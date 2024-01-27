@@ -1,6 +1,8 @@
 /* Add your custom styles here */
 body {
     padding-top: 56px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
 }
 
 .navbar {
@@ -8,7 +10,7 @@ body {
 }
 
 .navbar.fixed-top {
-    background-color: #343a40;
+    background-color: #343a40 !important;
 }
 
 .header {
@@ -26,8 +28,17 @@ body {
     color: #343a40;
 }
 
+.education-item {
+    margin-bottom: 20px;
+}
+
 .project-card {
     margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
 }
 
 .project-card img {
@@ -36,13 +47,18 @@ body {
 }
 
 #cv {
-    color: white;
-}
-
-#cv a {
     color: #343a40;
 }
 
+#cv a {
+    color: white;
+}
+
 #programming i {
+    color: white;
+}
+
+.footer {
+    background-color: #343a40;
     color: white;
 }
