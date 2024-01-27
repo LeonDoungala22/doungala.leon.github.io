@@ -95,3 +95,16 @@ body {
         padding: 60px 0;
     }
 }
+.circle-container {
+            width: 150px; /* Set the width and height as per your preference */
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%; /* Create a circle by setting border-radius to 50% */
+        }
+
+        .circle-image {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            display: block;
+        }
