@@ -1,4 +1,4 @@
-/* Add your custom styles here */
+/* Custom styles */
 body {
     padding-top: 56px;
     font-family: 'Roboto', sans-serif;
@@ -61,4 +61,22 @@ body {
 .footer {
     background-color: #343a40;
     color: white;
+}
+
+/* Additional styling for the contact form (example) */
+#contact form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contact input,
+#contact textarea {
+    margin-bottom: 15px;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        padding: 60px 0;
+    }
 }
