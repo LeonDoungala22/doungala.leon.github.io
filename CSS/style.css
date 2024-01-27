@@ -38,6 +38,10 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.education-item i {
+    color: #3498db; /* Education icon color (blue) */
+}
+
 .project-card {
     margin-bottom: 30px;
     background-color: #fff; /* White background for project cards */
@@ -95,16 +99,3 @@ body {
         padding: 60px 0;
     }
 }
-.circle-container {
-            width: 150px; /* Set the width and height as per your preference */
-            height: 150px;
-            overflow: hidden;
-            border-radius: 50%; /* Create a circle by setting border-radius to 50% */
-        }
-
-        .circle-image {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-            display: block;
-        }
