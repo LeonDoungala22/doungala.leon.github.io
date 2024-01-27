@@ -2,7 +2,8 @@
 body {
     padding-top: 56px;
     font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #e6e6e6; /* Light gray background */
+    color: #333; /* Dark text color */
 }
 
 .navbar {
@@ -10,30 +11,38 @@ body {
 }
 
 .navbar.fixed-top {
-    background-color: #343a40 !important;
+    background-color: #2c3e50 !important; /* Dark blue background */
+    color: #ecf0f1; /* Light text color */
 }
 
 .header {
-    background-color: #343a40;
+    background-color: #2c3e50; /* Dark blue background */
     color: white;
     padding: 80px 0;
 }
 
 .social-icons a {
-    color: white;
+    color: #ecf0f1; /* Light text color */
     margin: 0 10px;
 }
 
 .section-title {
-    color: #343a40;
+    color: #2c3e50; /* Dark blue color */
 }
 
 .education-item {
     margin-bottom: 20px;
+    background-color: #fff; /* White background for education items */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-card {
     margin-bottom: 30px;
+    background-color: #fff; /* White background for project cards */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
@@ -44,29 +53,35 @@ body {
 .project-card img {
     max-height: 200px;
     object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 #cv {
-    color: #343a40;
+    color: #2c3e50; /* Dark blue color */
 }
 
 #cv a {
-    color: white;
+    color: #ecf0f1; /* Light text color */
 }
 
 #programming i {
-    color: white;
+    color: #ecf0f1; /* Light text color */
 }
 
 .footer {
-    background-color: #343a40;
-    color: white;
+    background-color: #2c3e50; /* Dark blue background */
+    color: #ecf0f1; /* Light text color */
 }
 
 /* Additional styling for the contact form (example) */
 #contact form {
     max-width: 400px;
     margin: 0 auto;
+    background-color: #fff; /* White background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #contact input,
