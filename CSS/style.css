@@ -37,14 +37,14 @@ body {
 
 /* Header */
 .header {
-    background: url('images/background.jpg') center/cover no-repeat;
+    background: url('images/images.jpeg') center/cover no-repeat;
     color: #fff;
     text-align: center;
     padding: 150px 0;
 }
 
 .header-text {
-    /* Additional styling for header text if needed */
+    /* Add any additional styling here */
 }
 
 /* About Section */
@@ -234,7 +234,10 @@ footer {
         padding: 80px 0;
     }
 
-    .about-content,
+    .about-content {
+        width: 100%;
+    }
+
     .education-item,
     .project-card {
         width: 100%;
