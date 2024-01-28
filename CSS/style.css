@@ -43,15 +43,8 @@ body {
     padding: 150px 0;
 }
 
-.profile-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
 .header-text {
-    /* Add any additional styling here */
+    /* Additional styling for header text if needed */
 }
 
 /* About Section */
@@ -72,7 +65,7 @@ body {
 
 /* Education Section */
 #education {
-    background-color: #f9f9f9;
+    background-color: #9c9393;
     padding: 100px 0;
 }
 
@@ -241,22 +234,9 @@ footer {
         padding: 80px 0;
     }
 
-    .profile-image img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .about-content {
-        width: 100%;
-    }
-
+    .about-content,
     .education-item,
     .project-card {
         width: 100%;
     }
-}
-
-/* Custom styles for the Glide Carousel in the About section */
-.about-carousel {
-    /* Add your styles here */
 }
