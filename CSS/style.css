@@ -49,7 +49,6 @@ nav {
     font-size: 16px;
 }
 
-
 /* Header */
 .header {
     background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('images/images.jpeg') center/cover no-repeat;
@@ -157,7 +156,7 @@ nav {
     border-radius: 5px;
 }
 
-/* Add this to your existing CSS */
+/* Programming Section */
 #programming {
     padding: 100px 0;
     background: linear-gradient(135deg, #2a265f, #000080); /* Futuristic gradient background */
@@ -273,17 +272,48 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    body {
+        padding-top: 80px; /* Adjust top padding for smaller screens */
+    }
+
+    nav {
+        padding: 10px 0; /* Adjust padding for smaller screens */
+    }
+
     .header {
         padding: 80px 0;
     }
 
-    .about-content {
+    .header-content {
+        max-width: 100%; /* Adjust content width for smaller screens */
+    }
+
+    .project-card,
+    .education-item {
         width: 100%;
     }
 
-    .education-item,
-    .project-card {
+    .education-container {
+        justify-content: center; /* Center items for smaller screens */
+    }
+
+    .education-item {
+        margin-bottom: 20px; /* Adjust margin for smaller screens */
+    }
+
+    .section-title {
+        font-size: 2em; /* Adjust title font size for smaller screens */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
         width: 100%;
+        padding: 15px;
+        margin-bottom: 20px; /* Adjust margin for smaller screens */
+    }
+
+    .contact-form button {
+        padding: 15px 30px; /* Adjust padding for smaller screens */
     }
 }
 
