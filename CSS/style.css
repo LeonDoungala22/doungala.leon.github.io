@@ -15,10 +15,9 @@ body {
     padding-top: 60px;
 }
 
-/* Navigation */
 nav {
-    background-color: #222; /* Dark background for navbar */
-    padding: 10px 0;
+    background-color: #222;
+    padding: 15px 0;
     position: fixed;
     top: 0;
     width: 100%;
@@ -27,21 +26,29 @@ nav {
 }
 
 .navbar.fixed {
-    background-color: #333; /* Darker background when scrolling */
+    background-color: #333;
 }
 
 .navbar-brand,
 .navbar-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin-right: 20px;
+    transition: color 0.3s;
 }
 
 .navbar-links a:hover {
     color: #e44d26;
 }
+
+/* Adjust the icon size */
+.navbar-links i {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
 
 /* Header */
 .header {
@@ -74,6 +81,11 @@ nav {
     color: #fff;
     font-size: 24px;
     margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #e44d26;
 }
 
 /* Projects Section */
@@ -85,6 +97,7 @@ nav {
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 50px;
+    color: #e44d26;
 }
 
 .projects-container {
@@ -93,15 +106,21 @@ nav {
     justify-content: space-around;
 }
 
+.project-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 .project-card {
-    width: 30%;
+    width: 48%;
     margin-bottom: 30px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out;
-    background-color: rgba(255, 255, 255, 0.9); /* Clear background */
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    color: #333; /* Darker text color */
+    color: #333;
 }
 
 .project-card:hover {
@@ -121,12 +140,12 @@ nav {
 .project-info h5 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #1d1d5a; /* Title color */
+    color: #e44d26;
 }
 
 .project-info p {
     font-size: 1.2em;
-    color: #555; /* Detail text color */
+    color: #555;
 }
 
 .project-info .btn {
@@ -138,34 +157,31 @@ nav {
     border-radius: 5px;
 }
 
-/* Programming Languages Section */
+/* Add this to your existing CSS */
 #programming {
-    background-color: #111; /* Dark background */
-    color: #fff;
     padding: 100px 0;
+    background: linear-gradient(135deg, #2a265f, #000080); /* Futuristic gradient background */
 }
 
 .section-title {
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 50px;
+    color: #fff; /* Change title color to white */
 }
 
-.row {
+.programming-icons {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 30px;
 }
 
-.col-md-4 {
-    width: 30%;
-    margin-bottom: 30px;
-    text-align: center;
+.programming-icons i {
+    color: #61dafb; /* Icon color matches the gradient */
+    transition: transform 0.3s, color 0.3s;
 }
 
-.col-md-4 h4 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.programming-icons i:hover {
+    color: #fff; /* Icon color on hover */
+    transform: scale(1.2);
 }
 
 /* CV Section */
@@ -190,6 +206,8 @@ nav {
 #contact {
     padding: 100px 0;
     text-align: center;
+    background-color: #111;
+    color: #fff;
 }
 
 .contact-form {
@@ -200,31 +218,54 @@ nav {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #444; /* Darker border color */
-    border-radius: 5px;
-    background-color: #333; /* Dark background for input fields */
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 2px solid #666;
+    border-radius: 8px;
+    background-color: #222;
     color: #fff;
 }
 
 .contact-form button {
-    padding: 15px 30px;
+    padding: 20px 40px;
     background-color: #e44d26;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    transition: background-color 0.3s;
 }
 
 .contact-form button:hover {
     background-color: #333;
 }
 
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+}
+
+.contact-info i {
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+/* Example icons from Font Awesome */
+.contact-info i.phone {
+    color: #00bcd4; /* Teal color for phone icon */
+}
+
+.contact-info i.email {
+    color: #4caf50; /* Green color for email icon */
+}
+
 /* Footer */
 footer {
-    background-color: #222; /* Dark background */
+    background-color: #222;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -242,6 +283,73 @@ footer {
 
     .education-item,
     .project-card {
+        width: 100%;
+    }
+}
+
+/* Education Section */
+#education {
+    background-color: #333;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #e44d26;
+}
+
+.education-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.education-item {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.education-item:hover {
+    transform: scale(1.05);
+}
+
+.education-item i {
+    font-size: 2em;
+    color: #e44d26;
+}
+
+.education-item h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.duration {
+    font-size: 1.2em;
+    color: #888;
+}
+
+.institution-link {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.institution-link:hover {
+    color: #e44d26;
+}
+
+/* Responsive for Education Section */
+@media (max-width: 768px) {
+    .education-item {
         width: 100%;
     }
 }

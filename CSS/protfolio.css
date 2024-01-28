@@ -17,8 +17,8 @@ body {
 
 /* Navigation */
 nav {
-    background-color: #222; /* Dark background for navbar */
-    padding: 10px 0;
+    background-color: #222;
+    padding: 15px 0;
     position: fixed;
     top: 0;
     width: 100%;
@@ -27,21 +27,29 @@ nav {
 }
 
 .navbar.fixed {
-    background-color: #333; /* Darker background when scrolling */
+    background-color: #333;
 }
 
 .navbar-brand,
 .navbar-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin-right: 20px;
+    transition: color 0.3s;
 }
 
 .navbar-links a:hover {
     color: #e44d26;
 }
+
+/* Adjust the icon size */
+.navbar-links i {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
 
 /* Header */
 .header {
