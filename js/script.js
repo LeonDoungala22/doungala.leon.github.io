@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // Smooth scrolling for anchor links
+    
     $("a").on('click', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
     });
 
-    // Update the navbar position on window scroll
+   
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         var navbarHeight = $(".navbar").outerHeight();
@@ -25,7 +25,7 @@ $(document).ready(function () {
         }
     });
 
-    // Navbar-specific JavaScript code
+    
     const navbar = document.querySelector('.navbar');
 
     window.addEventListener('scroll', function () {
@@ -35,11 +35,8 @@ $(document).ready(function () {
             navbar.classList.remove('fixed');
         }
     });
-});
-// Add this script to your page or include it in your existing JS file
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scrolling to anchor links
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -50,20 +47,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add scroll animation to the Programming Languages section
-    const programmingSection = document.getElementById('programming');
-    const programmingIcons = document.querySelector('.programming-icons');
+  
+    const sectionsToAnimate = document.querySelectorAll('.animate-section');
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const scrollPosition = window.scrollY;
 
-        if (isInViewport(programmingSection)) {
-            programmingIcons.style.opacity = 1;
-            programmingIcons.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-        } else {
-            programmingIcons.style.opacity = 0;
-            programmingIcons.style.transform = 'translateY(0)';
-        }
+        sectionsToAnimate.forEach((section, index) => {
+            if (isInViewport(section)) {
+                
+                gsap.to(section, { opacity: 1, y: Math.sin(scrollPosition * 0.01 + index) * 50, duration: 1, ease: 'power2.inOut', delay: index * 0.3 });
+            } else {
+              
+                gsap.to(section, { opacity: 0, y: 20, duration: 0.5, ease: 'power2.inOut' });
+            }
+        });
     });
 
     function isInViewport(element) {
