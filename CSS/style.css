@@ -162,7 +162,7 @@ nav {
     background: linear-gradient(135deg, #2a265f, #000080); /* Futuristic gradient background */
 }
 
-.section-title {
+.section-title#programming-title {
     color: #fff; /* Change title color to white */
 }
 
@@ -301,7 +301,8 @@ footer {
         margin-bottom: 20px; /* Adjust margin for smaller screens */
     }
 
-    .section-title {
+    .section-title,
+    .section-title#programming-title {
         font-size: 2em; /* Adjust title font size for smaller screens */
     }
 
@@ -324,7 +325,7 @@ footer {
     padding: 100px 0;
 }
 
-.section-title {
+.section-title#education-title {
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 50px;
@@ -375,6 +376,58 @@ footer {
 
 .institution-link:hover {
     color: #e44d26;
+}
+
+/* Adjustments for the Journey Section with Bootstrap Carousel */
+#journey {
+    padding: 100px 0;
+    display: flex;
+    align-items: center; /* Center content vertically */
+}
+
+#journey .section-title {
+    font-size: 1.5em; /* Increase the font size for better visibility */
+}
+
+#journey .lead {
+    font-size: 1em; /* Adjust the font size for better readability */
+}
+
+.journey-content {
+    text-align: justify;
+}
+
+.journey-content h2.section-title {
+    margin-bottom: 2rem;
+}
+
+.journey-content p.lead {
+    font-size: 1.4em;
+    margin-bottom: 1.5rem;
+}
+
+.col-lg-6 {
+    display: flex;
+    align-items: center; /* Center content vertically in each column */
+}
+
+#myCarousel {
+    max-width: 100%;
+    height: auto; /* Responsive height */
+}
+
+.carousel-item img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto; /* Responsive height */
+}
+
+/* Adjustments for the carousel controls on smaller screens */
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+    }
 }
 
 /* Responsive for Education Section */

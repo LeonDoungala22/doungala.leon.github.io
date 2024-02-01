@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    
+
+    // Smooth scrolling for anchor links using jQuery
     $("a").on('click', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
@@ -13,7 +14,7 @@ $(document).ready(function () {
         }
     });
 
-   
+    // Toggle fixed navbar on scroll using jQuery
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         var navbarHeight = $(".navbar").outerHeight();
@@ -25,9 +26,8 @@ $(document).ready(function () {
         }
     });
 
-    
+    // Toggle fixed navbar on scroll using vanilla JavaScript
     const navbar = document.querySelector('.navbar');
-
     window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('fixed');
@@ -36,7 +36,7 @@ $(document).ready(function () {
         }
     });
 
-    
+    // Smooth scrolling for internal links using vanilla JavaScript
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -47,7 +47,7 @@ $(document).ready(function () {
         });
     });
 
-  
+    // Scroll animations for sections using GSAP
     const sectionsToAnimate = document.querySelectorAll('.animate-section');
 
     window.addEventListener('scroll', function () {
@@ -55,15 +55,24 @@ $(document).ready(function () {
 
         sectionsToAnimate.forEach((section, index) => {
             if (isInViewport(section)) {
-                
-                gsap.to(section, { opacity: 1, y: Math.sin(scrollPosition * 0.01 + index) * 50, duration: 1, ease: 'power2.inOut', delay: index * 0.3 });
+                // Add specific mobile animation here
+                if (window.innerWidth < 768) {
+                    gsap.to(section, { opacity: 1, y: 0, duration: 1, ease: 'power2.inOut', delay: index * 0.3 });
+                } else {
+                    gsap.to(section, { opacity: 1, y: Math.sin(scrollPosition * 0.01 + index) * 50, duration: 1, ease: 'power2.inOut', delay: index * 0.3 });
+                }
             } else {
-              
-                gsap.to(section, { opacity: 0, y: 20, duration: 0.5, ease: 'power2.inOut' });
+                // Add specific mobile animation here
+                if (window.innerWidth < 768) {
+                    gsap.to(section, { opacity: 0, y: 0, duration: 0.5, ease: 'power2.inOut' });
+                } else {
+                    gsap.to(section, { opacity: 0, y: 20, duration: 0.5, ease: 'power2.inOut' });
+                }
             }
         });
     });
 
+    // Helper function to check if an element is in the viewport
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
         return (
