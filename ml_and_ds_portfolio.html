@@ -59,99 +59,118 @@
         </div>
     </header>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section with Tabs -->
     <section id="portfolio" class="py-5">
         <div class="container">
-            <h2 class="section-title text-center mb-5">AI / ML and Data Science Portfolio</h2>
-            <div class="projects-container d-flex flex-wrap justify-content-center">
-                <!-- Project Cards -->
-                <div class="project-card m-3">
-                    <img src="images/HR-Analytics.jpeg" alt="Human Resources Analytics" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Human Resources Analytics</h5>
-                        <p>Algorithm: PCA and K-Means Clustering</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+            <h2 class="section-title text-center mb-5">Portfolio</h2>
+            <ul class="nav nav-tabs justify-content-center" id="portfolioTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="ml-tab" data-bs-toggle="tab" data-bs-target="#ml"
+                        type="button" role="tab" aria-controls="ml" aria-selected="true">ML / Data Science</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="generative-tab" data-bs-toggle="tab" data-bs-target="#generative"
+                        type="button" role="tab" aria-controls="generative" aria-selected="false">Generative AI</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="portfolioTabsContent">
+                <!-- ML / Data Science Portfolio -->
+                <div class="tab-pane fade show active" id="ml" role="tabpanel" aria-labelledby="ml-tab">
+                    <div class="projects-container d-flex flex-wrap justify-content-center mt-4">
+                        <div class="project-card m-3">
+                            <img src="images/HR-Analytics.jpeg" alt="Human Resources Analytics" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Human Resources Analytics</h5>
+                                <p>Algorithm: PCA and K-Means Clustering</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card m-3">
+                            <img src="images/download.jpeg" alt="Diabetes Prediction and Characterization" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Diabetes Prediction and Characterization</h5>
+                                <p>Algorithm: Ensemble Learning, Random Forest, AdaBoost, XGBoost</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Ensembles/Diabetes%20Prediction%20and%20Characterization/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card m-3">
+                            <img src="images/download (1).jpeg" alt="Exploring Customer Segmentation" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Exploring Customer Segmentation</h5>
+                                <p>Algorithm: K-Means Clustering</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Clustering/K-Means/Customer%20Segmentation%20using%20K-Means%20Clustering/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card m-3">
+                            <img src="images/8_Main_Types_of_Heart_Disease.jpeg" alt="Heart Disease Prediction" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Heart Disease Prediction</h5>
+                                <p>Algorithm: SVM, NLP</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card m-3">
+                            <img src="images/download (3).png" alt="Sentiment Analysis on IMDb Movie Reviews" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Sentiment Analysis on IMDb Movie Reviews</h5>
+                                <p>Algorithm: Bernoulli Naive Bayes</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20on%20IMDb%20Movie%20Reviews/Bernoulli%20Naive%20Bayes/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card m-3">
+                            <img src="images/download (4).jpeg" alt="Breast Cancer Classification" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Breast Cancer Classification</h5>
+                                <p>Algorithm: K-Nearest Neighbors (KNN)</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/K-Nearest%20Neighbors%20(KNN)/Breast%20Cancer%20Classification%20with%20K-Nearest%20Neighbors%20(KNN)/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card m-3">
+                            <img src="images/download (2).jpeg" alt="Salary Prediction" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Salary Prediction</h5>
+                                <p>Algorithm: Linear Regression</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card m-3">
+                            <img src="images/download (5).jpeg" alt="Credit Card Fraud Detection" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Credit Card Fraud Detection</h5>
+                                <p>Algorithm: Decision Trees Classifier</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Credit%20Card%20Fraud%20Detection/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card m-3">
+                            <img src="images/AdobeStock_497729134 (1).jpeg" alt="Predicting Housing Prices" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Predicting Housing Prices</h5>
+                                <p>Algorithm: DecisionTree Regressor</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Predicting%20Housing%20Prices%20with%20Gaussian%20Naive%20Bayes/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card m-3">
+                            <img src="images/0_igDW-qYQQh_FS0Ky.jpeg" alt="Spam Email Classification" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Spam Email Classification</h5>
+                                <p>Algorithm: Logistic Regression</p>
+                                <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/%20Logistic%20Regression%20(sigmoid%20functions)/Spam%20Email%20Classification/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="project-card m-3">
-                    <img src="images/download.jpeg" alt="Diabetes Prediction and Characterization" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Diabetes Prediction and Characterization</h5>
-                        <p>Algorithm: Ensemble Learning, Random Forest, AdaBoost, XGBoost</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Ensembles/Diabetes%20Prediction%20and%20Characterization/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card m-3">
-                    <img src="images/download (1).jpeg" alt="Exploring Customer Segmentation" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Exploring Customer Segmentation</h5>
-                        <p>Algorithm: K-Means Clustering</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Clustering/K-Means/Customer%20Segmentation%20using%20K-Means%20Clustering/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card m-3">
-                    <img src="images/8_Main_Types_of_Heart_Disease.jpeg" alt="Heart Disease Prediction" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Heart Disease Prediction</h5>
-                        <p>Algorithm: SVM, NLP</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card m-3">
-                    <img src="images/download (3).png" alt="Sentiment Analysis on IMDb Movie Reviews" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Sentiment Analysis on IMDb Movie Reviews</h5>
-                        <p>Algorithm: Bernoulli Naive Bayes</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20on%20IMDb%20Movie%20Reviews/Bernoulli%20Naive%20Bayes/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card m-3">
-                    <img src="images/download (4).jpeg" alt="Breast Cancer Classification" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Breast Cancer Classification</h5>
-                        <p>Algorithm: K-Nearest Neighbors (KNN)</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/K-Nearest%20Neighbors%20(KNN)/Breast%20Cancer%20Classification%20with%20K-Nearest%20Neighbors%20(KNN)/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card m-3">
-                    <img src="images/download (2).jpeg" alt="Salary Prediction" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Salary Prediction</h5>
-                        <p>Algorithm: Linear Regression</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card m-3">
-                    <img src="images/download (5).jpeg" alt="Credit Card Fraud Detection" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Credit Card Fraud Detection</h5>
-                        <p>Algorithm: Decision Trees Classifier</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Credit%20Card%20Fraud%20Detection/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card m-3">
-                    <img src="images/AdobeStock_497729134 (1).jpeg" alt="Predicting Housing Prices" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Predicting Housing Prices</h5>
-                        <p>Algorithm: DecisionTree Regressor</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Predicting%20Housing%20Prices%20with%20Gaussian%20Naive%20Bayes/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card m-3">
-                    <img src="images/0_igDW-qYQQh_FS0Ky.jpeg" alt="Spam Email Classification" class="img-fluid">
-                    <div class="project-info">
-                        <h5>Spam Email Classification</h5>
-                        <p>Algorithm: Logistic Regression</p>
-                        <a href="https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/%20Logistic%20Regression%20(sigmoid%20functions)/Spam%20Email%20Classification/main.ipynb" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                <!-- Generative AI Portfolio -->
+                <div class="tab-pane fade" id="generative" role="tabpanel" aria-labelledby="generative-tab">
+                    <div class="projects-container d-flex flex-wrap justify-content-center mt-4">
+                        <div class="project-card m-3">
+                            <img src="images/generative-ai-project.jpg" alt="Generative AI Project" class="img-fluid">
+                            <div class="project-info">
+                                <h5>Generative Art Exploration</h5>
+                                <p>Technology: GANs (Generative Adversarial Networks)</p>
+                                <a href="https://github.com/LeonDoungala22/generative-ai-project" class="btn btn-primary mt-2" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                        <!-- Add more Generative AI Projects here -->
                     </div>
                 </div>
             </div>
