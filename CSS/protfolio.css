@@ -7,12 +7,13 @@
 
 /* Body */
 body {
-    font-family: 'Your Chosen Font', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     background-color: #111; /* Dark background */
     color: #fff;
     padding-top: 60px;
+    overflow-x: hidden;
 }
 
 /* Navigation */
@@ -23,7 +24,7 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .navbar.fixed {
@@ -37,22 +38,24 @@ nav {
     font-size: 18px;
     font-weight: 500;
     margin-right: 20px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
     color: #e44d26;
 }
 
-/* Adjust the icon size */
-.navbar-links i {
-    margin-right: 5px;
-    font-size: 16px;
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
 }
 
 /* Header */
 .header {
-    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('images/images.jpeg') center/cover no-repeat;
+    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('images/header-bg.jpeg') center/cover no-repeat;
     color: #fff;
     text-align: center;
     padding: 150px 0;
@@ -81,17 +84,43 @@ nav {
     color: #fff;
     font-size: 24px;
     margin-right: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #e44d26;
+    transform: scale(1.2);
 }
 
 /* Projects Section */
-#projects {
+#portfolio {
     padding: 100px 0;
+    text-align: center;
 }
 
 .section-title {
     font-size: 2.5em;
-    text-align: center;
+    color: #e44d26;
     margin-bottom: 50px;
+}
+
+.nav-tabs .nav-link {
+    color: #fff;
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    margin-right: 15px;
+    transition: color 0.3s, background 0.3s;
+}
+
+.nav-tabs .nav-link.active {
+    color: #111;
+    background: #e44d26;
+    border-radius: 5px;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #e44d26;
 }
 
 .projects-container {
@@ -101,24 +130,25 @@ nav {
 }
 
 .project-card {
-    width: 30%;
+    width: 320px;
     margin-bottom: 30px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-    background-color: rgba(255, 255, 255, 0.9); /* Clear background */
+    background-color: #fff;
     border-radius: 10px;
-    color: #333; /* Darker text color */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .project-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .project-info {
@@ -127,91 +157,49 @@ nav {
 
 .project-info h5 {
     font-size: 1.5em;
+    color: #e44d26;
     margin-bottom: 10px;
-    color: #1d1d5a; /* Title color */
 }
 
 .project-info p {
-    font-size: 1.2em;
-    color: #555; /* Detail text color */
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .project-info .btn {
-    display: inline-block;
     padding: 10px 15px;
     background-color: #e44d26;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-/* Programming Languages Section */
-#programming {
-    background-color: #111; /* Dark background */
-    color: #fff;
-    padding: 100px 0;
-}
-
-.section-title {
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.row {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.col-md-4 {
-    width: 30%;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.col-md-4 h4 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-/* CV Section */
-#cv {
-    padding: 100px 0;
-}
-
-.cv-download {
-    text-align: center;
-}
-
-.cv-download .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #e44d26;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+.project-info .btn:hover {
+    background-color: #333;
 }
 
 /* Contact Section */
 #contact {
     padding: 100px 0;
-    text-align: center;
+    background-color: #222;
 }
 
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
+    text-align: left;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
-    border: 1px solid #444; /* Darker border color */
+    border: 1px solid #555;
     border-radius: 5px;
-    background-color: #333; /* Dark background for input fields */
+    background-color: #333;
     color: #fff;
 }
 
@@ -223,6 +211,7 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.2em;
+    transition: background 0.3s ease;
 }
 
 .contact-form button:hover {
@@ -231,24 +220,31 @@ nav {
 
 /* Footer */
 footer {
-    background-color: #222; /* Dark background */
-    color: #fff;
+    background-color: #222;
     padding: 20px 0;
     text-align: center;
+    color: #fff;
 }
 
-/* Responsive */
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .header {
-        padding: 80px 0;
+        padding: 100px 20px;
     }
 
-    .about-content {
-        width: 100%;
+    .projects-container {
+        justify-content: center;
     }
 
-    .education-item,
     .project-card {
-        width: 100%;
+        width: 90%;
+    }
+
+    .section-title {
+        font-size: 2em;
     }
 }
