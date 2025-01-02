@@ -92,86 +92,106 @@ nav {
     transform: scale(1.2);
 }
 
-/* Projects Section */
-#projects {
+/* About Section */
+#journey {
     padding: 100px 0;
-    text-align: center;
+    background-color: #111;
 }
 
-.section-title {
+#journey .section-title {
     font-size: 2.5em;
     color: #e44d26;
+    margin-bottom: 20px;
+}
+
+.journey-content {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.carousel-inner img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Education Section */
+#education {
+    padding: 100px 0;
+    background-color: #222;
+}
+
+#education .section-title {
+    color: #e44d26;
+    text-align: center;
     margin-bottom: 50px;
 }
 
-.projects-container {
+.education-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.project-card {
-    width: 300px;
-    background-color: #fff;
+.education-item {
+    background-color: #333;
+    padding: 20px;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #333;
+    text-align: center;
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-info {
-    padding: 15px;
-    text-align: left;
-}
-
-.project-info h5 {
-    font-size: 1.5em;
-    color: #e44d26;
+.education-item h3 {
+    color: #fff;
     margin-bottom: 10px;
 }
 
-.project-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 15px;
+.education-item p {
+    color: #ccc;
 }
 
-.project-info .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #e44d26;
+/* Machine Learning Portfolio Section */
+#about {
+    padding: 100px 0;
+    background-color: #111;
+}
+
+.about-content {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+#about .section-title {
+    font-size: 2.5em;
+    color: #e44d26;
+    margin-bottom: 20px;
+}
+
+.carousel-inner img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-item h1 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    text-align: center;
     color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
 }
 
-.project-info .btn:hover {
-    background-color: #333;
+.carousel-item p1 {
+    font-size: 1em;
+    text-align: center;
+    color: #ccc;
+    display: block;
 }
 
-/* Programming Section */
+/* Programming Languages Section */
 #programming {
     padding: 100px 0;
     background: linear-gradient(135deg, #2a265f, #000080);
     color: #fff;
-}
-
-.section-title#programming-title {
-    color: #fff;
+    text-align: center;
 }
 
 .programming-icons {
@@ -183,51 +203,71 @@ nav {
     gap: 15px;
 }
 
+.programming-icons div {
+    text-align: center;
+}
+
 .programming-icons i {
-    color: #61dafb;
-    font-size: 2em;
+    font-size: 3em;
+    margin-bottom: 10px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .programming-icons i:hover {
-    color: #fff;
+    color: #e44d26;
     transform: scale(1.2);
+}
+
+/* CV Section */
+#cv {
+    padding: 100px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+#cv .section-title {
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.cv-download a {
+    padding: 10px 20px;
+    background-color: #e44d26;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cv-download a:hover {
+    background-color: #111;
 }
 
 /* Contact Section */
 #contact {
     padding: 100px 0;
     background-color: #222;
+    text-align: center;
 }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
+#contact .section-title {
+    color: #e44d26;
     margin-bottom: 20px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
 }
 
-.contact-form button {
-    padding: 15px 30px;
-    background-color: #e44d26;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+#contact p {
     font-size: 1.2em;
-    transition: background 0.3s ease;
+    color: #ccc;
+    margin-bottom: 10px;
 }
 
-.contact-form button:hover {
-    background-color: #333;
+#contact a {
+    color: #e44d26;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: #fff;
 }
 
 /* Footer */
@@ -266,5 +306,9 @@ footer p {
 
     .social-icons a {
         font-size: 20px;
+    }
+
+    .carousel-inner img {
+        height: 250px;
     }
 }
