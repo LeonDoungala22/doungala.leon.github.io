@@ -70,13 +70,12 @@ nav {
 #journey {
     padding: 60px 20px;
     display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-start;
     gap: 20px;
+    align-items: flex-start;
 }
 
 .carousel-inner img {
-    height: 300px;
+    height: 450px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -88,11 +87,22 @@ nav {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.journey-content img {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    width: 40%;
 }
 
 #myCarousel {
     flex: 1;
-    max-width: 350px;
+    max-width: 600px;
+    margin-right: 20px;
 }
 
 /* Education Section */
@@ -149,11 +159,12 @@ nav {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.6;
 }
 
 #about .carousel-inner img {
-    height: 300px;
+    height: 400px;
     object-fit: cover;
     border-radius: 8px;
 }
