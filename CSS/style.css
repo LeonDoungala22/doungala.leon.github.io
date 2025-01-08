@@ -8,50 +8,51 @@
 /* Body Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
-    background-color: #111;
-    color: #f4f4f4;
+    background-color: #121212;
+    color: #e0e0e0;
     overflow-x: hidden;
 }
 
 /* Navbar Styles */
 nav {
-    background-color: #222;
+    background-color: #1f1f1f;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     transition: background-color 0.3s ease-in-out;
     padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand, .nav-link {
-    color: #f4f4f4 !important;
-    font-size: 16px;
+    color: #e0e0e0 !important;
+    font-size: 18px;
     transition: color 0.3s;
 }
 
 .nav-link:hover {
-    color: #ff5733 !important;
+    color: #ff6f61 !important;
 }
 
 /* Header Section */
 .header {
-    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('images/header-bg.jpeg') center/cover no-repeat;
+    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('images/header-bg.jpeg') center/cover no-repeat;
     text-align: center;
     padding: 150px 20px;
     color: #fff;
 }
 
 .header h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
 }
 
 .header p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
 }
 
 .social-icons a {
@@ -62,13 +63,13 @@ nav {
 }
 
 .social-icons a:hover {
-    color: #ff5733;
+    color: #ff6f61;
     transform: scale(1.2);
 }
 
 /* Journey Section */
 #journey {
-    padding: 60px 20px;
+    padding: 80px 20px;
     display: flex;
     gap: 20px;
     align-items: flex-start;
@@ -83,11 +84,11 @@ nav {
 .journey-content {
     flex: 2;
     text-align: justify;
-    background-color: #1a1a1a;
-    padding: 20px;
+    background-color: #1f1f1f;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.8;
 }
 
@@ -107,14 +108,14 @@ nav {
 
 /* Education Section */
 #education {
-    background-color: #191919;
-    padding: 60px 20px;
+    background-color: #1a1a1a;
+    padding: 80px 20px;
     text-align: center;
 }
 
 #education .section-title {
-    font-size: 1.8rem;
-    color: #ff5733;
+    font-size: 2rem;
+    color: #ff6f61;
     margin-bottom: 30px;
 }
 
@@ -129,7 +130,7 @@ nav {
     flex: 1;
     min-width: 30%;
     background-color: #292929;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
@@ -140,26 +141,26 @@ nav {
 }
 
 .education-item h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
-    color: #f4f4f4;
+    color: #e0e0e0;
 }
 
 .education-item p {
-    color: #ccc;
+    color: #b0b0b0;
 }
 
 /* Machine Learning Portfolio Section */
 #about {
-    padding: 60px 20px;
+    padding: 80px 20px;
 }
 
 .about-content {
-    background-color: #1a1a1a;
-    padding: 20px;
+    background-color: #1f1f1f;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
@@ -170,17 +171,17 @@ nav {
 }
 
 #about h2 {
-    font-size: 1.8rem;
-    color: #ff5733;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
 }
 
 #about .btn {
-    background-color: #ff5733;
+    background-color: #ff6f61;
     color: #fff;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
     transition: background-color 0.3s;
 }
 
@@ -190,7 +191,7 @@ nav {
 
 /* Programming Languages Section */
 #programming {
-    padding: 60px 20px;
+    padding: 80px 20px;
     background: linear-gradient(135deg, #2c3e50, #4ca1af);
     text-align: center;
 }
@@ -204,28 +205,28 @@ nav {
 }
 
 .programming-icons i {
-    font-size: 3rem;
-    color: #f4f4f4;
+    font-size: 3.5rem;
+    color: #e0e0e0;
     transition: transform 0.3s, color 0.3s;
 }
 
 .programming-icons i:hover {
-    color: #ff5733;
+    color: #ff6f61;
     transform: scale(1.2);
 }
 
 /* CV Section */
 #cv {
-    padding: 40px 20px;
-    background-color: #f4f4f4;
-    color: #111;
+    padding: 60px 20px;
+    background-color: #e0e0e0;
+    color: #121212;
     text-align: center;
 }
 
 #cv .btn {
-    background-color: #ff5733;
+    background-color: #ff6f61;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
@@ -236,19 +237,19 @@ nav {
 
 /* Contact Section */
 #contact {
-    padding: 40px 20px;
-    background-color: #222;
+    padding: 60px 20px;
+    background-color: #1f1f1f;
     text-align: center;
 }
 
 #contact p {
     margin-bottom: 10px;
-    color: #f4f4f4;
-    font-size: 14px;
+    color: #e0e0e0;
+    font-size: 16px;
 }
 
 #contact a {
-    color: #ff5733;
+    color: #ff6f61;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -259,10 +260,10 @@ nav {
 
 /* Footer */
 footer {
-    background-color: #111;
+    background-color: #121212;
     padding: 20px 0;
     text-align: center;
-    color: #ccc;
+    color: #b0b0b0;
     font-size: 14px;
 }
 
