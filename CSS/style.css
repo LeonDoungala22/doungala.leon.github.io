@@ -73,12 +73,14 @@ nav {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .carousel-inner img {
     height: 450px;
     object-fit: cover;
     border-radius: 8px;
+    width: 100%;
 }
 
 .journey-content {
@@ -97,13 +99,15 @@ nav {
     margin-right: 20px;
     margin-bottom: 10px;
     border-radius: 8px;
-    width: 40%;
+    width: 100%;
+    max-width: 40%;
 }
 
 #myCarousel {
     flex: 1;
     max-width: 600px;
     margin-right: 20px;
+    width: 100%;
 }
 
 /* Education Section */
@@ -168,6 +172,7 @@ nav {
     height: 400px;
     object-fit: cover;
     border-radius: 8px;
+    width: 100%;
 }
 
 #about h2 {
@@ -273,17 +278,18 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    #journey {
-        flex-wrap: wrap;
+    .header {
+        padding: 100px 20px;
+    }
+
+    .journey-content img {
+        width: 100%;
+        margin: 0 0 10px 0;
     }
 
     #myCarousel {
         max-width: 100%;
         margin-bottom: 20px;
-    }
-
-    .journey-content {
-        flex: 1;
     }
 
     .education-container {
@@ -293,5 +299,23 @@ footer p {
     .programming-icons {
         flex-direction: column;
         gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .header p {
+        font-size: 1.2rem;
+    }
+
+    .education-item {
+        min-width: 100%;
+    }
+
+    .programming-icons i {
+        font-size: 2.5rem;
     }
 }
