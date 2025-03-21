@@ -1,24 +1,24 @@
-/* Modern Light Theme - Professional Tech Portfolio 2024 */
+/* Modern Somber Theme - Professional Tech Portfolio 2024 */
 
 :root {
-  /* Modern Light Color Palette */
-  --primary: #0061ff;
-  --primary-gradient: linear-gradient(135deg, #0061ff, #60efff);
-  --secondary: #6610f2;
-  --secondary-gradient: linear-gradient(135deg, #6610f2, #0061ff);
-  --accent: #ff006e;
-  --bg-light: #f8f9fd;
-  --bg-light-alt: #eef1f9;
-  --card-bg: #ffffff;
-  --card-bg-alt: rgba(255, 255, 255, 0.85);
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --text-primary: #1e2432;
-  --text-secondary: #505c75;
+  /* Somber Professional Color Palette */
+  --primary: #4285f4;
+  --primary-gradient: linear-gradient(135deg, #4285f4, #34a0ff);
+  --secondary: #6c5ce7;
+  --secondary-gradient: linear-gradient(135deg, #6c5ce7, #4285f4);
+  --accent: #00c2ff;
+  --bg-dark: #1c2331;
+  --bg-dark-alt: #131b2b;
+  --card-bg: #232d3f;
+  --card-bg-alt: rgba(35, 45, 63, 0.85);
+  --glass-bg: rgba(35, 45, 63, 0.85);
+  --text-primary: #e6e9ef;
+  --text-secondary: #a3aed0;
   --text-light: #ffffff;
-  --border-color: rgba(0, 97, 255, 0.15);
-  --success: #00c896;
+  --border-color: rgba(66, 133, 244, 0.15);
+  --success: #0acf97;
   --border-radius: 12px;
-  --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --font-primary: 'Space Grotesk', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
@@ -36,7 +36,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-light);
+  background: var(--bg-dark-alt);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -55,7 +55,7 @@ body {
   font-family: var(--font-primary);
   font-size: 16px;
   line-height: 1.7;
-  background-color: var(--bg-light);
+  background-color: var(--bg-dark);
   color: var(--text-primary);
   overflow-x: hidden;
   position: relative;
@@ -70,9 +70,9 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 25px 25px, rgba(0, 97, 255, 0.03) 2px, transparent 0),
-    linear-gradient(rgba(0, 97, 255, 0.01) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 97, 255, 0.01) 1px, transparent 1px);
+    radial-gradient(circle at 25px 25px, rgba(66, 133, 244, 0.06) 2px, transparent 0),
+    linear-gradient(rgba(66, 133, 244, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66, 133, 244, 0.03) 1px, transparent 1px);
   background-size: 
     50px 50px,
     25px 25px,
@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-bottom: 1.2rem;
   font-weight: 400;
-  color: var (--text-secondary);
+  color: var(--text-secondary);
 }
 
 a {
@@ -204,7 +204,7 @@ a:hover {
   -webkit-backdrop-filter: blur(10px) !important;
   padding: 15px 0 !important;
   transition: all 0.4s ease;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(66, 133, 244, 0.1);
   position: fixed;
   width: 100%;
   z-index: 1000;
@@ -337,7 +337,7 @@ a:hover {
 /* Modern Header with Gradient Background */
 .header {
   position: relative;
-  background: linear-gradient(135deg, #f5f7ff, #e8f0ff);
+  background: linear-gradient(135deg, #131b2b, #1c2331);
   padding: 180px 0 100px;
   overflow: hidden;
 }
@@ -348,7 +348,7 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 97, 255, 0.05), rgba(102, 16, 242, 0.05));
+  background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(108, 92, 231, 0.1));
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
 }
@@ -496,7 +496,7 @@ a:hover {
 .carousel-control-next {
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(35, 45, 63, 0.7);
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
@@ -508,14 +508,14 @@ a:hover {
 
 .carousel-control-prev:hover, 
 .carousel-control-next:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(35, 45, 63, 0.9);
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: brightness(0) saturate(100%) invert(29%) sepia(98%) saturate(3650%) hue-rotate(214deg) brightness(99%) contrast(104%);
+  filter: brightness(0) saturate(100%) invert(100%);
 }
 
 /* Carousel indicators */
@@ -541,9 +541,9 @@ a:hover {
 #programming {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #e8f0ff, #f5f7ff);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  background: linear-gradient(135deg, #131b2b, #1c2331);
+  border-top: 1px solid rgba(66, 133, 244, 0.1);
+  border-bottom: 1px solid rgba(66, 133, 244, 0.1);
 }
 
 #programming::before {
@@ -594,7 +594,7 @@ a:hover {
 
 .tech-chip:hover {
   background-color: var(--primary);
-  color: white;
+  color: var(--text-light);
   border-color: var(--primary);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 97, 255, 0.2);
@@ -660,7 +660,7 @@ a:hover {
 
 /* Education section */
 #education {
-  background-color: var(--bg-light);
+  background-color: var(--bg-dark);
   position: relative;
   overflow: hidden;
 }
@@ -867,7 +867,7 @@ a:hover {
   align-items: center;
   gap: 10px;
   padding: 10px 15px;
-  background-color: var(--bg-light);
+  background-color: rgba(28, 35, 49, 0.5);
   border-radius: 8px;
   transition: var(--transition);
 }
@@ -883,7 +883,7 @@ a:hover {
 }
 
 .institution-link:hover .institution-info {
-  background-color: rgba(0, 97, 255, 0.1);
+  background-color: rgba(66, 133, 244, 0.15);
 }
 
 .institution-link:hover .institution-name {
@@ -908,15 +908,15 @@ a:hover {
 }
 
 .detail-card {
-  background-color: rgba(0, 97, 255, 0.03);
+  background-color: rgba(66, 133, 244, 0.05);
   border-radius: 8px;
   padding: 20px;
-  border: 1px solid rgba(0, 97, 255, 0.1);
+  border: 1px solid rgba(66, 133, 244, 0.1);
   transition: var(--transition);
 }
 
 .detail-card:hover {
-  background-color: rgba(0, 97, 255, 0.06);
+  background-color: rgba(66, 133, 244, 0.1);
   transform: translateY(-3px);
 }
 
@@ -1057,8 +1057,8 @@ a:hover {
 }
 
 .contact-form .form-control {
-  background-color: var(--bg-light);
-  border: 1px solid var(--border-color);
+  background-color: rgba(28, 35, 49, 0.8);
+  border: 1px solid rgba(66, 133, 244, 0.1);
   color: var(--text-primary);
   border-radius: 8px;
   padding: 12px 15px;
@@ -1068,7 +1068,7 @@ a:hover {
 .contact-form .form-control:focus {
   box-shadow: 0 0 0 3px rgba(0, 97, 255, 0.15);
   border-color: var(--primary);
-  background-color: white;
+  background-color: rgba(28, 35, 49, 0.95);
 }
 
 .form-response {
@@ -1077,10 +1077,10 @@ a:hover {
 
 /* Footer */
 footer {
-  background-color: var(--bg-light-alt);
+  background-color: var(--bg-dark-alt);
   padding: 40px 0;
   text-align: center;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(66, 133, 244, 0.1);
   position: relative;
 }
 
@@ -1151,7 +1151,7 @@ footer::before {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(66, 133, 244, 0.1);
 }
 
 .back-to-top.active {
@@ -1344,14 +1344,14 @@ footer::before {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(19, 27, 43, 0.85);
   backdrop-filter: blur(5px);
   padding: 15px;
   z-index: 2;
 }
 
 .carousel-item .project-info h3 {
-  color: var(--text-primary);
+  color: var(--text-light);
   margin-bottom: 5px;
   font-size: 1.2rem;
 }
