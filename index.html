@@ -386,8 +386,8 @@
     <!-- Portfolio Section -->
     <section id="about" class="section-padding">
         <div class="container">
-            <div class="row align-items-stretch content-match-container">
-                <div class="col-lg-6 order-lg-2">
+            <div class="row">
+                <div class="col-lg-6">
                     <div class="about-content">
                         <h2 class="section-title">Portfolio Catalogue</h2>
                         <div class="content-divider" aria-hidden="true"></div>
@@ -398,8 +398,6 @@
                         
                         <p>My portfolio also features impactful work in <strong>generative AI</strong>, including projects built with frameworks like <strong>LangChain</strong>. These include <strong>automated document summarization</strong>, <strong>chatbot development</strong>, and <strong>retrieval-augmented generation (RAG)</strong> systems, delivering tailored, real-time insights for healthcare and other industries.</p>
                         
-                        <p>In summary, my portfolio reflects a commitment to innovation and practical problem-solving through AI and machine learning. Detailed project documentation and source code are available on <strong>GitHub</strong>, showcasing how these technologies can address real-world challenges and drive meaningful change across industries.</p>
-                        
                         <div class="portfolio-cta">
                             <a href="ml_and_ds_portfolio.html" class="btn btn-primary" target="_blank" rel="noopener">
                                 <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i>
@@ -409,148 +407,117 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-6 order-lg-1">
-                    <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-progress" aria-hidden="true"></div>
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="HR Analytics"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Diabetes Prediction"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Customer Segmentation"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3" aria-label="Heart Disease Prediction"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="4" aria-label="Sentiment Analysis"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="5" aria-label="Breast Cancer Classification"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="6" aria-label="Salary Prediction"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="7" aria-label="Salary Prediction Linear Regression"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="8" aria-label="Credit Card Fraud Detection"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="9" aria-label="Housing Prices Prediction"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="10" aria-label="Spam Email Classification"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="11" aria-label="Virtual Doctor AI"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="12" aria-label="ATS System"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="13" aria-label="Diabetes Prediction AI"></button>
+                <div class="col-lg-6">
+                    <div class="portfolio-showcase">
+                        <div id="portfolioCarousel" class="carousel slide portfolio-carousel" data-bs-ride="carousel" data-bs-interval="6000">
+                            <div class="portfolio-progress-container">
+                                <div class="portfolio-progress" aria-hidden="true"></div>
+                            </div>
+                            
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="HR Analytics"></button>
+                                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Diabetes Prediction"></button>
+                                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Customer Segmentation"></button>
+                                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3" aria-label="Heart Disease Prediction"></button>
+                                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="4" aria-label="Sentiment Analysis"></button>
+                            </div>
+                            
+                            <div class="carousel-inner">
+                                <!-- HR Analytics -->
+                                <div class="carousel-item active">
+                                    <img src="images/HR-Analytics.jpeg" class="d-block" alt="HR Analytics dashboard showing employee data">
+                                    <div class="portfolio-overlay">
+                                        <h3 class="portfolio-title">Human Resources Analytics</h3>
+                                        <h4 class="portfolio-subtitle">Employee Data Processing & Visualization</h4>
+                                        <p class="portfolio-description">Developed a comprehensive HR analytics system that processes employee data to identify patterns in retention, performance, and workforce dynamics using clustering and principal component analysis.</p>
+                                        <div class="portfolio-tech">
+                                            <span class="portfolio-tech-tag">PCA</span>
+                                            <span class="portfolio-tech-tag">K-means</span>
+                                            <span class="portfolio-tech-tag">Data Visualization</span>
+                                            <span class="portfolio-tech-tag">Python</span>
+                                        </div>
+                                        <a href="ml_and_ds_portfolio.html#hr-analytics" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Diabetes Prediction -->
+                                <div class="carousel-item">
+                                    <img src="images/63035a8cccff5c5246811939_difference-between-type-1-and-type-2-diabetes_1fCeq5.jpeg" class="d-block" alt="Diabetes data visualization with prediction model">
+                                    <div class="portfolio-overlay">
+                                        <h3 class="portfolio-title">Diabetes Prediction & Characterization</h3>
+                                        <h4 class="portfolio-subtitle">Medical Predictive Modeling</h4>
+                                        <p class="portfolio-description">Created an ensemble-based machine learning system that predicts diabetes risk factors and characterizes different patient profiles to enable early intervention and personalized treatment plans.</p>
+                                        <div class="portfolio-tech">
+                                            <span class="portfolio-tech-tag">Ensemble Learning</span>
+                                            <span class="portfolio-tech-tag">Random Forest</span>
+                                            <span class="portfolio-tech-tag">AdaBoost</span>
+                                            <span class="portfolio-tech-tag">XGBoost</span>
+                                        </div>
+                                        <a href="ml_and_ds_portfolio.html#diabetes-prediction" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Customer Segmentation -->
+                                <div class="carousel-item">
+                                    <img src="images/download (1).jpeg" class="d-block" alt="Customer segments visualization with clustering results">
+                                    <div class="portfolio-overlay">
+                                        <h3 class="portfolio-title">Customer Segmentation Analysis</h3>
+                                        <h4 class="portfolio-subtitle">Market Research & Consumer Behavior</h4>
+                                        <p class="portfolio-description">Designed a clustering system that segments customers based on purchasing behavior, demographics, and engagement metrics to enable targeted marketing strategies and personalized customer experiences.</p>
+                                        <div class="portfolio-tech">
+                                            <span class="portfolio-tech-tag">K-Means Clustering</span>
+                                            <span class="portfolio-tech-tag">Customer Analytics</span>
+                                            <span class="portfolio-tech-tag">Data Mining</span>
+                                            <span class="portfolio-tech-tag">Python</span>
+                                        </div>
+                                        <a href="ml_and_ds_portfolio.html#customer-segmentation" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Heart Disease Prediction -->
+                                <div class="carousel-item">
+                                    <img src="images/8_Main_Types_of_Heart_Disease.jpeg" class="d-block" alt="Heart disease prediction model with medical imagery">
+                                    <div class="portfolio-overlay">
+                                        <h3 class="portfolio-title">Heart Disease Prediction System</h3>
+                                        <h4 class="portfolio-subtitle">Medical Diagnostic Support</h4>
+                                        <p class="portfolio-description">Developed a support vector machine model that analyzes patient health metrics to predict cardiovascular disease risk with high accuracy, providing early warning for preventative intervention.</p>
+                                        <div class="portfolio-tech">
+                                            <span class="portfolio-tech-tag">SVM</span>
+                                            <span class="portfolio-tech-tag">Healthcare ML</span>
+                                            <span class="portfolio-tech-tag">Feature Selection</span>
+                                            <span class="portfolio-tech-tag">Scikit-learn</span>
+                                        </div>
+                                        <a href="ml_and_ds_portfolio.html#heart-disease" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Sentiment Analysis -->
+                                <div class="carousel-item">
+                                    <img src="images/download (3).png" class="d-block" alt="Sentiment analysis visualization with text classification">
+                                    <div class="portfolio-overlay">
+                                        <h3 class="portfolio-title">Natural Language Sentiment Analysis</h3>
+                                        <h4 class="portfolio-subtitle">Text Mining & Opinion Analysis</h4>
+                                        <p class="portfolio-description">Built an NLP system utilizing Naive Bayes classification to analyze customer reviews, social media comments, and feedback data, extracting sentiment patterns and emotional trends from unstructured text.</p>
+                                        <div class="portfolio-tech">
+                                            <span class="portfolio-tech-tag">Naive Bayes</span>
+                                            <span class="portfolio-tech-tag">NLP</span>
+                                            <span class="portfolio-tech-tag">Text Classification</span>
+                                            <span class="portfolio-tech-tag">NLTK</span>
+                                        </div>
+                                        <a href="ml_and_ds_portfolio.html#sentiment-analysis" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="images/HR-Analytics.jpeg" class="d-block w-100 rounded img-fluid" alt="HR Analytics dashboard showing employee data">
-                                <div class="project-info">
-                                    <h3>Human Resources Analytics</h3>
-                                    <p>Algorithm: PCA and Kmean clustering</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/63035a8cccff5c5246811939_difference-between-type-1-and-type-2-diabetes_1fCeq5.jpeg" class="d-block w-100 rounded img-fluid" alt="Diabetes data visualization with prediction model">
-                                <div class="project-info">
-                                    <h3>Diabetes Prediction and Characterization</h3>
-                                    <p>Algorithm: Ensemble Learning, Random Forest, AdaBoost, XGBoost</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/download (1).jpeg" class="d-block w-100 rounded img-fluid" alt="Customer segments visualization with clustering results">
-                                <div class="project-info">
-                                    <h3>Customer Segmentation</h3>
-                                    <p>Algorithm: K-Means Clustering</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/8_Main_Types_of_Heart_Disease.jpeg" class="d-block w-100 rounded img-fluid" alt="Heart disease prediction model with medical imagery">
-                                <div class="project-info">
-                                    <h3>Heart Disease Prediction</h3>
-                                    <p>Algorithm: SVM</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/download (3).png" class="d-block w-100 rounded img-fluid" alt="Sentiment analysis visualization with text classification">
-                                <div class="project-info">
-                                    <h3>Sentiment Analysis</h3>
-                                    <p>Algorithm: Bernoulli Naive Bayes</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/download (4).jpeg" class="d-block w-100 rounded img-fluid" alt="Breast cancer cell classification visualization">
-                                <div class="project-info">
-                                    <h3>Breast Cancer Classification</h3>
-                                    <p>Algorithm: K-Nearest Neighbors (KNN)</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/download (3).png" class="d-block w-100 rounded img-fluid" alt="Salary prediction model with data points">
-                                <div class="project-info">
-                                    <h3>Salary Prediction</h3>
-                                    <p>Algorithm: Linear Regression</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/download (2).jpeg" class="d-block w-100 rounded img-fluid" alt="Salary prediction with experience correlation graph">
-                                <div class="project-info">
-                                    <h3>Salary Prediction</h3>
-                                    <p>Algorithm: Linear Regression</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/download (5).jpeg" class="d-block w-100 rounded img-fluid" alt="Credit card fraud detection system visualization">
-                                <div class="project-info">
-                                    <h3>Credit Card Fraud Detection</h3>
-                                    <p>Algorithm: Decision Trees Classifier</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/AdobeStock_497729134 (1).jpeg" class="d-block w-100 rounded img-fluid" alt="Housing price prediction model with property imagery">
-                                <div class="project-info">
-                                    <h3>Predicting Housing Prices</h3>
-                                    <p>Algorithm: DecisionTree Regressor</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/0_igDW-qYQQh_FS0Ky.jpeg" class="d-block w-100 rounded img-fluid" alt="Email classification system for spam detection">
-                                <div class="project-info">
-                                    <h3>Spam Email Classification</h3>
-                                    <p>Algorithm: Logistic Regression, NLP</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/virtual-doctor-ai.png" class="d-block w-100 rounded img-fluid" alt="Virtual doctor AI interface with medical consultation">
-                                <div class="project-info">
-                                    <h3>Virtual Doctor AI Assistant</h3>
-                                    <p>Leverages RAG and AI agents for medical diagnostics</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/ATS written .png" class="d-block w-100 rounded img-fluid" alt="ATS system for CV matching with job requirements">
-                                <div class="project-info">
-                                    <h3>Semantic ATS System for CV Matching</h3>
-                                    <p>Uses RAG and semantic search for accurate CV-job alignment</p>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img src="images/Screenshot 2025-01-02 at 21.08.13.png" class="d-block w-100 rounded img-fluid" alt="Conversational AI interface for diabetes prediction">
-                                <div class="project-info">
-                                    <h3>Conversational AI for Diabetes Prediction</h3>
-                                    <p>Built using RAG workflows for predictive analysis</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
             </div>

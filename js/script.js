@@ -460,3 +460,80 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+/* filepath: /Users/leon Doungala/Library/CloudStorage/GoogleDrive-doungala.leon@gmail.com/My Drive/PERSONAL/Perso/My Projects/doungala.leon.github.io/js/portfolio-carousel.js */
+// Portfolio Carousel Enhancements
+document.addEventListener('DOMContentLoaded', function() {
+    // Portfolio Carousel Progress Bar
+    const portfolioCarousel = document.getElementById('portfolioCarousel');
+    const portfolioProgress = document.querySelector('.portfolio-progress');
+    
+    if (portfolioCarousel && portfolioProgress) {
+        // Set the initial interval (match with data-bs-interval in HTML)
+        const interval = 6000;
+        let carouselTime = 0;
+        let progressInterval;
+        
+        // Initialize progress bar animation
+        function startProgressAnimation() {
+            carouselTime = 0;
+            clearInterval(progressInterval);
+            
+            progressInterval = setInterval(function() {
+                carouselTime += 10;
+                const progressPercent = (carouselTime / interval) * 100;
+                portfolioProgress.style.width = `${progressPercent}%`;
+                
+                if (carouselTime >= interval) {
+                    carouselTime = 0;
+                }
+            }, 10);
+        }
+        
+        // Reset progress when slide changes
+        portfolioCarousel.addEventListener('slide.bs.carousel', function() {
+            portfolioProgress.style.width = '0%';
+            startProgressAnimation();
+        });
+        
+        // Start progress animation when page loads
+        startProgressAnimation();
+        
+        // Pause animation when mouse enters carousel
+        portfolioCarousel.addEventListener('mouseenter', function() {
+            clearInterval(progressInterval);
+        });
+        
+        // Resume animation when mouse leaves carousel
+        portfolioCarousel.addEventListener('mouseleave', function() {
+            startProgressAnimation();
+        });
+    }
+    
+    // Parallax effect on carousel images
+    const carouselItems = document.querySelectorAll('.portfolio-carousel .carousel-item');
+    
+    carouselItems.forEach(item => {
+        const img = item.querySelector('img');
+        
+        if (img) {
+            item.addEventListener('mousemove', function(e) {
+                const boundingRect = item.getBoundingClientRect();
+                const mouseX = e.clientX - boundingRect.left;
+                const mouseY = e.clientY - boundingRect.top;
+                
+                const centerX = boundingRect.width / 2;
+                const centerY = boundingRect.height / 2;
+                
+                const moveX = (mouseX - centerX) / 30;
+                const moveY = (mouseY - centerY) / 30;
+                
+                img.style.transform = `scale(1.05) translate(${-moveX}px, ${-moveY}px)`;
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                img.style.transform = 'scale(1)';
+            });
+        }
+    });
+});
