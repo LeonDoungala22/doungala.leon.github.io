@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="CSS/style.css">
 
     <title>Leon Doungala - Portfolio</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -150,17 +151,18 @@
     <div class="container">
         <h2 class="section-title">Education</h2>
         <div class="education-container">
-            <!-- Education Item 1 -->
-            <div class="education-item">
+             <!-- Education Item 4 -->
+             <div class="education-item">
                 <i class="fas fa-graduation-cap"></i> <!-- Update icon here -->
-                <h3>MSc in Computer Engineering and Automation, Artificial Intelligence</h3>
-                <p class="duration">Sep 2022 - March 2025</p>
-                <a href="https://uniecampus.coursecatalogue.cineca.it/corsi/2024/10060/insegnamenti/10002?schemaid=4785" target="_blank" class="Study plan and teaching">
-                    <p class="institution">UniCampus University, Como, Italy</p>
+                <h3>Bachelor's in Electronic and Computer Engineering</h3>
+                <p class="duration">Sep 2015 - Sep 2020</p>
+                <a href="https://unife.coursecatalogue.cineca.it/corsi/2016/10533/insegnamenti/2?schemaid=8887" target="_blank" class="Study plan and teaching">
+                    <p class="institution">Ferrara University, Ferrara, Italy</p>
                 </a>
             </div>
-            <!-- Education Item 2 -->
-            <div class="education-item">
+
+             <!-- Education Item 2 -->
+             <div class="education-item">
                 <i class="fas fa-graduation-cap"></i> <!-- Update icon here -->
                 <h3>Double Master's in Data Science</h3>
                 <p class="duration">Apr 2021 - Apr 2022</p>
@@ -173,15 +175,17 @@
                     </a>
                 </div>
             </div>
-            <!-- Education Item 4 -->
+            <!-- Education Item 1 -->
             <div class="education-item">
                 <i class="fas fa-graduation-cap"></i> <!-- Update icon here -->
-                <h3>Bachelor's in Electronic and Computer Engineering</h3>
-                <p class="duration">Sep 2015 - Sep 2020</p>
-                <a href="https://unife.coursecatalogue.cineca.it/corsi/2016/10533/insegnamenti/2?schemaid=8887" target="_blank" class="Study plan and teaching">
-                    <p class="institution">Ferrara University, Ferrara, Italy</p>
+                <h3>MSc in Computer Engineering and Automation, Artificial Intelligence</h3>
+                <p class="duration">Sep 2022 - March 2025</p>
+                <a href="https://uniecampus.coursecatalogue.cineca.it/corsi/2024/10060/insegnamenti/10002?schemaid=4785" target="_blank" class="Study plan and teaching">
+                    <p class="institution">UniCampus University, Como, Italy</p>
                 </a>
             </div>
+           
+           
         </div>
     </div>
 
@@ -376,15 +380,52 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <!-- Contact details with icons -->
-            <p><i class="fas fa-phone"></i> Italy: (+39) 32 93 67 00 86</p>
-            <p><i class="far fa-envelope"></i> Email: <a href="mailto:doungala.leon@gmail.com">doungala.leon@gmail.com</a></p>
-            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank">Leon Doungala</a></p>
-            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/LeonDoungala22" target="_blank">Leon Doungala</a></p>
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Contact Me</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-form-container">
+                    <!-- Formspree integration - replace YOUR_FORM_ID with your formspree form ID -->
+                    <form action="https://formspree.io/f/mdkeepar" method="POST" class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="_replyto" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-4">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group mb-4">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <!-- Optional honeypot field to prevent spam -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
     
     
     
@@ -400,6 +441,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!-- Your custom JavaScript goes here -->
 </body>
