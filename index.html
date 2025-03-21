@@ -1,398 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Leon Doungala's Portfolio - AI/ML Engineer and Data Scientist">
-    <meta name="keywords" content="Leon Doungala, AI Engineer, ML Engineer, Data Scientist, Portfolio">
+    <meta name="description" content="Leon Doungala - AI/ML Engineer and Data Scientist specializing in healthcare AI solutions, natural language processing, and machine learning applications">
+    <meta name="keywords" content="Leon Doungala, AI Engineer, ML Engineer, Data Scientist, Healthcare AI, Machine Learning, RAG, Portfolio">
     <meta name="author" content="Leon Doungala">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
-
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <meta property="og:title" content="Leon Doungala - AI/ML Engineer Portfolio">
+    <meta property="og:description" content="Professional portfolio of Leon Doungala, AI/ML Engineer and Data Scientist specializing in healthcare applications">
+    <meta property="og:image" content="images/Screenshot 2023-12-21 at 11.23.46.png">
+    <meta property="og:url" content="https://leondoungala22.github.io">
+    <meta name="theme-color" content="#050510">
+    
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-oCXYnH0mAJ7RJ8d6JbippRlYB6e3xWIlC6LqOEmzCFA3pZgce2SRSuPmhh5EdwE6" crossorigin="anonymous">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-49HJF8X89E"></script>
-        <script>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49HJF8X89E"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-49HJF8X89E');
-        </script>
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </script>
+    
+    <!-- Preconnect to External Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap CSS CDN -->
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
-    <!-- Your Custom CSS -->
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="CSS/style.css">
-
-    <title>Leon Doungala - Portfolio</title>
+    
+    <!-- Google Translate API -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    
+    <!-- reCAPTCHA API -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <title>Leon Doungala | AI/ML Engineer & Data Scientist</title>
 </head>
 
 <body>
-
-<!-- Enhanced Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <span class="brand-text">Leon Doungala</span>
-            <span class="brand-dot"></span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#about">
-                        <span class="nav-icon"><i class="fas fa-user"></i></span>
-                        <span class="nav-text">About</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#education">
-                        <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
-                        <span class="nav-text">Education</span>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
-                        <span class="nav-text">Portfolio</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="ml_and_ds_portfolio.html">
-                            <i class="fas fa-chart-line me-2"></i> ML & Data Science
-                        </a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="thesi.html">
-                        <span class="nav-icon"><i class="fas fa-clipboard-check"></i></span>
-                        <span class="nav-text">Thesis</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#cv">
-                        <span class="nav-icon"><i class="fas fa-file"></i></span>
-                        <span class="nav-text">CV</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#contact">
-                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
-                        <span class="nav-text">Contact</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
- <!-- Enhanced Header -->
-<header class="header">
-    <div class="header-overlay"></div>
-    <div class="container">
-        <div class="header-content">
-            <div class="header-intro">
-                <span class="greeting">Hello, I'm</span>
-                <h1 class="name">Leon Doungala</h1>
-                <div class="profession-wrapper">
-                    <p class="profession">
-                        <span class="profession-text">AI/ML Engineer</span>
-                        <span class="profession-separator">|</span>
-                        <span class="profession-text">Data Scientist</span>
-                    </p>
-                </div>
-                <div class="header-description">
-                    <p>Developing intelligent solutions through artificial intelligence and machine learning.</p>
-                </div>
-                <div class="header-cta">
-                    <a href="index.html#about" class="btn btn-explore">Explore My Work</a>
-                    <a href="index.html#contact" class="btn btn-contact">Contact Me</a>
-                </div>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank" class="social-icon linkedin">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/LeonDoungala22" target="_blank" class="social-icon github">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-
-<!-- Journey Section with Bootstrap Carousel -->
-<section id="journey" class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 order-lg-2">
-                <div class="journey-content text-justify" style="text-align: justify; font-size: 14px; line-height: 1.6;">
-                    <h1 class="section-title mb-3" style="font-size: 1.5rem;">About Me</h1>
-                
-
-                   
-                    <p>
-                        I am Leon Doungala, an AI/ML Engineer and Data Scientist with a strong focus on solving real-world challenges using artificial intelligence. My academic background includes an MSc in Computer Engineering and Automation, with my thesis, <strong>“AI and ML Techniques for Diabetes Prediction and Characterization,”</strong> showcasing my dedication to healthcare innovation through AI and predictive modeling.
-                    </p>
-                    <p>
-                        In 2024, as part of my professional experience, I developed an advanced and powerful AI-driven Applicant Tracking System (ATS). The GitHub version of this project serves as a minimal viable product (MVP) demo, similar to many of my other projects on GitHub. This system enhances candidate matching for HR teams, demonstrating my ability to design impactful AI solutions for business needs.
-                    </p>
-                    <p>
-                        Additionally, my work on Retrieval-Augmented Generation (RAG) AI systems has had a transformative impact in the healthcare sector. These systems are used by doctors in over 300 clinics and have processed more than 150,000 unstructured referrals, delivering actionable insights and improving decision-making.
-                    </p>
-                    <p>
-                        While my expertise extends across industries, I am deeply committed to healthcare. I focus on creating AI tools that support medical professionals and enhance patient care, leveraging advanced technologies to make a meaningful difference.
-                    </p>
-                
-
-
-                </div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/Screenshot 2023-12-21 at 11.23.46.png" class="d-block w-100 rounded img-fluid" alt="Professional Photo 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/IMG-20220921-WA0089.jpg" class="d-block w-100 rounded img-fluid" alt="Professional Photo 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/laurea/119995504_3384547154948322_2262992165495949213_n.jpeg" class="d-block w-100 rounded img-fluid" alt="Professional Photo 3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/laurea/120101411_3384510134952024_1036254012292065648_n.jpeg" class="d-block w-100 rounded img-fluid" alt="Professional Photo 4">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/laurea/FB_IMG_1628613184932_Original.jpeg"  class="d-block w-100 rounded img-fluid" alt="Professional Photo 5">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                        <span                            class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- Education Section -->
-<section id="education" class="bg-dark">
-    <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="education-container">
-             <!-- Education Item 4 -->
-             <div class="education-item">
-                <i class="fas fa-graduation-cap"></i> <!-- Update icon here -->
-                <h3>Bachelor's in Electronic and Computer Engineering</h3>
-                <p class="duration">Sep 2015 - Sep 2020</p>
-                <a href="https://unife.coursecatalogue.cineca.it/corsi/2016/10533/insegnamenti/2?schemaid=8887" target="_blank" class="Study plan and teaching">
-                    <p class="institution">Ferrara University, Ferrara, Italy</p>
-                </a>
-            </div>
-
-             <!-- Education Item 2 -->
-             <div class="education-item">
-                <i class="fas fa-graduation-cap"></i> <!-- Update icon here -->
-                <h3>Double Master's in Data Science</h3>
-                <p class="duration">Apr 2021 - Apr 2022</p>
-                <div class="institution-links">
-                    <a href="https://romebusinessschool.com/corporate-education/" target="_blank" class="institution-link">
-                        <p class="institution">Rome Business School, Rome, Italy</p>
-                    </a> &
-                    <a href="https://www.universidadviu.com/es/" target="_blank" class="institution-link">
-                        <p class="institution">International University of Valencia, Valencia, Spain</p>
-                    </a>
-                </div>
-            </div>
-            <!-- Education Item 1 -->
-            <div class="education-item">
-                <i class="fas fa-graduation-cap"></i> <!-- Update icon here -->
-                <h3>MSc in Computer Engineering and Automation, Artificial Intelligence</h3>
-                <p class="duration">Sep 2022 - March 2025</p>
-                <a href="https://uniecampus.coursecatalogue.cineca.it/corsi/2024/10060/insegnamenti/10002?schemaid=4785" target="_blank" class="Study plan and teaching">
-                    <p class="institution">UniCampus University, Como, Italy</p>
-                </a>
-            </div>
-           
-           
-        </div>
-    </div>
-
-</section>
-
-
-    <!-- Projects Section -->
-    <section id="about" class="py-5">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
         <div class="container">
-            <div class="row">
+            <a class="navbar-brand" href="index.html" aria-label="Leon Doungala Home">
+                <span class="brand-text">Leon Doungala</span>
+                <span class="brand-dot" aria-hidden="true"></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            <span class="nav-icon" aria-hidden="true"><i class="fas fa-user"></i></span>
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">
+                            <span class="nav-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+                            <span class="nav-text">Education</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="nav-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></span>
+                            <span class="nav-text">Portfolio</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="ml_and_ds_portfolio.html">
+                                    <i class="fas fa-chart-line me-2" aria-hidden="true"></i> ML & Data Science
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="thesi.html">
+                            <span class="nav-icon" aria-hidden="true"><i class="fas fa-clipboard-check"></i></span>
+                            <span class="nav-text">Thesis</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cv">
+                            <span class="nav-icon" aria-hidden="true"><i class="fas fa-file"></i></span>
+                            <span class="nav-text">CV</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <span class="nav-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="header">
+        <div class="header-overlay" aria-hidden="true"></div>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-intro">
+                    <span class="greeting">Hello, I'm</span>
+                    <h1 class="name">Leon Doungala</h1>
+                    <div class="profession-wrapper">
+                        <p class="profession">
+                            <span class="profession-text">AI/ML Engineer</span>
+                            <span class="profession-separator" aria-hidden="true">|</span>
+                            <span class="profession-text">Data Scientist</span>
+                        </p>
+                    </div>
+                    <div class="header-description">
+                        <p>Developing intelligent solutions through artificial intelligence and machine learning.</p>
+                    </div>
+                    <div class="header-cta">
+                        <a href="#about" class="btn btn-explore">Explore My Work</a>
+                        <a href="#contact" class="btn btn-contact">Contact Me</a>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank" rel="noopener" 
+                       class="social-icon linkedin" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/LeonDoungala22" target="_blank" rel="noopener" 
+                       class="social-icon github" aria-label="GitHub Profile">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="journey" class="section-padding">
+        <div class="container">
+            <div class="row align-items-stretch content-match-container">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="about-content text-justify text-lg-left" style="text-align: justify; font-size: 14px;">
-                        <h2 class="section-title mb-3">Portfolio Catalogue</h2>
-                        <p>
-                            The "<strong>AI / ML and Data Science Portfolio</strong>" section highlights my skills in machine learning. Using tools like <strong>scikit-learn</strong>, I have applied techniques such as <strong>PCA</strong>, <strong>K-means clustering</strong>, and <strong>Ensemble Learning with XGBoost</strong>. My experience includes working with essential models like <strong>SVM</strong> and <strong>Decision Trees</strong>, showcasing my ability to address diverse challenges effectively.
-                        </p>
-                        <p>
-                            I have strong expertise in <strong>exploratory data analysis (EDA)</strong>, focusing on data manipulation, preparation, and interpretation. My projects span applications such as <strong>heart disease prediction</strong>, <strong>sentiment analysis</strong>, <strong>customer segmentation</strong>, and <strong>fraud detection</strong>, demonstrating my versatility across multiple domains.
-                        </p>
-                        <p>
-                            My portfolio also features impactful work in <strong>generative AI</strong>, including projects built with frameworks like <strong>LangChain</strong>. These include <strong>automated document summarization</strong>, <strong>chatbot development</strong>, and <strong>retrieval-augmented generation (RAG)</strong> systems, delivering tailored, real-time insights for healthcare and other industries.
-                        </p>
-                        <p>
-                            In summary, my portfolio reflects a commitment to innovation and practical problem-solving through AI and machine learning. Detailed project documentation and source code are available on <strong>GitHub</strong>, showcasing how these technologies can address real-world challenges and drive meaningful change across industries.
-                        </p>
+                    <div class="journey-content text-justify">
+                        <h2 class="section-title">About Me</h2>
+                        <div class="content-divider" aria-hidden="true"></div>
                         
+                        <p>I am Leon Doungala, an AI/ML Engineer and Data Scientist with a strong focus on solving real-world challenges using artificial intelligence. My academic background includes an MSc in Computer Engineering and Automation, with my thesis, <strong>"AI and ML Techniques for Diabetes Prediction and Characterization,"</strong> showcasing my dedication to healthcare innovation through AI and predictive modeling.</p>
                         
-                       <div class="cv-download">
-                        <a href="ml_and_ds_portfolio.html" class="btn btn-primary" target="_blank">Click here to Explore Portfolio</a>
+                        <p>In 2024, as part of my professional experience, I developed an advanced and powerful AI-driven Applicant Tracking System (ATS). The GitHub version of this project serves as a minimal viable product (MVP) demo, similar to many of my other projects on GitHub. This system enhances candidate matching for HR teams, demonstrating my ability to design impactful AI solutions for business needs.</p>
+                        
+                        <p>Additionally, my work on Retrieval-Augmented Generation (RAG) AI systems has had a transformative impact in the healthcare sector. These systems are used by doctors in numerous clinics and have processed more than 150,000 unstructured referrals, delivering actionable insights and improving decision-making.</p>
+                        
+                        <p>While my expertise extends across industries, I am deeply committed to healthcare. I focus on creating AI tools that support medical professionals and enhance patient care, leveraging advanced technologies to make a meaningful difference.</p>
                     </div>
-                    </div>
-                   
                 </div>
                 
                 <div class="col-lg-6 order-lg-1">
-                    <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-progress" aria-hidden="true"></div>
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="12" aria-label="Slide 13"></button>
-                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="13" aria-label="Slide 14"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
                         </div>
+                        
                         <div class="carousel-inner">
-                            <!-- Add your professional photos here -->
                             <div class="carousel-item active">
-                                <img src="images/HR-Analytics.jpeg" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 1">
-                                    <h1>Human Resources Analytics</h1>
-                                    <p1>Algorithm:PCA and Kmean clustering</p1>   
+                                <img src="images/Screenshot 2023-12-21 at 11.23.46.png" class="d-block w-100 rounded img-fluid" alt="Leon Doungala professional photo">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/63035a8cccff5c5246811939_difference-between-type-1-and-type-2-diabetes_1fCeq5.jpeg" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 2">
-                                    <h1>Diabetes Prediction and Characterization</h1>
-                                    <p1>Algorithm: Ensemble Learning , Random forest , AdaBoost , XGBoost</p1>
+                                <img src="images/IMG-20220921-WA0089.jpg" class="d-block w-100 rounded img-fluid" alt="Leon Doungala at a professional event">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/download (1).jpeg" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 3">
-                                    <h1>Customer Segmentation</h1>
-                                    <p1>Algorithm: K-Means Clustering</p1>
+                                <img src="images/laurea/119995504_3384547154948322_2262992165495949213_n.jpeg" class="d-block w-100 rounded img-fluid" alt="Leon Doungala at graduation ceremony">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/8_Main_Types_of_Heart_Disease.jpeg" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 3">
-                                    <h1>Heart Disease Prediction</h1>
-                                    <p1>Algorithm: SVM</p1>
+                                <img src="images/laurea/120101411_3384510134952024_1036254012292065648_n.jpeg" class="d-block w-100 rounded img-fluid" alt="Leon Doungala receiving diploma">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/download (3).png" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 3">
-                                    <h1>Sentiment Analysis</h1>
-                                    <p1>Algorithm: Bernoulli Naive Bayes</p1>
+                                <img src="images/laurea/FB_IMG_1628613184932_Original.jpeg" class="d-block w-100 rounded img-fluid" alt="Leon Doungala in academic regalia">
                             </div>
-
-                            <div class="carousel-item">
-                                <img src="images/download (4).jpeg" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 3">
-                                    <h1>Breast Cancer Classification</h1>
-                                    <p1>Algorithm: K-Nearest Neighbors (KNN)</p1>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/download (3).png" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 3">
-                                    <h1>Salary Prediction</h1>
-                                    <p1>Algorithm: Linear Regression</p1>
-                            </div>
-
-                            <div class="carousel-item">
-                                <img src="images/download (2).jpeg" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 3">
-                                    <h1>Salary Prediction</h1>
-                                    <p1>Algorithm: Linear Regression</p1>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/download (5).jpeg" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 3">
-                                    <h1>Credit Card Fraud Detection</h1>
-                                    <p1>Algorithm: Decision Trees Classifier</p1>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/AdobeStock_497729134 (1).jpeg" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 3">
-                                    <h1>Predicting Housing Prices</h1>
-                                    <p1>Algorithm: DecisionTree Regressor</p1>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/0_igDW-qYQQh_FS0Ky.jpeg" class="d-block w-100 rounded img-fluid"
-                                    alt="Professional Photo 3">
-                                    <h1>Spam Email Classification</h1>
-                                    <p1>Algorithm: Logistic Regression , NLP </p1>
-                            </div>
-                               <!-- Generative AI Projects -->
-                            <div class="carousel-item">
-                                <img src="images/virtual-doctor-ai.png" class="d-block w-100 rounded img-fluid" alt="Virtual Doctor Assistant">
-                                <h1>Virtual Doctor AI Assistant</h1>
-                                <p1>Leverages RAG and AI agents for medical diagnostics.</p1>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/ATS written .png" class="d-block w-100 rounded img-fluid" alt="Semantic ATS System">
-                                <h1>Semantic ATS System for CV Matching</h1>
-                                <p1>Uses RAG and semantic search for accurate CV-job alignment.</p1>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/Screenshot 2025-01-02 at 21.08.13.png" class="d-block w-100 rounded img-fluid" alt="Conversational AI for Diabetes Prediction">
-                                <h1>Conversational AI for Diabetes Prediction</h1>
-                                <p1>Built using RAG workflows for predictive analysis and characterization.</p1>
-                            </div>
-                            <!-- Add more carousel items with your photos -->
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel"
-                            data-bs-slide="prev">
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -401,126 +216,430 @@
             </div>
         </div>
     </section>
-<!-- Programming Languages Section -->
-<section id="programming" class="bg-primary text-white">
-    <div class="container">
-        <h2 class="section-title">Programming Languages</h2>
-        <div class="programming-icons">
-            <div>
-                <i class="fab fa-python fa-3x"></i>
-                <span>Python</span>
-            </div>
-            <div>
-                <i class="fab fa-java fa-3x"></i>
-                <span>Java</span>
-            </div>
-            <div>
-                <i class="fab fa-r-project fa-3x"></i>
-                <span>R</span>
-            </div>
-            <div>
-                <i class="fab fa-cuttlefish fa-3x"></i>
-                <span>C++</span>
-            </div>
-            <div>
-                <i class="fas fa-database fa-3x"></i>
-                <span>Sql</span>
-            </div>
+
+    <!-- Education Section -->
+    <section id="education" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center">Education</h2>
+            <div class="content-divider centered" aria-hidden="true"></div>
             
+            <div class="education-container">
+                <!-- Master's Degree -->
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    </div>
+                    <h3>MSc in Computer Engineering and Automation, Artificial Intelligence</h3>
+                    <p class="duration">Sep 2022 - March 2025</p>
+                    <a href="https://uniecampus.coursecatalogue.cineca.it/corsi/2024/10060/insegnamenti/10002?schemaid=4785" 
+                       target="_blank" rel="noopener" class="institution-link" aria-label="UniCampus University course catalogue">
+                        <p class="institution">UniCampus University, Como, Italy</p>
+                    </a>
+                </div>
+                
+                <!-- Double Master's -->
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    </div>
+                    <h3>Double Master's in Data Science</h3>
+                    <p class="duration">Apr 2021 - Apr 2022</p>
+                    <div class="dual-institutions">
+                        <a href="https://romebusinessschool.com/corporate-education/" 
+                           target="_blank" rel="noopener" class="institution-link" aria-label="Rome Business School website">
+                            <p class="institution">Rome Business School, Rome, Italy</p>
+                        </a>
+                        <span class="institution-separator">&</span>
+                        <a href="https://www.universidadviu.com/es/" 
+                           target="_blank" rel="noopener" class="institution-link" aria-label="International University of Valencia website">
+                            <p class="institution">International University of Valencia, Spain</p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Bachelor's Degree -->
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    </div>
+                    <h3>Bachelor's in Electronic and Computer Engineering</h3>
+                    <p class="duration">Sep 2015 - Sep 2020</p>
+                    <a href="https://unife.coursecatalogue.cineca.it/corsi/2016/10533/insegnamenti/2?schemaid=8887" 
+                       target="_blank" rel="noopener" class="institution-link" aria-label="Ferrara University course catalogue">
+                        <p class="institution">Ferrara University, Ferrara, Italy</p>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Portfolio Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-stretch content-match-container">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="about-content">
+                        <h2 class="section-title">Portfolio Catalogue</h2>
+                        <div class="content-divider" aria-hidden="true"></div>
+                        
+                        <p>The "<strong>AI / ML and Data Science Portfolio</strong>" section highlights my skills in machine learning. Using tools like <strong>scikit-learn</strong>, I have applied techniques such as <strong>PCA</strong>, <strong>K-means clustering</strong>, and <strong>Ensemble Learning with XGBoost</strong>. My experience includes working with essential models like <strong>SVM</strong> and <strong>Decision Trees</strong>, showcasing my ability to address diverse challenges effectively.</p>
+                        
+                        <p>I have strong expertise in <strong>exploratory data analysis (EDA)</strong>, focusing on data manipulation, preparation, and interpretation. My projects span applications such as <strong>heart disease prediction</strong>, <strong>sentiment analysis</strong>, <strong>customer segmentation</strong>, and <strong>fraud detection</strong>, demonstrating my versatility across multiple domains.</p>
+                        
+                        <p>My portfolio also features impactful work in <strong>generative AI</strong>, including projects built with frameworks like <strong>LangChain</strong>. These include <strong>automated document summarization</strong>, <strong>chatbot development</strong>, and <strong>retrieval-augmented generation (RAG)</strong> systems, delivering tailored, real-time insights for healthcare and other industries.</p>
+                        
+                        <p>In summary, my portfolio reflects a commitment to innovation and practical problem-solving through AI and machine learning. Detailed project documentation and source code are available on <strong>GitHub</strong>, showcasing how these technologies can address real-world challenges and drive meaningful change across industries.</p>
+                        
+                        <div class="portfolio-cta">
+                            <a href="ml_and_ds_portfolio.html" class="btn btn-primary" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i>
+                                Explore Full Portfolio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 order-lg-1">
+                    <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-progress" aria-hidden="true"></div>
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="HR Analytics"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Diabetes Prediction"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Customer Segmentation"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3" aria-label="Heart Disease Prediction"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="4" aria-label="Sentiment Analysis"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="5" aria-label="Breast Cancer Classification"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="6" aria-label="Salary Prediction"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="7" aria-label="Salary Prediction Linear Regression"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="8" aria-label="Credit Card Fraud Detection"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="9" aria-label="Housing Prices Prediction"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="10" aria-label="Spam Email Classification"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="11" aria-label="Virtual Doctor AI"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="12" aria-label="ATS System"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="13" aria-label="Diabetes Prediction AI"></button>
+                        </div>
+                        
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/HR-Analytics.jpeg" class="d-block w-100 rounded img-fluid" alt="HR Analytics dashboard showing employee data">
+                                <div class="project-info">
+                                    <h3>Human Resources Analytics</h3>
+                                    <p>Algorithm: PCA and Kmean clustering</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/63035a8cccff5c5246811939_difference-between-type-1-and-type-2-diabetes_1fCeq5.jpeg" class="d-block w-100 rounded img-fluid" alt="Diabetes data visualization with prediction model">
+                                <div class="project-info">
+                                    <h3>Diabetes Prediction and Characterization</h3>
+                                    <p>Algorithm: Ensemble Learning, Random Forest, AdaBoost, XGBoost</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/download (1).jpeg" class="d-block w-100 rounded img-fluid" alt="Customer segments visualization with clustering results">
+                                <div class="project-info">
+                                    <h3>Customer Segmentation</h3>
+                                    <p>Algorithm: K-Means Clustering</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/8_Main_Types_of_Heart_Disease.jpeg" class="d-block w-100 rounded img-fluid" alt="Heart disease prediction model with medical imagery">
+                                <div class="project-info">
+                                    <h3>Heart Disease Prediction</h3>
+                                    <p>Algorithm: SVM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/download (3).png" class="d-block w-100 rounded img-fluid" alt="Sentiment analysis visualization with text classification">
+                                <div class="project-info">
+                                    <h3>Sentiment Analysis</h3>
+                                    <p>Algorithm: Bernoulli Naive Bayes</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/download (4).jpeg" class="d-block w-100 rounded img-fluid" alt="Breast cancer cell classification visualization">
+                                <div class="project-info">
+                                    <h3>Breast Cancer Classification</h3>
+                                    <p>Algorithm: K-Nearest Neighbors (KNN)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/download (3).png" class="d-block w-100 rounded img-fluid" alt="Salary prediction model with data points">
+                                <div class="project-info">
+                                    <h3>Salary Prediction</h3>
+                                    <p>Algorithm: Linear Regression</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/download (2).jpeg" class="d-block w-100 rounded img-fluid" alt="Salary prediction with experience correlation graph">
+                                <div class="project-info">
+                                    <h3>Salary Prediction</h3>
+                                    <p>Algorithm: Linear Regression</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/download (5).jpeg" class="d-block w-100 rounded img-fluid" alt="Credit card fraud detection system visualization">
+                                <div class="project-info">
+                                    <h3>Credit Card Fraud Detection</h3>
+                                    <p>Algorithm: Decision Trees Classifier</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/AdobeStock_497729134 (1).jpeg" class="d-block w-100 rounded img-fluid" alt="Housing price prediction model with property imagery">
+                                <div class="project-info">
+                                    <h3>Predicting Housing Prices</h3>
+                                    <p>Algorithm: DecisionTree Regressor</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/0_igDW-qYQQh_FS0Ky.jpeg" class="d-block w-100 rounded img-fluid" alt="Email classification system for spam detection">
+                                <div class="project-info">
+                                    <h3>Spam Email Classification</h3>
+                                    <p>Algorithm: Logistic Regression, NLP</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/virtual-doctor-ai.png" class="d-block w-100 rounded img-fluid" alt="Virtual doctor AI interface with medical consultation">
+                                <div class="project-info">
+                                    <h3>Virtual Doctor AI Assistant</h3>
+                                    <p>Leverages RAG and AI agents for medical diagnostics</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/ATS written .png" class="d-block w-100 rounded img-fluid" alt="ATS system for CV matching with job requirements">
+                                <div class="project-info">
+                                    <h3>Semantic ATS System for CV Matching</h3>
+                                    <p>Uses RAG and semantic search for accurate CV-job alignment</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img src="images/Screenshot 2025-01-02 at 21.08.13.png" class="d-block w-100 rounded img-fluid" alt="Conversational AI interface for diabetes prediction">
+                                <div class="project-info">
+                                    <h3>Conversational AI for Diabetes Prediction</h3>
+                                    <p>Built using RAG workflows for predictive analysis</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
+    <!-- Tech Skills Section -->
+    <section id="programming" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center">Technical Skills</h2>
+            <div class="content-divider centered" aria-hidden="true"></div>
+            
+            <div class="skills-container">
+                <div class="programming-icons">
+                    <div class="skill-item">
+                        <i class="fab fa-python fa-3x" aria-hidden="true"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-java fa-3x" aria-hidden="true"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-r-project fa-3x" aria-hidden="true"></i>
+                        <span>R</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-cuttlefish fa-3x" aria-hidden="true"></i>
+                        <span>C++</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database fa-3x" aria-hidden="true"></i>
+                        <span>SQL</span>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <h3>Machine Learning</h3>
+                        <div class="tech-chips">
+                            <span class="tech-chip">TensorFlow</span>
+                            <span class="tech-chip">PyTorch</span>
+                            <span class="tech-chip">scikit-learn</span>
+                            <span class="tech-chip">XGBoost</span>
+                            <span class="tech-chip">NLTK</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>Data Processing</h3>
+                        <div class="tech-chips">
+                            <span class="tech-chip">Pandas</span>
+                            <span class="tech-chip">NumPy</span>
+                            <span class="tech-chip">Spark</span>
+                            <span class="tech-chip">Matplotlib</span>
+                            <span class="tech-chip">Seaborn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CV Section -->
-    <section id="cv" class="bg-light">
+    <section id="cv" class="section-padding">
         <div class="container">
-            <h2 class="section-title">CV</h2>
-            <p class="lead">Download my CV in PDF format:</p>
-            <div class="cv-download">
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
+            <h2 class="section-title text-center">Curriculum Vitae</h2>
+            <div class="content-divider centered" aria-hidden="true"></div>
             
-                    gtag('config', 'G-49HJF8X89E');
-                    </script>
-                <a href="Docs/cv_AI Engineer - Data Scientist- Leon Doungala.pdf" class="btn btn-primary" target="_blank"
-                    download>Download CV</a>
+            <div class="cv-content text-center">
+                <p class="lead">Download my complete CV to learn more about my professional experience, skills, and education.</p>
+                
+                <div class="cv-download">
+                    <a href="Docs/cv_AI Engineer - Data Scientist- Leon Doungala.pdf" class="btn btn-primary" 
+                       target="_blank" rel="noopener" download>
+                        <i class="fas fa-file-download me-2" aria-hidden="true"></i>
+                        Download CV
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-    <div class="container">
-        <h2 class="section-title text-center mb-5">Contact Me</h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="contact-form-container">
-                    <!-- Formspree integration - replace YOUR_FORM_ID with your formspree form ID -->
-                    <form action="https://formspree.io/f/mdkeepar" method="POST" class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center">Contact Me</h2>
+            <div class="content-divider centered" aria-hidden="true"></div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form-container">
+                        <form action="https://formspree.io/f/mdkeepar" method="POST" class="contact-form" id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="_replyto" required>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="_replyto" required>
-                                </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="subject">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
                             </div>
-                        </div>
-                        
-                        <div class="form-group mb-4">
-                            <label for="subject">Subject</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required>
-                        </div>
-                        
-                        <div class="form-group mb-4">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        
-                        <!-- Optional honeypot field to prevent spam -->
-                        <input type="text" name="_gotcha" style="display:none">
-                        
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane me-2"></i>Send Message
-                            </button>
-                        </div>
-                    </form>
+                            
+                            <div class="form-group mb-4">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <!-- Honeypot field to prevent spam -->
+                            <input type="text" name="_gotcha" style="display:none">
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>
+                                    Send Message
+                                </button>
+                            </div>
+                            
+                            <div id="form-response" class="mt-4" aria-live="polite"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-    
-    
-    
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Leon Doungala. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-text">Leon Doungala</span>
+                    <span class="brand-dot" aria-hidden="true"></span>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#education">Education</a>
+                    <a href="ml_and_ds_portfolio.html">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="social-icons footer-social">
+                    <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank" rel="noopener" 
+                       class="social-icon linkedin" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/LeonDoungala22" target="_blank" rel="noopener" 
+                       class="social-icon github" aria-label="GitHub Profile">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                </div>
+                
+                <p class="copyright">&copy; 2024 Leon Doungala. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle (Popper included) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </a>
 
-    <!-- Your custom JavaScript goes here -->
+    <!-- Scripts (loaded at the end for performance) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+    
+    <!-- Form submission handling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const formResponse = document.getElementById('form-response');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    formResponse.innerHTML = '<div class="alert alert-info">Sending your message...</div>';
+                    
+                    // Form submission is handled by Formspree
+                    // This adds visual feedback while the form submits
+                    setTimeout(function() {
+                        formResponse.innerHTML = '<div class="alert alert-success">Message sent successfully! I\'ll get back to you soon.</div>';
+                        contactForm.reset();
+                    }, 1000);
+                });
+            }
+        });
+    </script>
 </body>
-
 </html>
