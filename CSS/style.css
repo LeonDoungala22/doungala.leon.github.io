@@ -2616,3 +2616,90 @@ section:nth-child(even) {
     margin-right: 0 !important;
   }
 }
+
+/* Portfolio Carousel Height Standardization */
+.portfolio-carousel {
+  height: 550px; /* Fixed height for the carousel container */
+  overflow: hidden;
+}
+
+.portfolio-carousel .carousel-inner {
+  height: 100%;
+}
+
+.portfolio-carousel .carousel-item {
+  height: 100%;
+}
+
+.portfolio-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures images maintain aspect ratio while filling the container */
+  object-position: center;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(5, 5, 16, 0.95) 0%, rgba(5, 5, 16, 0.85) 60%, rgba(5, 5, 16, 0.4) 100%);
+  padding: 30px;
+  color: var(--text-light);
+  border-radius: 0 0 8px 8px;
+  max-height: 85%; /* Limit overlay height */
+  overflow-y: auto; /* Add scroll if content exceeds height */
+}
+
+/* Style scrollbar for overlay */
+.portfolio-overlay::-webkit-scrollbar {
+  width: 6px;
+}
+
+.portfolio-overlay::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.portfolio-overlay::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.portfolio-overlay::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Make sure controls appear above content */
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 15;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .portfolio-carousel {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-carousel {
+    height: 450px;
+  }
+  
+  .portfolio-overlay {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-carousel {
+    height: 400px;
+  }
+  
+  .portfolio-overlay {
+    padding: 15px;
+    max-height: 90%;
+  }
+}
