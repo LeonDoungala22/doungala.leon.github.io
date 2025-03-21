@@ -84,3 +84,69 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         });
     });
 });
+
+// Enhanced Carousel Features
+document.addEventListener('DOMContentLoaded', function() {
+  // Add progress bars to carousels
+  const carousels = document.querySelectorAll('.carousel');
+  
+  carousels.forEach(carousel => {
+    // Create progress bar
+    const progressBar = document.createElement('div');
+    progressBar.className = 'carousel-progress';
+    carousel.appendChild(progressBar);
+    
+    // Get carousel instance
+    const bsCarousel = new bootstrap.Carousel(carousel, {
+      interval: 5000 // 5 seconds per slide
+    });
+    
+    // Update progress bar on slide event
+    carousel.addEventListener('slide.bs.carousel', function() {
+      // Reset progress
+      progressBar.style.width = '0%';
+    });
+    
+    // Start progress animation
+    carousel.addEventListener('slid.bs.carousel', function() {
+      progressBar.style.width = '100%';
+      progressBar.style.transition = 'width 5s linear';
+    });
+    
+    // Initialize progress bar for first slide
+    progressBar.style.width = '100%';
+    progressBar.style.transition = 'width 5s linear';
+    
+    // Pause carousel on hover
+    carousel.addEventListener('mouseenter', function() {
+      bsCarousel.pause();
+      progressBar.style.transition = 'none';
+    });
+    
+    // Resume carousel on mouse leave
+    carousel.addEventListener('mouseleave', function() {
+      bsCarousel.cycle();
+      progressBar.style.width = '0%';
+      setTimeout(() => {
+        progressBar.style.width = '100%';
+        progressBar.style.transition = 'width 5s linear';
+      }, 50);
+    });
+  });
+  
+  // Add keyboard navigation for carousels
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') {
+      carousels.forEach(carousel => {
+        const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+        if (bsCarousel) bsCarousel.prev();
+      });
+    }
+    else if (e.key === 'ArrowRight') {
+      carousels.forEach(carousel => {
+        const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+        if (bsCarousel) bsCarousel.next();
+      });
+    }
+  });
+});
