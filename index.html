@@ -670,88 +670,179 @@
             
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="contact-form-container">
-                        <form action="https://formspree.io/f/mdkeepar" method="POST" class="contact-form" id="contactForm">
+                    <div class="contact-card">
+                        <div class="contact-methods">
                             <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
+                                <div class="col-md-4">
+                                    <div class="contact-method">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                                        </div>
+                                        <h3>Email</h3>
+                                        <p><a href="mailto:doungala.leon@gmail.com">doungala.leon@gmail.com</a></p>
                                     </div>
                                 </div>
-                                
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="_replyto" required>
+                                <div class="col-md-4">
+                                    <div class="contact-method">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                                        </div>
+                                        <h3>Phone</h3>
+                                        <p><a href="tel:+393293670086">(+39) 329 367 0086</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="contact-method">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                        </div>
+                                        <h3>Location</h3>
+                                        <p>Milan, Italy</p>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="form-group mb-4">
-                                <label for="subject">Subject</label>
-                                <input type="text" class="form-control" id="subject" name="subject" required>
-                            </div>
-                            
-                            <div class="form-group mb-4">
-                                <label for="message">Message</label>
-                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            
-                            <!-- Honeypot field to prevent spam -->
-                            <input type="text" name="_gotcha" style="display:none">
-                            
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>
-                                    Send Message
-                                </button>
-                            </div>
-                            
-                            <div id="form-response" class="mt-4" aria-live="polite"></div>
-                        </form>
+                        </div>
+                        
+                        <div class="contact-form-container">
+                            <h3 class="text-center mb-4">Send Me a Message</h3>
+                            <form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Message Subject" required>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="message">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Send Message
+                                    </button>
+                                </div>
+                                <div id="formResponse" class="form-response mt-3 text-center"></div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="brand-text">Leon Doungala</span>
-                    <span class="brand-dot" aria-hidden="true"></span>
-                </div>
-                
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#education">Education</a>
-                    <a href="ml_and_ds_portfolio.html">Portfolio</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                
-                <div class="social-icons footer-social">
-                    <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank" rel="noopener" 
-                       class="social-icon linkedin" aria-label="LinkedIn Profile">
-                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://github.com/LeonDoungala22" target="_blank" rel="noopener" 
-                       class="social-icon github" aria-label="GitHub Profile">
-                        <i class="fab fa-github" aria-hidden="true"></i>
-                    </a>
-                </div>
-                
-                <p class="copyright">&copy; 2024 Leon Doungala. All rights reserved.</p>
+    <!-- Footer Section -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="brand-text">Leon Doungala</span>
+                <span class="brand-dot" aria-hidden="true"></span>
+            </div>
+            
+            <div class="footer-tagline">
+                Engineer | AI/ML Specialist | Data Scientist
+            </div>
+            
+            <div class="footer-links">
+                <a href="#journey">About</a>
+                <a href="#about">Portfolio</a>
+                <a href="#programming">Skills</a>
+                <a href="#cv">CV</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank" rel="noopener" 
+                   class="social-icon linkedin" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/LeonDoungala22" target="_blank" rel="noopener" 
+                   class="social-icon github" aria-label="GitHub Profile">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:doungala.leon@gmail.com" class="social-icon email" aria-label="Email">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
+            </div>
+            
+            <div class="copyright">
+                &copy; <span id="currentYear">2025</span> Leon Doungala. All rights reserved.
             </div>
         </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <a href="#" id="back-to-top" class="back-to-top" aria-label="Back to top">
+    </div>
+    
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </a>
+    </button>
+</footer>
+
+<!-- Add this script at the end of your body tag before closing -->
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Back to Top Button functionality
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('active');
+        } else {
+            backToTopButton.classList.remove('active');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Form handling (if using Formspree)
+    const contactForm = document.getElementById('contactForm');
+    const formResponse = document.getElementById('formResponse');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            formResponse.innerHTML = '<div class="alert alert-info">Sending message...</div>';
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    formResponse.innerHTML = '<div class="alert alert-success">Message sent successfully!</div>';
+                    contactForm.reset();
+                } else {
+                    throw new Error(data.error || 'Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                formResponse.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+            }
+        });
+    }
+</script>
 
     <!-- Scripts (loaded at the end for performance) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
