@@ -638,25 +638,61 @@
         <div class="dot"></div>
     </div>
 
-    <!-- CV Section -->
-    <section id="cv" class="section-padding">
-        <div class="container">
-            <h2 class="section-title text-center">Curriculum Vitae</h2>
-            <div class="content-divider centered" aria-hidden="true"></div>
-            
-            <div class="cv-content text-center">
-                <p class="lead">Download my complete CV to learn more about my professional experience, skills, and education.</p>
-                
-                <div class="cv-download">
-                    <a href="Docs/cv_AI Engineer - Data Scientist- Leon Doungala.pdf" class="btn btn-primary" 
-                       target="_blank" rel="noopener" download>
-                        <i class="fas fa-file-download me-2" aria-hidden="true"></i>
-                        Download CV
-                    </a>
+    <!-- CV Section with Modal Popup -->
+<section id="cv" class="section-padding">
+    <div class="container">
+        <h2 class="section-title text-center">Curriculum Vitae</h2>
+        <div class="content-divider centered" aria-hidden="true"></div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="cv-card">
+                    <div class="cv-card-icon">
+                        <i class="fas fa-file-alt" aria-hidden="true"></i>
+                    </div>
+                    <div class="cv-card-content">
+                        <h3>Professional Experience & Qualifications</h3>
+                        <p>My CV details my journey as an Engineer specialized in AI/ML and Data Science, including my experience at People Lab, Euronext Group (Italian Stock Exchange), and my academic qualifications.</p>
+                        
+                        <div class="cv-actions">
+                            <button class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                <i class="fas fa-eye me-2" aria-hidden="true"></i>View CV
+                            </button>
+                            
+                            <a href="Docs/cv_AI Engineer - Data Scientist- Leon Doungala.pdf" class="btn btn-outline" 
+                               target="_blank" rel="noopener" download>
+                                <i class="fas fa-file-download me-2" aria-hidden="true"></i>Download CV
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- CV Modal -->
+<div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cvModalLabel">Leon Doungala | CV</h5>
+                <div class="modal-actions">
+                    <a href="Docs/cv_AI Engineer - Data Scientist- Leon Doungala.pdf" class="btn btn-sm btn-primary me-2" 
+                       target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt me-1" aria-hidden="true"></i>Open in New Tab
+                    </a>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body p-0">
+                <div class="cv-iframe-container">
+                    <iframe src="Docs/cv_AI Engineer - Data Scientist- Leon Doungala.pdf" title="Leon Doungala CV" class="cv-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="section-separator">
         <div class="separator-gradient" aria-hidden="true"></div>
