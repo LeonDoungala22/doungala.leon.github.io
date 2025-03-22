@@ -1,23 +1,46 @@
+/* Enhanced color palette for better readability */
 :root {
     --primary: #4285f4;
+    --primary-hover: #5a95f5;
     --primary-dark: #1e2638;
     --primary-light: #4285f4;
     --secondary: #34a853;
+    --secondary-light: #66c082;
     --accent: #fbbc05;
-    --danger: #ea4335;
+    --accent-light: #fdd35f;
+    --tertiary: #ea4335;
+    --tertiary-light: #f06960;
+    --purple: #a142f4;
+    --purple-light: #b674f7;
+    --teal: #00acc1;
+    --teal-light: #33c9d8;
+    
+    /* Background colors */
     --dark: #1a1f2e;
     --darker: #161a25;
-    --light: #e8eaed;
-    --gray: #80868b;
-    --gray-light: #dadce0;
-    --text-primary: #e8eaed;
-    --text-secondary: #bdc1c6;
-    --background: #121212;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 255, 255, 0.06);
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --bg-card-hover: rgba(255, 255, 255, 0.09);
+    
+    /* Text colors - lighter for better readability */
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-tertiary: #c5c5c5;
+    --text-muted: #a0a0a0;
+    
+    /* Borders and accents */
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-primary: rgba(66, 133, 244, 0.2);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
     --shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    
+    /* Gradients */
     --gradient-blue: linear-gradient(135deg, #4285f4, #0f9d58);
     --gradient-dark: linear-gradient(135deg, #1a1f2e, #131720);
+    --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+    --gradient-highlight: linear-gradient(90deg, rgba(66, 133, 244, 0.12), rgba(66, 133, 244, 0.05));
+    
+    /* Typography */
     --font-heading: 'Merriweather', serif;
     --font-body: 'Space Grotesk', sans-serif;
     --border-radius: 12px;
@@ -174,24 +197,27 @@ body {
 }
 
 .key-highlight {
-    background: linear-gradient(90deg, rgba(66, 133, 244, 0.08), rgba(66, 133, 244, 0.03));
-    border-left: 3px solid var(--primary);
-    padding: 25px 30px;  /* Increased padding */
-    margin: 40px 0; /* Increased margin */
-    border-radius: 0 8px 8px 0;
+    background: var(--gradient-highlight);
+    border-left: 4px solid var(--primary);
+    padding: 30px 35px;
+    margin: 50px 0;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .key-highlight p {
     margin-bottom: 0;
     line-height: 1.7;
+    color: var(--text-primary);
 }
 
 .highlight-text {
-    color: var(--primary);
+    color: var(--primary-light);
     font-weight: 600;
-    font-size: 1.15rem;
-    display: inline-block;  /* Changed to prevent wrapping issues */
-    margin-right: 5px;  /* Added margin */
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-right: 5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .sub-heading {
@@ -317,35 +343,36 @@ body {
 }
 
 .finding-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(66, 133, 244, 0.1);
-    border-radius: 12px;
-    padding: 25px;
+    background: var(--gradient-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 14px;
+    padding: 30px;
     transition: all 0.3s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .finding-card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--bg-card-hover);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    border-color: rgba(66, 133, 244, 0.3);
+    border-color: rgba(66, 133, 244, 0.4);
     z-index: 2;
 }
 
 .finding-icon {
-    background: rgba(66, 133, 244, 0.1);
-    width: 50px;
-    height: 50px;
+    background: rgba(66, 133, 244, 0.15);
+    width: 55px;
+    height: 55px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-    color: var(--primary);
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    color: var(--primary-light);
     flex-shrink: 0;
 }
 
@@ -357,18 +384,18 @@ body {
 }
 
 .finding-content h5 {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    margin-bottom: 15px;
     font-weight: 600;
     line-height: 1.4;
 }
 
 .finding-content p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 0;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: left; /* Changed from justify to prevent awkward spacing */
 }
 
@@ -796,12 +823,12 @@ body {
     line-height: 1.7;
 }
 
-/* Academic Header */
+/* Academic Header with improved contrast */
 .academic-header {
     background: linear-gradient(135deg, rgba(22, 26, 37, 0.97) 0%, rgba(35, 45, 63, 0.97) 100%);
     padding: 150px 0 80px;
     position: relative;
-    border-bottom: 1px solid rgba(66, 133, 244, 0.2);
+    border-bottom: 1px solid rgba(66, 133, 244, 0.3);
 }
 
 .academic-header::before {
@@ -829,8 +856,9 @@ body {
     display: block;
 }
 
+/* Typography improvements */
 .paper-title {
-    font-family: var(--heading-font);
+    font-family: var(--font-heading);
     color: var(--text-primary);
     font-size: 2.6rem;
     line-height: 1.3;
@@ -839,6 +867,7 @@ body {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .paper-author {
@@ -851,19 +880,24 @@ body {
 
 .paper-relator {
     font-size: 1rem;
-    color: var(--text-secondary);
+    color: var(--text-tertiary);
     margin-bottom: 25px;
     display: flex;
     justify-content: center;
-    gap: 30px; /* Increased from 20px */
+    gap: 50px; /* Increased from 30px for better separation */
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .relator-label, .candidate-label {
-    font-weight: 500;
-    color: var(--text-light);
-    margin-right: 5px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-right: 8px;
 }
 
 .paper-affiliation {
@@ -977,20 +1011,21 @@ body {
 
 /* Academic Sections */
 .academic-section {
-    margin-bottom: 80px; /* Increased from 60px */
+    margin-bottom: 100px; /* Increased from 80px */
     position: relative;
     overflow: visible;
-    padding: 0 15px; /* Increased from 10px */
+    padding: 0 20px; /* Increased from 15px */
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 700;
-    margin-bottom: 30px;
-    color: var(--text-light);
+    margin-bottom: 35px;
+    color: var(--text-primary);
     position: relative;
-    padding-bottom: 12px;
-    font-family: var(--heading-font);
+    padding-bottom: 15px;
+    font-family: var(--font-heading);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .section-title::after {
@@ -998,19 +1033,21 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 80px;
+    width: 100px;
     height: 3px;
     background: var(--primary);
+    border-radius: 3px;
 }
 
 .subsection-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-light);
-    margin: 45px 0 25px; /* Increased margins */
+    color: var(--text-primary);
+    margin: 55px 0 30px; /* Increased margins */
     display: flex;
     align-items: center;
-    padding-left: 5px; /* Added left padding */
+    padding-left: 10px; /* Increased from 5px */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Typography */
@@ -1024,35 +1061,49 @@ p {
 }
 
 ul {
-    padding-left: 20px;
-    margin-bottom: 1.5rem;
+    padding-left: 30px; /* Increased from 25px */
+    margin-bottom: 35px; /* Increased from 30px */
+    margin-top: 25px; /* Increased from 20px */
 }
 
 ul li {
-    margin-bottom: 10px;
+    margin-bottom: 18px; /* Increased from 15px */
     color: var(--text-secondary);
+    position: relative;
+    padding-left: 10px; /* Increased from 8px */
+    padding-right: 10px; /* Increased from 5px */
     font-size: 1.05rem;
-    text-align: justify;
     line-height: 1.7;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    border-radius: 50%;
 }
 
 /* Abstract */
 .abstract-content {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 12px;
-    padding: 35px;
-    margin: 30px 0;
-    border: 1px solid rgba(66, 133, 244, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: var(--gradient-card);
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px 0;
+    border: 1px solid var(--border-primary);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .abstract-content p {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.9;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 1.1rem;
     text-align: justify;
-    hyphens: auto;
+    padding: 0 5px;
 }
 
 .abstract-content p:last-child {
@@ -1060,22 +1111,22 @@ ul li {
 }
 
 .paper-dedication {
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 12px;
-    padding: 30px 35px;
-    margin: 40px 0;
+    background: rgba(66, 133, 244, 0.05);
+    border-radius: 16px;
+    padding: 35px 40px;
+    margin: 50px 0;
     position: relative;
-    border: 1px solid rgba(66, 133, 244, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(66, 133, 244, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .dedication-header {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: 12px;
+    margin-bottom: 20px;
     color: var(--primary);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
@@ -1086,12 +1137,12 @@ ul li {
 
 .paper-dedication blockquote {
     font-style: italic;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     border-left: 3px solid var(--primary);
-    padding-left: 20px;
+    padding-left: 25px;
     margin: 0;
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 /* Research Timeline */
@@ -1256,11 +1307,12 @@ ul li {
     margin: 30px 0;
 }
 
+/* Enhanced tech items */
 .tech-item {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 12px;
-    padding: 25px;
-    border: 1px solid rgba(66, 133, 244, 0.1);
+    background: var(--gradient-card);
+    border-radius: 14px;
+    padding: 30px;
+    border: 1px solid var(--border-primary);
     transition: all 0.3s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     height: 100%;
@@ -1302,18 +1354,72 @@ ul li {
 
 .tech-details h4 {
     color: var(--text-primary);
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+    font-size: 1.15rem;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
 .tech-details p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 0;
     line-height: 1.6;
     text-align: left;
     flex: 1;
+}
+
+/* Color accent variants for cards */
+.finding-card:nth-child(4n+1) .finding-icon {
+    background: rgba(66, 133, 244, 0.15);
+    color: var(--primary);
+}
+
+.finding-card:nth-child(4n+2) .finding-icon {
+    background: rgba(52, 168, 83, 0.15);
+    color: var(--secondary);
+}
+
+.finding-card:nth-child(4n+3) .finding-icon {
+    background: rgba(251, 188, 5, 0.15);
+    color: var(--accent);
+}
+
+.finding-card:nth-child(4n+4) .finding-icon {
+    background: rgba(234, 67, 53, 0.15);
+    color: var(--tertiary);
+}
+
+/* Similar color variants for tech cards */
+.tech-item:nth-child(4n+1) .tech-icon {
+    background: rgba(66, 133, 244, 0.15);
+}
+
+.tech-item:nth-child(4n+1) .tech-icon i {
+    color: var(--primary);
+}
+
+.tech-item:nth-child(4n+2) .tech-icon {
+    background: rgba(52, 168, 83, 0.15);
+}
+
+.tech-item:nth-child(4n+2) .tech-icon i {
+    color: var(--secondary);
+}
+
+.tech-item:nth-child(4n+3) .tech-icon {
+    background: rgba(251, 188, 5, 0.15);
+}
+
+.tech-item:nth-child(4n+3) .tech-icon i {
+    color: var(--accent);
+}
+
+.tech-item:nth-child(4n+4) .tech-icon {
+    background: rgba(234, 67, 53, 0.15);
+}
+
+.tech-item:nth-child(4n+4) .tech-icon i {
+    color: var(--tertiary);
 }
 
 /* Key Findings */
@@ -1322,24 +1428,27 @@ ul li {
 }
 
 .key-highlight {
-    background: linear-gradient(90deg, rgba(66, 133, 244, 0.08), rgba(66, 133, 244, 0.03));
-    border-left: 3px solid var(--primary);
-    padding: 25px 30px;  /* Increased padding */
-    margin: 40px 0; /* Increased margin */
-    border-radius: 0 8px 8px 0;
+    background: var(--gradient-highlight);
+    border-left: 4px solid var(--primary);
+    padding: 30px 35px;
+    margin: 50px 0;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .key-highlight p {
     margin-bottom: 0;
     line-height: 1.7;
+    color: var(--text-primary);
 }
 
 .highlight-text {
-    color: var(--primary);
+    color: var(--primary-light);
     font-weight: 600;
-    font-size: 1.15rem;
-    display: inline-block;  /* Changed to prevent wrapping issues */
-    margin-right: 5px;  /* Added margin */
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-right: 5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .findings-grid {
@@ -1350,35 +1459,36 @@ ul li {
 }
 
 .finding-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(66, 133, 244, 0.1);
-    border-radius: 12px;
-    padding: 25px;
+    background: var(--gradient-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 14px;
+    padding: 30px;
     transition: all 0.3s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .finding-card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--bg-card-hover);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    border-color: rgba(66, 133, 244, 0.3);
+    border-color: rgba(66, 133, 244, 0.4);
     z-index: 2;
 }
 
 .finding-icon {
-    background: rgba(66, 133, 244, 0.1);
-    width: 50px;
-    height: 50px;
+    background: rgba(66, 133, 244, 0.15);
+    width: 55px;
+    height: 55px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-    color: var(--primary);
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    color: var(--primary-light);
     flex-shrink: 0;
 }
 
@@ -1390,18 +1500,18 @@ ul li {
 }
 
 .finding-content h5 {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    margin-bottom: 15px;
     font-weight: 600;
     line-height: 1.4;
 }
 
 .finding-content p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 0;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: left; /* Changed from justify to prevent awkward spacing */
 }
 
@@ -1695,7 +1805,7 @@ ul li {
 
 @media (max-width: 992px) {
     .academic-section {
-        padding: 0 10px;
+        padding: 0 15px;
     }
     
     .paper-title {
@@ -1725,8 +1835,13 @@ ul li {
     }
     
     .key-highlight {
-        padding: 20px 25px;
-        margin: 35px 0;
+        padding: 25px 30px;
+        margin: 40px 0;
+    }
+    
+    .paper-relator {
+        gap: 30px;
+        padding: 12px;
     }
 }
 
@@ -1776,16 +1891,36 @@ ul li {
     }
     
     .academic-section {
-        padding: 0 8px;
-        margin-bottom: 70px;
+        padding: 0 10px;
+        margin-bottom: 80px;
+    }
+    
+    #introduction {
+        padding: 25px;
+        margin-top: 50px;
+        margin-bottom: 80px;
     }
     
     .academic-section p {
-        padding: 0 3px;
+        padding: 0 5px;
     }
     
     .key-highlight {
-        padding: 18px 22px;
+        padding: 20px 25px;
+    }
+    
+    .abstract-content {
+        padding: 30px;
+    }
+    
+    .paper-dedication {
+        padding: 30px;
+    }
+    
+    .paper-relator {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
     }
 }
 
@@ -1811,60 +1946,82 @@ ul li {
 
 /* Improved academic section spacing */
 .academic-section {
-    margin-bottom: 80px; /* Increased from 60px */
+    margin-bottom: 100px; /* Increased from 80px */
     position: relative;
     overflow: visible;
-    padding: 0 15px; /* Increased from 10px */
+    padding: 0 20px; /* Increased from 15px */
 }
 
 /* Better spacing for introduction text */
 #introduction {
-    margin-top: 50px; /* Added top margin */
-    margin-bottom: 90px; /* Extra bottom margin */
+    margin-top: 70px; /* Increased from 50px */
+    margin-bottom: 100px; /* Increased from 90px */
+    background: rgba(255, 255, 255, 0.01);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Increase paragraph spacing */
 .academic-section p {
     color: var(--text-secondary);
     line-height: 1.8;
-    margin-bottom: 22px; /* Increased from 20px */
+    margin-bottom: 25px; /* Increased from 22px */
     text-align: justify;
-    padding: 0 5px; /* Added side padding for text */
+    padding: 0 10px; /* Increased from 5px */
+    font-size: 1.05rem;
+    letter-spacing: 0.2px;
 }
 
 /* Better key highlight margins */
 .key-highlight {
-    background: linear-gradient(90deg, rgba(66, 133, 244, 0.08), rgba(66, 133, 244, 0.03));
-    border-left: 3px solid var(--primary);
-    padding: 25px 30px; /* Increased padding */
-    margin: 40px 0; /* Increased margin */
-    border-radius: 0 8px 8px 0;
+    background: var(--gradient-highlight);
+    border-left: 4px solid var(--primary);
+    padding: 30px 35px; /* Increased padding */
+    margin: 50px 0; /* Increased margin */
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Improved list spacing */
 .academic-section ul {
-    padding-left: 25px; /* Increased from 20px */
-    margin-bottom: 30px; /* Increased from 25px */
-    margin-top: 20px; /* Added top margin */
+    padding-left: 30px; /* Increased from 25px */
+    margin-bottom: 35px; /* Increased from 30px */
+    margin-top: 25px; /* Increased from 20px */
 }
 
 .academic-section ul li {
-    margin-bottom: 15px; /* Increased from 12px */
+    margin-bottom: 18px; /* Increased from 15px */
     color: var(--text-secondary);
     position: relative;
-    padding-left: 8px; /* Increased from 5px */
-    padding-right: 5px; /* Added right padding */
+    padding-left: 10px; /* Increased from 8px */
+    padding-right: 10px; /* Increased from 5px */
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.academic-section ul li::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    border-radius: 50%;
 }
 
 /* Improved subsection spacing */
 .subsection-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-light);
-    margin: 45px 0 25px; /* Increased margins */
+    color: var(--text-primary);
+    margin: 55px 0 30px; /* Increased margins */
     display: flex;
     align-items: center;
-    padding-left: 5px; /* Added left padding */
+    padding-left: 10px; /* Increased from 5px */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Better card spacing */
@@ -1875,26 +2032,55 @@ ul li {
 /* Responsive adjustments */
 @media (max-width: 992px) {
     .academic-section {
-        padding: 0 10px;
+        padding: 0 15px;
+    }
+    
+    #introduction {
+        padding: 30px;
     }
     
     .key-highlight {
-        padding: 20px 25px;
-        margin: 35px 0;
+        padding: 25px 30px;
+        margin: 40px 0;
+    }
+    
+    .paper-relator {
+        gap: 30px;
+        padding: 12px;
     }
 }
 
 @media (max-width: 768px) {
     .academic-section {
-        padding: 0 8px;
-        margin-bottom: 70px;
+        padding: 0 10px;
+        margin-bottom: 80px;
+    }
+    
+    #introduction {
+        padding: 25px;
+        margin-top: 50px;
+        margin-bottom: 80px;
     }
     
     .academic-section p {
-        padding: 0 3px;
+        padding: 0 5px;
     }
     
     .key-highlight {
-        padding: 18px 22px;
+        padding: 20px 25px;
+    }
+    
+    .abstract-content {
+        padding: 30px;
+    }
+    
+    .paper-dedication {
+        padding: 30px;
+    }
+    
+    .paper-relator {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
     }
 }
