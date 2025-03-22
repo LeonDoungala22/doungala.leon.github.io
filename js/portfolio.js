@@ -804,14 +804,17 @@ function loadProject(projectId) {
                     }
                     
                     // Create a card for each project
-                    projectsList.forEach(project => {
+                    projectsList.forEach((project, index) => {
                         const projectCard = document.createElement('div');
                         projectCard.className = 'project-card';
                         projectCard.dataset.id = project.id;
                         projectCard.dataset.category = project.category;
                         projectCard.dataset.tags = project.tags.join(',').toLowerCase();
                         
-                        // Get a subset of tags to display (max 3) for clean UI
+                        // Calculate variation class based on index to create visual variety
+                        const colorVariant = index % 4; // Creates 4 different card styles
+                        projectCard.classList.add(`card-variant-${colorVariant}`);
+                        
                         const displayTags = project.tags.slice(0, 3);
                         const remainingTagsCount = project.tags.length > 3 ? project.tags.length - 3 : 0;
                         
@@ -827,7 +830,7 @@ function loadProject(projectId) {
                                 <p class="project-description">${project.description}</p>
                                 <div class="project-tech">
                                     ${displayTags.map(tag => `<span class="tech-badge">${tag}</span>`).join('')}
-                                    ${remainingTagsCount > 0 ? `<span class="tech-badge">+${remainingTagsCount} more</span>` : ''}
+                                    ${remainingTagsCount > 0 ? `<span class="tech-badge more-badge">+${remainingTagsCount} more</span>` : ''}
                                 </div>
                                 <div class="project-links">
                                     <button class="btn btn-view-project" data-id="${project.id}">
@@ -1153,12 +1156,16 @@ function populateProjects(gridId, projectsList) {
         return;
     }
     
-    projectsList.forEach(project => {
+    projectsList.forEach((project, index) => {
         const projectCard = document.createElement('div');
         projectCard.className = 'project-card';
         projectCard.dataset.id = project.id;
         projectCard.dataset.category = project.category;
         projectCard.dataset.tags = project.tags.join(',').toLowerCase();
+        
+        // Calculate variation class based on index to create visual variety
+        const colorVariant = index % 4; // Creates 4 different card styles
+        projectCard.classList.add(`card-variant-${colorVariant}`);
         
         const displayTags = project.tags.slice(0, 3);
         const remainingTagsCount = project.tags.length > 3 ? project.tags.length - 3 : 0;
@@ -1175,7 +1182,7 @@ function populateProjects(gridId, projectsList) {
                 <p class="project-description">${project.description}</p>
                 <div class="project-tech">
                     ${displayTags.map(tag => `<span class="tech-badge">${tag}</span>`).join('')}
-                    ${remainingTagsCount > 0 ? `<span class="tech-badge">+${remainingTagsCount} more</span>` : ''}
+                    ${remainingTagsCount > 0 ? `<span class="tech-badge more-badge">+${remainingTagsCount} more</span>` : ''}
                 </div>
                 <div class="project-links">
                     <button class="btn btn-view-project" data-id="${project.id}">
@@ -1476,5 +1483,34 @@ document.addEventListener('DOMContentLoaded', function() {
       "retina_detect": true
     });
   }
+});
+
+// Ensure project cards are populated after DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a brief moment to ensure all scripts are loaded
+    setTimeout(function() {
+        // Double-check if projects array exists and has content
+        if (typeof projects !== 'undefined' && projects.length > 0) {
+            // Populate all project grids
+            populateProjects('projectGrid', projects);
+            populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
+            populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
+            
+            console.log('Projects loaded: ' + projects.length);
+        } else {
+            console.error('Projects array not found or empty. Check your projects data.');
+        }
+    }, 500);
+    
+    // URL parameter handling
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('project');
+    
+    if (projectId) {
+        // Wait for projects to load
+        setTimeout(function() {
+            loadProject(projectId);
+        }, 800);
+    }
 });
 
