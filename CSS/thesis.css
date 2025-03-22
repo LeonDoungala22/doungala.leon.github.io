@@ -1,9 +1,12 @@
-/* Enhanced color palette for better readability */
+/* Hybrid Theme Color System - Balance of Dark & Light */
 :root {
+    /* Primary colors */
     --primary: #4285f4;
     --primary-hover: #5a95f5;
     --primary-dark: #1e2638;
     --primary-light: #4285f4;
+    
+    /* Accent colors for visual interest and color coding */
     --secondary: #34a853;
     --secondary-light: #66c082;
     --accent: #fbbc05;
@@ -18,6 +21,8 @@
     /* Background colors */
     --dark: #1a1f2e;
     --darker: #161a25;
+    --card-bg: rgba(42, 52, 70, 0.9);
+    --card-bg-hover: rgba(50, 62, 85, 0.9);
     --bg-card: rgba(255, 255, 255, 0.05);
     --bg-card-hover: rgba(255, 255, 255, 0.09);
     
@@ -30,7 +35,6 @@
     /* Borders and accents */
     --border-light: rgba(255, 255, 255, 0.1);
     --border-primary: rgba(66, 133, 244, 0.2);
-    --card-bg: rgba(255, 255, 255, 0.05);
     --card-border: rgba(255, 255, 255, 0.1);
     --shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     
@@ -86,13 +90,13 @@ body {
 
 /* Fix navbar icon spacing */
 .navbar-dark .navbar-nav .nav-link i {
-    margin-right: 8px;  /* Increased from default */
+    margin-right: 10px;
     font-size: 0.9rem;
 }
 
 /* Fix dropdown item icon spacing */
 .dropdown-item i {
-    margin-right: 8px;  /* Increased from default */
+    margin-right: 12px;
     width: 18px;
     text-align: center;
 }
@@ -606,8 +610,8 @@ body {
 .thesis-keywords {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin: 25px 0;
+    gap: 12px;
+    margin: 30px 0;
     justify-content: center;
     padding: 0 20px;
 }
@@ -922,8 +926,8 @@ body {
 .thesis-keywords {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin: 25px 0;
+    gap: 12px;
+    margin: 30px 0;
     justify-content: center;
     padding: 0 20px;
 }
@@ -972,19 +976,19 @@ body {
 
 /* Modal PDF Viewer */
 .modal-content {
-    background-color: #1a1f2e;
+    background-color: var(--card-bg);
     border: 1px solid rgba(66, 133, 244, 0.2);
     border-radius: 12px;
 }
 
 .modal-header {
-    border-bottom: 1px solid rgba(66, 133, 244, 0.2);
+    border-bottom: 1px solid rgba(66, 133, 244, 0.1);
     padding: 15px 20px;
 }
 
 .modal-title {
     color: var(--text-primary);
-    font-family: var(--heading-font);
+    font-weight: 600;
 }
 
 .modal-body {
@@ -992,13 +996,13 @@ body {
 }
 
 .modal-footer {
-    border-top: 1px solid rgba(66, 133, 244, 0.2);
+    border-top: 1px solid rgba(66, 133, 244, 0.1);
     padding: 15px 20px;
 }
 
 .modal-pdf-viewer {
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     border: none;
 }
 
@@ -1192,11 +1196,11 @@ ul li::before {
 }
 
 .timeline-content {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 12px;
+    background: var(--gradient-card);
+    border-radius: 14px;
     padding: 30px;
     margin-left: 15px;
-    border: 1px solid rgba(66, 133, 244, 0.1);
+    border: 1px solid var(--border-primary);
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
@@ -1630,9 +1634,8 @@ ul li::before {
 }
 
 .future-work-item:hover {
-    transform: translateX(5px);
+    transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(66, 133, 244, 0.2);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
