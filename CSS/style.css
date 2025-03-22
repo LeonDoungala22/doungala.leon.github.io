@@ -2957,59 +2957,85 @@ section:nth-child(even) {
   position: relative;
   overflow: hidden;
   border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(66, 133, 244, 0.15);
 }
 
 .contact-methods {
-  padding: 30px;
-  background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(66, 133, 244, 0.05));
+  padding: 35px 30px;
+  background: linear-gradient(135deg, rgba(35, 45, 63, 0.9), rgba(19, 27, 43, 0.95));
   border-radius: var(--border-radius) var(--border-radius) 0 0;
-  border-bottom: 1px solid rgba(66, 133, 244, 0.1);
+  border-bottom: 1px solid rgba(66, 133, 244, 0.15);
   margin-bottom: 0;
+  position: relative;
+}
+
+.contact-methods::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    rgba(66, 133, 244, 0.7) 0%, 
+    rgba(66, 133, 244, 0.9) 50%, 
+    rgba(66, 133, 244, 0.7) 100%);
 }
 
 .contact-method {
   text-align: center;
-  padding: 25px 15px;
-  transition: all 0.3s ease;
+  padding: 28px 20px;
+  transition: all 0.4s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(66, 133, 244, 0.08);
 }
 
 .contact-method:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: rgba(66, 133, 244, 0.2);
 }
 
 .contact-icon {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  background: rgba(66, 133, 244, 0.1);
+  background: rgba(66, 133, 244, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid rgba(66, 133, 244, 0.2);
+}
+
+.contact-icon::after {
+  content: '';
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  border: 1px dashed rgba(66, 133, 244, 0.4);
+  animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
 
 .contact-icon i {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--primary);
   transition: all 0.3s ease;
-}
-
-.contact-method:hover .contact-icon {
-  background: var(--primary);
-  transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
-}
-
-.contact-method:hover .contact-icon i {
-  color: white;
 }
 
 .contact-method h3 {
@@ -3049,17 +3075,77 @@ section:nth-child(even) {
   width: 100%;
 }
 
-/* Form container styles */
+/* Scholarly form container styling */
 .contact-form-container {
   padding: 40px;
   background: rgba(255, 255, 255, 0.02);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
+  border-top: 1px solid rgba(66, 133, 244, 0.1);
+  position: relative;
+}
+
+.contact-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, 
+    rgba(66, 133, 244, 0.05) 0%, 
+    transparent 70%);
+  pointer-events: none;
 }
 
 .contact-form-container h3 {
   color: var(--text-light);
   margin-bottom: 25px;
   font-size: 1.3rem;
+  position: relative;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.contact-form-container h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(66, 133, 244, 0.4) 0%, 
+    rgba(66, 133, 244, 0.8) 50%, 
+    rgba(66, 133, 244, 0.4) 100%);
+}
+
+.contact-form label {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.contact-form .form-control {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(66, 133, 244, 0.15);
+  color: var(--text-light);
+  border-radius: 8px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(66, 133, 244, 0.4);
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.contact-form .btn {
+  padding: 12px 30px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 /* Alert styling for form responses */
