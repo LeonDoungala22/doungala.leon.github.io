@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leon Doungala's Portfolio - AI/ML Engineer and Data Scientist">
+    <meta name="keywords" content="Leon Doungala, AI Engineer, ML Engineer, Data Scientist, Portfolio">
+    <meta name="author" content="Leon Doungala">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/protfolio.css">
+    <title>Leon Doungala - AI/ML Portfolio</title>
+</head>
+
+<body class="futuristic-theme">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="code-bracket">&lt;</span>Leon Doungala<span class="code-bracket">/&gt;</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about"><i class="fas fa-user"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-project-diagram"></i> AI/ML Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="thesi.html"><i class="fas fa-clipboard-check"></i> Thesis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#cv"><i class="fas fa-file"></i> CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header with Particle Animation -->
+    <header class="portfolio-header">
+        <div id="particles-js"></div>
+        <div class="container header-content position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="glowing-text mb-3">AI & ML PORTFOLIO</div>
+                    <h1 class="display-4 fw-bold mb-3">Machine Learning & AI Projects</h1>
+                    <p class="lead">Exploring data science, machine learning models, and generative AI applications</p>
+                    <div class="header-buttons mt-4">
+                        <a href="#project-explorer" class="btn btn-glow me-3">
+                            <i class="fas fa-search"></i> Explore Projects
+                        </a>
+                        <a href="https://github.com/LeonDoungala22" target="_blank" class="btn btn-outline-light">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Explorer Section -->
+    <section id="project-explorer" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title with-line">Project Explorer</h2>
+                    <p class="section-subtitle">Select a category to browse projects or search by keywords</p>
+                </div>
+            </div>
+
+            <!-- Category Selector & Search -->
+            <div class="explorer-controls mb-5">
+                <div class="row g-4">
+                    <div class="col-md-8">
+                        <div class="category-selector">
+                            <ul class="nav nav-pills nav-glowing mb-4 justify-content-center justify-content-md-start" id="projectTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-projects" 
+                                        type="button" role="tab" aria-selected="true">
+                                        <i class="fas fa-th-large"></i> All Projects
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="ml-tab" data-bs-toggle="tab" data-bs-target="#ml-projects" 
+                                        type="button" role="tab" aria-selected="false">
+                                        <i class="fas fa-brain"></i> Machine Learning
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="gen-tab" data-bs-toggle="tab" data-bs-target="#gen-projects" 
+                                        type="button" role="tab" aria-selected="false">
+                                        <i class="fas fa-robot"></i> Generative AI
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search-box">
+                            <input type="text" id="projectSearch" class="form-control form-control-lg" placeholder="Search projects...">
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Display Area -->
+            <div class="tab-content" id="projectTabContent">
+                <!-- All Projects Tab -->
+                <div class="tab-pane fade show active" id="all-projects" role="tabpanel" aria-labelledby="all-tab">
+                    <div class="project-grid" id="projectGrid">
+                        <!-- Project items will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- ML Projects Tab -->
+                <div class="tab-pane fade" id="ml-projects" role="tabpanel" aria-labelledby="ml-tab">
+                    <div class="project-grid" id="mlProjectGrid">
+                        <!-- ML Project items will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Generative AI Tab -->
+                <div class="tab-pane fade" id="gen-projects" role="tabpanel" aria-labelledby="gen-tab">
+                    <div class="project-grid" id="genProjectGrid">
+                        <!-- Generative AI Project items will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Project Section -->
+    <section id="active-project" class="py-5 d-none">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <button id="back-to-projects" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </button>
+                </div>
+            </div>
+            
+            <div class="project-display">
+                <!-- Project content will be dynamically loaded here -->
+                <div id="project-content" class="project-content-container">
+                    <!-- Dynamic project content goes here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-center py-4">
+        <div class="container">
+            <div class="footer-social mb-3">
+                <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/LeonDoungala22" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="mailto:doungala.leon@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2024 Leon Doungala. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Data -->
+    <script>
+        // Project data structure with all projects including images
+        const projects = [
+            {
+                id: "customer-segmentation",
+                title: "Customer Segmentation using K-Means",
+                description: "Clustering analysis for customer segmentation using K-Means algorithm.",
+                category: "ml",
+                tags: ["K-Means", "Clustering", "Machine Learning", "scikit-learn"],
+                image: "images/download (1).jpeg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Clustering/K-Means/Customer%20Segmentation%20using%20K-Means%20Clustering/main.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Clustering/K-Means/Customer%20Segmentation%20using%20K-Means%20Clustering/main.ipynb",
+                detailedDescription: `
+                    <p>This project demonstrates how to implement customer segmentation using K-Means clustering in Python with scikit-learn. Customer segmentation is a common business strategy that involves grouping customers with similar characteristics or behaviors to target marketing campaigns more effectively.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>K-Means Clustering</li>
+                        <li>Data Preprocessing and Feature Engineering</li>
+                        <li>Dimensionality Reduction</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                    <h3>Business Impact</h3>
+                    <p>The analysis helps businesses to better understand different customer groups, personalize marketing strategies, optimize resource allocation, and improve customer satisfaction by meeting specific needs of different segments.</p>
+                `
+            },
+            {
+                id: "hr-analytics",
+                title: "Human Resources Analytics",
+                description: "PCA and clustering for HR data analysis to identify employee patterns.",
+                category: "ml",
+                tags: ["PCA", "Data Analysis", "HR Analytics", "Employee Retention"],
+                image: "images/HR-Analytics.jpeg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb",
+                detailedDescription: `
+                    <p>This project uses Principal Component Analysis (PCA) and clustering techniques to analyze HR data and identify patterns related to employee satisfaction, performance, and retention.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>Principal Component Analysis (PCA)</li>
+                        <li>Hierarchical Clustering</li>
+                        <li>Feature Importance Analysis</li>
+                        <li>Correlation Analysis</li>
+                    </ul>
+                    <h3>Business Applications</h3>
+                    <p>Human Resources departments can use these insights to develop better retention strategies, improve workplace satisfaction, and identify factors that contribute to employee turnover.</p>
+                `
+            },
+            {
+                id: "diabetes-prediction",
+                title: "Diabetes Prediction and Characterization",
+                description: "Ensemble learning methods for medical prediction of diabetes risk.",
+                category: "ml",
+                tags: ["Ensemble Learning", "Medical ML", "Random Forest", "XGBoost"],
+                image: "images/Screenshot 2025-01-02 at 21.08.13.png",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
+                detailedDescription: `
+                    <p>This project implements ensemble learning methods to predict diabetes risk based on various health metrics and patient data.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>Random Forest Classification</li>
+                        <li>XGBoost</li>
+                        <li>Feature Importance Analysis</li>
+                        <li>Cross-Validation</li>
+                        <li>Hyperparameter Tuning</li>
+                    </ul>
+                    <h3>Healthcare Applications</h3>
+                    <p>The models developed in this project can help healthcare providers identify patients at high risk for diabetes, allowing for earlier intervention and preventative care measures.</p>
+                `
+            },
+            {
+                id: "heart-disease",
+                title: "Heart Disease Prediction",
+                description: "SVM and NLP techniques for medical diagnosis and risk assessment.",
+                category: "ml",
+                tags: ["SVM", "Medical ML", "Classification", "scikit-learn"],
+                image: "images/8_Main_Types_of_Heart_Disease.jpeg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
+                detailedDescription: `
+                    <p>This project focuses on heart disease prediction using Support Vector Machines (SVM) and explores various medical indicators to assess risk factors.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>Support Vector Machines (SVM)</li>
+                        <li>Feature Selection and Engineering</li>
+                        <li>Model Evaluation and Validation</li>
+                        <li>Medical Data Analysis</li>
+                    </ul>
+                    <h3>Healthcare Applications</h3>
+                    <p>The predictive models can assist cardiologists in early diagnosis, risk stratification, and treatment planning for heart disease patients, potentially saving lives through early intervention.</p>
+                `
+            },
+            {
+                id: "sentiment-analysis",
+                title: "Sentiment Analysis on IMDb Reviews",
+                description: "NLP-based classification of movie reviews using Naive Bayes.",
+                category: "ml",
+                tags: ["NLP", "Naive Bayes", "Text Classification", "scikit-learn"],
+                image: "images/sentiment-analysis.jpg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
+                detailedDescription: `
+                    <p>This project applies Natural Language Processing techniques to analyze sentiment in IMDb movie reviews, classifying them as positive or negative using Naive Bayes algorithms.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>Natural Language Processing (NLP)</li>
+                        <li>Text Preprocessing and Tokenization</li>
+                        <li>Feature Extraction with TF-IDF</li>
+                        <li>Naive Bayes Classification</li>
+                        <li>Model Performance Evaluation</li>
+                    </ul>
+                    <h3>Business Applications</h3>
+                    <p>This sentiment analysis approach can be adapted for various business applications including brand monitoring, customer feedback analysis, and social media sentiment tracking.</p>
+                `
+            },
+            {
+                id: "breast-cancer",
+                title: "Breast Cancer Classification",
+                description: "KNN algorithm for diagnosing breast tumors as malignant or benign.",
+                category: "ml",
+                tags: ["KNN", "Medical ML", "Classification", "scikit-learn"],
+                image: "images/breast-cancer.jpg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/KNN%20(%20K%20Nearest%20Neighbors%20)/Breast%20Cancer%20Classification/main.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/KNN%20(%20K%20Nearest%20Neighbors%20)/Breast%20Cancer%20Classification/main.ipynb",
+                detailedDescription: `
+                    <p>This project uses the K-Nearest Neighbors (KNN) algorithm to classify breast cancer tumors as malignant or benign based on features extracted from digitized images of breast mass.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>K-Nearest Neighbors Algorithm</li>
+                        <li>Medical Image Feature Analysis</li>
+                        <li>Hyperparameter Optimization</li>
+                        <li>Feature Scaling and Preprocessing</li>
+                        <li>Evaluation Metrics for Medical Diagnostics</li>
+                    </ul>
+                    <h3>Healthcare Impact</h3>
+                    <p>Early and accurate breast cancer detection can significantly improve patient outcomes. This model demonstrates how machine learning can assist in medical diagnostics by providing a second opinion to pathologists.</p>
+                `
+            },
+            {
+                id: "salary-prediction",
+                title: "Salary Prediction",
+                description: "Linear regression model for salary forecasting based on experience and skills.",
+                category: "ml",
+                tags: ["Linear Regression", "Forecasting", "scikit-learn"],
+                image: "images/salary-prediction.jpg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
+                detailedDescription: `
+                    <p>This project develops a linear regression model to predict salaries based on years of experience, education level, and other relevant factors that influence compensation.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>Linear Regression</li>
+                        <li>Feature Engineering</li>
+                        <li>Data Visualization</li>
+                        <li>Statistical Analysis</li>
+                        <li>Model Validation and Residual Analysis</li>
+                    </ul>
+                    <h3>Business Applications</h3>
+                    <p>HR departments and recruiting firms can use this model to establish fair salary ranges, conduct market comparisons, and improve compensation strategies to attract and retain talent.</p>
+                `
+            },
+            {
+                id: "fraud-detection",
+                title: "Credit Card Fraud Detection",
+                description: "Decision Trees for detecting fraudulent transactions in credit card data.",
+                category: "ml",
+                tags: ["Decision Trees", "Anomaly Detection", "Financial ML"],
+                image: "images/fraud-detection.jpg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20classification/Credit%20Card%20Fraud%20Detection/main.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20classification/Credit%20Card%20Fraud%20Detection/main.ipynb",
+                detailedDescription: `
+                    <p>This project focuses on detecting fraudulent credit card transactions using Decision Tree algorithms, addressing the challenges of imbalanced datasets in financial fraud detection.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>Decision Tree Classification</li>
+                        <li>Handling Imbalanced Datasets</li>
+                        <li>Feature Selection and Importance</li>
+                        <li>Cost-Sensitive Learning</li>
+                        <li>Performance Metrics for Fraud Detection</li>
+                    </ul>
+                    <h3>Financial Industry Applications</h3>
+                    <p>Financial institutions can implement similar systems to detect and prevent fraudulent transactions in real-time, reducing losses and protecting customers while maintaining a seamless experience for legitimate transactions.</p>
+                `
+            },
+            {
+                id: "housing-prices",
+                title: "Predicting Housing Prices",
+                description: "Decision Tree Regressor for real estate price prediction.",
+                category: "ml",
+                tags: ["Decision Tree Regression", "Real Estate", "Forecasting"],
+                image: "images/housing-prices.jpg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
+                detailedDescription: `
+                    <p>This project develops a Decision Tree Regression model to predict housing prices based on various features like location, size, amenities, and other relevant factors that influence real estate valuation.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>Decision Tree Regression</li>
+                        <li>Feature Engineering and Selection</li>
+                        <li>Regression Analysis</li>
+                        <li>Cross-Validation Techniques</li>
+                        <li>Model Evaluation Metrics for Regression</li>
+                    </ul>
+                    <h3>Real Estate Applications</h3>
+                    <p>Real estate agencies, appraisers, and property investors can use this model to estimate property values, identify undervalued properties, and make data-driven investment decisions in the housing market.</p>
+                `
+            },
+            {
+                id: "spam-email",
+                title: "Spam Email Classification",
+                description: "Logistic Regression for filtering spam emails from legitimate communications.",
+                category: "ml",
+                tags: ["Logistic Regression", "NLP", "Email Filtering"],
+                image: "images/spam-detection.jpg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
+                detailedDescription: `
+                    <p>This project implements Logistic Regression to classify emails as spam or legitimate (ham) based on their content and header information, creating an effective email filtering system.</p>
+                    <h3>Key Techniques</h3>
+                    <ul>
+                        <li>Logistic Regression</li>
+                        <li>Text Preprocessing and Vectorization</li>
+                        <li>Feature Engineering for Email Content</li>
+                        <li>Model Evaluation and Threshold Optimization</li>
+                        <li>Confusion Matrix Analysis</li>
+                    </ul>
+                    <h3>Practical Applications</h3>
+                    <p>The techniques demonstrated in this project can be applied to develop email filtering systems that protect users from phishing attempts, malware, and unwanted marketing communications while ensuring important messages reach their inbox.</p>
+                `
+            },
+            {
+                id: "virtual-doctor",
+                title: "Virtual Doctor AI Assistant",
+                description: "AI-powered system for medical guidance based on symptoms.",
+                category: "generative",
+                tags: ["LangChain", "Medical AI", "NLP", "Generative AI"],
+                image: "images/virtual-doctor-ai.png",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/AI-Health-Assistant/blob/main/AI_Health_Assistant.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/AI-Health-Assistant",
+                detailedDescription: `
+                    <p>The Virtual Doctor AI Assistant is a generative AI application built with LangChain that provides medical guidance based on user-reported symptoms.</p>
+                    <h3>Key Technologies</h3>
+                    <ul>
+                        <li>LangChain Framework</li>
+                        <li>Large Language Models</li>
+                        <li>Medical Knowledge Base Integration</li>
+                        <li>Conversational AI</li>
+                    </ul>
+                    <h3>Features</h3>
+                    <p>The assistant can understand symptom descriptions, ask relevant follow-up questions, provide potential conditions that match the symptoms, and suggest when to seek professional medical help.</p>
+                    <p class="note">Note: This system is designed for educational purposes only and does not replace professional medical advice.</p>
+                `
+            },
+            {
+                id: "ats-system",
+                title: "AI Semantic ATS System for CV Matching",
+                description: "RAG-based system for CV-job description matching.",
+                category: "generative",
+                tags: ["RAG", "Resume Analysis", "NLP", "Semantic Search"],
+                image: "images/ATS written .png",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0/blob/main/ATS_System.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0",
+                detailedDescription: `
+                    <p>This project implements a semantic Applicant Tracking System (ATS) using Retrieval Augmented Generation (RAG) to match CVs/resumes with job descriptions.</p>
+                    <h3>Key Technologies</h3>
+                    <ul>
+                        <li>Retrieval Augmented Generation (RAG)</li>
+                        <li>Semantic Search</li>
+                        <li>Document Processing</li>
+                        <li>Vector Embeddings</li>
+                    </ul>
+                    <h3>Applications</h3>
+                    <p>The system helps recruiters efficiently identify qualified candidates by semantically matching resume content with job requirements, going beyond simple keyword matching to understand skills and experiences in context.</p>
+                `
+            },
+            {
+                id: "diabetes-chatbot",
+                title: "Conversational AI for Diabetes Prediction",
+                description: "Medical assistant using RAG workflows for diabetes analysis.",
+                category: "generative",
+                tags: ["RAG", "Healthcare AI", "Conversational AI", "LangChain"],
+                image: "images/diabetes-chatbot.jpg",
+                notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Chatbot.ipynb",
+                githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization",
+                detailedDescription: `
+                    <p>This project integrates conversational AI with diabetes prediction models to create an interactive system that helps assess diabetes risk through natural language conversation.</p>
+                    <h3>Key Technologies</h3>
+                    <ul>
+                        <li>RAG (Retrieval Augmented Generation)</li>
+                        <li>LangChain for Workflow Orchestration</li>
+                        <li>Diabetes Prediction Models</li>
+                        <li>Conversational UI</li>
+                    </ul>
+                    <h3>Healthcare Applications</h3>
+                    <p>This system can be deployed in healthcare settings to help patients understand their diabetes risk, provide educational content about diabetes prevention, and support healthcare providers in efficient patient screening.</p>
+                `
+            }
+        ];
+    </script>
+
+    <!-- Dynamic content loading script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Populate project grids
+            populateProjects('projectGrid', projects);
+            populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
+            populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
+            
+            // Set up event listeners
+            document.getElementById('back-to-projects').addEventListener('click', function() {
+                document.getElementById('active-project').classList.add('d-none');
+                document.getElementById('project-explorer').classList.remove('d-none');
+                window.scrollTo(0, document.getElementById('project-explorer').offsetTop - 100);
+            });
+            
+            // Search functionality
+            document.getElementById('projectSearch').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                filterProjects(searchTerm);
+            });
+
+            // Add fullscreen toggle event listener - delegate to the document
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('.notebook-fullscreen-btn') || e.target.closest('.notebook-fullscreen-btn')) {
+                    e.preventDefault();
+                    
+                    const container = document.querySelector('.notebook-frame-container');
+                    if (container) {
+                        // Instead of toggling fullscreen, we'll open in a new tab
+                        const iframe = container.querySelector('iframe');
+                        if (iframe && iframe.src) {
+                            window.open(iframe.src, '_blank');
+                        }
+                    }
+                }
+            });
+            
+            // Improve loading experience for notebooks
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('.btn-view-project') || e.target.closest('.btn-view-project')) {
+                    // When a project is clicked, we'll show a loading indicator until the notebook loads
+                    const projectId = e.target.closest('.btn-view-project').dataset.id;
+                    const project = projects.find(p => p.id === projectId);
+                    
+                    if (project) {
+                        // After the project content is loaded and the iframe is added
+                        setTimeout(() => {
+                            const iframe = document.querySelector('.notebook-iframe');
+                            if (iframe) {
+                                // Add loading indicator
+                                const container = iframe.closest('.notebook-frame-container');
+                                const loadingHtml = `
+                                  <div class="loading-indicator">
+                                    <i class="fas fa-spinner"></i>
+                                    <div>Loading notebook...</div>
+                                  </div>
+                                `;
+                                if (container && !container.querySelector('.loading-indicator')) {
+                                  container.insertAdjacentHTML('beforeend', loadingHtml);
+                                }
+                                
+                                // Remove loading indicator when iframe loads
+                                iframe.onload = function() {
+                                  const indicator = container.querySelector('.loading-indicator');
+                                  if (indicator) {
+                                    indicator.remove();
+                                  }
+                                };
+                            }
+                        }, 100);
+                    }
+                }
+            });
+
+            // Add this to the DOMContentLoaded event listener for direct project link handling
+            // Check URL for direct project links
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('project');
+            
+            if (projectId) {
+                const project = projects.find(p => p.id === projectId);
+                if (project) {
+                    // Load the project directly
+                    setTimeout(() => {
+                        loadProject(projectId);
+                    }, 500);
+                }
+            }
+        });
+        
+        function populateProjects(gridId, projectsList) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = '';
+            
+            projectsList.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+                projectCard.dataset.id = project.id;
+                projectCard.dataset.category = project.category;
+                projectCard.dataset.tags = project.tags.join(',').toLowerCase();
+                
+                projectCard.innerHTML = `
+                    <div class="project-image">
+                        <img src="${project.image || 'images/placeholder.jpg'}" alt="${project.title}">
+                        <div class="project-category ${project.category === 'generative' ? 'cat-gen' : 'cat-ml'}">
+                            ${project.category === 'generative' ? 'Generative AI' : 'Machine Learning'}
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-description">${project.description}</p>
+                        <div class="project-tech">
+                            ${project.tags.map(tag => `<span class="tech-badge">${tag}</span>`).join('')}
+                        </div>
+                        <div class="project-links">
+                            <button class="btn btn-view-project" data-id="${project.id}">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(projectCard);
+                
+                // Add event listener to view project button
+                projectCard.querySelector('.btn-view-project').addEventListener('click', function() {
+                    loadProject(this.dataset.id);
+                });
+            });
+        }
+        
+        function loadProject(projectId) {
+            const project = projects.find(p => p.id === projectId);
+            if (!project) return;
+            
+            const projectContent = document.getElementById('project-content');
+            
+            // Keep original notebookUrl without modifications
+            let notebookUrl = project.notebookUrl;
+            
+            // Get current date in formatted style
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            });
+            
+            projectContent.innerHTML = `
+              <div class="project-article">
+                <div class="project-article-header">
+                  <h1 class="project-article-title">${project.title}</h1>
+                  
+                  <div class="project-article-meta">
+                    <div class="project-article-author">
+                      <div class="author-avatar">
+                        <img src="images/Foto_LEON_DOUGALA-removebg-preview-removebg-preview.png" alt="Leon Doungala">
+                      </div>
+                      <div class="author-info">
+                        <div class="author-name">Leon Doungala</div>
+                        <div class="author-role">AI/ML Engineer & Data Scientist</div>
+                      </div>
+                    </div>
+                    
+                    <div class="project-article-date">
+                      <i class="far fa-calendar-alt"></i> ${formattedDate}
+                    </div>
+                    
+                    <div class="project-article-tags">
+                      ${project.tags.map(tag => `<span class="badge ${project.category === 'generative' ? 'bg-info' : 'bg-primary'}">${tag}</span>`).join('')}
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="project-article-content">
+                  <!-- Remove the image section -->
+                  
+                  <div class="project-article-body">
+                    <div class="article-sidebar">
+                      <div class="article-sidebar-section">
+                        <h3 class="article-sidebar-title">Project Links</h3>
+                        <div class="article-links">
+                          <a href="${project.githubUrl}" class="article-link" target="_blank">
+                            <i class="fab fa-github"></i> GitHub Repository
+                          </a>
+                          <a href="${notebookUrl}" class="article-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Open Notebook
+                          </a>
+                        </div>
+                      </div>
+                      
+                      <div class="article-sidebar-section">
+                        <h3 class="article-sidebar-title">Technologies</h3>
+                        <div class="article-tech-list">
+                          ${generateTechLevels(project.tags)}
+                        </div>
+                      </div>
+                      
+                      <div class="article-sidebar-section">
+                        <h3 class="article-sidebar-title">Share</h3>
+                        <div class="article-links">
+                          <a href="javascript:void(0)" onclick="shareProject('${project.title}', '${project.id}')" class="article-link">
+                            <i class="fas fa-share-alt"></i> Share Project
+                          </a>
+                          <a href="javascript:void(0)" onclick="copyLink('${project.id}')" class="article-link">
+                            <i class="fas fa-link"></i> Copy Link
+                          </a>
+                        </div>
+                      </div>
+                      
+                      <div class="article-sidebar-section">
+                        <h3 class="article-sidebar-title">Project Overview</h3>
+                        <div class="sidebar-description">
+                          ${project.detailedDescription}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="article-main">
+                      <!-- Focus on the notebook as the main content -->
+                      <div class="notebook-container">
+                        <h2 class="notebook-title">Project Implementation</h2>
+                        <div class="notebook-controls">
+                          <a href="${notebookUrl}" class="notebook-control-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Open in Full Screen
+                          </a>
+                          <button class="notebook-control-btn refresh-notebook">
+                            <i class="fas fa-sync-alt"></i> Refresh Notebook
+                          </button>
+                        </div>
+                        <div class="notebook-frame-container">
+                          <div class="loading-indicator">
+                            <div class="loading-spinner"></div>
+                            <div class="loading-text">Loading notebook...</div>
+                          </div>
+                          <iframe class="notebook-iframe" src="${notebookUrl}" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+            
+            // Set up notebook loading behavior
+            const iframe = projectContent.querySelector('.notebook-iframe');
+            const loadingIndicator = projectContent.querySelector('.loading-indicator');
+            
+            iframe.onload = function() {
+              // Hide loading indicator when iframe is loaded
+              if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+              }
+            };
+            
+            // Set up refresh notebook button
+            const refreshButton = projectContent.querySelector('.refresh-notebook');
+            if (refreshButton) {
+              refreshButton.addEventListener('click', function() {
+                // Show loading indicator
+                if (loadingIndicator) {
+                  loadingIndicator.style.display = 'flex';
+                }
+                
+                // Reload the iframe
+                iframe.src = iframe.src;
+              });
+            }
+            
+            // Hide project explorer, show active project
+            document.getElementById('project-explorer').classList.add('d-none');
+            document.getElementById('active-project').classList.remove('d-none');
+            
+            // Scroll to top of active project
+            window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
+        }
+        
+        // Function to generate tech level indicators
+        function generateTechLevels(tags) {
+          // Map tags to tech levels
+          const techLevels = {
+            "K-Means": "advanced",
+            "Clustering": "advanced",
+            "Machine Learning": "advanced",
+            "scikit-learn": "advanced",
+            "PCA": "advanced",
+            "Data Analysis": "advanced",
+            "HR Analytics": "intermediate",
+            "Ensemble Learning": "advanced",
+            "Medical ML": "advanced",
+            "Random Forest": "advanced",
+            "XGBoost": "advanced",
+            "SVM": "advanced",
+            "NLP": "intermediate",
+            "Classification": "advanced",
+            "Text Classification": "intermediate",
+            "Naive Bayes": "advanced",
+            "KNN": "advanced",
+            "Linear Regression": "advanced",
+            "Forecasting": "intermediate",
+            "Decision Trees": "advanced",
+            "Anomaly Detection": "advanced",
+            "Financial ML": "intermediate",
+            "Decision Tree Regression": "advanced",
+            "Real Estate": "intermediate",
+            "Logistic Regression": "advanced",
+            "Email Filtering": "intermediate",
+            "LangChain": "intermediate",
+            "Medical AI": "intermediate",
+            "Generative AI": "intermediate",
+            "RAG": "intermediate",
+            "Resume Analysis": "intermediate", 
+            "Semantic Search": "intermediate",
+            "Healthcare AI": "intermediate",
+            "Conversational AI": "intermediate",
+            "Document Processing": "intermediate",
+            "Vector Embeddings": "intermediate"
+          };
+          
+          return tags.map(tag => {
+            const level = techLevels[tag] || "intermediate";
+            return `
+              <div class="article-tech-item">
+                <span>${tag}</span>
+                <div class="tech-level ${level}"></div>
+              </div>
+            `;
+          }).join('');
+        }
+        
+        // Function to share project
+        function shareProject(title, id) {
+          if (navigator.share) {
+            navigator.share({
+              title: title,
+              text: `Check out this project: ${title}`,
+              url: window.location.href.split('#')[0] + `?project=${id}`
+            })
+            .catch(err => {
+              console.error('Share failed:', err);
+            });
+          } else {
+            alert('Use the copy link function to share this project');
+          }
+        }
+        
+        // Function to copy project link to clipboard
+        function copyLink(id) {
+          const linkToCopy = window.location.href.split('#')[0] + `?project=${id}`;
+          
+          navigator.clipboard.writeText(linkToCopy)
+            .then(() => {
+              // Show a notification
+              const notification = document.createElement('div');
+              notification.className = 'copy-notification';
+              notification.innerHTML = '<i class="fas fa-check"></i> Link copied to clipboard';
+              document.body.appendChild(notification);
+              
+              // Remove notification after a delay
+              setTimeout(() => {
+                notification.remove();
+              }, 3000);
+            })
+            .catch(err => {
+              console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+
+    <!-- Update the navigation link in your main index.html -->
+    <script>
+        // Check if we need to update the portfolio link in the main index page
+        function updateMainNavLink() {
+            const portfolioLinks = document.querySelectorAll('a[href="_portfolio.html"]');
+            portfolioLinks.forEach(link => {
+                link.href = "ml_and_ds_portfolio.html";
+            });
+        }
+        
+        // This will only execute if this script runs on the index page
+        if (window.location.pathname.includes('index.html')) {
+            document.addEventListener('DOMContentLoaded', updateMainNavLink);
+        }
+    </script>
+
+    <!-- Particle.js and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS("particles-js", {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: "#4285f4" },
+                        shape: { type: "circle" },
+                        opacity: { value: 0.5, random: true },
+                        size: { value: 3, random: true },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#4285f4",
+                            opacity: 0.4,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            direction: "none",
+                            random: true,
+                            out_mode: "out"
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "grab" },
+                            onclick: { enable: true, mode: "push" }
+                        },
+                        modes: {
+                            grab: { distance: 140, line_linked: { opacity: 1 } },
+                            push: { particles_nb: 4 }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Update the notebook-frame-container and notebook-iframe CSS -->
+    <style>
+      /* Enhanced Notebook Container Styles */
+      .notebook-frame-container {
+        width: 100%;
+        height: 1200px; /* Increased height from 800px to 1200px */
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        position: relative;
+        background-color: #fff;
+        margin: 0 auto;
+      }
+    
+      .notebook-iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: #fff;
+      }
+    
+      /* Loading indicator */
+      .notebook-frame-container::before {
+        content: "Loading notebook...";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #333;
+        font-size: 18px;
+        font-weight: 500;
+        z-index: 0;
+      }
+    
+      /* Responsive notebook heights */
+      @media (max-width: 1400px) {
+        .notebook-frame-container {
+          height: 1000px;
+        }
+      }
+    
+      @media (max-width: 992px) {
+        .notebook-frame-container {
+          height: 800px;
+        }
+      }
+    
+      @media (max-width: 768px) {
+        .notebook-frame-container {
+          height: 700px;
+        }
+      }
+    
+      @media (max-width: 576px) {
+        .notebook-frame-container {
+          height: 600px;
+          border-radius: 8px;
+        }
+      }
+    
+      /* Notebook view controls */
+      .notebook-controls {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 15px;
+      }
+    
+      .notebook-fullscreen-btn {
+        background-color: rgba(66, 133, 244, 0.15);
+        color: var(--primary);
+        border: none;
+        border-radius: var(--border-radius-sm);
+        padding: 8px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: var(--transition-fast);
+        display: flex;
+        align-items: center;
+      }
+    
+      .notebook-fullscreen-btn:hover {
+        background-color: rgba(66, 133, 244, 0.25);
+        transform: translateY(-2px);
+      }
+    
+      .notebook-fullscreen-btn i {
+        margin-right: 6px;
+      }
+    </style>
+
+    <!-- Add this CSS for article-style project presentation -->
+    <style>
+      /* Article-style project presentation */
+      .project-article {
+        background-color: var(--glass-bg);
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .project-article-header {
+        padding: 40px;
+        background: linear-gradient(to bottom, rgba(18, 26, 41, 0.9), var(--bg-dark));
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .project-article-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(147, 106, 255, 0.1));
+        z-index: 0;
+      }
+      
+      .project-article-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(90deg, var(--text-primary), var(--primary-light));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .project-article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .project-article-author {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        margin-bottom: 10px;
+      }
+      
+      .author-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+        border: 2px solid var(--primary);
+        box-shadow: 0 0 10px rgba(66, 133, 244, 0.3);
+      }
+      
+      .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .author-info {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .author-name {
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: 1.1rem;
+        margin-bottom: 3px;
+      }
+      
+      .author-role {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+      
+      .project-article-date {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .project-article-date i {
+        margin-right: 8px;
+        color: var(--primary);
+      }
+      
+      .project-article-tags {
+        margin-left: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .project-article-content {
+        padding: 40px;
+      }
+      
+      .project-article-image {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .project-article-image img {
+        max-width: 100%;
+        border-radius: var(--border-radius-md);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+      }
+      
+      .project-article-body {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 30px;
+      }
+      
+      .article-sidebar {
+        position: sticky;
+        top: 100px;
+      }
+      
+      .article-main {
+        color: var(--text-secondary);
+        line-height: 1.8;
+      }
+      
+      .article-main h2 {
+        color: var(--primary-light);
+        font-size: 1.8rem;
+        margin: 30px 0 20px;
+        font-weight: 600;
+      }
+      
+      .article-main h3 {
+        color: var(--primary-light);
+        font-size: 1.4rem;
+        margin: 25px 0 15px;
+        font-weight: 600;
+      }
+      
+      .article-main p {
+        margin-bottom: 20px;
+      }
+      
+      .article-main ul {
+        padding-left: 20px;
+        margin-bottom: 25px;
+      }
+      
+      .article-main li {
+        margin-bottom: 8px;
+      }
+      
+      .article-sidebar-section {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: var(--border-radius-md);
+        padding: 20px;
+        margin-bottom: 25px;
+        border: 1px solid var(--glass-border);
+      }
+      
+      .article-sidebar-title {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+        font-weight: 600;
+      }
+      
+      .article-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .article-link {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: var(--border-radius-sm);
+        background-color: rgba(255, 255, 255, 0.05);
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      
+      .article-link:hover {
+        background-color: rgba(66, 133, 244, 0.15);
+        transform: translateY(-2px);
+        color: var(--text-primary);
+      }
+      
+      .article-link i {
+        margin-right: 10px;
+        color: var(--primary);
+      }
+      
+      .article-tech-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .article-tech-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 10px;
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: var(--border-radius-sm);
+      }
+      
+      .article-tech-item span {
+        color: var(--text-secondary);
+      }
+      
+      .article-tech-item .tech-level {
+        width: 90px;
+        height: 6px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .article-tech-item .tech-level::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: var(--primary-gradient);
+        border-radius: 3px;
+      }
+      
+      .article-tech-item .tech-level.advanced::after {
+        width: 90%;
+      }
+      
+      .article-tech-item .tech-level.intermediate::after {
+        width: 60%;
+      }
+      
+      .article-tech-item .tech-level.basic::after {
+        width: 40%;
+      }
+      
+      .notebook-container {
+        margin-top: 50px;
+        padding-top: 40px;
+        border-top: 1px solid var(--glass-border);
+      }
+      
+      .notebook-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        .project-article-body {
+          grid-template-columns: 1fr;
+        }
+        
+        .article-sidebar {
+          position: static;
+          margin-bottom: 30px;
+        }
+        
+        .project-article-title {
+          font-size: 2rem;
+        }
+        
+        .project-article-header,
+        .project-article-content {
+          padding: 30px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .project-article-header,
+        .project-article-content {
+          padding: 20px;
+        }
+        
+        .project-article-title {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+
+    <!-- Update the loadProject function to implement article-style presentation -->
+    <script>
+      function loadProject(projectId) {
+        const project = projects.find(p => p.id === projectId);
+        if (!project) return;
+        
+        const projectContent = document.getElementById('project-content');
+        
+        // Keep original notebookUrl without modifications
+        let notebookUrl = project.notebookUrl;
+        
+        // Get current date in formatted style
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        });
+        
+        projectContent.innerHTML = `
+          <div class="project-article">
+            <div class="project-article-header">
+              <h1 class="project-article-title">${project.title}</h1>
+              
+              <div class="project-article-meta">
+                <div class="project-article-author">
+                  <div class="author-avatar">
+                    <img src="images/Foto_LEON_DOUGALA-removebg-preview-removebg-preview.png" alt="Leon Doungala">
+                  </div>
+                  <div class="author-info">
+                    <div class="author-name">Leon Doungala</div>
+                    <div class="author-role">AI/ML Engineer & Data Scientist</div>
+                  </div>
+                </div>
+                
+                <div class="project-article-date">
+                  <i class="far fa-calendar-alt"></i> ${formattedDate}
+                </div>
+                
+                <div class="project-article-tags">
+                  ${project.tags.map(tag => `<span class="badge ${project.category === 'generative' ? 'bg-info' : 'bg-primary'}">${tag}</span>`).join('')}
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-article-content">
+              <div class="project-article-image">
+                <img src="${project.image || 'images/placeholder.jpg'}" alt="${project.title}" class="img-fluid">
+              </div>
+              
+              <div class="project-article-body">
+                <div class="article-sidebar">
+                  <div class="article-sidebar-section">
+                    <h3 class="article-sidebar-title">Project Links</h3>
+                    <div class="article-links">
+                      <a href="${project.githubUrl}" class="article-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub Repository
+                      </a>
+                      <a href="${notebookUrl}" class="article-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Open Notebook
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div class="article-sidebar-section">
+                    <h3 class="article-sidebar-title">Technologies</h3>
+                    <div class="article-tech-list">
+                      ${generateTechLevels(project.tags)}
+                    </div>
+                  </div>
+                  
+                  <div class="article-sidebar-section">
+                    <h3 class="article-sidebar-title">Share</h3>
+                    <div class="article-links">
+                      <a href="javascript:void(0)" onclick="shareProject('${project.title}', '${project.id}')" class="article-link">
+                        <i class="fas fa-share-alt"></i> Share Project
+                      </a>
+                      <a href="javascript:void(0)" onclick="copyLink('${project.id}')" class="article-link">
+                        <i class="fas fa-link"></i> Copy Link
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="article-main">
+                  <div class="article-content">
+                    ${project.detailedDescription}
+                  </div>
+                  
+                  <div class="notebook-container">
+                    <h2 class="notebook-title">Project Implementation</h2>
+                    <div class="notebook-frame-container">
+                      <iframe class="notebook-iframe" src="${notebookUrl}" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        // Hide project explorer, show active project
+        document.getElementById('project-explorer').classList.add('d-none');
+        document.getElementById('active-project').classList.remove('d-none');
+        
+        // Scroll to top of active project
+        window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
+      }
+      
+      // Function to generate tech level indicators
+      function generateTechLevels(tags) {
+        // Map tags to tech levels (you can customize this based on your expertise)
+        const techLevels = {
+          "K-Means": "advanced",
+          "Clustering": "advanced",
+          "Machine Learning": "advanced",
+          "scikit-learn": "advanced",
+          "PCA": "advanced",
+          "Data Analysis": "advanced",
+          "HR Analytics": "intermediate",
+          "Ensemble Learning": "advanced",
+          "Medical ML": "advanced",
+          "SVM": "advanced",
+          "NLP": "intermediate",
+          "Classification": "advanced",
+          "KNN": "advanced",
+          "Linear Regression": "advanced",
+          "Forecasting": "intermediate",
+          "Decision Trees": "advanced",
+          "LangChain": "intermediate",
+          "RAG": "intermediate",
+          "Generative AI": "intermediate"
+        };
+        
+        return tags.map(tag => {
+          const level = techLevels[tag] || "intermediate";
+          return `
+            <div class="article-tech-item">
+              <span>${tag}</span>
+              <div class="tech-level ${level}"></div>
+            </div>
+          `;
+        }).join('');
+      }
+      
+      // Function to share project (can be expanded with actual social sharing)
+      function shareProject(title, id) {
+        if (navigator.share) {
+          navigator.share({
+            title: title,
+            text: `Check out this project: ${title}`,
+            url: window.location.href.split('#')[0] + `?project=${id}`
+          })
+          .catch(err => {
+            console.error('Share failed:', err);
+          });
+        } else {
+          alert('Use the copy link function to share this project');
+        }
+      }
+      
+      // Function to copy project link to clipboard
+      function copyLink(id) {
+        const linkToCopy = window.location.href.split('#')[0] + `?project=${id}`;
+        
+        navigator.clipboard.writeText(linkToCopy)
+          .then(() => {
+            // Show a notification or toast
+            const projectContent = document.getElementById('project-content');
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.innerHTML = '<i class="fas fa-check"></i> Link copied to clipboard';
+            projectContent.appendChild(notification);
+            
+            // Remove notification after a delay
+            setTimeout(() => {
+              notification.remove();
+            }, 3000);
+          })
+          .catch(err => {
+            console.error('Could not copy text: ', err);
+          });
+      }
+    </script>
+
+    <!-- Add notification style for copy link functionality -->
+    <style>
+      .copy-notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--primary);
+        color: white;
+        padding: 10px 20px;
+        border-radius: var(--border-radius-md);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        animation: slideIn 0.3s forwards, fadeOut 0.3s forwards 2.7s;
+      }
+      
+      @keyframes slideIn {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <!-- Add this to the DOMContentLoaded event listener to handle direct project links -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check URL for direct project links
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('project');
+        
+        if (projectId) {
+          const project = projects.find(p => p.id === projectId);
+          if (project) {
+            // Load the project directly
+            setTimeout(() => {
+              loadProject(projectId);
+            }, 500);
+          }
+        }
+        
+        // Rest of your initialization code...
+      });
+    </script>
+
+<!-- Enhanced notebook display styles -->
+<style>
+  /* Prominent Notebook Container */
+  .notebook-container {
+    margin-top: 60px;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 40px;
+  }
+  
+  .notebook-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--primary-light);
+    text-align: center;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Larger notebook frame with enhanced styling */
+  .notebook-frame-container {
+    width: 100%;
+    height: 1400px; /* Increased height for better readability */
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    background-color: #fff;
+    margin: 0 auto;
+    border: 3px solid rgba(66, 133, 244, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .notebook-frame-container:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+  }
+  
+  .notebook-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #fff;
+  }
+  
+  /* Notebook controls positioned more prominently */
+  .notebook-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+  
+  .notebook-control-btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .notebook-control-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .notebook-control-btn i {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  
+  /* Improved notebook layout in article */
+  .article-main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .article-content {
+    margin-bottom: 40px;
+  }
+  
+  /* Focus on notebook display */
+  .project-article-body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 30px;
+  }
+  
+  @media (max-width: 1400px) {
+    .notebook-frame-container {
+      height: 1200px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .notebook-frame-container {
+      height: 1000px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .project-article-body {
+      grid-template-columns: 1fr;
+    }
+    
+    .notebook-frame-container {
+      height: 900px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .notebook-frame-container {
+      height: 800px;
+      border-radius: 12px;
+    }
+    
+    .notebook-title {
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .notebook-frame-container {
+      height: 700px;
+      border-radius: 8px;
+    }
+    
+    .notebook-controls {
+      flex-direction: column;
+    }
+  }
+  
+  /* Loading state for notebook */
+  .loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(66, 133, 244, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+  
+  .loading-text {
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<!-- Update the loadProject function to enhance notebook presentation -->
+<script>
+  function loadProject(projectId) {
+    const project = projects.find(p => p.id === projectId);
+    if (!project) return;
+    
+    const projectContent = document.getElementById('project-content');
+    
+    // Keep original notebookUrl as requested
+    let notebookUrl = project.notebookUrl;
+    
+    // Get current date in formatted style
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+    
+    projectContent.innerHTML = `
+      <div class="project-article">
+        <div class="project-article-header">
+          <h1 class="project-article-title">${project.title}</h1>
+          
+          <div class="project-article-meta">
+            <div class="project-article-author">
+              <div class="author-avatar">
+                <img src="images/Foto_LEON_DOUGALA-removebg-preview-removebg-preview.png" alt="Leon Doungala">
+              </div>
+              <div class="author-info">
+                <div class="author-name">Leon Doungala</div>
+                <div class="author-role">AI/ML Engineer & Data Scientist</div>
+              </div>
+            </div>
+            
+            <div class="project-article-date">
+              <i class="far fa-calendar-alt"></i> ${formattedDate}
+            </div>
+            
+            <div class="project-article-tags">
+              ${project.tags.map(tag => `<span class="badge ${project.category === 'generative' ? 'bg-info' : 'bg-primary'}">${tag}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-article-content">
+          <!-- Remove the image section -->
+          
+          <div class="project-article-body">
+            <div class="article-sidebar">
+              <div class="article-sidebar-section">
+                <h3 class="article-sidebar-title">Project Links</h3>
+                <div class="article-links">
+                  <a href="${project.githubUrl}" class="article-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub Repository
+                  </a>
+                  <a href="${notebookUrl}" class="article-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Open Notebook
+                  </a>
+                </div>
+              </div>
+              
+              <div class="article-sidebar-section">
+                <h3 class="article-sidebar-title">Technologies</h3>
+                <div class="article-tech-list">
+                  ${generateTechLevels(project.tags)}
+                </div>
+              </div>
+              
+              <div class="article-sidebar-section">
+                <h3 class="article-sidebar-title">Share</h3>
+                <div class="article-links">
+                  <a href="javascript:void(0)" onclick="shareProject('${project.title}', '${project.id}')" class="article-link">
+                    <i class="fas fa-share-alt"></i> Share Project
+                  </a>
+                  <a href="javascript:void(0)" onclick="copyLink('${project.id}')" class="article-link">
+                    <i class="fas fa-link"></i> Copy Link
+                  </a>
+                </div>
+              </div>
+              
+              <div class="article-sidebar-section">
+                <h3 class="article-sidebar-title">Project Overview</h3>
+                <div class="sidebar-description">
+                  ${project.detailedDescription}
+                </div>
+              </div>
+            </div>
+            
+            <div class="article-main">
+              <!-- Focus on the notebook as the main content -->
+              <div class="notebook-container">
+                <h2 class="notebook-title">Project Implementation</h2>
+                <div class="notebook-controls">
+                  <a href="${notebookUrl}" class="notebook-control-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Open in Full Screen
+                  </a>
+                  <button class="notebook-control-btn refresh-notebook">
+                    <i class="fas fa-sync-alt"></i> Refresh Notebook
+                  </button>
+                </div>
+                <div class="notebook-frame-container">
+                  <div class="loading-indicator">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Loading notebook...</div>
+                  </div>
+                  <iframe class="notebook-iframe" src="${notebookUrl}" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Set up notebook loading behavior
+    const iframe = projectContent.querySelector('.notebook-iframe');
+    const loadingIndicator = projectContent.querySelector('.loading-indicator');
+    
+    iframe.onload = function() {
+      // Hide loading indicator when iframe is loaded
+      if (loadingIndicator) {
+        loadingIndicator.style.display = 'none';
+      }
+    };
+    
+    // Set up refresh notebook button
+    const refreshButton = projectContent.querySelector('.refresh-notebook');
+    if (refreshButton) {
+      refreshButton.addEventListener('click', function() {
+        // Show loading indicator
+        if (loadingIndicator) {
+          loadingIndicator.style.display = 'flex';
+        }
+        
+        // Reload the iframe
+        iframe.src = iframe.src;
+      });
+    }
+    
+    // Hide project explorer, show active project
+    document.getElementById('project-explorer').classList.add('d-none');
+    document.getElementById('active-project').classList.remove('d-none');
+    
+    // Scroll to top of active project
+    window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
+  }
+</script>
+
+<!-- Enhanced notebook-focused styles -->
+<style>
+  /* Move the project description to the sidebar */
+  .sidebar-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+  
+  .sidebar-description h3 {
+    font-size: 1.1rem;
+    color: var(--primary-light);
+    margin: 15px 0 10px;
+  }
+  
+  .sidebar-description ul {
+    padding-left: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .sidebar-description li {
+    margin-bottom: 5px;
+  }
+  
+  /* Main notebook area - make it the focal point */
+  .article-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Larger and more prominent notebook container */
+  .notebook-container {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+    flex: 1;
+  }
+  
+  /* Bold eye-catching title for the notebook */
+  .notebook-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--primary-light);
+    text-align: center;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+  }
+  
+  /* Make the notebook even larger */
+  .notebook-frame-container {
+    width: 100%;
+    height: 1600px; /* Even taller for maximum readability */
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    background-color: #fff;
+    margin: 0 auto;
+    border: 3px solid rgba(66, 133, 244, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  /* Enhanced loading indicator */
+  .loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(66, 133, 244, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+  
+  .loading-text {
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Improved grid layout to give more space to the notebook */
+  .project-article-body {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* More space for the notebook */
+    gap: 40px;
+  }
+  
+  /* Make the notebook controls more prominent */
+  .notebook-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    gap: 15px;
+  }
+  
+  .notebook-control-btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .notebook-control-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .notebook-control-btn i {
+    margin-right: 10px;
+  }
+</style>
+</body>
+
+</html>
