@@ -3295,30 +3295,103 @@ copyright {
 
 /* Enhanced carousel transitions */
 .carousel-item {
-  transition: transform 1.2s ease, opacity 0.7s ease-out;
+  transition: transform 0.8s ease;
+  /* Remove opacity transition that causes blackout */
+}
+
+/* Remove the opacity 0 starting point */
+.carousel-item:not(.active) {
+  display: block;
   opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .carousel-item.active {
   opacity: 1;
+  visibility: visible;
+  position: relative;
 }
 
 /* Optimize images in carousel for better performance */
 .carousel-item img {
   will-change: transform;
   transition: transform 0.5s ease-out;
-  backface-visibility: hidden; /* Improves performance */
-  opacity: 1; /* Ensure images are always visible */
+  backface-visibility: hidden;
+  transform-style: preserve-3d; /* Better 3D rendering */
 }
 
 /* Improve progress bar appearance */
 .carousel-progress {
   height: 3px;
-  background-color: rgba(66, 133, 244, 0.7); /* Use primary color with transparency */
+  background-color: rgba(66, 133, 244, 0.7);
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   z-index: 10;
   transition: width 12s linear;
+}
+
+/* Jupyter-style loading animation */
+.jupyter-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 5, 16, 0.85);
+  z-index: 100;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.jupyter-loading.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.jupyter-spinner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.jupyter-spinner::before,
+.jupyter-spinner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top-color: var(--primary);
+}
+
+.jupyter-spinner::before {
+  animation: spin 1.5s linear infinite;
+}
+
+.jupyter-spinner::after {
+  border-top-color: rgba(66, 133, 244, 0.4);
+  animation: spin 1s linear infinite reverse;
+}
+
+.jupyter-loading-text {
+  color: var(--text-light);
+  margin-top: 20px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

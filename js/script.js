@@ -189,6 +189,67 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+
+  // Add Jupyter-style loading to project content
+  const projectContainers = document.querySelectorAll('.project-content, .notebook-iframe-container');
+  
+  projectContainers.forEach(container => {
+    // Create loading overlay
+    const loadingOverlay = document.createElement('div');
+    loadingOverlay.className = 'jupyter-loading';
+    loadingOverlay.innerHTML = `
+      <div class="jupyter-loading-inner">
+        <div class="jupyter-spinner"></div>
+        <div class="jupyter-loading-text">Loading content...</div>
+      </div>
+    `;
+    
+    container.appendChild(loadingOverlay);
+    
+    // Add functionality to hide loader when content is loaded
+    setTimeout(() => {
+      loadingOverlay.classList.add('loaded');
+    }, 1500); // Default timeout - will be replaced by actual load event for iframes
+    
+    // If container has iframe, add load event listener
+    const iframe = container.querySelector('iframe');
+    if (iframe) {
+      iframe.addEventListener('load', () => {
+        loadingOverlay.classList.add('loaded');
+      });
+    }
+  });
+  
+  // Make About Me carousel match content height
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) {
+    const aboutContent = aboutSection.querySelector('.about-content');
+    const carouselContainer = aboutSection.querySelector('.carousel');
+    
+    if (aboutContent && carouselContainer) {
+      // Function to match heights
+      function matchHeights() {
+        // Get content height
+        const contentHeight = aboutContent.offsetHeight;
+        
+        // If we're on desktop (above 992px)
+        if (window.innerWidth >= 992) {
+          // Set carousel height to match content
+          carouselContainer.style.height = `${contentHeight}px`;
+        } else {
+          // Reset height on mobile
+          carouselContainer.style.height = '';
+        }
+      }
+      
+      // Run on load and resize
+      matchHeights();
+      window.addEventListener('resize', matchHeights);
+      
+      // Also run after a short delay to account for any dynamic content
+      setTimeout(matchHeights, 500);
+    }
+  }
 });
 
 /* filepath: /Users/leon Doungala/Library/CloudStorage/GoogleDrive-doungala.leon@gmail.com/My Drive/PERSONAL/Perso/My Projects/doungala.leon.github.io/js/animations.js */
