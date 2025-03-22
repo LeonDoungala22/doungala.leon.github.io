@@ -91,14 +91,32 @@ document.addEventListener('DOMContentLoaded', function() {
   const carousels = document.querySelectorAll('.carousel');
   
   carousels.forEach(carousel => {
+    // Skip if we already have a progress bar
+    if (carousel.querySelector('.carousel-progress')) return;
+    
+    // Preload images to avoid loading delays during transitions
+    const preloadImages = () => {
+      const images = carousel.querySelectorAll('img');
+      images.forEach(img => {
+        const preloader = new Image();
+        preloader.src = img.src;
+      });
+    };
+    
+    // Start preloading
+    preloadImages();
+    
     // Create progress bar
     const progressBar = document.createElement('div');
     progressBar.className = 'carousel-progress';
     carousel.appendChild(progressBar);
     
-    // Get carousel instance
+    // Get carousel instance with much slower timing
     const bsCarousel = new bootstrap.Carousel(carousel, {
-      interval: 5000 // 5 seconds per slide
+      interval: 4000, // 4 seconds per slide
+      pause: 'hover',  // Pause on hover
+      wrap: true,      // Loop continuously 
+      keyboard: true   // Enable keyboard navigation
     });
     
     // Update progress bar on slide event
@@ -110,12 +128,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start progress animation
     carousel.addEventListener('slid.bs.carousel', function() {
       progressBar.style.width = '100%';
-      progressBar.style.transition = 'width 5s linear';
+      progressBar.style.transition = 'width 12s linear'; // Match the interval
     });
     
     // Initialize progress bar for first slide
     progressBar.style.width = '100%';
-    progressBar.style.transition = 'width 5s linear';
+    progressBar.style.transition = 'width 12s linear'; // Match the interval
     
     // Pause carousel on hover
     carousel.addEventListener('mouseenter', function() {
@@ -129,9 +147,31 @@ document.addEventListener('DOMContentLoaded', function() {
       progressBar.style.width = '0%';
       setTimeout(() => {
         progressBar.style.width = '100%';
-        progressBar.style.transition = 'width 5s linear';
+        progressBar.style.transition = 'width 12s linear'; // Match the interval
       }, 50);
     });
+    
+    // Optional: Add touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    carousel.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) {
+        bsCarousel.next();
+      }
+      if (touchEndX > touchStartX + 50) {
+        bsCarousel.prev();
+      }
+    }
   });
   
   // Add keyboard navigation for carousels
