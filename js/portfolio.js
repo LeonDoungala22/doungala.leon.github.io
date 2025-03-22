@@ -1485,32 +1485,82 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Ensure project cards are populated after DOM loads
+// Define projects array at the global scope first to ensure it exists
+if (typeof projects === 'undefined') {
+  console.log('Initializing projects array...');
+  window.projects = [
+    // Your project data will be here - keeping your existing project definitions
+  ];
+}
+
+// Ensure project cards are populated after DOM loads with better error handling
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait a brief moment to ensure all scripts are loaded
-    setTimeout(function() {
-        // Double-check if projects array exists and has content
-        if (typeof projects !== 'undefined' && projects.length > 0) {
-            // Populate all project grids
-            populateProjects('projectGrid', projects);
-            populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
-            populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
-            
-            console.log('Projects loaded: ' + projects.length);
-        } else {
-            console.error('Projects array not found or empty. Check your projects data.');
+  console.log('DOM loaded, preparing to populate projects...');
+  
+  // Add helpful debug information
+  if (typeof projects !== 'undefined') {
+    console.log('Projects array found with ' + projects.length + ' projects');
+  } else {
+    console.error('Projects array not found! This will cause the cards not to load.');
+  }
+  
+  // Wait a brief moment to ensure all scripts are loaded
+  setTimeout(function() {
+    try {
+      // Double-check if projects array exists and has content
+      if (typeof projects !== 'undefined' && projects.length > 0) {
+        // Get references to grids, checking if they exist first
+        const projectGrid = document.getElementById('projectGrid');
+        const mlProjectGrid = document.getElementById('mlProjectGrid');
+        const genProjectGrid = document.getElementById('genProjectGrid');
+        
+        // Only try to populate grids that exist in the DOM
+        if (projectGrid) {
+          console.log('Populating main project grid...');
+          populateProjects('projectGrid', projects);
         }
-    }, 500);
-    
-    // URL parameter handling
+        
+        if (mlProjectGrid) {
+          console.log('Populating ML project grid...');
+          populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
+        }
+        
+        if (genProjectGrid) {
+          console.log('Populating generative AI project grid...');
+          populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
+        }
+        
+        console.log('Successfully loaded ' + projects.length + ' projects');
+      } else {
+        console.error('Projects array not found or empty. Check your projects data and make sure it\'s defined before this code runs.');
+      }
+    } catch (error) {
+      console.error('Error populating projects:', error);
+    }
+  }, 800); // Increased timeout to ensure everything is loaded
+  
+  // URL parameter handling with error handling
+  try {
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get('project');
     
     if (projectId) {
-        // Wait for projects to load
-        setTimeout(function() {
+      // Wait longer for projects to load when directly accessing a project
+      setTimeout(function() {
+        try {
+          if (typeof loadProject === 'function') {
+            console.log('Loading project with ID:', projectId);
             loadProject(projectId);
-        }, 800);
+          } else {
+            console.error('loadProject function not found');
+          }
+        } catch (err) {
+          console.error('Error loading project:', err);
+        }
+      }, 1200);
     }
+  } catch (err) {
+    console.error('Error handling URL parameters:', err);
+  }
 });
 
