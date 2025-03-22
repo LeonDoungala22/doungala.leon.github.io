@@ -603,7 +603,7 @@
             
             const projectContent = document.getElementById('project-content');
             
-            // Keep original notebookUrl without modifications
+            // Keep original notebookUrl as requested
             let notebookUrl = project.notebookUrl;
             
             // Get current date in formatted style
@@ -616,92 +616,81 @@
             
             projectContent.innerHTML = `
               <div class="project-article">
+                <!-- Minimal Project Header -->
                 <div class="project-article-header">
                   <h1 class="project-article-title">${project.title}</h1>
-                  
                   <div class="project-article-meta">
-                    <div class="project-article-author">
-                      <div class="author-avatar">
-                        <img src="images/Foto_LEON_DOUGALA-removebg-preview-removebg-preview.png" alt="Leon Doungala">
-                      </div>
-                      <div class="author-info">
-                        <div class="author-name">Leon Doungala</div>
-                        <div class="author-role">AI/ML Engineer & Data Scientist</div>
-                      </div>
-                    </div>
-                    
                     <div class="project-article-date">
                       <i class="far fa-calendar-alt"></i> ${formattedDate}
                     </div>
-                    
                     <div class="project-article-tags">
                       ${project.tags.map(tag => `<span class="badge ${project.category === 'generative' ? 'bg-info' : 'bg-primary'}">${tag}</span>`).join('')}
                     </div>
                   </div>
                 </div>
                 
-                <div class="project-article-content">
-                  <!-- Remove the image section -->
+                <!-- Top Control Bar -->
+                <div class="notebook-top-controls">
+                  <div class="notebook-info">
+                    <span class="notebook-author">Implementation by Leon Doungala, AI/ML Engineer</span>
+                  </div>
+                  <div class="notebook-actions">
+                    <a href="${project.githubUrl}" class="action-btn github-btn" target="_blank">
+                      <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="${notebookUrl}" class="action-btn fullscreen-btn" target="_blank">
+                      <i class="fas fa-external-link-alt"></i> Open in New Tab
+                    </a>
+                    <button class="action-btn refresh-btn refresh-notebook">
+                      <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Maximum Width/Height Notebook Container -->
+                <div class="notebook-frame-container-max">
+                  <div class="loading-indicator">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Loading notebook...</div>
+                  </div>
+                  <iframe class="notebook-iframe" src="${notebookUrl}" allowfullscreen></iframe>
+                </div>
+                
+                <!-- Bottom Brief Info -->
+                <div class="project-bottom-info">
+                  <div class="project-description-toggle">
+                    <button class="toggle-description-btn" onclick="toggleDescription()">
+                      <i class="fas fa-info-circle"></i> Project Information
+                    </button>
+                  </div>
                   
-                  <div class="project-article-body">
-                    <div class="article-sidebar">
-                      <div class="article-sidebar-section">
-                        <h3 class="article-sidebar-title">Project Links</h3>
-                        <div class="article-links">
-                          <a href="${project.githubUrl}" class="article-link" target="_blank">
-                            <i class="fab fa-github"></i> GitHub Repository
-                          </a>
-                          <a href="${notebookUrl}" class="article-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Open Notebook
-                          </a>
-                        </div>
+                  <div class="project-description-panel" id="projectDescription">
+                    <div class="description-panel-content">
+                      <div class="panel-header">
+                        <h3>Project Details</h3>
+                        <button class="close-panel-btn" onclick="toggleDescription()">
+                          <i class="fas fa-times"></i>
+                        </button>
                       </div>
-                      
-                      <div class="article-sidebar-section">
-                        <h3 class="article-sidebar-title">Technologies</h3>
-                        <div class="article-tech-list">
-                          ${generateTechLevels(project.tags)}
-                        </div>
-                      </div>
-                      
-                      <div class="article-sidebar-section">
-                        <h3 class="article-sidebar-title">Share</h3>
-                        <div class="article-links">
-                          <a href="javascript:void(0)" onclick="shareProject('${project.title}', '${project.id}')" class="article-link">
-                            <i class="fas fa-share-alt"></i> Share Project
-                          </a>
-                          <a href="javascript:void(0)" onclick="copyLink('${project.id}')" class="article-link">
-                            <i class="fas fa-link"></i> Copy Link
-                          </a>
-                        </div>
-                      </div>
-                      
-                      <div class="article-sidebar-section">
-                        <h3 class="article-sidebar-title">Project Overview</h3>
-                        <div class="sidebar-description">
-                          ${project.detailedDescription}
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="article-main">
-                      <!-- Focus on the notebook as the main content -->
-                      <div class="notebook-container">
-                        <h2 class="notebook-title">Project Implementation</h2>
-                        <div class="notebook-controls">
-                          <a href="${notebookUrl}" class="notebook-control-btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Open in Full Screen
-                          </a>
-                          <button class="notebook-control-btn refresh-notebook">
-                            <i class="fas fa-sync-alt"></i> Refresh Notebook
-                          </button>
-                        </div>
-                        <div class="notebook-frame-container">
-                          <div class="loading-indicator">
-                            <div class="loading-spinner"></div>
-                            <div class="loading-text">Loading notebook...</div>
+                      <div class="panel-body">
+                        ${project.detailedDescription}
+                        
+                        <div class="tech-section">
+                          <h4>Technologies</h4>
+                          <div class="tech-pills">
+                            ${project.tags.map(tag => {
+                              const level = getTechLevel(tag);
+                              return `<span class="tech-pill tech-${level}">${tag}</span>`;
+                            }).join('')}
                           </div>
-                          <iframe class="notebook-iframe" src="${notebookUrl}" allowfullscreen></iframe>
+                        </div>
+                        
+                        <div class="author-section">
+                          <h4>Implementation by</h4>
+                          <div class="author-info">
+                            <div class="author-name">Leon Doungala</div>
+                            <div class="author-title">AI/ML Engineer & Data Scientist</div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -832,6 +821,26 @@
             .catch(err => {
               console.error('Could not copy text: ', err);
             });
+        }
+        
+        // Helper function to get tech level
+        function getTechLevel(tag) {
+          const advancedTechs = ["K-Means", "Clustering", "Machine Learning", "scikit-learn", "PCA", "Data Analysis", 
+            "Ensemble Learning", "Medical ML", "Random Forest", "XGBoost", "SVM", "Classification", "KNN", 
+            "Linear Regression", "Decision Trees", "Naive Bayes"];
+            
+          const intermediateTechs = ["NLP", "Text Classification", "Forecasting", "HR Analytics", "Financial ML", 
+            "Real Estate", "Email Filtering", "LangChain", "Medical AI", "Generative AI", "RAG", "Healthcare AI"];
+          
+          if (advancedTechs.includes(tag)) return "advanced";
+          if (intermediateTechs.includes(tag)) return "intermediate";
+          return "basic";
+        }
+        
+        // Function to toggle description panel
+        function toggleDescription() {
+          const panel = document.getElementById('projectDescription');
+          panel.classList.toggle('panel-open');
         }
     </script>
 
@@ -1778,15 +1787,6 @@
               </div>
               
               <div class="article-sidebar-section">
-                <h3 class="article-sidebar-title">Technologies</h3>
-                <div class="article-tech-list">
-                  ${generateTechLevels(project.tags)}
-                </div>
-              </div>
-              
-              <div class="article-sidebar-section">
-                <h3 class="article-sidebar-title">Share</h3>
-                <div class="article-links">
                   <a href="javascript:void(0)" onclick="shareProject('${project.title}', '${project.id}')" class="article-link">
                     <i class="fas fa-share-alt"></i> Share Project
                   </a>
