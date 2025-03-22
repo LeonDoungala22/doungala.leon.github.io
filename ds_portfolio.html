@@ -39,44 +39,58 @@
         </div>
     </nav>
 
-    <!-- Header with Particle Animation -->
+        <!-- Header with Particle Animation and Profile -->
     <header class="portfolio-header">
         <div id="particles-js"></div>
         <div class="container header-content position-relative">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mx-auto text-center">
-                    <div class="glowing-text mb-3">AI & ML PORTFOLIO</div>
-                    <h1 class="display-4 fw-bold mb-3">Machine Learning & AI Projects</h1>
-                    <p class="lead">Exploring data science, machine learning models, and generative AI applications</p>
-                    <div class="header-buttons mt-4">
-                        <a href="#project-explorer" class="btn btn-glow me-3">
-                            <i class="fas fa-search"></i> Explore Projects
-                        </a>
-                        <a href="https://github.com/LeonDoungala22" target="_blank" class="btn btn-outline-light">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Profile Showcase -->
+                    <div class="profile-showcase">
+                        <!-- Profile Photo -->
+                        <div class="profile-photo-container">
+                            <img src="images/Untitled_design-removebg-preview__1_-removebg-preview (1).png" alt="Leon Doungala" class="profile-photo">
+                        </div>
+                        
+                        <!-- Profile Info -->
+                        <div class="profile-info">
+                            <h1 class="profile-name">Leon Doungala</h1>
+                            <div class="profile-title-container">
+                                <span class="profile-title">Engineer</span>
+                                <span class="profile-title">AI/ML Engineer</span>
+                                <span class="profile-title">Data Scientist</span>
+                            </div>
+                            <div class="header-action-buttons">
+                                <a href="#project-explorer" class="header-button primary-button">
+                                    <i class="fas fa-project-diagram"></i> Explore Projects
+                                </a>
+                                <a href="https://github.com/LeonDoungala22" target="_blank" class="header-button secondary-button">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Project Explorer Section -->
+    <!-- Update this section in your project explorer -->
     <section id="project-explorer" class="py-5">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="section-title with-line">Project Explorer</h2>
-                    <p class="section-subtitle">Select a category to browse projects or search by keywords</p>
+                    <p class="section-subtitle">Discover my work in machine learning and generative AI</p>
                 </div>
             </div>
 
-            <!-- Category Selector & Search -->
+            <!-- Enhanced Category Selector & Search -->
             <div class="explorer-controls mb-5">
-                <div class="row g-4">
-                    <div class="col-md-8">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-8">
                         <div class="category-selector">
-                            <ul class="nav nav-pills nav-glowing mb-4 justify-content-center justify-content-md-start" id="projectTabs" role="tablist">
+                            <ul class="nav nav-pills nav-glowing mb-4 justify-content-center justify-content-lg-start flex-nowrap overflow-auto" id="projectTabs" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-projects" 
                                         type="button" role="tab" aria-selected="true">
@@ -98,7 +112,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="search-box">
                             <input type="text" id="projectSearch" class="form-control form-control-lg" placeholder="Search projects...">
                             <i class="fas fa-search search-icon"></i>
@@ -107,7 +121,9 @@
                 </div>
             </div>
 
-            <!-- Project Display Area -->
+          
+
+            <!-- Project Display Area with Enhanced Layout -->
             <div class="tab-content" id="projectTabContent">
                 <!-- All Projects Tab -->
                 <div class="tab-pane fade show active" id="all-projects" role="tabpanel" aria-labelledby="all-tab">
@@ -153,15 +169,38 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer bg-dark text-center py-4">
+    <!-- Enhanced Footer -->
+    <footer class="footer py-5">
         <div class="container">
-            <div class="footer-social mb-3">
-                <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/LeonDoungala22" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="mailto:doungala.leon@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="footer-brand">
+                        <span class="code-bracket">&lt;</span>Leon Doungala<span class="code-bracket">/&gt;</span>
+                    </div>
+                    <p class="mt-3">AI/ML Engineer & Data Scientist specializing in machine learning and generative AI applications.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#education">Education</a></li>
+                        <li><a href="index.html#cv">My CV</a></li>
+                        <li><a href="thesi.html">Thesis Work</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-heading">Connect</h5>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/LeonDoungala22" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="mailto:doungala.leon@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <p class="mt-3">Let's collaborate on your next AI project</p>
+                </div>
             </div>
-            <p>&copy; 2024 Leon Doungala. All rights reserved.</p>
+            <div class="footer-bottom mt-4 pt-4 text-center">
+                <p>&copy; 2024 Leon Doungala. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

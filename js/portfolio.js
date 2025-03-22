@@ -865,15 +865,22 @@ function loadProject(projectId) {
                     
                     projectContent.innerHTML = `
                       <div class="project-article">
-                        <!-- Minimal Project Header -->
+                        <!-- Minimal Project Header with Info Button -->
                         <div class="project-article-header">
                           <h1 class="project-article-title">${project.title}</h1>
                           <div class="project-article-meta">
-                            <div class="project-article-date">
-                              <i class="far fa-calendar-alt"></i> ${formattedDate}
+                            <div class="project-meta-left">
+                              <div class="project-article-date">
+                                <i class="far fa-calendar-alt"></i> ${formattedDate}
+                              </div>
+                              <div class="project-article-tags">
+                                ${project.tags.map(tag => `<span class="badge ${project.category === 'generative' ? 'bg-info' : 'bg-primary'}">${tag}</span>`).join('')}
+                              </div>
                             </div>
-                            <div class="project-article-tags">
-                              ${project.tags.map(tag => `<span class="badge ${project.category === 'generative' ? 'bg-info' : 'bg-primary'}">${tag}</span>`).join('')}
+                            <div class="project-meta-right">
+                              <button class="project-info-btn toggle-description-btn" onclick="toggleDescription()">
+                                <i class="fas fa-info-circle"></i> Project Information
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -905,41 +912,33 @@ function loadProject(projectId) {
                           <iframe class="notebook-iframe" src="${notebookUrl}" allowfullscreen></iframe>
                         </div>
                         
-                        <!-- Bottom Brief Info -->
-                        <div class="project-bottom-info">
-                          <div class="project-description-toggle">
-                            <button class="toggle-description-btn" onclick="toggleDescription()">
-                              <i class="fas fa-info-circle"></i> Project Information
-                            </button>
-                          </div>
-                          
-                          <div class="project-description-panel" id="projectDescription">
-                            <div class="description-panel-content">
-                              <div class="panel-header">
-                                <h3>Project Details</h3>
-                                <button class="close-panel-btn" onclick="toggleDescription()">
-                                  <i class="fas fa-times"></i>
-                                </button>
-                              </div>
-                              <div class="panel-body">
-                                ${project.detailedDescription}
-                                
-                                <div class="tech-section">
-                                  <h4>Technologies</h4>
-                                  <div class="tech-pills">
-                                    ${project.tags.map(tag => {
-                                      const level = getTechLevel(tag);
-                                      return `<span class="tech-pill tech-${level}">${tag}</span>`;
-                                    }).join('')}
-                                  </div>
+                        <!-- Project Information Panel -->
+                        <div class="project-description-panel" id="projectDescription">
+                          <div class="description-panel-content">
+                            <div class="panel-header">
+                              <h3>Project Details</h3>
+                              <button class="close-panel-btn" onclick="toggleDescription()">
+                                <i class="fas fa-times"></i>
+                              </button>
+                            </div>
+                            <div class="panel-body">
+                              ${project.detailedDescription}
+                              
+                              <div class="tech-section">
+                                <h4>Technologies</h4>
+                                <div class="tech-pills">
+                                  ${project.tags.map(tag => {
+                                    const level = getTechLevel(tag);
+                                    return `<span class="tech-pill tech-${level}">${tag}</span>`;
+                                  }).join('')}
                                 </div>
-                                
-                                <div class="author-section">
-                                  <h4>Implementation by</h4>
-                                  <div class="author-info">
-                                    <div class="author-name">Leon Doungala</div>
-                                    <div class="author-title">AI/ML Engineer & Data Scientist</div>
-                                  </div>
+                              </div>
+                              
+                              <div class="author-section">
+                                <h4>Implementation by</h4>
+                                <div class="author-info">
+                                  <div class="author-name">Leon Doungala</div>
+                                  <div class="author-title">AI/ML Engineer & Data Scientist</div>
                                 </div>
                               </div>
                             </div>
@@ -1091,4 +1090,279 @@ function loadProject(projectId) {
                   const panel = document.getElementById('projectDescription');
                   panel.classList.toggle('panel-open');
                 }
+
+// Add this to your DOMContentLoaded event to update the stats counters
+document.addEventListener('DOMContentLoaded', function() {
+    // Populate project grids
+    populateProjects('projectGrid', projects);
+    populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
+    populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
+    
+    // Update stats counters with animation
+    updateStatsCounters();
+    
+    // Rest of your initialization code...
+});
+
+// Function to animate counting up for stats
+function updateStatsCounters() {
+    const totalProjects = projects.length;
+    const mlProjects = projects.filter(p => p.category === 'ml').length;
+    const genProjects = projects.filter(p => p.category === 'generative').length;
+    
+    animateCounter('totalProjects', totalProjects);
+    animateCounter('mlProjects', mlProjects);
+    animateCounter('genProjects', genProjects);
+}
+
+function animateCounter(elementId, targetValue) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    let currentValue = 0;
+    const duration = 1500; // ms
+    const stepTime = 30; // ms
+    const totalSteps = duration / stepTime;
+    const stepValue = targetValue / totalSteps;
+    
+    const counterAnimation = setInterval(() => {
+        currentValue += stepValue;
+        if (currentValue >= targetValue) {
+            currentValue = targetValue;
+            clearInterval(counterAnimation);
+        }
+        element.textContent = Math.floor(currentValue);
+    }, stepTime);
+}
+
+// Enhanced project card creation
+function populateProjects(gridId, projectsList) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    
+    grid.innerHTML = '';
+    
+    if (projectsList.length === 0) {
+        grid.innerHTML = `
+            <div class="empty-projects">
+                <i class="fas fa-folder-open"></i>
+                <h3>No projects found</h3>
+                <p>Try adjusting your search or select a different category.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    projectsList.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        projectCard.dataset.id = project.id;
+        projectCard.dataset.category = project.category;
+        projectCard.dataset.tags = project.tags.join(',').toLowerCase();
+        
+        const displayTags = project.tags.slice(0, 3);
+        const remainingTagsCount = project.tags.length > 3 ? project.tags.length - 3 : 0;
+        
+        projectCard.innerHTML = `
+            <div class="project-image">
+                <img src="${project.image || 'images/placeholder.jpg'}" alt="${project.title}" loading="lazy">
+                <div class="project-category ${project.category === 'generative' ? 'cat-gen' : 'cat-ml'}">
+                    ${project.category === 'generative' ? 'Generative AI' : 'Machine Learning'}
+                </div>
+            </div>
+            <div class="project-body">
+                <h3 class="project-title">${project.title}</h3>
+                <p class="project-description">${project.description}</p>
+                <div class="project-tech">
+                    ${displayTags.map(tag => `<span class="tech-badge">${tag}</span>`).join('')}
+                    ${remainingTagsCount > 0 ? `<span class="tech-badge">+${remainingTagsCount} more</span>` : ''}
+                </div>
+                <div class="project-links">
+                    <button class="btn btn-view-project" data-id="${project.id}">
+                        <i class="fas fa-eye"></i> View Project
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        grid.appendChild(projectCard);
+        
+        projectCard.querySelector('.btn-view-project').addEventListener('click', function() {
+            loadProject(this.dataset.id);
+        });
+    });
+}
+
+// Function to toggle description panel
+function toggleDescription() {
+  const panel = document.getElementById('projectDescription');
+  panel.classList.toggle('panel-open');
+}
+
+// Define a single DOMContentLoaded event handler that combines all initialization
+document.addEventListener('DOMContentLoaded', function() {
+  // Check URL for direct project links
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('project');
+  
+  // Initialize particles.js if available
+  if (typeof particlesJS !== 'undefined') {
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#4285f4" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#4285f4",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: true,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 }
+        }
+      }
+    });
+  }
+  
+  // Check if we need to update the portfolio link in the main index page
+  if (window.location.pathname.includes('index.html')) {
+    updateMainNavLink();
+  }
+  
+  // Populate project grids if the elements exist
+  if (document.getElementById('projectGrid')) {
+    populateProjects('projectGrid', projects);
+    populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
+    populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
+    
+    // Update stats counters with animation
+    updateStatsCounters();
+  }
+  
+  // Set up event listeners for project interaction
+  if (document.getElementById('back-to-projects')) {
+    document.getElementById('back-to-projects').addEventListener('click', function() {
+      document.getElementById('active-project').classList.add('d-none');
+      document.getElementById('project-explorer').classList.remove('d-none');
+      window.scrollTo(0, document.getElementById('project-explorer').offsetTop - 100);
+    });
+  }
+  
+  // Search functionality
+  const projectSearch = document.getElementById('projectSearch');
+  if (projectSearch) {
+    projectSearch.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      filterProjects(searchTerm);
+    });
+  }
+  
+  // Handle direct project loading if URL parameter exists
+  if (projectId) {
+    const project = projects.find(p => p.id === projectId);
+    if (project) {
+      // Load the project directly
+      setTimeout(() => {
+        loadProject(projectId);
+      }, 500);
+    }
+  }
+});
+
+// Function to animate counting up for stats
+function updateStatsCounters() {
+  const totalProjects = projects.length;
+  const mlProjects = projects.filter(p => p.category === 'ml').length;
+  const genProjects = projects.filter(p => p.category === 'generative').length;
+  
+  animateCounter('totalProjects', totalProjects);
+  animateCounter('mlProjects', mlProjects);
+  animateCounter('genProjects', genProjects);
+}
+
+function animateCounter(elementId, targetValue) {
+  const element = document.getElementById(elementId);
+  if (!element) return;
+  
+  let currentValue = 0;
+  const duration = 1500; // ms
+  const stepTime = 30; // ms
+  const totalSteps = duration / stepTime;
+  const stepValue = targetValue / totalSteps;
+  
+  const counterAnimation = setInterval(() => {
+    currentValue += stepValue;
+    if (currentValue >= targetValue) {
+      currentValue = targetValue;
+      clearInterval(counterAnimation);
+    }
+    element.textContent = Math.floor(currentValue);
+  }, stepTime);
+}
+
+// Filter projects based on search term
+function filterProjects(searchTerm) {
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  projectCards.forEach(card => {
+    const title = card.querySelector('.project-title').textContent.toLowerCase();
+    const description = card.querySelector('.project-description').textContent.toLowerCase();
+    const tags = card.dataset.tags.toLowerCase();
+    
+    if (title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm)) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  
+  // Check for empty state in each tab
+  const tabs = ['projectGrid', 'mlProjectGrid', 'genProjectGrid'];
+  tabs.forEach(tabId => {
+    const grid = document.getElementById(tabId);
+    if (!grid) return;
+    
+    const visibleCards = grid.querySelectorAll('.project-card[style="display: flex;"]');
+    
+    if (visibleCards.length === 0 && !grid.querySelector('.empty-search-results')) {
+      grid.innerHTML += `
+        <div class="empty-search-results empty-projects">
+          <i class="fas fa-search"></i>
+          <h3>No matching projects</h3>
+          <p>Try different search terms or clear your search</p>
+        </div>
+      `;
+    } else if (visibleCards.length > 0) {
+      const emptyState = grid.querySelector('.empty-search-results');
+      if (emptyState) emptyState.remove();
+    }
+  });
+}
+
+// Update portfolio links in navigation
+function updateMainNavLink() {
+  const portfolioLinks = document.querySelectorAll('a[href="_portfolio.html"]');
+  portfolioLinks.forEach(link => {
+    link.href = "ml_and_ds_portfolio.html";
+  });
+}
 
