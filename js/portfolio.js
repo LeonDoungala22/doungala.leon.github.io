@@ -447,7 +447,7 @@ function loadProject(projectId) {
                         description: "Ensemble learning methods for medical prediction of diabetes risk.",
                         category: "ml",
                         tags: ["Ensemble Learning", "Medical ML", "Random Forest", "XGBoost"],
-                        image: "images/Screenshot 2025-01-02 at 21.08.13.png",
+                        image: "images/diabete.jpeg",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
                         githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
                         detailedDescription: `
@@ -492,7 +492,7 @@ function loadProject(projectId) {
                         description: "NLP-based classification of movie reviews using Naive Bayes.",
                         category: "ml",
                         tags: ["NLP", "Naive Bayes", "Text Classification", "scikit-learn"],
-                        image: "images/sentiment-analysis.jpg",
+                        image: "images/sentiment-analysis.png",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
                         githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
                         detailedDescription: `
@@ -515,7 +515,7 @@ function loadProject(projectId) {
                         description: "KNN algorithm for diagnosing breast tumors as malignant or benign.",
                         category: "ml",
                         tags: ["KNN", "Medical ML", "Classification", "scikit-learn"],
-                        image: "images/breast-cancer.jpg",
+                        image: "images/breast-cancer.jpeg",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/KNN%20(%20K%20Nearest%20Neighbors%20)/Breast%20Cancer%20Classification/main.ipynb",
                         githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/KNN%20(%20K%20Nearest%20Neighbors%20)/Breast%20Cancer%20Classification/main.ipynb",
                         detailedDescription: `
@@ -538,7 +538,7 @@ function loadProject(projectId) {
                         description: "Linear regression model for salary forecasting based on experience and skills.",
                         category: "ml",
                         tags: ["Linear Regression", "Forecasting", "scikit-learn"],
-                        image: "images/salary-prediction.jpg",
+                        image: "images/salary-prediction.jpeg",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
                         githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
                         detailedDescription: `
@@ -561,7 +561,7 @@ function loadProject(projectId) {
                         description: "Decision Trees for detecting fraudulent transactions in credit card data.",
                         category: "ml",
                         tags: ["Decision Trees", "Anomaly Detection", "Financial ML"],
-                        image: "images/fraud-detection.jpg",
+                        image: "images/1637FraudDetection.jpeg",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20classification/Credit%20Card%20Fraud%20Detection/main.ipynb",
                         githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20classification/Credit%20Card%20Fraud%20Detection/main.ipynb",
                         detailedDescription: `
@@ -584,7 +584,7 @@ function loadProject(projectId) {
                         description: "Decision Tree Regressor for real estate price prediction.",
                         category: "ml",
                         tags: ["Decision Tree Regression", "Real Estate", "Forecasting"],
-                        image: "images/housing-prices.jpg",
+                        image: "images/housing-prices.jpeg",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
                         githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
                         detailedDescription: `
@@ -607,7 +607,7 @@ function loadProject(projectId) {
                         description: "Logistic Regression for filtering spam emails from legitimate communications.",
                         category: "ml",
                         tags: ["Logistic Regression", "NLP", "Email Filtering"],
-                        image: "images/spam-detection.jpg",
+                        image: "images/spam-detection.jpeg",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
                         githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
                         detailedDescription: `
@@ -653,7 +653,7 @@ function loadProject(projectId) {
                         description: "RAG-based system for CV-job description matching.",
                         category: "generative",
                         tags: ["RAG", "Resume Analysis", "NLP", "Semantic Search"],
-                        image: "images/ATS written .png",
+                        image: "images/imag1.png",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0/blob/main/ATS_System.ipynb",
                         githubUrl: "https://github.com/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0",
                         detailedDescription: `
@@ -675,7 +675,7 @@ function loadProject(projectId) {
                         description: "Medical assistant using RAG workflows for diabetes analysis.",
                         category: "generative",
                         tags: ["RAG", "Healthcare AI", "Conversational AI", "LangChain"],
-                        image: "images/diabetes-chatbot.jpg",
+                        image: "images/Screenshot 2025-01-02 at 21.08.13.png",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Chatbot.ipynb",
                         githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization",
                         detailedDescription: `
@@ -1365,4 +1365,116 @@ function updateMainNavLink() {
     link.href = "ml_and_ds_portfolio.html";
   });
 }
+
+/* Add this to your portfolio.js file or script section */
+document.addEventListener('DOMContentLoaded', function() {
+  // Particles.js configuration
+  if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 40,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#4285f4"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.3,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 0.5,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 2,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#4285f4",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 0.4
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 4,
+            "duration": 2,
+            "opacity": 0.8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 2
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  }
+});
 
