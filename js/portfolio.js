@@ -393,300 +393,300 @@ function loadProject(projectId) {
         
                 // Project data structure with all projects including images
                 const projects = [
-                    {
-                        id: "customer-segmentation",
-                        title: "Customer Segmentation using K-Means",
-                        description: "Clustering analysis for customer segmentation using K-Means algorithm.",
-                        category: "ml",
-                        tags: ["K-Means", "Clustering", "Machine Learning", "scikit-learn"],
-                        image: "images/download (1).jpeg",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Clustering/K-Means/Customer%20Segmentation%20using%20K-Means%20Clustering/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/advanced-customer-segmentation-ai/blob/main/Customer_Segmentation_K_Means.ipynb",
-                        detailedDescription: `
-                            <p>This project demonstrates how to implement customer segmentation using K-Means clustering in Python with scikit-learn. Customer segmentation is a common business strategy that involves grouping customers with similar characteristics or behaviors to target marketing campaigns more effectively.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>K-Means Clustering</li>
-                                <li>Data Preprocessing and Feature Engineering</li>
-                                <li>Dimensionality Reduction</li>
-                                <li>Data Visualization</li>
-                            </ul>
-                            <h3>Business Impact</h3>
-                            <p>The analysis helps businesses to better understand different customer groups, personalize marketing strategies, optimize resource allocation, and improve customer satisfaction by meeting specific needs of different segments.</p>
-                        `
-                    },
-                    {
-                        id: "hr-analytics",
-                        title: "Human Resources Analytics",
-                        description: "PCA and clustering for HR data analysis to identify employee patterns.",
-                        category: "ml",
-                        tags: ["PCA", "Data Analysis", "HR Analytics", "Employee Retention"],
-                        image: "images/HR-Analytics.jpeg",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb",
-                        detailedDescription: `
-                            <p>This project uses Principal Component Analysis (PCA) and clustering techniques to analyze HR data and identify patterns related to employee satisfaction, performance, and retention.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>Principal Component Analysis (PCA)</li>
-                                <li>Hierarchical Clustering</li>
-                                <li>Feature Importance Analysis</li>
-                                <li>Correlation Analysis</li>
-                            </ul>
-                            <h3>Business Applications</h3>
-                            <p>Human Resources departments can use these insights to develop better retention strategies, improve workplace satisfaction, and identify factors that contribute to employee turnover.</p>
-                        `
-                    },
-                    {
-                        id: "diabetes-prediction",
-                        title: "Diabetes Prediction and Characterization",
-                        description: "Ensemble learning methods for medical prediction of diabetes risk.",
-                        category: "ml",
-                        tags: ["Ensemble Learning", "Medical ML", "Random Forest", "XGBoost"],
-                        image: "images/diabete.jpeg",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
-                        detailedDescription: `
-                            <p>This project implements ensemble learning methods to predict diabetes risk based on various health metrics and patient data.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>Random Forest Classification</li>
-                                <li>XGBoost</li>
-                                <li>Feature Importance Analysis</li>
-                                <li>Cross-Validation</li>
-                                <li>Hyperparameter Tuning</li>
-                            </ul>
-                            <h3>Healthcare Applications</h3>
-                            <p>The models developed in this project can help healthcare providers identify patients at high risk for diabetes, allowing for earlier intervention and preventative care measures.</p>
-                        `
-                    },
-                    {
-                        id: "heart-disease",
-                        title: "Heart Disease Prediction",
-                        description: "SVM and NLP techniques for medical diagnosis and risk assessment.",
-                        category: "ml",
-                        tags: ["SVM", "Medical ML", "Classification", "scikit-learn"],
-                        image: "images/8_Main_Types_of_Heart_Disease.jpeg",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
-                        detailedDescription: `
-                            <p>This project focuses on heart disease prediction using Support Vector Machines (SVM) and explores various medical indicators to assess risk factors.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>Support Vector Machines (SVM)</li>
-                                <li>Feature Selection and Engineering</li>
-                                <li>Model Evaluation and Validation</li>
-                                <li>Medical Data Analysis</li>
-                            </ul>
-                            <h3>Healthcare Applications</h3>
-                            <p>The predictive models can assist cardiologists in early diagnosis, risk stratification, and treatment planning for heart disease patients, potentially saving lives through early intervention.</p>
-                        `
-                    },
-                    {
-                        id: "sentiment-analysis",
-                        title: "Sentiment Analysis on IMDb Reviews",
-                        description: "NLP-based classification of movie reviews using Naive Bayes.",
-                        category: "ml",
-                        tags: ["NLP", "Naive Bayes", "Text Classification", "scikit-learn"],
-                        image: "images/sentiment-analysis.png",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
-                        detailedDescription: `
-                            <p>This project applies Natural Language Processing techniques to analyze sentiment in IMDb movie reviews, classifying them as positive or negative using Naive Bayes algorithms.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>Natural Language Processing (NLP)</li>
-                                <li>Text Preprocessing and Tokenization</li>
-                                <li>Feature Extraction with TF-IDF</li>
-                                <li>Naive Bayes Classification</li>
-                                <li>Model Performance Evaluation</li>
-                            </ul>
-                            <h3>Business Applications</h3>
-                            <p>This sentiment analysis approach can be adapted for various business applications including brand monitoring, customer feedback analysis, and social media sentiment tracking.</p>
-                        `
-                    },
-                    {
-                        id: "breast-cancer",
-                        title: "Breast Cancer Classification",
-                        description: "KNN algorithm for diagnosing breast tumors as malignant or benign.",
-                        category: "ml",
-                        tags: ["KNN", "Medical ML", "Classification", "scikit-learn"],
-                        image: "images/breast-cancer.jpeg",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/KNN%20(%20K%20Nearest%20Neighbors%20)/Breast%20Cancer%20Classification/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/KNN%20(%20K%20Nearest%20Neighbors%20)/Breast%20Cancer%20Classification/main.ipynb",
-                        detailedDescription: `
-                            <p>This project uses the K-Nearest Neighbors (KNN) algorithm to classify breast cancer tumors as malignant or benign based on features extracted from digitized images of breast mass.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>K-Nearest Neighbors Algorithm</li>
-                                <li>Medical Image Feature Analysis</li>
-                                <li>Hyperparameter Optimization</li>
-                                <li>Feature Scaling and Preprocessing</li>
-                                <li>Evaluation Metrics for Medical Diagnostics</li>
-                            </ul>
-                            <h3>Healthcare Impact</h3>
-                            <p>Early and accurate breast cancer detection can significantly improve patient outcomes. This model demonstrates how machine learning can assist in medical diagnostics by providing a second opinion to pathologists.</p>
-                        `
-                    },
-                    {
-                        id: "salary-prediction",
-                        title: "Salary Prediction",
-                        description: "Linear regression model for salary forecasting based on experience and skills.",
-                        category: "ml",
-                        tags: ["Linear Regression", "Forecasting", "scikit-learn"],
-                        image: "images/salary-prediction.jpeg",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
-                        detailedDescription: `
-                            <p>This project develops a linear regression model to predict salaries based on years of experience, education level, and other relevant factors that influence compensation.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>Linear Regression</li>
-                                <li>Feature Engineering</li>
-                                <li>Data Visualization</li>
-                                <li>Statistical Analysis</li>
-                                <li>Model Validation and Residual Analysis</li>
-                            </ul>
-                            <h3>Business Applications</h3>
-                            <p>HR departments and recruiting firms can use this model to establish fair salary ranges, conduct market comparisons, and improve compensation strategies to attract and retain talent.</p>
-                        `
-                    },
-                    {
-                        id: "fraud-detection",
-                        title: "Credit Card Fraud Detection",
-                        description: "Decision Trees for detecting fraudulent transactions in credit card data.",
-                        category: "ml",
-                        tags: ["Decision Trees", "Anomaly Detection", "Financial ML"],
-                        image: "images/1637FraudDetection.jpeg",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20classification/Credit%20Card%20Fraud%20Detection/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20classification/Credit%20Card%20Fraud%20Detection/main.ipynb",
-                        detailedDescription: `
-                            <p>This project focuses on detecting fraudulent credit card transactions using Decision Tree algorithms, addressing the challenges of imbalanced datasets in financial fraud detection.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>Decision Tree Classification</li>
-                                <li>Handling Imbalanced Datasets</li>
-                                <li>Feature Selection and Importance</li>
-                                <li>Cost-Sensitive Learning</li>
-                                <li>Performance Metrics for Fraud Detection</li>
-                            </ul>
-                            <h3>Financial Industry Applications</h3>
-                            <p>Financial institutions can implement similar systems to detect and prevent fraudulent transactions in real-time, reducing losses and protecting customers while maintaining a seamless experience for legitimate transactions.</p>
-                        `
-                    },
-                    {
-                        id: "housing-prices",
-                        title: "Predicting Housing Prices",
-                        description: "Decision Tree Regressor for real estate price prediction.",
-                        category: "ml",
-                        tags: ["Decision Tree Regression", "Real Estate", "Forecasting"],
-                        image: "images/housing-prices.jpeg",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
-                        detailedDescription: `
-                            <p>This project develops a Decision Tree Regression model to predict housing prices based on various features like location, size, amenities, and other relevant factors that influence real estate valuation.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>Decision Tree Regression</li>
-                                <li>Feature Engineering and Selection</li>
-                                <li>Regression Analysis</li>
-                                <li>Cross-Validation Techniques</li>
-                                <li>Model Evaluation Metrics for Regression</li>
-                            </ul>
-                            <h3>Real Estate Applications</h3>
-                            <p>Real estate agencies, appraisers, and property investors can use this model to estimate property values, identify undervalued properties, and make data-driven investment decisions in the housing market.</p>
-                        `
-                    },
-                    {
-                        id: "spam-email",
-                        title: "Spam Email Classification",
-                        description: "Logistic Regression for filtering spam emails from legitimate communications.",
-                        category: "ml",
-                        tags: ["Logistic Regression", "NLP", "Email Filtering"],
-                        image: "images/spam-detection.jpeg",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
-                        detailedDescription: `
-                            <p>This project implements Logistic Regression to classify emails as spam or legitimate (ham) based on their content and header information, creating an effective email filtering system.</p>
-                            <h3>Key Techniques</h3>
-                            <ul>
-                                <li>Logistic Regression</li>
-                                <li>Text Preprocessing and Vectorization</li>
-                                <li>Feature Engineering for Email Content</li>
-                                <li>Model Evaluation and Threshold Optimization</li>
-                                <li>Confusion Matrix Analysis</li>
-                            </ul>
-                            <h3>Practical Applications</h3>
-                            <p>The techniques demonstrated in this project can be applied to develop email filtering systems that protect users from phishing attempts, malware, and unwanted marketing communications while ensuring important messages reach their inbox.</p>
-                        `
-                    },
-                    {
-                        id: "virtual-doctor",
-                        title: "Virtual Doctor AI Assistant",
-                        description: "AI-powered system for medical guidance based on symptoms.",
-                        category: "generative",
-                        tags: ["LangChain", "Medical AI", "NLP", "Generative AI"],
-                        image: "images/virtual-doctor-ai.png",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/AI-Health-Assistant/blob/main/AI_Health_Assistant.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/AI-Health-Assistant",
-                        detailedDescription: `
-                            <p>The Virtual Doctor AI Assistant is a generative AI application built with LangChain that provides medical guidance based on user-reported symptoms.</p>
-                            <h3>Key Technologies</h3>
-                            <ul>
-                                <li>LangChain Framework</li>
-                                <li>Large Language Models</li>
-                                <li>Medical Knowledge Base Integration</li>
-                                <li>Conversational AI</li>
-                            </ul>
-                            <h3>Features</h3>
-                            <p>The assistant can understand symptom descriptions, ask relevant follow-up questions, provide potential conditions that match the symptoms, and suggest when to seek professional medical help.</p>
-                            <p class="note">Note: This system is designed for educational purposes only and does not replace professional medical advice.</p>
-                        `
-                    },
-                    {
-                        id: "ats-system",
-                        title: "AI Semantic ATS System for CV Matching",
-                        description: "RAG-based system for CV-job description matching.",
-                        category: "generative",
-                        tags: ["RAG", "Resume Analysis", "NLP", "Semantic Search"],
-                        image: "images/imag1.png",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0/blob/main/ATS_System.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0",
-                        detailedDescription: `
-                            <p>This project implements a semantic Applicant Tracking System (ATS) using Retrieval Augmented Generation (RAG) to match CVs/resumes with job descriptions.</p>
-                            <h3>Key Technologies</h3>
-                            <ul>
-                                <li>Retrieval Augmented Generation (RAG)</li>
-                                <li>Semantic Search</li>
-                                <li>Document Processing</li>
-                                <li>Vector Embeddings</li>
-                            </ul>
-                            <h3>Applications</h3>
-                            <p>The system helps recruiters efficiently identify qualified candidates by semantically matching resume content with job requirements, going beyond simple keyword matching to understand skills and experiences in context.</p>
-                        `
-                    },
-                    {
-                        id: "diabetes-chatbot",
-                        title: "Conversational AI for Diabetes Prediction",
-                        description: "Medical assistant using RAG workflows for diabetes analysis.",
-                        category: "generative",
-                        tags: ["RAG", "Healthcare AI", "Conversational AI", "LangChain"],
-                        image: "images/Screenshot 2025-01-02 at 21.08.13.png",
-                        notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Chatbot.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization",
-                        detailedDescription: `
-                            <p>This project integrates conversational AI with diabetes prediction models to create an interactive system that helps assess diabetes risk through natural language conversation.</p>
-                            <h3>Key Technologies</h3>
-                            <ul>
-                                <li>RAG (Retrieval Augmented Generation)</li>
-                                <li>LangChain for Workflow Orchestration</li>
-                                <li>Diabetes Prediction Models</li>
-                                <li>Conversational UI</li>
-                            </ul>
-                            <h3>Healthcare Applications</h3>
-                            <p>This system can be deployed in healthcare settings to help patients understand their diabetes risk, provide educational content about diabetes prevention, and support healthcare providers in efficient patient screening.</p>
-                        `
-                    }
+                  {
+                    id: "customer-segmentation",
+                    title: "Customer Segmentation using K-Means",
+                    description: "Clustering analysis for customer segmentation using K-Means algorithm.",
+                    category: "ml",
+                    tags: ["K-Means", "Clustering", "Machine Learning", "scikit-learn"],
+                    image: "images/download (1).jpeg",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Clustering/K-Means/Customer%20Segmentation%20using%20K-Means%20Clustering/main.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/advanced-customer-segmentation-ai/blob/main/Customer_Segmentation_K_Means.ipynb",
+                    detailedDescription: `
+                      <p>This project demonstrates how to implement customer segmentation using K-Means clustering in Python with scikit-learn. Customer segmentation is a common business strategy that involves grouping customers with similar characteristics or behaviors to target marketing campaigns more effectively.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>K-Means Clustering</li>
+                        <li>Data Preprocessing and Feature Engineering</li>
+                        <li>Dimensionality Reduction</li>
+                        <li>Data Visualization</li>
+                      </ul>
+                      <h3>Business Impact</h3>
+                      <p>The analysis helps businesses to better understand different customer groups, personalize marketing strategies, optimize resource allocation, and improve customer satisfaction by meeting specific needs of different segments.</p>
+                    `
+                  },
+                  {
+                    id: "hr-analytics",
+                    title: "Human Resources Analytics",
+                    description: "PCA and clustering for HR data analysis to identify employee patterns.",
+                    category: "ml",
+                    tags: ["PCA", "Data Analysis", "HR Analytics", "Employee Retention"],
+                    image: "images/HR-Analytics.jpeg",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb",
+                    detailedDescription: `
+                      <p>This project uses Principal Component Analysis (PCA) and clustering techniques to analyze HR data and identify patterns related to employee satisfaction, performance, and retention.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>Principal Component Analysis (PCA)</li>
+                        <li>Hierarchical Clustering</li>
+                        <li>Feature Importance Analysis</li>
+                        <li>Correlation Analysis</li>
+                      </ul>
+                      <h3>Business Applications</h3>
+                      <p>Human Resources departments can use these insights to develop better retention strategies, improve workplace satisfaction, and identify factors that contribute to employee turnover.</p>
+                    `
+                  },
+                  {
+                    id: "diabetes-prediction",
+                    title: "Diabetes Prediction and Characterization",
+                    description: "Ensemble learning methods for medical prediction of diabetes risk.",
+                    category: "ml",
+                    tags: ["Ensemble Learning", "Medical ML", "Random Forest", "XGBoost"],
+                    image: "images/diabete.jpeg",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
+                    detailedDescription: `
+                      <p>This project implements ensemble learning methods to predict diabetes risk based on various health metrics and patient data.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>Random Forest Classification</li>
+                        <li>XGBoost</li>
+                        <li>Feature Importance Analysis</li>
+                        <li>Cross-Validation</li>
+                        <li>Hyperparameter Tuning</li>
+                      </ul>
+                      <h3>Healthcare Applications</h3>
+                      <p>The models developed in this project can help healthcare providers identify patients at high risk for diabetes, allowing for earlier intervention and preventative care measures.</p>
+                    `
+                  },
+                  {
+                    id: "heart-disease",
+                    title: "Heart Disease Prediction",
+                    description: "SVM and NLP techniques for medical diagnosis and risk assessment.",
+                    category: "ml",
+                    tags: ["SVM", "Medical ML", "Classification", "scikit-learn"],
+                    image: "images/8_Main_Types_of_Heart_Disease.jpeg",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
+                    detailedDescription: `
+                      <p>This project focuses on heart disease prediction using Support Vector Machines (SVM) and explores various medical indicators to assess risk factors.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>Support Vector Machines (SVM)</li>
+                        <li>Feature Selection and Engineering</li>
+                        <li>Model Evaluation and Validation</li>
+                        <li>Medical Data Analysis</li>
+                      </ul>
+                      <h3>Healthcare Applications</h3>
+                      <p>The predictive models can assist cardiologists in early diagnosis, risk stratification, and treatment planning for heart disease patients, potentially saving lives through early intervention.</p>
+                    `
+                  },
+                  {
+                    id: "sentiment-analysis",
+                    title: "Sentiment Analysis on IMDb Reviews",
+                    description: "NLP-based classification of movie reviews using Naive Bayes.",
+                    category: "ml",
+                    tags: ["NLP", "Naive Bayes", "Text Classification", "scikit-learn"],
+                    image: "images/sentiment-analysis.png",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
+                    detailedDescription: `
+                      <p>This project applies Natural Language Processing techniques to analyze sentiment in IMDb movie reviews, classifying them as positive or negative using Naive Bayes algorithms.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>Natural Language Processing (NLP)</li>
+                        <li>Text Preprocessing and Tokenization</li>
+                        <li>Feature Extraction with TF-IDF</li>
+                        <li>Naive Bayes Classification</li>
+                        <li>Model Performance Evaluation</li>
+                      </ul>
+                      <h3>Business Applications</h3>
+                      <p>This sentiment analysis approach can be adapted for various business applications including brand monitoring, customer feedback analysis, and social media sentiment tracking.</p>
+                    `
+                  },
+                  {
+                    id: "breast-cancer",
+                    title: "Breast Cancer Classification",
+                    description: "KNN algorithm for diagnosing breast tumors as malignant or benign.",
+                    category: "ml",
+                    tags: ["KNN", "Medical ML", "Classification", "scikit-learn"],
+                    image: "images/breast-cancer.jpeg",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/KNN%20(%20K%20Nearest%20Neighbors%20)/Breast%20Cancer%20Classification/main.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/KNN%20(%20K%20Nearest%20Neighbors%20)/Breast%20Cancer%20Classification/main.ipynb",
+                    detailedDescription: `
+                      <p>This project uses the K-Nearest Neighbors (KNN) algorithm to classify breast cancer tumors as malignant or benign based on features extracted from digitized images of breast mass.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>K-Nearest Neighbors Algorithm</li>
+                        <li>Medical Image Feature Analysis</li>
+                        <li>Hyperparameter Optimization</li>
+                        <li>Feature Scaling and Preprocessing</li>
+                        <li>Evaluation Metrics for Medical Diagnostics</li>
+                      </ul>
+                      <h3>Healthcare Impact</h3>
+                      <p>Early and accurate breast cancer detection can significantly improve patient outcomes. This model demonstrates how machine learning can assist in medical diagnostics by providing a second opinion to pathologists.</p>
+                    `
+                  },
+                  {
+                    id: "salary-prediction",
+                    title: "Salary Prediction",
+                    description: "Linear regression model for salary forecasting based on experience and skills.",
+                    category: "ml",
+                    tags: ["Linear Regression", "Forecasting", "scikit-learn"],
+                    image: "images/salary-prediction.jpeg",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
+                    detailedDescription: `
+                      <p>This project develops a linear regression model to predict salaries based on years of experience, education level, and other relevant factors that influence compensation.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>Linear Regression</li>
+                        <li>Feature Engineering</li>
+                        <li>Data Visualization</li>
+                        <li>Statistical Analysis</li>
+                        <li>Model Validation and Residual Analysis</li>
+                      </ul>
+                      <h3>Business Applications</h3>
+                      <p>HR departments and recruiting firms can use this model to establish fair salary ranges, conduct market comparisons, and improve compensation strategies to attract and retain talent.</p>
+                    `
+                  },
+                  {
+                    id: "fraud-detection",
+                    title: "Credit Card Fraud Detection",
+                    description: "Decision Trees for detecting fraudulent transactions in credit card data.",
+                    category: "ml",
+                    tags: ["Decision Trees", "Anomaly Detection", "Financial ML"],
+                    image: "images/1637FraudDetection.jpeg",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Advanced-Credit-Card-Fraud-Detection/blob/main/main.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Advanced-Credit-Card-Fraud-Detection/blob/main/main.ipynb",
+                    detailedDescription: `
+                      <p>This project focuses on detecting fraudulent credit card transactions using Decision Tree algorithms, addressing the challenges of imbalanced datasets in financial fraud detection.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>Decision Tree Classification</li>
+                        <li>Handling Imbalanced Datasets</li>
+                        <li>Feature Selection and Importance</li>
+                        <li>Cost-Sensitive Learning</li>
+                        <li>Performance Metrics for Fraud Detection</li>
+                      </ul>
+                      <h3>Financial Industry Applications</h3>
+                      <p>Financial institutions can implement similar systems to detect and prevent fraudulent transactions in real-time, reducing losses and protecting customers while maintaining a seamless experience for legitimate transactions.</p>
+                    `
+                  },
+                  {
+                    id: "housing-prices",
+                    title: "Predicting Housing Prices",
+                    description: "Decision Tree Regressor for real estate price prediction.",
+                    category: "ml",
+                    tags: ["Decision Tree Regression", "Real Estate", "Forecasting"],
+                    image: "images/housing-prices.jpeg",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
+                    detailedDescription: `
+                      <p>This project develops a Decision Tree Regression model to predict housing prices based on various features like location, size, amenities, and other relevant factors that influence real estate valuation.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>Decision Tree Regression</li>
+                        <li>Feature Engineering and Selection</li>
+                        <li>Regression Analysis</li>
+                        <li>Cross-Validation Techniques</li>
+                        <li>Model Evaluation Metrics for Regression</li>
+                      </ul>
+                      <h3>Real Estate Applications</h3>
+                      <p>Real estate agencies, appraisers, and property investors can use this model to estimate property values, identify undervalued properties, and make data-driven investment decisions in the housing market.</p>
+                    `
+                  },
+                  {
+                    id: "spam-email",
+                    title: "Spam Email Classification",
+                    description: "Logistic Regression for filtering spam emails from legitimate communications.",
+                    category: "ml",
+                    tags: ["Logistic Regression", "NLP", "Email Filtering"],
+                    image: "images/spam-detection.jpeg",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
+                    detailedDescription: `
+                      <p>This project implements Logistic Regression to classify emails as spam or legitimate (ham) based on their content and header information, creating an effective email filtering system.</p>
+                      <h3>Key Techniques</h3>
+                      <ul>
+                        <li>Logistic Regression</li>
+                        <li>Text Preprocessing and Vectorization</li>
+                        <li>Feature Engineering for Email Content</li>
+                        <li>Model Evaluation and Threshold Optimization</li>
+                        <li>Confusion Matrix Analysis</li>
+                      </ul>
+                      <h3>Practical Applications</h3>
+                      <p>The techniques demonstrated in this project can be applied to develop email filtering systems that protect users from phishing attempts, malware, and unwanted marketing communications while ensuring important messages reach their inbox.</p>
+                    `
+                  },
+                  {
+                    id: "virtual-doctor",
+                    title: "Virtual Doctor AI Assistant",
+                    description: "AI-powered system for medical guidance based on symptoms.",
+                    category: "generative",
+                    tags: ["LangChain", "Medical AI", "NLP", "Generative AI"],
+                    image: "images/virtual-doctor-ai.png",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/AI-Health-Assistant/blob/main/AI_Health_Assistant.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/AI-Health-Assistant",
+                    detailedDescription: `
+                      <p>The Virtual Doctor AI Assistant is a generative AI application built with LangChain that provides medical guidance based on user-reported symptoms.</p>
+                      <h3>Key Technologies</h3>
+                      <ul>
+                        <li>LangChain Framework</li>
+                        <li>Large Language Models</li>
+                        <li>Medical Knowledge Base Integration</li>
+                        <li>Conversational AI</li>
+                      </ul>
+                      <h3>Features</h3>
+                      <p>The assistant can understand symptom descriptions, ask relevant follow-up questions, provide potential conditions that match the symptoms, and suggest when to seek professional medical help.</p>
+                      <p class="note">Note: This system is designed for educational purposes only and does not replace professional medical advice.</p>
+                    `
+                  },
+                  {
+                    id: "ats-system",
+                    title: "AI Semantic ATS System for CV Matching",
+                    description: "RAG-based system for CV-job description matching.",
+                    category: "generative",
+                    tags: ["RAG", "Resume Analysis", "NLP", "Semantic Search"],
+                    image: "images/imag1.png",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0/blob/main/ATS_System.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0",
+                    detailedDescription: `
+                      <p>This project implements a semantic Applicant Tracking System (ATS) using Retrieval Augmented Generation (RAG) to match CVs/resumes with job descriptions.</p>
+                      <h3>Key Technologies</h3>
+                      <ul>
+                        <li>Retrieval Augmented Generation (RAG)</li>
+                        <li>Semantic Search</li>
+                        <li>Document Processing</li>
+                        <li>Vector Embeddings</li>
+                      </ul>
+                      <h3>Applications</h3>
+                      <p>The system helps recruiters efficiently identify qualified candidates by semantically matching resume content with job requirements, going beyond simple keyword matching to understand skills and experiences in context.</p>
+                    `
+                  },
+                  {
+                    id: "diabetes-chatbot",
+                    title: "Conversational AI for Diabetes Prediction",
+                    description: "Medical assistant using RAG workflows for diabetes analysis.",
+                    category: "generative",
+                    tags: ["RAG", "Healthcare AI", "Conversational AI", "LangChain"],
+                    image: "images/Screenshot 2025-01-02 at 21.08.13.png",
+                    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Chatbot.ipynb",
+                    githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization",
+                    detailedDescription: `
+                      <p>This project integrates conversational AI with diabetes prediction models to create an interactive system that helps assess diabetes risk through natural language conversation.</p>
+                      <h3>Key Technologies</h3>
+                      <ul>
+                        <li>RAG (Retrieval Augmented Generation)</li>
+                        <li>LangChain for Workflow Orchestration</li>
+                        <li>Diabetes Prediction Models</li>
+                        <li>Conversational UI</li>
+                      </ul>
+                      <h3>Healthcare Applications</h3>
+                      <p>This system can be deployed in healthcare settings to help patients understand their diabetes risk, provide educational content about diabetes prevention, and support healthcare providers in efficient patient screening.</p>
+                    `
+                  }
                 ];
         
         
