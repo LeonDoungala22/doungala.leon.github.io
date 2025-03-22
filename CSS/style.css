@@ -3295,7 +3295,12 @@ copyright {
 
 /* Enhanced carousel transitions */
 .carousel-item {
-  transition: transform 1.2s ease, opacity .7s ease-out;
+  transition: transform 1.2s ease, opacity 0.7s ease-out;
+  opacity: 0;
+}
+
+.carousel-item.active {
+  opacity: 1;
 }
 
 /* Optimize images in carousel for better performance */
@@ -3303,12 +3308,13 @@ copyright {
   will-change: transform;
   transition: transform 0.5s ease-out;
   backface-visibility: hidden; /* Improves performance */
+  opacity: 1; /* Ensure images are always visible */
 }
 
 /* Improve progress bar appearance */
 .carousel-progress {
   height: 3px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(66, 133, 244, 0.7); /* Use primary color with transparency */
   position: absolute;
   bottom: 0;
   left: 0;
