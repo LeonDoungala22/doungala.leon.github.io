@@ -79,13 +79,27 @@
         </div>
     </nav>
 
-    <!-- Thesis Hero Section -->
-    <div class="thesis-hero">
+    <!-- Academic Paper Header -->
+    <div class="academic-header">
         <div class="container text-center">
-            <h1 class="thesis-title">Master of Science Thesis in Computer Engineering and Automation, Artificial Intelligence</h1>
-            <h2 class="thesis-subtitle">Artificial Intelligence and Machine Learning Techniques for the Characterization and Prediction of Diabetes</h2>
+            <div class="paper-metadata">
+                <span class="paper-type">Master of Science Thesis</span>
+                <span class="paper-field">Computer Engineering and Automation, Artificial Intelligence</span>
+                <span class="paper-date">© 2023</span>
+            </div>
             
-            <div class="thesis-keywords mt-4">
+            <h1 class="paper-title">Artificial Intelligence and Machine Learning Techniques for the Characterization and Prediction of Diabetes</h1>
+            
+            <div class="paper-author">
+                <span class="author-name">Leon Martial Doungala Nzoyem</span>
+            </div>
+            
+            <div class="paper-affiliation">
+                <span class="university-name">Università degli Studi eCampus</span>
+                <span class="faculty-name">Facoltà di Ingegneria | Corso di Laurea Magistrale in Ingegneria Informatica e dell'Automazione</span>
+            </div>
+            
+            <div class="thesis-keywords">
                 <span class="thesis-keyword">Machine Learning</span>
                 <span class="thesis-keyword">Diabetes Prediction</span>
                 <span class="thesis-keyword">Medical AI</span>
@@ -94,365 +108,514 @@
                 <span class="thesis-keyword">Predictive Modeling</span>
             </div>
             
-            <div class="thesis-university mt-4">
-                <span class="university-name">Università degli Studi eCampus</span>
-                <span class="faculty-name">Facoltà di Ingegneria | Corso di Laurea Magistrale in Ingegneria Informatica e dell'Automazione</span>
-            </div>
-            
-            <div class="thesis-dedication mt-4">
-                <i class="fas fa-quote-left quote-icon"></i>
-                <p>In Memory and Hope - This work is dedicated to all those affected by diabetes — those living with it and those who have lost their lives to the disease. It also honours their families, carers and loved ones who support them every day. May this work contribute to better care, better management and, one day, a cure for this disease.</p>
-                <i class="fas fa-quote-right quote-icon"></i>
+            <button class="btn btn-primary view-full-thesis mt-4" data-bs-toggle="modal" data-bs-target="#pdfModal">
+                <i class="fas fa-file-pdf me-2"></i> View Full Thesis Document
+            </button>
+        </div>
+    </div>
+
+    <!-- PDF Modal -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-lg-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfModalLabel">Thesis Document: Table of Contents and Conclusion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <object class="modal-pdf-viewer" data="Docs/Tesis_table_of_content.pdf" type="application/pdf">
+                        <p>Your browser doesn't support embedded PDFs. Please use a modern browser or <a href="Docs/Tesis_table_of_content.pdf" target="_blank">download the PDF</a> to view it.</p>
+                    </object>
+                </div>
+                <div class="modal-footer">
+                    <a href="Docs/Tesis_table_of_content.pdf" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt me-2"></i> Open in New Tab
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Thesis Content -->
-    <div class="container-fluid thesis-container">
-        <div class="row">
-            <div class="col-xxl-10 col-xl-11 col-thesis mx-auto">
-                <!-- Introduction Section -->
-                <div class="thesis-content-section">
-                    <h3><i class="fas fa-book-open section-icon"></i> Introduction</h3>
-                    <div class="key-highlight">
-                        <p>
-                            <span class="highlight-text">Diabetes affects approximately 537 million adults worldwide</span>, with projections suggesting this figure may reach 783 million by 2045. The substantial socioeconomic burden and healthcare implications necessitate innovative approaches for early detection and intervention.
-                        </p>
-                    </div>
-                    
-                    <p>
-                        Diabetes is a chronic disease that affects millions of people worldwide. It is on the rise, causing
-                        serious health problems, economic challenges and reduced quality of life. According to recent
-                        reports, the number of adults with diabetes has quadrupled since 1980, mainly due to an
-                        increase in type 2 diabetes. Early detection and good management of diabetes are essential
-                        to prevent serious complications such as heart disease, kidney failure and blindness.
-                        However, traditional methods of diagnosing diabetes often miss the disease in its early stages,
-                        leading to delays in treatment and worse health outcomes.
-                    </p>
-                    <p>
-                        Recently, advances in artificial intelligence (AI) and machine learning (ML) have shown great
-                        potential for improving healthcare. These technologies help in early diagnosis, personalised
-                        treatment and effective management of chronic diseases such as diabetes. AI and ML can
-                        analyse large amounts of data to find patterns that may not be obvious to doctors. Using
-                        AI and ML to predict and manage diabetes could significantly improve patient care by
-                        providing more accurate, timely and personalised treatments.
-                    </p>
-                    
-                    <h4 class="sub-heading"><i class="fas fa-bullseye"></i> Research Objectives</h4>
-                    <p>
-                        The main objective of this thesis is to explore and develop AI and ML techniques to help
-                        predict and understand diabetes. Specifically, this study aims to:
-                    </p>
-                    <ul class="thesis-objectives">
-                        <li><i class="fas fa-check-circle"></i> Build and evaluate machine learning models to predict diabetes based on clinical and demographic data</li>
-                        <li><i class="fas fa-check-circle"></i> Explore the use of generative AI techniques to generate additional data for better model training and improved prediction accuracy</li>
-                        <li><i class="fas fa-check-circle"></i> Use LangChain for natural language processing (NLP) to extract important information from unstructured medical records and improve diabetes management</li>
-                        <li><i class="fas fa-check-circle"></i> Compare the effectiveness of different machine learning models and generative AI techniques to find the best approach for predicting and understanding diabetes</li>
-                        <li><i class="fas fa-check-circle"></i> Add to the existing body of knowledge by showing how AI and ML can be practically applied in healthcare, with a focus on diabetes</li>
-                    </ul>
+    <!-- Thesis Content - Academic Article Style -->
+    <div class="container academic-container">
+        <!-- Abstract Section -->
+        <div class="academic-section">
+            <h2 class="section-title">Abstract</h2>
+            
+            <div class="abstract-content">
+                <p>
+                    This thesis investigates the application of artificial intelligence and machine learning methodologies for the characterization and prediction of diabetes mellitus. As one of the leading global health challenges, diabetes affects approximately 537 million adults worldwide, with projections suggesting this figure may reach 783 million by 2045. The substantial socioeconomic burden and healthcare implications necessitate innovative approaches for early detection and intervention.
+                </p>
+                <p>
+                    The research integrates sophisticated machine learning, deep learning, generative AI, and natural language processing techniques to create predictive frameworks for diabetes risk identification. This interdisciplinary approach culminated in the development of Elyon, a Python Flask-based web application that provides healthcare professionals with practical tools for diabetes analysis and management.
+                </p>
+                <p>
+                    Key findings demonstrated that carefully engineered AI models can achieve significant improvements in prediction accuracy compared to traditional clinical assessment methods. Through feature importance analysis, the research identified several previously underrepresented biomarkers and their complex interactions that contribute to diabetes risk stratification. The developed methodology establishes a robust framework for applying AI in diabetes risk assessment with potential for integration into clinical practice.
+                </p>
+            </div>
+            
+            <div class="paper-dedication">
+                <div class="dedication-header">
+                    <i class="fas fa-heart dedication-icon"></i>
+                    <span>Dedication</span>
                 </div>
-                
-                <!-- Table of Contents Section -->
-                <div class="thesis-content-section">
-                    <h3><i class="fas fa-list-ul section-icon"></i> Thesis Structure & Content</h3>
-                    <p>
-                        This thesis is structured to provide a comprehensive exploration of AI/ML techniques for diabetes prediction. Below is the complete table of contents showing the scope and organization of the research:
-                    </p>
-                    
-                    <div class="thesis-toc">
-                        <div class="toc-chapter">
-                            <h4><i class="fas fa-bookmark"></i> Chapter 1: Introduction</h4>
-                            <ul>
-                                <li><i class="fas fa-angle-right"></i> Problem Statement</li>
-                                <li><i class="fas fa-angle-right"></i> Objectives of the Study</li>
-                                <li><i class="fas fa-angle-right"></i> Structure of the Thesis</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="toc-chapter">
-                            <h4><i class="fas fa-bookmark"></i> Chapter 2: Background and Literature Review</h4>
-                            <ul>
-                                <li><i class="fas fa-angle-right"></i> Overview of Diabetes Mellitus</li>
-                                <li><i class="fas fa-angle-right"></i> Introduction to Artificial Intelligence (AI)</li>
-                                <li><i class="fas fa-angle-right"></i> Machine Learning in Healthcare</li>
-                                <li><i class="fas fa-angle-right"></i> Python Libraries for AI and ML</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="toc-chapter">
-                            <h4><i class="fas fa-bookmark"></i> Chapter 3: Machine Learning Techniques for Diabetes Prediction and Characterization</h4>
-                            <ul>
-                                <li><i class="fas fa-angle-right"></i> Data Collection and Preprocessing</li>
-                                <li><i class="fas fa-angle-right"></i> Feature Engineering</li>
-                                <li><i class="fas fa-angle-right"></i> Machine Learning Model Building and Selection</li>
-                                <li><i class="fas fa-angle-right"></i> Models Comparison and Selection</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="toc-chapter">
-                            <h4><i class="fas fa-bookmark"></i> Chapter 4: Generative AI for Data Augmentation and Analysis</h4>
-                            <ul>
-                                <li><i class="fas fa-angle-right"></i> Introduction to Generative AI - LLMs</li>
-                                <li><i class="fas fa-angle-right"></i> LangChain and RAG for Diabetes Management</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="toc-chapter">
-                            <h4><i class="fas fa-bookmark"></i> Chapter 5: Conclusions</h4>
-                            <ul>
-                                <li><i class="fas fa-angle-right"></i> Summary of Findings</li>
-                                <li><i class="fas fa-angle-right"></i> Contributions to the Field</li>
-                                <li><i class="fas fa-angle-right"></i> Final Thoughts on AI in Diabetes Management</li>
-                                <li><i class="fas fa-angle-right"></i> Closing Remarks</li>
-                            </ul>
-                        </div>
+                <blockquote>
+                    In Memory and Hope - This work is dedicated to all those affected by diabetes — those living with it and those who have lost their lives to the disease. It also honours their families, carers and loved ones who support them every day. May this work contribute to better care, better management and, one day, a cure for this disease.
+                </blockquote>
+            </div>
+        </div>
+        
+        <!-- Research Timeline -->
+        <div class="academic-section">
+            <h2 class="section-title">Research Timeline & Methodology</h2>
+            
+            <div class="research-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-search"></i>
                     </div>
-                    
-                    <!-- PDF Viewer -->
-                    <div class="pdf-section">
-                        <div class="thesis-note">
-                            <i class="fas fa-info-circle me-2"></i> The embedded PDF viewer below displays the detailed table of contents and conclusion sections from the complete thesis. This provides insight into the research methodology, findings, and implications.
-                        </div>
-                        
-                        <object class="thesis-pdf-viewer" data="Docs/Tesis_table_of_content.pdf" type="application/pdf">
-                            <p>Your browser doesn't support embedded PDFs. Please use a modern browser to view the content.</p>
-                        </object>
-                    </div>
-                    
-                    <div class="thesis-copyright">
-                        Note: This research is protected under personal copyright. The complete thesis is maintained as private intellectual property for academic purposes only. All rights reserved © 2023-2024 Leon Doungala.
-                    </div>
-                    
-                    <div class="thesis-citation">
-                        <div class="citation-icon"><i class="fas fa-bookmark"></i></div>
-                        <div class="citation-text">
-                            Doungala, L. (2023). <em>Artificial Intelligence and Machine Learning Techniques for the Characterization 
-                            and Prediction of Diabetes</em>. Master's Thesis, Università degli Studi eCampus, Facoltà di Ingegneria, Corso di Laurea Magistrale in Ingegneria Informatica e dell'Automazione.
-                        </div>
+                    <div class="timeline-content">
+                        <h4>Literature Review & Problem Definition</h4>
+                        <span class="timeline-date">Q1 2023</span>
+                        <p>Comprehensive review of diabetes epidemiology, current AI approaches in healthcare, and identification of research gaps in early prediction systems.</p>
+                        <div class="methodology-tag"><i class="fas fa-book"></i> Systematic Literature Review</div>
                     </div>
                 </div>
                 
-                <!-- Conclusions Section -->
-                <div class="thesis-content-section">
-                    <h3><i class="fas fa-lightbulb section-icon"></i> Conclusions</h3>
-                    
-                    <div class="key-highlight">
-                        <p>
-                            <span class="highlight-text">This thesis culminated in the development of Elyon</span>, a Python Flask-based web application that integrates machine learning, deep learning, generative AI, and natural language processing to provide healthcare professionals with a practical tool for diabetes management.
-                        </p>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-database"></i>
                     </div>
-                    
-                    <h4 class="sub-heading"><i class="fas fa-chart-line"></i> Summary of Findings</h4>
-                    <p>
-                        This thesis examined the nexus of artificial intelligence and diabetes management, offering a
-                        comprehensive examination of prediction, characterisation, and management solutions. The
-                        study employed a range of methodologies, integrating machine learning, deep learning,
-                        generative AI, and natural language processing, which culminated in the development of Elyon, a
-                        Python Flask-based web application. Elyon provides a practical tool for healthcare professionals to
-                        facilitate effective analysis and management of diabetes.
-                    </p>
-                    
-                    <div class="findings-grid">
-                        <div class="finding-card">
-                            <div class="finding-icon"><i class="fas fa-book"></i></div>
-                            <div class="finding-content">
-                                <h5>Extensive Literature Review</h5>
-                                <p>The text provides a comprehensive understanding of diabetes mellitus, encompassing its various types, global prevalence, and impact on health. The study identified significant challenges in diabetes management, emphasizing the necessity for AI-driven solutions.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="finding-card">
-                            <div class="finding-icon"><i class="fas fa-cogs"></i></div>
-                            <div class="finding-content">
-                                <h5>Machine Learning in Diabetes Prediction</h5>
-                                <p>Supervised learning models such as logistic regression, decision trees and neural networks were used to predict incident diabetes. Exploratory data analysis identified key health measures such as HbA1c, BMI and cholesterol levels as significant predictors.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="finding-card">
-                            <div class="finding-icon"><i class="fas fa-random"></i></div>
-                            <div class="finding-content">
-                                <h5>Generative AI for Data Augmentation</h5>
-                                <p>Techniques such as Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs) addressed data scarcity by generating synthetic datasets. These augmented datasets improved model robustness and generalization capabilities.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="finding-card">
-                            <div class="finding-icon"><i class="fas fa-comments"></i></div>
-                            <div class="finding-content">
-                                <h5>LangChain and RAG</h5>
-                                <p>LangChain's NLP capabilities enabled the interpretation of complex medical records and user queries. Retrieval-Augmented Generation was used to combine data retrieval with language generation for accurate, contextually relevant insights.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="finding-card">
-                            <div class="finding-icon"><i class="fas fa-laptop-code"></i></div>
-                            <div class="finding-content">
-                                <h5>Web Application: Elyon</h5>
-                                <p>The Elyon app integrated machine learning models, generative AI and conversational agents with intuitive visualizations and interactive chat capabilities, making health data accessible and actionable for clinicians.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h4 class="sub-heading"><i class="fas fa-award"></i> Contributions to the Field</h4>
-                    <p>This thesis makes several significant contributions to AI and healthcare research:</p>
-                    
-                    <div class="contributions-container">
-                        <div class="contribution-item">
-                            <div class="contribution-number">01</div>
-                            <div class="contribution-content">
-                                <h5>Comprehensive AI Framework for Diabetes Management</h5>
-                                <p>Demonstrated the integration of machine learning, generative AI, and NLP into a unified system for disease prediction and patient characterization. Showcased the practical application of AI methodologies to tackle real-world healthcare challenges.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contribution-item">
-                            <div class="contribution-number">02</div>
-                            <div class="contribution-content">
-                                <h5>Enhancements in Data Augmentation</h5>
-                                <p>Developed frameworks for generating synthetic datasets using GANs and VAEs, addressing common issues such as data scarcity and class imbalance in medical datasets.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contribution-item">
-                            <div class="contribution-number">03</div>
-                            <div class="contribution-content">
-                                <h5>Exploration of LangChain and RAG in Healthcare</h5>
-                                <p>Provided an implementation blueprint for using LangChain and RAG in medical decision support systems, highlighting their ability to interpret and respond to user queries in a data-driven manner.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contribution-item">
-                            <div class="contribution-number">04</div>
-                            <div class="contribution-content">
-                                <h5>User-centred design</h5>
-                                <p>Developed Elyon, a web application that combines AI models with user-centric interfaces to improve accessibility and usability for clinicians.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contribution-item">
-                            <div class="contribution-number">05</div>
-                            <div class="contribution-content">
-                                <h5>Knowledge Contribution</h5>
-                                <p>Provided a comprehensive review of diabetes management challenges, current AI techniques and their applications. Encouraged further research by making partial implementations available via a GitHub repository, balancing transparency with privacy concerns.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h4 class="sub-heading"><i class="fas fa-brain"></i> Final Thoughts on AI in Diabetes Management</h4>
-                    <p>
-                        This thesis highlights how AI can contribute to:
-                    </p>
-                    <div class="final-thoughts">
-                        <div class="thought-item">
-                            <div class="thought-icon"><i class="fas fa-chart-pie"></i></div>
-                            <div class="thought-content">
-                                <h5>Enhanced Predictive Accuracy</h5>
-                                <p>Advanced machine learning techniques enable early identification of at-risk individuals, facilitating timely medical interventions.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="thought-item">
-                            <div class="thought-icon"><i class="fas fa-user-md"></i></div>
-                            <div class="thought-content">
-                                <h5>Personalized Healthcare</h5>
-                                <p>AI systems like Elyon analyze patient-specific data to deliver tailored recommendations, promoting precision medicine.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="thought-item">
-                            <div class="thought-icon"><i class="fas fa-tasks"></i></div>
-                            <div class="thought-content">
-                                <h5>Streamlined Decision-Making</h5>
-                                <p>AI-powered tools such as LangChain and RAG reduce the cognitive load on healthcare providers by offering evidence-based insights and efficient information retrieval.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="thought-item">
-                            <div class="thought-icon"><i class="fas fa-expand-arrows-alt"></i></div>
-                            <div class="thought-content">
-                                <h5>Scalable and Sustainable Solutions</h5>
-                                <p>Generative AI models address data limitations, ensuring scalability in predictive healthcare applications.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h4 class="sub-heading"><i class="fas fa-flag-checkered"></i> Closing Remarks</h4>
-                    <div class="closing-remarks">
-                        <p>
-                            The development of Elyon clearly shows the strong potential of artificial intelligence in
-                            transforming healthcare. By combining supervised learning, generative AI, and natural language
-                            processing, this project offers a practical and scalable solution to manage diabetes effectively. As AI
-                            technology continues to advance, its role in personalized medicine and decision-making will grow
-                            even more important, helping doctors and healthcare providers deliver better care and improve
-                            patient outcomes. Elyon not only addresses key challenges in diabetes management but also opens
-                            the door to exciting possibilities for future research. This project provides a strong foundation for
-                            exploring how advanced AI techniques can further enhance global healthcare systems, potentially
-                            as the focus of a PhD study.
-                        </p>
+                    <div class="timeline-content">
+                        <h4>Data Collection & Preprocessing</h4>
+                        <span class="timeline-date">Q2 2023</span>
+                        <p>Acquisition and preparation of diabetes-related clinical and demographic datasets, missing value handling, outlier detection, feature normalization, and exploratory data analysis.</p>
+                        <div class="methodology-tag"><i class="fas fa-filter"></i> Data Cleaning & Preprocessing</div>
+                        <div class="methodology-tag"><i class="fas fa-chart-bar"></i> Exploratory Data Analysis</div>
                     </div>
                 </div>
                 
-                <!-- Future Research Section -->
-                <div class="thesis-content-section">
-                    <h3><i class="fas fa-rocket section-icon"></i> Future Research Directions</h3>
-                    <p>
-                        Building on the foundation established in this thesis, my ongoing and planned research extends into several promising directions:
-                    </p>
-                    
-                    <div class="future-work-container">
-                        <div class="future-work-item">
-                            <div class="future-work-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="future-work-content">
-                                <h4>Continuous Glucose Monitoring Integration</h4>
-                                <p>Development of time-series models that incorporate data from continuous glucose monitoring (CGM) devices to capture glycemic variability patterns and their relationship to diabetes progression. This approach will enable more personalized risk assessment based on individual glucose metabolism profiles.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="future-work-item">
-                            <div class="future-work-icon">
-                                <i class="fas fa-exchange-alt"></i>
-                            </div>
-                            <div class="future-work-content">
-                                <h4>Transfer Learning for Diverse Populations</h4>
-                                <p>Research into domain adaptation techniques that can transfer knowledge from well-studied populations to underrepresented demographic groups where labeled data is scarce. This will address current equity gaps in AI-based diabetes prediction across different ethnic and socioeconomic populations.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="future-work-item">
-                            <div class="future-work-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="future-work-content">
-                                <h4>Privacy-Preserving Federated Learning</h4>
-                                <p>Development of federated learning frameworks that enable collaborative model training across multiple healthcare institutions without sharing sensitive patient data. This approach will facilitate creation of more robust and generalizable models while preserving patient privacy and confidentiality.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="future-work-item">
-                            <div class="future-work-icon">
-                                <i class="fas fa-laptop-medical"></i>
-                            </div>
-                            <div class="future-work-content">
-                                <h4>Elyon Platform Enhancement</h4>
-                                <p>Further development of the Elyon web application to include real-time monitoring capabilities, integration with electronic health records, and enhanced visualization tools for healthcare providers. This will create a more comprehensive solution for diabetes management in clinical settings.</p>
-                            </div>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Model Development & Feature Engineering</h4>
+                        <span class="timeline-date">Q2-Q3 2023</span>
+                        <p>Implementation of supervised learning models, advanced feature engineering, hyperparameter tuning, and development of ensemble methods for improved prediction accuracy.</p>
+                        <div class="methodology-tag"><i class="fas fa-code-branch"></i> Feature Engineering</div>
+                        <div class="methodology-tag"><i class="fas fa-robot"></i> Model Training</div>
+                        <div class="methodology-tag"><i class="fas fa-cog"></i> Hyperparameter Optimization</div>
                     </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="thesis-nav">
-                    <a href="index.html" class="thesis-nav-link">
-                        <i class="fas fa-arrow-left"></i> Back to Main Page
-                    </a>
-                    <a href="ml_and_ds_portfolio.html" class="thesis-nav-link">
-                        View Related Projects <i class="fas fa-arrow-right"></i>
-                    </a>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Generative AI & Data Augmentation</h4>
+                        <span class="timeline-date">Q3 2023</span>
+                        <p>Implementation of GANs and VAEs for synthetic data generation to address data imbalance and enhance model robustness for clinical applications.</p>
+                        <div class="methodology-tag"><i class="fas fa-layer-group"></i> Generative Modeling</div>
+                        <div class="methodology-tag"><i class="fas fa-retweet"></i> Data Augmentation</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>LangChain & RAG Implementation</h4>
+                        <span class="timeline-date">Q3-Q4 2023</span>
+                        <p>Development of natural language processing components using LangChain and Retrieval-Augmented Generation for medical text interpretation and contextual insights.</p>
+                        <div class="methodology-tag"><i class="fas fa-comment-alt"></i> NLP Processing</div>
+                        <div class="methodology-tag"><i class="fas fa-brain"></i> Semantic Analysis</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Elyon Application Development</h4>
+                        <span class="timeline-date">Q4 2023</span>
+                        <p>Integration of developed models and techniques into a comprehensive Flask-based web application for clinical diabetes management and prediction.</p>
+                        <div class="methodology-tag"><i class="fab fa-python"></i> Flask Development</div>
+                        <div class="methodology-tag"><i class="fas fa-users"></i> User-Centered Design</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Evaluation & Thesis Defense</h4>
+                        <span class="timeline-date">Q4 2023 - Q1 2024</span>
+                        <p>Comprehensive evaluation of model performance, documentation of findings, thesis writing, and successful defense of research outcomes.</p>
+                        <div class="methodology-tag"><i class="fas fa-tasks"></i> Performance Evaluation</div>
+                        <div class="methodology-tag"><i class="fas fa-file-alt"></i> Academic Documentation</div>
+                    </div>
                 </div>
             </div>
+        </div>
+        
+        <!-- Technologies & Tools Section -->
+        <div class="academic-section">
+            <h2 class="section-title">Technologies & Implementation</h2>
+            
+            <div class="technologies-wrapper">
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h3 class="category-title"><i class="fab fa-python"></i> Core Libraries</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-brain"></i></div>
+                                <div class="tech-details">
+                                    <h4>Python & NumPy</h4>
+                                    <p>Foundation for numerical computing and core scientific operations</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-chart-bar"></i></div>
+                                <div class="tech-details">
+                                    <h4>Pandas</h4>
+                                    <p>Data manipulation, preprocessing, and exploratory analysis</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-chart-line"></i></div>
+                                <div class="tech-details">
+                                    <h4>Matplotlib & Seaborn</h4>
+                                    <p>Statistical data visualization and exploratory plotting</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3 class="category-title"><i class="fas fa-robot"></i> Machine Learning</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-cogs"></i></div>
+                                <div class="tech-details">
+                                    <h4>Scikit-learn</h4>
+                                    <p>Classical ML algorithms, preprocessing, and evaluation metrics</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-tree"></i></div>
+                                <div class="tech-details">
+                                    <h4>XGBoost</h4>
+                                    <p>Gradient boosting framework for optimal diabetes prediction</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-project-diagram"></i></div>
+                                <div class="tech-details">
+                                    <h4>Imbalanced-learn</h4>
+                                    <p>Addressing class imbalance in diabetes prediction datasets</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3 class="category-title"><i class="fas fa-network-wired"></i> Deep Learning</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fab fa-tensorflow"></i></div>
+                                <div class="tech-details">
+                                    <h4>TensorFlow & Keras</h4>
+                                    <p>Neural network development and deep learning implementations</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-random"></i></div>
+                                <div class="tech-details">
+                                    <h4>GANs & VAEs</h4>
+                                    <p>Generative models for data augmentation and synthetic sample creation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3 class="category-title"><i class="fas fa-comments"></i> NLP & Integration</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-link"></i></div>
+                                <div class="tech-details">
+                                    <h4>LangChain</h4>
+                                    <p>Framework for developing context-aware medical text processing applications</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-search"></i></div>
+                                <div class="tech-details">
+                                    <h4>RAG</h4>
+                                    <p>Retrieval-Augmented Generation for improved medical context understanding</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <div class="tech-icon"><i class="fas fa-server"></i></div>
+                                <div class="tech-details">
+                                    <h4>Flask</h4>
+                                    <p>Web framework for developing the Elyon application interface</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Findings Section -->
+        <div class="academic-section">
+            <h2 class="section-title">Key Findings & Results</h2>
+            
+            <div class="findings-section">
+                <div class="key-highlight mb-4">
+                    <p>
+                        <span class="highlight-text">This research culminated in the development of Elyon</span>, a Python Flask-based web application that integrates multiple ML/AI techniques to provide healthcare professionals with a comprehensive tool for diabetes management.
+                    </p>
+                </div>
+                
+                <div class="findings-grid">
+                    <div class="finding-card">
+                        <div class="finding-icon"><i class="fas fa-book"></i></div>
+                        <div class="finding-content">
+                            <h5>Extensive Literature Review</h5>
+                            <p>The research provides a comprehensive understanding of diabetes mellitus, encompassing its various types, global prevalence, and impact on health. The study identified significant challenges in diabetes management, emphasizing the necessity for AI-driven solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <div class="finding-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="finding-content">
+                            <h5>Machine Learning in Diabetes Prediction</h5>
+                            <p>Supervised learning models such as logistic regression, decision trees and neural networks were used to predict incident diabetes. Exploratory data analysis identified key health measures such as HbA1c, BMI and cholesterol levels as significant predictors.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <div class="finding-icon"><i class="fas fa-random"></i></div>
+                        <div class="finding-content">
+                            <h5>Generative AI for Data Augmentation</h5>
+                            <p>Techniques such as Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs) addressed data scarcity by generating synthetic datasets. These augmented datasets improved model robustness and generalization capabilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <div class="finding-icon"><i class="fas fa-comments"></i></div>
+                        <div class="finding-content">
+                            <h5>LangChain and RAG</h5>
+                            <p>LangChain's NLP capabilities enabled the interpretation of complex medical records and user queries. Retrieval-Augmented Generation was used to combine data retrieval with language generation for accurate, contextually relevant insights.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <div class="finding-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="finding-content">
+                            <h5>Web Application: Elyon</h5>
+                            <p>The Elyon app integrated machine learning models, generative AI and conversational agents with intuitive visualizations and interactive chat capabilities, making health data accessible and actionable for clinicians.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contributions Section -->
+        <div class="academic-section">
+            <h2 class="section-title">Contributions to the Field</h2>
+            
+            <div class="contributions-container">
+                <div class="contribution-item">
+                    <div class="contribution-number">01</div>
+                    <div class="contribution-content">
+                        <h5>Comprehensive AI Framework for Diabetes Management</h5>
+                        <p>Demonstrated the integration of machine learning, generative AI, and NLP into a unified system for disease prediction and patient characterization. Showcased the practical application of AI methodologies to tackle real-world healthcare challenges.</p>
+                    </div>
+                </div>
+                
+                <div class="contribution-item">
+                    <div class="contribution-number">02</div>
+                    <div class="contribution-content">
+                        <h5>Enhancements in Data Augmentation</h5>
+                        <p>Developed frameworks for generating synthetic datasets using GANs and VAEs, addressing common issues such as data scarcity and class imbalance in medical datasets.</p>
+                    </div>
+                </div>
+                
+                <div class="contribution-item">
+                    <div class="contribution-number">03</div>
+                    <div class="contribution-content">
+                        <h5>Exploration of LangChain and RAG in Healthcare</h5>
+                        <p>Provided an implementation blueprint for using LangChain and RAG in medical decision support systems, highlighting their ability to interpret and respond to user queries in a data-driven manner.</p>
+                    </div>
+                </div>
+                
+                <div class="contribution-item">
+                    <div class="contribution-number">04</div>
+                    <div class="contribution-content">
+                        <h5>User-centred design</h5>
+                        <p>Developed Elyon, a web application that combines AI models with user-centric interfaces to improve accessibility and usability for clinicians.</p>
+                    </div>
+                </div>
+                
+                <div class="contribution-item">
+                    <div class="contribution-number">05</div>
+                    <div class="contribution-content">
+                        <h5>Knowledge Contribution</h5>
+                        <p>Provided a comprehensive review of diabetes management challenges, current AI techniques and their applications. Encouraged further research by making partial implementations available via a GitHub repository, balancing transparency with privacy concerns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Conclusions Section -->
+        <div class="academic-section">
+            <h2 class="section-title">Conclusions & Future Directions</h2>
+            
+            <h3 class="subsection-title">Final Thoughts on AI in Diabetes Management</h3>
+            <div class="final-thoughts">
+                <div class="thought-item">
+                    <div class="thought-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="thought-content">
+                        <h5>Enhanced Predictive Accuracy</h5>
+                        <p>Advanced machine learning techniques enable early identification of at-risk individuals, facilitating timely medical interventions.</p>
+                    </div>
+                </div>
+                
+                <div class="thought-item">
+                    <div class="thought-icon"><i class="fas fa-user-md"></i></div>
+                    <div class="thought-content">
+                        <h5>Personalized Healthcare</h5>
+                        <p>AI systems like Elyon analyze patient-specific data to deliver tailored recommendations, promoting precision medicine.</p>
+                    </div>
+                </div>
+                
+                <div class="thought-item">
+                    <div class="thought-icon"><i class="fas fa-tasks"></i></div>
+                    <div class="thought-content">
+                        <h5>Streamlined Decision-Making</h5>
+                        <p>AI-powered tools such as LangChain and RAG reduce the cognitive load on healthcare providers by offering evidence-based insights and efficient information retrieval.</p>
+                    </div>
+                </div>
+                
+                <div class="thought-item">
+                    <div class="thought-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                    <div class="thought-content">
+                        <h5>Scalable and Sustainable Solutions</h5>
+                        <p>Generative AI models address data limitations, ensuring scalability in predictive healthcare applications.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title">Future Research Directions</h3>
+            <div class="future-work-container">
+                <div class="future-work-item">
+                    <div class="future-work-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="future-work-content">
+                        <h4>Continuous Glucose Monitoring Integration</h4>
+                        <p>Development of time-series models that incorporate data from continuous glucose monitoring (CGM) devices to capture glycemic variability patterns and their relationship to diabetes progression. This approach will enable more personalized risk assessment based on individual glucose metabolism profiles.</p>
+                    </div>
+                </div>
+                
+                <div class="future-work-item">
+                    <div class="future-work-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="future-work-content">
+                        <h4>Transfer Learning for Diverse Populations</h4>
+                        <p>Research into domain adaptation techniques that can transfer knowledge from well-studied populations to underrepresented demographic groups where labeled data is scarce. This will address current equity gaps in AI-based diabetes prediction across different ethnic and socioeconomic populations.</p>
+                    </div>
+                </div>
+                
+                <div class="future-work-item">
+                    <div class="future-work-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="future-work-content">
+                        <h4>Privacy-Preserving Federated Learning</h4>
+                        <p>Development of federated learning frameworks that enable collaborative model training across multiple healthcare institutions without sharing sensitive patient data. This approach will facilitate creation of more robust and generalizable models while preserving patient privacy and confidentiality.</p>
+                    </div>
+                </div>
+                
+                <div class="future-work-item">
+                    <div class="future-work-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <div class="future-work-content">
+                        <h4>Elyon Platform Enhancement</h4>
+                        <p>Further development of the Elyon web application to include real-time monitoring capabilities, integration with electronic health records, and enhanced visualization tools for healthcare providers. This will create a more comprehensive solution for diabetes management in clinical settings.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="closing-remarks">
+                <p>
+                    The development of Elyon clearly shows the strong potential of artificial intelligence in
+                    transforming healthcare. By combining supervised learning, generative AI, and natural language
+                    processing, this project offers a practical and scalable solution to manage diabetes effectively. As AI
+                    technology continues to advance, its role in personalized medicine and decision-making will grow
+                    even more important, helping doctors and healthcare providers deliver better care and improve
+                    patient outcomes. Elyon not only addresses key challenges in diabetes management but also opens
+                    the door to exciting possibilities for future research. This project provides a strong foundation for
+                    exploring how advanced AI techniques can further enhance global healthcare systems, potentially
+                    as the focus of a PhD study.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Academic Citation -->
+        <div class="academic-section">
+            <h2 class="section-title">Citation</h2>
+            
+            <div class="citation-box">
+                <div class="citation-header">
+                    <i class="fas fa-quote-left citation-icon"></i>
+                    <h4>How to Cite This Work</h4>
+                </div>
+                
+                <div class="citation-formats">
+                    <div class="citation-format">
+                        <h5>APA Format</h5>
+                        <p>Doungala, L. M. (2023). <em>Artificial Intelligence and Machine Learning Techniques for the Characterization and Prediction of Diabetes</em>. [Master's thesis, Università degli Studi eCampus]. Faculty of Engineering.</p>
+                    </div>
+                    
+                    <div class="citation-format">
+                        <h5>IEEE Format</h5>
+                        <p>L. M. Doungala, "Artificial Intelligence and Machine Learning Techniques for the Characterization and Prediction of Diabetes," M.S. thesis, Faculty of Engineering, Università degli Studi eCampus, Italy, 2023.</p>
+                    </div>
+                </div>
+                
+                <div class="copyright-notice">
+                    <i class="fas fa-copyright me-2"></i> This research is protected under personal copyright. The complete thesis is maintained as private intellectual property for academic purposes only. All rights reserved © 2023-2024 Leon Doungala.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Links -->
+        <div class="navigation-section">
+            <a href="index.html" class="nav-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <a href="ml_and_ds_portfolio.html" class="nav-button">
+                View Related Projects <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
     </div>
 
@@ -471,5 +634,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="js/thesis.js"></script>
 </body>
 </html>
