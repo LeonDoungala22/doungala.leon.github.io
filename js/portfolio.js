@@ -60,15 +60,7 @@ function loadProject(projectId) {
                 </div>
               </div>
               
-              <div class="article-sidebar-section">
-                  <a href="javascript:void(0)" onclick="shareProject('${project.title}', '${project.id}')" class="article-link">
-                    <i class="fas fa-share-alt"></i> Share Project
-                  </a>
-                  <a href="javascript:void(0)" onclick="copyLink('${project.id}')" class="article-link">
-                    <i class="fas fa-link"></i> Copy Link
-                  </a>
-                </div>
-              </div>
+            
               
               <div class="article-sidebar-section">
                 <h3 class="article-sidebar-title">Project Overview</h3>
@@ -89,12 +81,12 @@ function loadProject(projectId) {
                   <button class="notebook-control-btn refresh-notebook">
                     <i class="fas fa-sync-alt"></i> Refresh Notebook
                   </button>
+                  <button class="notebook-control-btn" onclick="shareNotebook('${project.title}', '${notebookUrl}')">
+                    <i class="fas fa-share-alt"></i> Share Notebook
+                  </button>
                 </div>
                 <div class="notebook-frame-container">
-                  <div class="loading-indicator">
-                    <div class="loading-spinner"></div>
-                    <div class="loading-text">Loading notebook...</div>
-                  </div>
+                  
                   <iframe class="notebook-iframe" src="${notebookUrl}" allowfullscreen></iframe>
                 </div>
               </div>
@@ -228,17 +220,7 @@ function loadProject(projectId) {
                     </div>
                   </div>
                   
-                  <div class="article-sidebar-section">
-                    <h3 class="article-sidebar-title">Share</h3>
-                    <div class="article-links">
-                      <a href="javascript:void(0)" onclick="shareProject('${project.title}', '${project.id}')" class="article-link">
-                        <i class="fas fa-share-alt"></i> Share Project
-                      </a>
-                      <a href="javascript:void(0)" onclick="copyLink('${project.id}')" class="article-link">
-                        <i class="fas fa-link"></i> Copy Link
-                      </a>
-                    </div>
-                  </div>
+                  
                 </div>
                 
                 <div class="article-main">
@@ -248,7 +230,21 @@ function loadProject(projectId) {
                   
                   <div class="notebook-container">
                     <h2 class="notebook-title">Project Implementation</h2>
+                    <div class="notebook-controls">
+                      <a href="${notebookUrl}" class="notebook-control-btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Open in Full Screen
+                      </a>
+                      <button class="notebook-control-btn refresh-notebook">
+                        <i class="fas fa-sync-alt"></i> Refresh Notebook
+                      </button>
+                      <button class="notebook-control-btn" onclick="shareNotebook('${project.title}', '${notebookUrl}')">
+                        <i class="fas fa-share-alt"></i> Share Notebook
+                      </button>
+                    </div>
                     <div class="notebook-frame-container">
+                      <div class="loading-indicator">
+                        
+                      </div>
                       <iframe class="notebook-iframe" src="${notebookUrl}" allowfullscreen></iframe>
                     </div>
                   </div>
@@ -405,7 +401,7 @@ function loadProject(projectId) {
                         tags: ["K-Means", "Clustering", "Machine Learning", "scikit-learn"],
                         image: "images/download (1).jpeg",
                         notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Clustering/K-Means/Customer%20Segmentation%20using%20K-Means%20Clustering/main.ipynb",
-                        githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/Clustering/K-Means/Customer%20Segmentation%20using%20K-Means%20Clustering/main.ipynb",
+                        githubUrl: "https://github.com/LeonDoungala22/advanced-customer-segmentation-ai/blob/main/Customer_Segmentation_K_Means.ipynb",
                         detailedDescription: `
                             <p>This project demonstrates how to implement customer segmentation using K-Means clustering in Python with scikit-learn. Customer segmentation is a common business strategy that involves grouping customers with similar characteristics or behaviors to target marketing campaigns more effectively.</p>
                             <h3>Key Techniques</h3>
@@ -730,42 +726,7 @@ function loadProject(projectId) {
                         }
                     });
                     
-                    // Improve loading experience for notebooks
-                    document.addEventListener('click', function(e) {
-                        if (e.target.matches('.btn-view-project') || e.target.closest('.btn-view-project')) {
-                            // When a project is clicked, we'll show a loading indicator until the notebook loads
-                            const projectId = e.target.closest('.btn-view-project').dataset.id;
-                            const project = projects.find(p => p.id === projectId);
-                            
-                            if (project) {
-                                // After the project content is loaded and the iframe is added
-                                setTimeout(() => {
-                                    const iframe = document.querySelector('.notebook-iframe');
-                                    if (iframe) {
-                                        // Add loading indicator
-                                        const container = iframe.closest('.notebook-frame-container');
-                                        const loadingHtml = `
-                                          <div class="loading-indicator">
-                                            <i class="fas fa-spinner"></i>
-                                            <div>Loading notebook...</div>
-                                          </div>
-                                        `;
-                                        if (container && !container.querySelector('.loading-indicator')) {
-                                          container.insertAdjacentHTML('beforeend', loadingHtml);
-                                        }
-                                        
-                                        // Remove loading indicator when iframe loads
-                                        iframe.onload = function() {
-                                          const indicator = container.querySelector('.loading-indicator');
-                                          if (indicator) {
-                                            indicator.remove();
-                                          }
-                                        };
-                                    }
-                                }, 100);
-                            }
-                        }
-                    });
+                    
         
                     // Add this to the DOMContentLoaded event listener for direct project link handling
                     // Check URL for direct project links
@@ -884,6 +845,7 @@ function loadProject(projectId) {
                               <button class="project-info-btn toggle-description-btn" onclick="toggleDescription()">
                                 <i class="fas fa-info-circle"></i> Project Information
                               </button>
+                              
                             </div>
                           </div>
                         </div>
@@ -903,15 +865,15 @@ function loadProject(projectId) {
                             <button class="action-btn refresh-btn refresh-notebook">
                               <i class="fas fa-sync-alt"></i> Refresh
                             </button>
+                            <button class="action-btn share-btn" onclick="shareNotebook('${project.title}', '${notebookUrl}')">
+                              <i class="fas fa-share-alt"></i> Share Notebook
+                            </button>
                           </div>
                         </div>
                         
                         <!-- Maximum Width/Height Notebook Container -->
                         <div class="notebook-frame-container-max">
-                          <div class="loading-indicator">
-                            <div class="loading-spinner"></div>
-                            <div class="loading-text">Loading notebook...</div>
-                          </div>
+                         
                           <iframe class="notebook-iframe" src="${notebookUrl}" allowfullscreen></iframe>
                         </div>
                         
@@ -1563,4 +1525,37 @@ document.addEventListener('DOMContentLoaded', function() {
     console.error('Error handling URL parameters:', err);
   }
 });
+
+// Add this function to handle notebook sharing
+function shareNotebook(title, notebookUrl) {
+  if (navigator.share) {
+    navigator.share({
+      title: `Jupyter Notebook: ${title}`,
+      text: `Check out this data science notebook: ${title}`,
+      url: notebookUrl
+    })
+    .catch(err => {
+      console.error('Could not share notebook:', err);
+    });
+  } else {
+    // Fallback for browsers that don't support the Web Share API
+    navigator.clipboard.writeText(notebookUrl)
+      .then(() => {
+        // Show a notification
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.innerHTML = '<i class="fas fa-check"></i> Notebook URL copied to clipboard';
+        document.body.appendChild(notification);
+        
+        // Remove notification after a delay
+        setTimeout(() => {
+          notification.remove();
+        }, 3000);
+      })
+      .catch(err => {
+        console.error('Could not copy notebook URL:', err);
+        alert('Please copy this URL manually: ' + notebookUrl);
+      });
+  }
+}
 
