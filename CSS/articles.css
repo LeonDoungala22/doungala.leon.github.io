@@ -1,0 +1,755 @@
+/* Articles Page Styling */
+
+/* Header Specific Styling */
+.articles-header {
+    background: linear-gradient(135deg, #131b2b, #1c2331);
+    position: relative;
+    margin-top: 0;
+    padding-top: 120px; /* Adjusted to account for fixed navbar */
+    padding-bottom: 80px;
+}
+
+.articles-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(rgba(66, 133, 244, 0.15) 2px, transparent 2px),
+        radial-gradient(rgba(66, 133, 244, 0.1) 2px, transparent 2px);
+    background-size: 30px 30px, 90px 90px;
+    background-position: 0 0, 15px 15px;
+    opacity: 0.5;
+    animation: floatAnimation 60s linear infinite;
+}
+
+@keyframes floatAnimation {
+    0% { background-position: 0 0, 15px 15px; }
+    100% { background-position: 30px 30px, 45px 45px; }
+}
+
+/* Article Filters */
+.article-filters {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 70px;
+    z-index: 90;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.filter-tabs .nav-pills {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    gap: 10px;
+}
+
+.filter-tabs .nav-pills::-webkit-scrollbar {
+    height: 3px;
+}
+
+.filter-tabs .nav-pills::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.filter-tabs .nav-pills::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.filter-tabs .nav-link {
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.filter-tabs .nav-link:hover {
+    background: rgba(66, 133, 244, 0.15);
+    color: var(--text-light);
+}
+
+.filter-tabs .nav-link.active {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 97, 255, 0.2);
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 10px 20px;
+    padding-right: 40px;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(66, 133, 244, 0.3);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+}
+
+/* Articles List Styling */
+.articles-list {
+    padding: 50px 0;
+    position: relative;
+}
+
+.articles-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(66, 133, 244, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.article-card {
+    background: linear-gradient(145deg, rgba(25, 30, 45, 0.8), rgba(20, 25, 40, 0.9));
+    border: 1px solid rgba(66, 133, 244, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(66, 133, 244, 0.4);
+}
+
+.article-image {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #131b2b, #1c2331);
+}
+
+.article-image::before {
+    content: 'Image Loading...';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    z-index: 0;
+}
+
+.article-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.05);
+}
+
+.article-category {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(66, 133, 244, 0.8);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.article-content {
+    padding: 25px;
+}
+
+.article-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.article-card:hover .article-title {
+    color: var(--primary);
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.article-meta i {
+    color: var(--primary);
+    margin-right: 5px;
+}
+
+.article-excerpt {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.article-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.article-card:hover .article-tag {
+    background: rgba(66, 133, 244, 0.15);
+    color: var(--primary-brighter);
+}
+
+/* Featured Article */
+.featured-article {
+    position: relative;
+}
+
+.coming-soon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(25, 30, 45, 0.92), rgba(20, 25, 40, 0.97));
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+}
+
+.coming-soon-content {
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+}
+
+.coming-soon-content i {
+    font-size: 3rem;
+    color: var(--primary-brighter);
+    animation: pulse 2s infinite;
+}
+
+.coming-soon-content h2 {
+    color: var(--text-light);
+    margin: 20px 0;
+    font-size: 2.2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.coming-soon-content p {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.7; transform: scale(1); }
+}
+
+.article-card.featured {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.article-card.featured .article-image {
+    height: 300px;
+}
+
+.article-card.featured .article-image img {
+    height: 100%;
+}
+
+.article-card.featured .article-title {
+    font-size: 1.8rem;
+}
+
+.coming-soon-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(45deg, #ff7300, #ff004c);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Pagination */
+.pagination-container {
+    margin-top: 40px;
+}
+
+.pagination .page-link {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+    margin: 0 5px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: rgba(66, 133, 244, 0.1);
+    color: var(--primary);
+    border-color: rgba(66, 133, 244, 0.2);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 0 10px rgba(66, 133, 244, 0.3);
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: rgba(255, 255, 255, 0.02);
+    color: var(--text-muted);
+    border-color: var(--border-color);
+}
+
+/* Sidebar Widgets */
+.sidebar-widget {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin-bottom: 35px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.sidebar-widget:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: rgba(66, 133, 244, 0.2);
+}
+
+.widget-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(66, 133, 244, 0.2);
+    color: var(--text-light);
+    position: relative;
+}
+
+.widget-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 60px;
+    height: 2px;
+    background: var(--primary-gradient);
+}
+
+/* Author Widget */
+.author-bio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.author-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(66, 133, 244, 0.3);
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.author-role {
+    color: var(--primary);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.author-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.author-social {
+    display: flex;
+    gap: 10px;
+}
+
+.author-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.author-social a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Topics Widget */
+.topic-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.topic-list li {
+    margin-bottom: 10px;
+}
+
+.topic-list li:last-child {
+    margin-bottom: 0;
+}
+
+.topic-list a {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.topic-list a:hover {
+    background: rgba(66, 133, 244, 0.1);
+    color: var(--text-light);
+    transform: translateX(5px);
+}
+
+.topic-list a span {
+    color: var(--primary);
+    font-size: 0.85rem;
+}
+
+/* Subscribe Widget */
+.subscribe-widget p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.subscribe-form .form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.subscribe-form .form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(66, 133, 244, 0.3);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .sidebar-widget {
+        margin-top: 40px;
+    }
+    
+    .article-card.featured .article-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-filters {
+        top: 60px;
+    }
+    
+    .filter-tabs .nav-link {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .article-card.featured .article-image {
+        height: 250px;
+    }
+    
+    .article-card.featured .article-title {
+        font-size: 1.3rem;
+    }
+    
+    .coming-soon-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .coming-soon-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .article-filters {
+        padding: 10px 0;
+    }
+    
+    .search-box {
+        margin-top: 15px;
+    }
+    
+    .article-card.featured .article-image {
+        height: 200px;
+    }
+    
+    .article-card.featured .article-title {
+        font-size: 1.2rem;
+    }
+    
+    .article-content {
+        padding: 15px;
+    }
+    
+    .article-item {
+        margin-bottom: 20px;
+    }
+}
+
+/* Add these at the end of your CSS file */
+
+/* Fallback animations if ScrollReveal isn't loaded */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-animation {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Staggered animation for cards */
+.article-item:nth-child(1) .fade-in-animation { animation-delay: 0.1s; }
+.article-item:nth-child(2) .fade-in-animation { animation-delay: 0.2s; }
+.article-item:nth-child(3) .fade-in-animation { animation-delay: 0.3s; }
+.article-item:nth-child(4) .fade-in-animation { animation-delay: 0.4s; }
+
+/* Ensure the navbar doesn't create a gap */
+.navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Make room for fixed navbar */
+body {
+    padding-top: 0 !important; /* Override any body padding that might be causing issues */
+}
+
+/* 1. Enhanced Color Palette */
+:root {
+    --accent-green: #0ACF97;
+    --accent-yellow: #FFC107;
+    --accent-red: #FF5B5B;
+    --accent-purple: #6C5CE7;
+    --accent-teal: #00C9A7;
+    --text-light: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.85);
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --primary-brighter: #4285f4;
+}
+
+/* 2. Improved Typography */
+.header-title {
+    font-size: 3rem;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: var(--text-light);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.2rem;
+}
+
+.header-welcome {
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    color: var(--primary-brighter);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.header-brief {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+p {
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    margin-bottom: 1.5rem;
+}
+
+/* 3. Better Card Design */
+
+/* Color coding system for cards */
+.article-item:nth-child(4n+1) .article-category {
+    background: var(--accent-green);
+}
+
+.article-item:nth-child(4n+2) .article-category {
+    background: var(--accent-purple);
+}
+
+.article-item:nth-child(4n+3) .article-category {
+    background: var(--accent-teal);
+}
+
+.article-item:nth-child(4n+4) .article-category {
+    background: var(--accent-yellow);
+}
+
+/* 4. Enhanced Contrast */
+
+/* 5. Improved Spacing */
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Better visual hierarchy */
+
+/* Enhanced coming soon overlay */
+
+/* Fix for button visibility issues in article cards */
+.article-buttons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.article-buttons a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+}
+
+.article-card {
+    overflow: visible !important;
+}
+
+/* Force all buttons to be visible */
+.btn-outline-light {
+    color: #fff !important;
+    border-color: #fff !important;
+    background-color: rgba(0,0,0,0.2) !important;
+}
+
+/* Update hover state for better visibility */
+.btn-outline-light:hover {
+    background-color: rgba(255,255,255,0.1) !important;
+    color: #fff !important;
+}
+
+/* Fix for any overlays that might be covering buttons */
+.coming-soon-overlay {
+    pointer-events: none !important;
+}
+
+.coming-soon-content {
+    pointer-events: auto !important;
+}
