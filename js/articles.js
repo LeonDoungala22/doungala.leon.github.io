@@ -1014,4 +1014,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Call the function at the end of your DOMContentLoaded event
     addUnderDevelopmentNotice();
+
+    // Add this to your existing DOMContentLoaded event handler
+    function addProjectsRevisionNotice() {
+        // Don't show if user already closed it in this session
+        if (sessionStorage.getItem('projectsNoticeShown') === 'true') {
+            return;
+        }
+        
+        const notice = document.createElement('div');
+        notice.className = 'projects-revision-notice';
+        notice.innerHTML = `
+            <div class="notice-content">
+                <div class="notice-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="notice-text">
+                    <h3>Articles & Projects Being Updated</h3>
+                    <p>New content is being progressively added to the site. Check back soon for more articles and projects!</p>
+                </div>
+                <button class="notice-close" aria-label="Close notification">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `;
+        
+        document.body.appendChild(notice);
+        
+        // Add event listener to close button
+        const closeButton = notice.querySelector('.notice-close');
+        closeButton.addEventListener('click', function() {
+            sessionStorage.setItem('projectsNoticeShown', 'true');
+            notice.classList.add('closing');
+            setTimeout(() => {
+                notice.remove();
+            }, 500);
+        });
+        
+        // No auto-hide timeout - notification stays until user closes it
+    }
+
+    // Show the notice
+    addProjectsRevisionNotice();
 });

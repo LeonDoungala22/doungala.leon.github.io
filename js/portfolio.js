@@ -1598,13 +1598,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 500);
     });
     
-    // Auto hide after 8 seconds
-    setTimeout(() => {
-      notice.classList.add('closing');
-      setTimeout(() => {
-        notice.remove();
-      }, 500);
-    }, 8000);
+    // No auto-hide timeout - notification stays until user closes it
   }
   
   // Show the notice
