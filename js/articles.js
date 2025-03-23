@@ -249,6 +249,78 @@ document.addEventListener('DOMContentLoaded', function() {
     const topicList = document.querySelectorAll('.topic-list a');
     const paginationContainer = document.querySelector('.pagination-container ul');
 
+    // Add this after the articleGrid element is defined
+    function addArticlesBanner() {
+        if (window.location.pathname.includes('articles.html')) {
+            const banner = document.createElement('div');
+            banner.className = 'articles-banner mb-5';
+            banner.innerHTML = `
+                <div class="articles-banner-content">
+                    <div class="banner-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <div class="banner-text">
+                        <h3>Technical Articles Coming Soon</h3>
+                        <p>I'm currently writing in-depth technical articles based on my AI/ML projects and research. 
+                        The cards below represent planned content that will be published in the coming months. 
+                        In the meantime, you can explore functioning project implementations through the "See Implementation" links.</p>
+                    </div>
+                </div>
+            `;
+            
+            // Add to page before the article grid
+            if (articleGrid && articleGrid.parentNode) {
+                articleGrid.parentNode.insertBefore(banner, articleGrid);
+                
+                // Add styles for the banner
+                const style = document.createElement('style');
+                style.textContent = `
+                    .articles-banner {
+                        background: linear-gradient(135deg, rgba(66, 133, 244, 0.1) 0%, rgba(15, 23, 42, 0.25) 100%);
+                        border-radius: 10px;
+                        padding: 25px;
+                        border-left: 4px solid #4285f4;
+                    }
+                    
+                    .articles-banner-content {
+                        display: flex;
+                        align-items: flex-start;
+                    }
+                    
+                    .banner-icon {
+                        font-size: 2rem;
+                        color: #4285f4;
+                        margin-right: 20px;
+                        padding-top: 5px;
+                    }
+                    
+                    .banner-text h3 {
+                        margin: 0 0 10px 0;
+                        font-size: 1.4rem;
+                    }
+                    
+                    .banner-text p {
+                        margin: 0;
+                        line-height: 1.6;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .articles-banner-content {
+                            flex-direction: column;
+                            text-align: center;
+                        }
+                        
+                        .banner-icon {
+                            margin: 0 0 15px 0;
+                        }
+                    }
+                `;
+                
+                document.head.appendChild(style);
+            }
+        }
+    }
+
     // ----- State Variables -----
     let currentFilter = 'all';
     let currentPage = 1;
@@ -280,6 +352,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Generate pagination
     renderPagination();
+
+    // Call this function after initializing page elements
+    addArticlesBanner();
 
     // ----- Event Listeners -----
     // Filter tabs click event
@@ -795,4 +870,148 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(addCardHoverEffects, 100);
         };
     }
+
+    // Add this function to the end of your DOM content loaded event handler
+    // Website under development notification
+    function addUnderDevelopmentNotice() {
+        // Check if we're on one of the pages that needs the notice
+        const currentPath = window.location.pathname;
+        const pagesToNotify = [
+            '/articles.html',
+            '/ml_and_ds_portfolio.html',
+            '/projects.html',
+            '/repository.html'
+        ];
+        
+        // Extract page name for custom message
+        let pageName = "This page";
+        if (currentPath.includes('articles')) pageName = "Articles section";
+        if (currentPath.includes('portfolio')) pageName = "Portfolio";
+        if (currentPath.includes('projects')) pageName = "Projects section";
+        if (currentPath.includes('repository')) pageName = "Repository";
+        
+        // Only add the notice if we're on one of the target pages
+        if (pagesToNotify.some(page => currentPath.includes(page.replace('/', '')))) {
+            // Create the notification element
+            const notice = document.createElement('div');
+            notice.className = 'development-notice';
+            notice.innerHTML = `
+                <div class="notice-content">
+                    <div class="notice-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="notice-text">
+                        <h3>${pageName} is currently under development</h3>
+                        <p>I'm actively building out this section with detailed content and case studies. Check back soon for updates!</p>
+                    </div>
+                    <button class="notice-close" aria-label="Close notification">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+            
+            // Add styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .development-notice {
+                    position: fixed;
+                    bottom: 30px;
+                    right: 30px;
+                    max-width: 400px;
+                    background: rgba(15, 23, 42, 0.95);
+                    border-left: 4px solid #4285f4;
+                    border-radius: 6px;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                    backdrop-filter: blur(8px);
+                    animation: slide-in 0.5s ease-out forwards;
+                    color: white;
+                }
+                
+                .notice-content {
+                    display: flex;
+                    padding: 20px;
+                    position: relative;
+                }
+                
+                .notice-icon {
+                    font-size: 1.8rem;
+                    color: #4285f4;
+                    margin-right: 15px;
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .notice-text h3 {
+                    margin: 0 0 8px 0;
+                    font-size: 1.1rem;
+                }
+                
+                .notice-text p {
+                    margin: 0;
+                    font-size: 0.9rem;
+                    opacity: 0.85;
+                }
+                
+                .notice-close {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: transparent;
+                    border: none;
+                    color: rgba(255, 255, 255, 0.6);
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    transition: color 0.2s;
+                }
+                
+                .notice-close:hover {
+                    color: white;
+                }
+                
+                @keyframes slide-in {
+                    from {
+                        transform: translateY(100px);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .development-notice {
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        max-width: 100%;
+                        border-radius: 0;
+                        border-left: none;
+                        border-top: 4px solid #4285f4;
+                    }
+                }
+            `;
+            
+            // Add elements to the DOM
+            document.head.appendChild(style);
+            document.body.appendChild(notice);
+            
+            // Add event listener to close button
+            const closeButton = notice.querySelector('.notice-close');
+            closeButton.addEventListener('click', function() {
+                // Store in sessionStorage so it stays closed during this session
+                sessionStorage.setItem('developmentNoticeClosed', 'true');
+                notice.remove();
+            });
+            
+            // Don't show if user already closed it in this session
+            if (sessionStorage.getItem('developmentNoticeClosed') === 'true') {
+                notice.remove();
+            }
+        }
+    }
+
+    // Call the function at the end of your DOMContentLoaded event
+    addUnderDevelopmentNotice();
 });
