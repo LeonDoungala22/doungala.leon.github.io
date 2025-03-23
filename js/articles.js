@@ -1,617 +1,741 @@
-// Add this to the beginning of your articles.js file to ensure there are no conflicts
-(function() {
-    // Safely check if ScrollReveal exists
-    const hasScrollReveal = typeof ScrollReveal !== 'undefined';
-    
-    // Store a reference to the original ScrollReveal if it exists
-    const originalScrollReveal = hasScrollReveal ? ScrollReveal : null;
-    
-    // Continue with the rest of your script
-    document.addEventListener('DOMContentLoaded', function() {
-        // Add loading indicator for particles
-        if (document.getElementById('particles-js')) {
-            const particlesEl = document.getElementById('particles-js');
-            particlesEl.innerHTML = '<div class="particles-loading">Initializing visualization...</div>';
-            
-            // Set a timeout in case particles.js fails to load
-            setTimeout(() => {
-                const loadingEl = document.querySelector('.particles-loading');
-                if (loadingEl) loadingEl.style.display = 'none';
-            }, 3000);
-        }
+/**
+ * Articles.js - JavaScript for the articles page
+ * Provides filtering, search, pagination, and interactive features
+ */
 
-        // Initialize particles.js in header
-        if (document.getElementById('particles-js')) {
-            particlesJS('particles-js', {
-                particles: {
-                    number: {
-                        value: 40,
-                        density: {
-                            enable: true,
-                            value_area: 800
-                        }
-                    },
-                    color: {
-                        value: '#4285f4'
-                    },
-                    shape: {
-                        type: 'circle',
-                        stroke: {
-                            width: 0,
-                            color: '#000000'
-                        }
-                    },
-                    opacity: {
-                        value: 0.15,
-                        random: true,
-                        anim: {
-                            enable: true,
-                            speed: 1,
-                            opacity_min: 0.05,
-                            sync: false
-                        }
-                    },
-                    size: {
-                        value: 3,
-                        random: true
-                    },
-                    line_linked: {
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize particles.js for the header background
+    if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 40,
+                    density: {
                         enable: true,
-                        distance: 150,
-                        color: '#4285f4',
-                        opacity: 0.1,
-                        width: 1
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#4285f4"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
                     },
-                    move: {
+                },
+                opacity: {
+                    value: 0.15,
+                    random: true,
+                    anim: {
                         enable: true,
                         speed: 1,
-                        direction: 'none',
-                        random: true,
-                        straight: false,
-                        out_mode: 'out',
-                        bounce: false,
+                        opacity_min: 0.05,
+                        sync: false
                     }
                 },
-                interactivity: {
-                    detect_on: 'canvas',
-                    events: {
-                        onhover: {
-                            enable: true,
-                            mode: 'grab'
-                        },
-                        onclick: {
-                            enable: true,
-                            mode: 'push'
-                        },
-                        resize: true
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        size_min: 0.3,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#4285f4",
+                    opacity: 0.1,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "grab"
                     },
-                    modes: {
-                        grab: {
-                            distance: 140,
-                            line_linked: {
-                                opacity: 0.5
-                            }
-                        },
-                        push: {
-                            particles_nb: 3
-                        }
-                    }
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
                 },
-                retina_detect: true
-            });
-        }
-        
-        // Article filtering functionality
-        const filterButtons = document.querySelectorAll('[data-filter]');
-        const articleItems = document.querySelectorAll('.article-item');
-        const topicLinks = document.querySelectorAll('.topic-list a');
-        
-        // Handle filter button clicks
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const filterValue = this.getAttribute('data-filter');
-                
-                // Update active state
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Filter articles
-                filterArticles(filterValue);
-            });
-        });
-        
-        // Handle topic links in sidebar
-        topicLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const filterValue = this.getAttribute('data-filter');
-                
-                // Update active states in main filter
-                filterButtons.forEach(btn => {
-                    if (btn.getAttribute('data-filter') === filterValue) {
-                        btn.classList.add('active');
-                    } else {
-                        btn.classList.remove('active');
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 0.8
+                        }
+                    },
+                    push: {
+                        particles_nb: 3
                     }
-                });
-                
-                // Filter articles
-                filterArticles(filterValue);
-                
-                // Scroll to the article section
-                document.querySelector('.article-filters').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
+                }
+            },
+            retina_detect: true
         });
-        
-        // Filter articles function
-        function filterArticles(filter) {
-            const articleItems = document.querySelectorAll('.article-item');
+    }
+
+    // ----- Article Data -----
+    // This would normally come from a database or API
+    // For now, we'll use static data for demonstration
+    const articles = [
+        {
+            id: 1,
+            title: "Multimodal Diabetes Prediction: Combining ML Ensembles with RAG-Enhanced LLMs",
+            excerpt: "Explore how machine learning ensembles and retrieval-augmented generation can be combined to create more accurate and interpretable diabetes prediction systems.",
+            image: "https://images.unsplash.com/photo-1581093806997-124204d9fa9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+            date: "2025-03-15",
+            readTime: "15 min read",
+            author: "Leon Doungala",
+            categories: ["machine-learning", "healthcare", "generative-ai"],
+            tags: ["ML Ensembles", "RAG", "Healthcare AI", "Diabetes", "LLMs"],
+            featured: true,
+            status: "coming-soon"
+        },
+        {
+            id: 2,
+            title: "Customer Segmentation: Unsupervised Learning for Business Intelligence",
+            excerpt: "A detailed walkthrough of customer segmentation techniques using K-means clustering and hierarchical clustering for business intelligence applications.",
+            image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2025-02-28",
+            readTime: "12 min read",
+            author: "Leon Doungala",
+            categories: ["clustering", "machine-learning"],
+            tags: ["K-means", "Clustering", "Business Intelligence", "Market Segmentation"],
+            status: "coming-soon"
+        },
+        {
+            id: 3,
+            title: "Heart Disease Prediction: Ensemble Learning Approaches",
+            excerpt: "An in-depth analysis of various ensemble learning techniques for predicting heart disease, with comparisons of Random Forest, XGBoost, and stacking methods.",
+            image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2025-02-15",
+            readTime: "18 min read",
+            author: "Leon Doungala",
+            categories: ["healthcare", "machine-learning"],
+            tags: ["Ensemble Learning", "Heart Disease", "Random Forest", "XGBoost", "Healthcare AI"],
+            status: "coming-soon"
+        },
+        {
+            id: 4,
+            title: "Building a Virtual Doctor Using RAG and Clinical Guidelines",
+            excerpt: "A step-by-step guide to creating a reliable virtual healthcare assistant by combining retrieval-augmented generation with structured clinical guidelines.",
+            image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2025-01-30",
+            readTime: "20 min read",
+            author: "Leon Doungala",
+            categories: ["generative-ai", "healthcare", "nlp"],
+            tags: ["Virtual Doctor", "RAG", "LLMs", "Healthcare AI", "Clinical Guidelines"],
+            status: "coming-soon"
+        },
+        {
+            id: 5,
+            title: "Advanced RAG-Based ATS Systems for HR",
+            excerpt: "Implementing a sophisticated applicant tracking system that leverages retrieval-augmented generation to better match candidates with job requirements.",
+            image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2025-01-15",
+            readTime: "16 min read",
+            author: "Leon Doungala",
+            categories: ["generative-ai", "nlp"],
+            tags: ["ATS", "Recruitment", "RAG", "HR Tech", "Resume Parsing"],
+            status: "coming-soon"
+        },
+        {
+            id: 6,
+            title: "Sentiment Analysis for Market Research",
+            excerpt: "Techniques for implementing sentiment analysis on social media data to extract insights for market research and competitive intelligence.",
+            image: "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2024-12-20",
+            readTime: "14 min read",
+            author: "Leon Doungala",
+            categories: ["nlp", "machine-learning"],
+            tags: ["Sentiment Analysis", "NLP", "Market Research", "Social Media Analytics"],
+            status: "coming-soon"
+        },
+        {
+            id: 7,
+            title: "Breast Cancer Classification Using Deep Learning",
+            excerpt: "A detailed approach to using convolutional neural networks for the classification of histopathological images to detect breast cancer.",
+            image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2024-12-05",
+            readTime: "22 min read",
+            author: "Leon Doungala",
+            categories: ["healthcare", "machine-learning"],
+            tags: ["Deep Learning", "CNN", "Breast Cancer", "Medical Imaging", "Classification"],
+            status: "coming-soon"
+        },
+        {
+            id: 8,
+            title: "Optimizing Housing Price Prediction Models",
+            excerpt: "Strategies for feature engineering and model selection to create more accurate housing price prediction systems with reduced overfitting.",
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2024-11-20",
+            readTime: "13 min read", 
+            author: "Leon Doungala",
+            categories: ["machine-learning"],
+            tags: ["Regression", "Feature Engineering", "Housing Prices", "Model Selection"],
+            status: "coming-soon"
+        },
+        {
+            id: 9,
+            title: "Email Spam Classification with NLP Techniques",
+            excerpt: "Advanced approaches to email spam detection combining traditional machine learning with modern natural language processing methods.",
+            image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2024-11-05",
+            readTime: "15 min read",
+            author: "Leon Doungala",
+            categories: ["machine-learning", "nlp"],
+            tags: ["Spam Detection", "NLP", "Classification", "Email Security"],
+            status: "coming-soon"
+        },
+        {
+            id: 10,
+            title: "Fraud Detection in Financial Transactions",
+            excerpt: "Implementing real-time fraud detection systems using anomaly detection and supervised learning with imbalanced datasets.",
+            image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2024-10-20",
+            readTime: "17 min read",
+            author: "Leon Doungala",
+            categories: ["machine-learning"],
+            tags: ["Fraud Detection", "Anomaly Detection", "Financial AI", "Imbalanced Learning"],
+            status: "coming-soon"
+        },
+        {
+            id: 11,
+            title: "Salary Prediction with Advanced Regression Techniques",
+            excerpt: "Exploring various regression models to predict salary based on experience, location, education, and other factors for HR analytics.",
+            image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2024-10-05",
+            readTime: "14 min read",
+            author: "Leon Doungala",
+            categories: ["machine-learning"],
+            tags: ["Regression", "Salary Prediction", "HR Analytics", "Feature Importance"],
+            status: "coming-soon"
+        },
+        {
+            id: 12,
+            title: "HR Analytics: Employee Retention Prediction",
+            excerpt: "Using clustering and classification techniques to identify patterns in employee attrition and build retention prediction models.",
+            image: "https://images.unsplash.com/photo-1573164574472-797cdf4a583a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2024-09-20",
+            readTime: "16 min read",
+            author: "Leon Doungala",
+            categories: ["clustering", "machine-learning"],
+            tags: ["HR Analytics", "Employee Retention", "Clustering", "Classification"],
+            status: "coming-soon"
+        }
+    ];
+
+    // ----- DOM Elements -----
+    const articleGrid = document.getElementById('articleGrid');
+    const articleSearch = document.getElementById('articleSearch');
+    const filterButtons = document.querySelectorAll('.filter-tabs button');
+    const topicList = document.querySelectorAll('.topic-list a');
+    const paginationContainer = document.querySelector('.pagination-container ul');
+
+    // ----- State Variables -----
+    let currentFilter = 'all';
+    let currentPage = 1;
+    const articlesPerPage = 6;
+    let searchQuery = '';
+
+    // ----- Initialize -----
+    // Update category counts
+    updateCategoryCounts();
+    
+    // Render articles with initial filter
+    renderArticles();
+    
+    // Generate pagination
+    renderPagination();
+
+    // ----- Event Listeners -----
+    // Filter tabs click event
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active class
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
             
-            articleItems.forEach(item => {
-                const category = item.getAttribute('data-category');
-                
-                // Just set visibility property rather than display style
-                if (filter === 'all' || filter === category) {
-                    item.setAttribute('data-visible', 'true');
+            // Update filter and reset page
+            currentFilter = this.getAttribute('data-filter');
+            currentPage = 1;
+            
+            // Re-render articles and pagination
+            renderArticles();
+            renderPagination();
+        });
+    });
+
+    // Topic list click event
+    topicList.forEach(topic => {
+        topic.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Update filter and reset page
+            currentFilter = this.getAttribute('data-filter');
+            currentPage = 1;
+            
+            // Update active class in filter tabs
+            filterButtons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === currentFilter) {
+                    btn.classList.add('active');
                 } else {
-                    item.setAttribute('data-visible', 'false');
+                    btn.classList.remove('active');
                 }
             });
             
-            // Update topic counts based on new filtering
-            updateTopicCounts();
+            // Re-render articles and pagination
+            renderArticles();
+            renderPagination();
+        });
+    });
+
+    // Search input event
+    articleSearch.addEventListener('input', function() {
+        searchQuery = this.value.toLowerCase().trim();
+        currentPage = 1;
+        renderArticles();
+        renderPagination();
+    });
+
+    // ----- Functions -----
+    // Get filtered articles based on current filter and search query
+    function getFilteredArticles() {
+        return articles.filter(article => {
+            // Filter by category
+            const categoryMatch = currentFilter === 'all' || article.categories.includes(currentFilter);
             
-            // Reset and setup pagination with filtered articles
-            setupPagination();
-        }
-        
-        // Search functionality
-        const searchInput = document.getElementById('articleSearch');
-        
-        if (searchInput) {
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase().trim();
-                
-                // If empty, reset to showing all
-                if (searchTerm === '') {
-                    // Find the active filter
-                    const activeFilter = document.querySelector('.filter-tabs .nav-link.active');
-                    filterArticles(activeFilter ? activeFilter.getAttribute('data-filter') : 'all');
-                    return;
-                }
-                
-                // Reset active state on filter buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                document.querySelector('[data-filter="all"]').classList.add('active');
-                
-                // Show all articles for searching
-                articleItems.forEach(item => {
-                    item.style.display = '';
-                });
-                
-                // Search through title and excerpt
-                articleItems.forEach(item => {
-                    const title = item.querySelector('.article-title').textContent.toLowerCase();
-                    const excerpt = item.querySelector('.article-excerpt').textContent.toLowerCase();
-                    const tags = Array.from(item.querySelectorAll('.article-tag'))
-                        .map(tag => tag.textContent.toLowerCase());
-                    
-                    // Check if any of the text contains the search term
-                    const matchesSearch = 
-                        title.includes(searchTerm) || 
-                        excerpt.includes(searchTerm) || 
-                        tags.some(tag => tag.includes(searchTerm));
-                    
-                    // Show or hide based on search
-                    if (matchesSearch) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        }
-        
-        // Use the SafeScrollReveal for animations
-        if (hasScrollReveal) {
-            try {
-                const srArticles = originalScrollReveal({
-                    origin: 'bottom',
-                    distance: '30px',
-                    duration: 800,
-                    delay: 100,
-                    easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
-                    reset: false
-                });
-                
-                srArticles.reveal('.article-card', { interval: 100 });
-                srArticles.reveal('.sidebar-widget', { interval: 150, delay: 200 });
-            } catch (e) {
-                console.warn('ScrollReveal error:', e);
-                // Apply fallback animations
-                document.querySelectorAll('.article-card, .sidebar-widget').forEach(el => {
-                    el.classList.add('fade-in-animation');
-                });
-            }
-        } else {
-            // Apply fallback animations
-            document.querySelectorAll('.article-card, .sidebar-widget').forEach(el => {
-                el.classList.add('fade-in-animation');
-            });
-        }
-        
-        // Subscribe form handling
-        const subscribeForm = document.querySelector('.subscribe-form');
-        
-        if (subscribeForm) {
-            subscribeForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get the email input
-                const emailInput = this.querySelector('input[type="email"]');
-                const email = emailInput.value.trim();
-                
-                // Basic validation
-                if (!email || !isValidEmail(email)) {
-                    createToast('Please enter a valid email address', 'error');
-                    return;
-                }
-                
-                // Simulate subscription (replace with actual API call)
-                createToast('Thanks for subscribing! Check your email to confirm.', 'success');
-                emailInput.value = '';
-            });
-        }
-        
-        // Helper function to validate email
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-        
-        // Toast notification function
-        function createToast(message, type = 'info') {
-            // Create toast container if not exists
-            let toastContainer = document.querySelector('.toast-container');
+            // Filter by search query
+            const searchMatch = searchQuery === '' || 
+                article.title.toLowerCase().includes(searchQuery) || 
+                article.excerpt.toLowerCase().includes(searchQuery) ||
+                article.tags.some(tag => tag.toLowerCase().includes(searchQuery));
             
-            if (!toastContainer) {
-                toastContainer = document.createElement('div');
-                toastContainer.className = 'toast-container';
-                document.body.appendChild(toastContainer);
-                
-                // Add styles
-                toastContainer.style.position = 'fixed';
-                toastContainer.style.bottom = '20px';
-                toastContainer.style.right = '20px';
-                toastContainer.style.zIndex = '9999';
-                toastContainer.style.maxWidth = '300px';
-            }
-            
-            // Create toast element
-            const toast = document.createElement('div');
-            toast.className = `toast toast-${type}`;
-            toast.innerHTML = `
-                <div class="toast-content">
-                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
-                    <p>${message}</p>
+            return categoryMatch && searchMatch;
+        });
+    }
+
+    // Render articles based on current filter, search, and pagination
+    function renderArticles() {
+        const filteredArticles = getFilteredArticles();
+        const startIndex = (currentPage - 1) * articlesPerPage;
+        const endIndex = startIndex + articlesPerPage;
+        const paginatedArticles = filteredArticles.slice(startIndex, endIndex);
+        
+        // Clear the grid
+        articleGrid.innerHTML = '';
+        
+        // Show "no articles found" message if no results
+        if (paginatedArticles.length === 0) {
+            articleGrid.innerHTML = `
+                <div class="col-12 text-center">
+                    <div class="empty-state">
+                        <i class="fas fa-search mb-3"></i>
+                        <h3>No articles found</h3>
+                        <p>Try adjusting your search or filter criteria</p>
+                    </div>
                 </div>
-                <button class="toast-close"><i class="fas fa-times"></i></button>
             `;
-            
-            // Style toast
-            toast.style.backgroundColor = type === 'success' ? 'rgba(10, 207, 151, 0.95)' : 'rgba(66, 133, 244, 0.95)';
-            toast.style.color = 'white';
-            toast.style.padding = '15px';
-            toast.style.borderRadius = '8px';
-            toast.style.marginTop = '10px';
-            toast.style.display = 'flex';
-            toast.style.justifyContent = 'space-between';
-            toast.style.alignItems = 'center';
-            toast.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
-            toast.style.transform = 'translateY(20px)';
-            toast.style.opacity = '0';
-            toast.style.transition = 'all 0.3s ease';
-            
-            // Add to container
-            toastContainer.appendChild(toast);
-            
-            // Animate in
-            setTimeout(() => {
-                toast.style.transform = 'translateY(0)';
-                toast.style.opacity = '1';
-            }, 10);
-            
-            // Close button
-            toast.querySelector('.toast-close').addEventListener('click', () => {
-                toast.style.transform = 'translateY(20px)';
-                toast.style.opacity = '0';
-                
-                setTimeout(() => {
-                    toast.remove();
-                }, 300);
-            });
-            
-            // Auto remove after 5 seconds
-            setTimeout(() => {
-                if (toast.parentNode) {
-                    toast.style.transform = 'translateY(20px)';
-                    toast.style.opacity = '0';
-                    
-                    setTimeout(() => {
-                        toast.remove();
-                    }, 300);
-                }
-            }, 5000);
+            return;
         }
         
-        // Initialize the animation for AI background elements
-        document.addEventListener('scroll', function() {
-            const scrollPosition = window.scrollY;
-            const viewportHeight = window.innerHeight;
-            const docHeight = document.documentElement.scrollHeight;
-            const scrollPercentage = scrollPosition / (docHeight - viewportHeight);
+        // Render each article
+        paginatedArticles.forEach(article => {
+            const articleCard = document.createElement('div');
+            articleCard.className = 'col-md-6 article-item';
+            articleCard.setAttribute('data-category', article.categories.join(' '));
             
-            // Move nodes based on scroll percentage
-            document.querySelectorAll('.ai-particle.node').forEach(node => {
-                const randomOffset = parseFloat(node.style.getPropertyValue('--delay')) * 10;
-                const xMovement = Math.sin(scrollPercentage * Math.PI * 2 + randomOffset) * 5;
-                const yMovement = Math.cos(scrollPercentage * Math.PI * 2 + randomOffset) * 5;
-                
-                node.style.transform = `translate(${xMovement}px, ${yMovement}px)`;
-            });
-        });
-
-        // Handle image loading errors
-        document.querySelectorAll('.article-image img').forEach(img => {
-            img.onerror = function() {
-                // Replace with a generated placeholder if image fails to load
-                const category = this.closest('.article-card').querySelector('.article-category').textContent;
-                this.src = `https://via.placeholder.com/600x400/1c2331/ffffff?text=${encodeURIComponent(category + ' Article')}`;
-            };
-        });
-        
-        // Author image fallback
-        const authorImg = document.querySelector('.author-image img');
-        if (authorImg) {
-            authorImg.onerror = function() {
-                this.src = 'https://ui-avatars.com/api/?name=Leon+Doungala&background=4285f4&color=fff&size=150';
-            };
-        }
-
-        // Initialize dynamic category counts
-        updateTopicCounts();
-        
-        // Initialize pagination
-        setupPagination();
-    });
-
-    // Fix for all implementation buttons
-    document.addEventListener('DOMContentLoaded', function() {
-        // Force all article buttons to be visible
-        document.querySelectorAll('.article-buttons').forEach(function(buttonsContainer) {
-            // Override any CSS that might be hiding buttons
-            buttonsContainer.style.cssText = `
-                display: flex !important; 
-                visibility: visible !important; 
-                opacity: 1 !important;
-                position: relative !important;
-                z-index: 100 !important;
-                pointer-events: auto !important;
-                margin-top: 15px !important;
+            // Generate tags HTML
+            const tagsHTML = article.tags.map(tag => 
+                `<span class="article-tag">${tag}</span>`
+            ).join('');
+            
+            // Generate metadata HTML
+            const metaHTML = `
+                <div class="article-date"><i class="far fa-calendar-alt"></i> ${formatDate(article.date)}</div>
+                <div class="article-read-time"><i class="far fa-clock"></i> ${article.readTime}</div>
             `;
             
-            // Force all links inside to be visible
-            buttonsContainer.querySelectorAll('a').forEach(function(button) {
-                button.style.cssText = `
-                    display: inline-flex !important;
-                    align-items: center !important;
-                    justify-content: center !important;
-                    visibility: visible !important;
-                    opacity: 1 !important;
-                    position: relative !important;
-                    z-index: 101 !important;
-                    pointer-events: auto !important;
-                `;
-            });
+            articleCard.innerHTML = `
+                <div class="article-card">
+                    ${article.status === 'coming-soon' ? '<div class="coming-soon-badge">Coming Soon</div>' : ''}
+                    <div class="article-image">
+                        <img src="${article.image}" alt="${article.title}">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">${article.title}</h3>
+                        <div class="article-meta">
+                            ${metaHTML}
+                        </div>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-tags">
+                            ${tagsHTML}
+                        </div>
+                        <div class="article-buttons">
+                            <button class="btn btn-primary disabled" ${article.status === 'coming-soon' ? 'disabled' : ''}>
+                                <i class="fas fa-book-reader"></i> Read Article
+                            </button>
+                            <a href="ml_and_ds_portfolio.html" class="btn btn-outline-light">
+                                <i class="fas fa-code"></i> See Implementation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            articleGrid.appendChild(articleCard);
         });
         
-        // Fix for heart disease link
-        const heartDiseaseButtons = document.querySelectorAll('.article-item[data-category="healthcare"] .article-buttons');
-        heartDiseaseButtons.forEach(function(btnContainer) {
-            const linkEl = btnContainer.querySelector('a[href*="heart-disease"]');
-            if (linkEl) {
-                linkEl.href = "ml_and_ds_portfolio.html?project=heart-disease-prediction";
-            }
-        });
-        
-        // Fix for breast cancer link
-        const breastCancerButtons = document.querySelectorAll('.article-item[data-category="healthcare"] .article-buttons');
-        breastCancerButtons.forEach(function(btnContainer) {
-            const linkEl = btnContainer.querySelector('a[href*="breast-cancer"]');
-            if (linkEl) {
-                linkEl.href = "ml_and_ds_portfolio.html?project=breast-cancer-classification";
-            }
-        });
-        
-        // Fix image loading errors with professional fallbacks
-        document.querySelectorAll('.article-image img').forEach(img => {
-            img.addEventListener('error', function() {
-                const category = this.closest('.article-card').querySelector('.article-category').textContent;
-                const iconMap = {
-                    'Machine Learning': 'fa-brain',
-                    'Generative AI': 'fa-robot',
-                    'AI in Healthcare': 'fa-heartbeat',
-                    'NLP': 'fa-language',
-                    'Data Analytics': 'fa-chart-pie',
-                    'Featured': 'fa-star'
-                };
-                
-                const icon = iconMap[category] || 'fa-microchip';
-                
-                // Create a clean placeholder with the category name and an icon
-                this.src = `https://dummyimage.com/800x400/1c2331/ffffff&text=${encodeURIComponent(category)}`;
-                
-                // Add icon overlay
-                const iconOverlay = document.createElement('div');
-                iconOverlay.className = 'icon-overlay';
-                iconOverlay.innerHTML = `<i class="fas ${icon}"></i>`;
-                iconOverlay.style.cssText = `
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 2;
-                    pointer-events: none;
-                `;
-                
-                iconOverlay.querySelector('i').style.cssText = `
-                    font-size: 3rem;
-                    color: rgba(255, 255, 255, 0.7);
-                `;
-                
-                this.parentNode.appendChild(iconOverlay);
-            });
-        });
-    });
+        // Add animation to the cards
+        animateArticleCards();
+    }
 
-    // Add this function after your DOMContentLoaded event
-    function updateTopicCounts() {
-        // Get all categories
-        const categories = {
+    // Format date in a readable format
+    function formatDate(dateString) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString('en-US', options);
+    }
+    
+    // Add staggered animation to article cards
+    function animateArticleCards() {
+        const cards = document.querySelectorAll('.article-item');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('animated', 'fadeInUp');
+            }, index * 100);
+        });
+    }
+
+    // Render pagination based on filtered articles
+    function renderPagination() {
+        const filteredArticles = getFilteredArticles();
+        const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+        
+        // Clear pagination
+        paginationContainer.innerHTML = '';
+        
+        // Don't show pagination if only one page
+        if (totalPages <= 1) return;
+        
+        // Previous button
+        const prevButton = document.createElement('li');
+        prevButton.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+        prevButton.innerHTML = `
+            <a class="page-link" href="#" aria-label="Previous">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+        `;
+        prevButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                renderArticles();
+                renderPagination();
+                scrollToTop();
+            }
+        });
+        paginationContainer.appendChild(prevButton);
+        
+        // Page numbers
+        const maxVisiblePages = 5;
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+        
+        // Adjust startPage if endPage is maxed out
+        if (endPage === totalPages) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
+        }
+        
+        // First page if not visible
+        if (startPage > 1) {
+            const firstPage = document.createElement('li');
+            firstPage.className = 'page-item';
+            firstPage.innerHTML = `<a class="page-link" href="#">1</a>`;
+            firstPage.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentPage = 1;
+                renderArticles();
+                renderPagination();
+                scrollToTop();
+            });
+            paginationContainer.appendChild(firstPage);
+            
+            // Ellipsis if needed
+            if (startPage > 2) {
+                const ellipsis = document.createElement('li');
+                ellipsis.className = 'page-item disabled';
+                ellipsis.innerHTML = `<span class="page-link">...</span>`;
+                paginationContainer.appendChild(ellipsis);
+            }
+        }
+        
+        // Page numbers
+        for (let i = startPage; i <= endPage; i++) {
+            const pageItem = document.createElement('li');
+            pageItem.className = `page-item ${i === currentPage ? 'active' : ''}`;
+            pageItem.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+            pageItem.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentPage = i;
+                renderArticles();
+                renderPagination();
+                scrollToTop();
+            });
+            paginationContainer.appendChild(pageItem);
+        }
+        
+        // Last page if not visible
+        if (endPage < totalPages) {
+            // Ellipsis if needed
+            if (endPage < totalPages - 1) {
+                const ellipsis = document.createElement('li');
+                ellipsis.className = 'page-item disabled';
+                ellipsis.innerHTML = `<span class="page-link">...</span>`;
+                paginationContainer.appendChild(ellipsis);
+            }
+            
+            const lastPage = document.createElement('li');
+            lastPage.className = 'page-item';
+            lastPage.innerHTML = `<a class="page-link" href="#">${totalPages}</a>`;
+            lastPage.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentPage = totalPages;
+                renderArticles();
+                renderPagination();
+                scrollToTop();
+            });
+            paginationContainer.appendChild(lastPage);
+        }
+        
+        // Next button
+        const nextButton = document.createElement('li');
+        nextButton.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+        nextButton.innerHTML = `
+            <a class="page-link" href="#" aria-label="Next">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        `;
+        nextButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderArticles();
+                renderPagination();
+                scrollToTop();
+            }
+        });
+        paginationContainer.appendChild(nextButton);
+    }
+
+    // Smooth scroll to top of article list
+    function scrollToTop() {
+        const articleListSection = document.querySelector('.articles-list');
+        if (articleListSection) {
+            window.scrollTo({
+                top: articleListSection.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Update category counts in sidebar
+    function updateCategoryCounts() {
+        // Count articles in each category
+        const categoryCounts = {
+            'all': articles.length,
             'machine-learning': 0,
             'generative-ai': 0,
             'healthcare': 0,
             'nlp': 0,
-            'clustering': 0,
-            'all': 0
+            'clustering': 0
         };
         
         // Count articles in each category
-        document.querySelectorAll('.article-item').forEach(item => {
-            const category = item.getAttribute('data-category');
-            if (category) {
-                if (categories[category] !== undefined) {
-                    categories[category]++;
+        articles.forEach(article => {
+            article.categories.forEach(category => {
+                if (categoryCounts.hasOwnProperty(category)) {
+                    categoryCounts[category]++;
                 }
-                categories['all']++;
-            }
+            });
         });
         
-        // Update the counts in the sidebar
-        document.querySelectorAll('.topic-list a').forEach(link => {
-            const filterValue = link.getAttribute('data-filter');
-            const countSpan = link.querySelector('span');
-            
-            if (countSpan && categories[filterValue] !== undefined) {
-                countSpan.textContent = `(${categories[filterValue]})`;
+        // Update sidebar topic counts
+        topicList.forEach(topic => {
+            const category = topic.getAttribute('data-filter');
+            const countSpan = topic.querySelector('span');
+            if (countSpan && categoryCounts.hasOwnProperty(category)) {
+                countSpan.textContent = `(${categoryCounts[category]})`;
             }
         });
     }
 
-    // Add this function to implement pagination
-    function setupPagination() {
-        const articlesPerPage = 6; // Show 6 articles per page
-        const articleItems = document.querySelectorAll('.article-item');
-        const paginationContainer = document.querySelector('.pagination');
-        
-        if (!paginationContainer) return;
-        
-        // Calculate total pages
-        const totalArticles = articleItems.length;
-        const totalPages = Math.ceil(totalArticles / articlesPerPage);
-        
-        // Clear existing pagination
-        paginationContainer.innerHTML = '';
-        
-        // Add previous button
-        const prevButton = document.createElement('li');
-        prevButton.className = 'page-item';
-        prevButton.innerHTML = `<a class="page-link" href="#" aria-label="Previous"><i class="fas fa-chevron-left"></i></a>`;
-        paginationContainer.appendChild(prevButton);
-        
-        // Add page numbers
-        for (let i = 1; i <= totalPages; i++) {
-            const pageItem = document.createElement('li');
-            pageItem.className = 'page-item' + (i === 1 ? ' active' : '');
-            pageItem.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
-            paginationContainer.appendChild(pageItem);
+    // Handle author section
+    const authorWidget = document.querySelector('.author-widget');
+    if (authorWidget) {
+        const authorImage = authorWidget.querySelector('.author-image');
+        if (authorImage) {
+            authorImage.innerHTML = `<img src="images/Untitled_design-removebg-preview__1_-removebg-preview (1).png" alt="Leon Doungala">`;
         }
         
-        // Add next button
-        const nextButton = document.createElement('li');
-        nextButton.className = 'page-item';
-        nextButton.innerHTML = `<a class="page-link" href="#" aria-label="Next"><i class="fas fa-chevron-right"></i></a>`;
-        paginationContainer.appendChild(nextButton);
+        const authorInfo = authorWidget.querySelector('.author-info');
+        if (authorInfo) {
+            authorInfo.innerHTML = `
+                <div class="author-name">Leon Doungala</div>
+                <div class="author-title">AI/ML Engineer & Data Scientist</div>
+            `;
+        }
+    }
+
+    // Handle subscribe form
+    const subscribeForm = document.querySelector('.subscribe-form');
+    if (subscribeForm) {
+        const formGroup = subscribeForm.querySelector('.form-group');
+        if (formGroup) {
+            formGroup.innerHTML = `
+                <input type="email" class="form-control" placeholder="Your email address" required>
+                <small class="text-muted">We'll never share your email with anyone else.</small>
+            `;
+        }
         
-        // Set initial page
-        showPage(1);
+        subscribeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            
+            if (emailInput && emailInput.value) {
+                // In a real application, you would send this to your server
+                console.log('Subscription request for:', emailInput.value);
+                
+                // Show success message
+                const formGroup = this.querySelector('.form-group');
+                formGroup.innerHTML = `
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle"></i> Thank you for subscribing!
+                    </div>
+                `;
+                
+                // Disable the button
+                const submitButton = this.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Subscribed';
+            }
+        });
+    }
+
+    // Initialize any bootstrap tooltips
+    if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
+        const tooltips = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltips.map(function (tooltip) {
+            return new bootstrap.Tooltip(tooltip);
+        });
+    }
+
+    // Set up "View Implementation" button
+    const viewImplementationBtns = document.querySelectorAll('.btn-outline-light');
+    viewImplementationBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // This would typically take the user to the specific project
+            // For now, just navigate to the portfolio page
+            window.location.href = 'ml_and_ds_portfolio.html';
+        });
+    });
+
+    // Handle footer navigation
+    const footerNav = document.querySelectorAll('.footer-nav');
+    if (footerNav.length >= 2) {
+        footerNav[0].innerHTML = `
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html#about"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a href="index.html#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        `;
         
-        // Add event listeners to pagination buttons
-        paginationContainer.querySelectorAll('.page-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
+        footerNav[1].innerHTML = `
+            <li><a href="ml_and_ds_portfolio.html"><i class="fas fa-project-diagram"></i> Portfolio</a></li>
+            <li><a href="thesi.html"><i class="fas fa-clipboard-check"></i> Thesis</a></li>
+            <li><a href="index.html#cv"><i class="fas fa-file-alt"></i> Resume</a></li>
+        `;
+    }
+
+    // Set portfolio showcase button
+    const portfolioBtn = document.querySelector('.project-showcase .btn');
+    if (portfolioBtn) {
+        portfolioBtn.innerHTML = `
+            <i class="fas fa-laptop-code"></i> View AI/ML Portfolio
+        `;
+    }
+
+    // Add special effects to article cards on hover
+    function addCardHoverEffects() {
+        const cards = document.querySelectorAll('.article-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const title = this.querySelector('.article-title');
+                if (title) {
+                    gsap.to(title, {
+                        y: -5,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                }
                 
-                const pageLinks = paginationContainer.querySelectorAll('.page-link[data-page]');
-                const currentPage = parseInt(paginationContainer.querySelector('.page-item.active .page-link').getAttribute('data-page'));
+                const image = this.querySelector('.article-image img');
+                if (image) {
+                    gsap.to(image, {
+                        scale: 1.05,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const title = this.querySelector('.article-title');
+                if (title) {
+                    gsap.to(title, {
+                        y: 0,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                }
                 
-                if (this.getAttribute('aria-label') === 'Previous') {
-                    if (currentPage > 1) {
-                        showPage(currentPage - 1);
-                    }
-                } else if (this.getAttribute('aria-label') === 'Next') {
-                    if (currentPage < totalPages) {
-                        showPage(currentPage + 1);
-                    }
-                } else {
-                    const pageNum = parseInt(this.getAttribute('data-page'));
-                    showPage(pageNum);
+                const image = this.querySelector('.article-image img');
+                if (image) {
+                    gsap.to(image, {
+                        scale: 1,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
                 }
             });
         });
-        
-        // Function to show specified page
-        function showPage(pageNum) {
-            // Update active class on pagination
-            paginationContainer.querySelectorAll('.page-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            paginationContainer.querySelector(`.page-link[data-page="${pageNum}"]`).parentNode.classList.add('active');
-            
-            // Enable/disable prev/next buttons
-            prevButton.classList.toggle('disabled', pageNum === 1);
-            nextButton.classList.toggle('disabled', pageNum === totalPages);
-            
-            // Show only articles for current page
-            articleItems.forEach((item, index) => {
-                const startIndex = (pageNum - 1) * articlesPerPage;
-                const endIndex = pageNum * articlesPerPage - 1;
-                
-                if (index >= startIndex && index <= endIndex) {
-                    item.style.display = '';
-                    // Add a fade-in animation
-                    item.style.opacity = '0';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transition = 'opacity 0.3s ease';
-                    }, 50 * (index - startIndex));
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            
-            // Scroll to top of articles
-            document.getElementById('articleGrid').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
     }
-})();
+
+    // If GSAP is available, add hover effects
+    if (typeof gsap !== 'undefined') {
+        addCardHoverEffects();
+        
+        // Re-add effects whenever articles are rendered
+        const renderArticlesOriginal = renderArticles;
+        renderArticles = function() {
+            renderArticlesOriginal();
+            setTimeout(addCardHoverEffects, 100);
+        };
+    }
+});
