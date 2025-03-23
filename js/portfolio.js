@@ -1559,3 +1559,55 @@ function shareNotebook(title, notebookUrl) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Existing code...
+  
+  // Add the under development notification
+  function addProjectsRevisionNotice() {
+    // Don't show if user already closed it in this session
+    if (sessionStorage.getItem('projectsNoticeShown') === 'true') {
+      return;
+    }
+    
+    const notice = document.createElement('div');
+    notice.className = 'projects-revision-notice';
+    notice.innerHTML = `
+      <div class="notice-content">
+        <div class="notice-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <div class="notice-text">
+          <h3>Projects Under Revision</h3>
+          <p>My portfolio is currently being updated. New projects will be progressively published in the coming weeks. Thank you for your interest!</p>
+        </div>
+        <button class="notice-close" aria-label="Close notification">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    `;
+    
+    document.body.appendChild(notice);
+    
+    // Add event listener to close button
+    const closeButton = notice.querySelector('.notice-close');
+    closeButton.addEventListener('click', function() {
+      sessionStorage.setItem('projectsNoticeShown', 'true');
+      notice.classList.add('closing');
+      setTimeout(() => {
+        notice.remove();
+      }, 500);
+    });
+    
+    // Auto hide after 8 seconds
+    setTimeout(() => {
+      notice.classList.add('closing');
+      setTimeout(() => {
+        notice.remove();
+      }, 500);
+    }, 8000);
+  }
+  
+  // Show the notice
+  addProjectsRevisionNotice();
+});
+
