@@ -132,18 +132,18 @@ document.addEventListener('DOMContentLoaded', function() {
             tags: ["Ensemble Learning", "Heart Disease", "Random Forest", "XGBoost", "Healthcare AI"],
             status: "coming-soon"
         },
-        {
-            id: 4,
-            title: "Building a Virtual Doctor Using RAG and Clinical Guidelines",
-            excerpt: "A step-by-step guide to creating a reliable virtual healthcare assistant by combining retrieval-augmented generation with structured clinical guidelines.",
-            image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-            date: "2025-01-30",
-            readTime: "20 min read",
-            author: "Leon Doungala",
-            categories: ["generative-ai", "healthcare", "nlp"],
-            tags: ["Virtual Doctor", "RAG", "LLMs", "Healthcare AI", "Clinical Guidelines"],
-            status: "coming-soon"
-        },
+               {
+                id: 4,
+                title: "Building a Healthcare Assistant Chatbot Using RAG and Clinical Guidelines",
+                excerpt: "A step-by-step guide to creating a reliable healthcare chatbot assistant by combining retrieval-augmented generation with structured clinical guidelines.",
+                image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+                date: "2025-01-30",
+                readTime: "20 min read",
+                author: "Leon Doungala",
+                categories: ["generative-ai", "healthcare", "nlp"],
+                tags: ["Healthcare Chatbot", "RAG", "LLMs", "Healthcare AI", "Clinical Guidelines"],
+                status: "coming-soon"
+            },
         {
             id: 5,
             title: "Advanced RAG-Based ATS Systems for HR",
@@ -252,8 +252,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // ----- State Variables -----
     let currentFilter = 'all';
     let currentPage = 1;
-    const articlesPerPage = 6;
     let searchQuery = '';
+
+    // Dynamic function to determine articles per page based on screen width
+    function getArticlesPerPage() {
+        const width = window.innerWidth;
+        if (width >= 1600) return 6;      // xxl+: 6 cards (2 rows of 3) - only on very large screens
+        if (width >= 992) return 4;       // lg: 4 cards (2 rows of 2) - better readability
+        if (width >= 768) return 4;       // md: 4 cards (2 rows of 2)
+        return 2;                         // sm: 2 cards (2 rows of 1)
+    }
+
+    // Dynamic function to determine column width based on screen size
+    function getColumnClass() {
+        const width = window.innerWidth;
+        if (width >= 1600) return 'col-xxl-4';           // 3 per row only on very large screens
+        if (width >= 768) return 'col-lg-6 col-md-6';    // 2 per row on large and medium
+        return 'col-12';                                 // 1 per row on small
+    }
 
     // ----- Initialize -----
     // Update category counts
@@ -315,6 +331,40 @@ document.addEventListener('DOMContentLoaded', function() {
         renderPagination();
     });
 
+    // Add after other event listeners
+    // Window resize event for responsive pagination
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            // Check if the number of articles per page has changed
+            const oldArticlesPerPage = getArticlesPerPage();
+            
+            // Force reflow to get new width
+            document.body.offsetHeight;
+            
+            const newArticlesPerPage = getArticlesPerPage();
+            
+            // If articles per page changed, we need to recalculate current page
+            if (oldArticlesPerPage !== newArticlesPerPage) {
+                // Adjust current page to keep approximate scroll position
+                const filteredArticles = getFilteredArticles();
+                const currentItemIndex = (currentPage - 1) * oldArticlesPerPage;
+                currentPage = Math.floor(currentItemIndex / newArticlesPerPage) + 1;
+                
+                // Make sure we don't exceed total pages
+                const totalPages = Math.ceil(filteredArticles.length / newArticlesPerPage);
+                currentPage = Math.min(currentPage, totalPages);
+                
+                // Re-render articles
+                renderArticles();
+            }
+            
+            // Always update pagination
+            renderPagination();
+        }, 250);
+    });
+
     // ----- Functions -----
     // Get filtered articles based on current filter and search query
     function getFilteredArticles() {
@@ -335,6 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Render articles based on current filter, search, and pagination
     function renderArticles() {
         const filteredArticles = getFilteredArticles();
+        const articlesPerPage = getArticlesPerPage();
         const startIndex = (currentPage - 1) * articlesPerPage;
         const endIndex = startIndex + articlesPerPage;
         const paginatedArticles = filteredArticles.slice(startIndex, endIndex);
@@ -345,9 +396,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show "no articles found" message if no results
         if (paginatedArticles.length === 0) {
             articleGrid.innerHTML = `
-                <div class="col-12 text-center">
+                <div class="col-12 text-center py-5">
                     <div class="empty-state">
-                        <i class="fas fa-search mb-3"></i>
+                        <i class="fas fa-search fa-3x mb-3 text-muted"></i>
                         <h3>No articles found</h3>
                         <p>Try adjusting your search or filter criteria</p>
                     </div>
@@ -356,10 +407,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+        // Get the appropriate column class
+        const columnClass = getColumnClass();
+        
         // Render each article
         paginatedArticles.forEach(article => {
             const articleCard = document.createElement('div');
-            articleCard.className = 'col-md-6 article-item';
+            articleCard.className = `${columnClass} article-item mb-4`;
             articleCard.setAttribute('data-category', article.categories.join(' '));
             
             // Generate tags HTML
@@ -374,26 +428,26 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             
             articleCard.innerHTML = `
-                <div class="article-card">
+                <div class="article-card h-100 d-flex flex-column">
                     ${article.status === 'coming-soon' ? '<div class="coming-soon-badge">Coming Soon</div>' : ''}
                     <div class="article-image">
-                        <img src="${article.image}" alt="${article.title}">
+                        <img src="${article.image}" alt="${article.title}" class="img-fluid">
                     </div>
-                    <div class="article-content">
+                    <div class="article-content d-flex flex-column flex-grow-1">
                         <h3 class="article-title">${article.title}</h3>
                         <div class="article-meta">
                             ${metaHTML}
                         </div>
-                        <p class="article-excerpt">${article.excerpt}</p>
-                        <div class="article-tags">
+                        <p class="article-excerpt flex-grow-1">${article.excerpt}</p>
+                        <div class="article-tags mb-3">
                             ${tagsHTML}
                         </div>
-                        <div class="article-buttons">
-                            <button class="btn btn-primary disabled" ${article.status === 'coming-soon' ? 'disabled' : ''}>
-                                <i class="fas fa-book-reader"></i> Read Article
+                        <div class="article-buttons mt-auto d-flex gap-2">
+                            <button class="btn btn-primary flex-grow-1" ${article.status === 'coming-soon' ? 'disabled' : ''}>
+                                <i class="fas fa-book-reader me-1"></i> Read Article
                             </button>
-                            <a href="ml_and_ds_portfolio.html" class="btn btn-outline-light">
-                                <i class="fas fa-code"></i> See Implementation
+                            <a href="ml_and_ds_portfolio.html" class="btn btn-outline-light flex-grow-1">
+                                <i class="fas fa-code me-1"></i> See Implementation
                             </a>
                         </div>
                     </div>
@@ -426,6 +480,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Render pagination based on filtered articles
     function renderPagination() {
         const filteredArticles = getFilteredArticles();
+        const articlesPerPage = getArticlesPerPage();
         const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
         
         // Clear pagination
@@ -453,8 +508,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         paginationContainer.appendChild(prevButton);
         
-        // Page numbers
-        const maxVisiblePages = 5;
+        // Dynamic visible pages based on screen size
+        const screenWidth = window.innerWidth;
+        const maxVisiblePages = screenWidth < 768 ? 3 : (screenWidth < 992 ? 5 : 7);
+        
         let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
         let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
         
