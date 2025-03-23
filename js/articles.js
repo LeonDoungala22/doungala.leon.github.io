@@ -502,6 +502,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="article-read-time"><i class="far fa-clock"></i> ${article.readTime}</div>
             `;
             
+            // Map article IDs to project links
+            // This maps each article to a specific project in the portfolio
+            const projectMappings = {
+                1: "diabetes-chatbot",  // Diabetes Prediction to diabetes-chatbot project
+                2: "customer-segmentation", // Customer Segmentation to related project
+                3: "heart-disease",    // Heart Disease Prediction to related project
+                4: "virtual-doctor",   // Healthcare Assistant to related project
+                5: "ats-system",       // RAG-Based ATS to related project
+                6: "sentiment-analysis", // Sentiment Analysis to related project
+                7: "breast-cancer",    // Breast Cancer to related project
+                8: "housing-prices",   // Housing Price Prediction to related project
+                9: "spam-email",       // Email Spam to related project
+                10: "fraud-detection", // Fraud Detection to related project
+                11: "salary-prediction", // Salary Prediction to related project
+                12: "hr-analytics"     // HR Analytics to related project
+            };
+            
+            // Get the corresponding project ID for the implementation link
+            const projectId = projectMappings[article.id] || "";
+            
             articleCard.innerHTML = `
                 <div class="article-card h-100 d-flex flex-column">
                     ${article.status === 'coming-soon' ? '<div class="coming-soon-badge">Coming Soon</div>' : ''}
@@ -521,7 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <button class="btn btn-primary flex-grow-1" ${article.status === 'coming-soon' ? 'disabled' : ''}>
                                 <i class="fas fa-book-reader me-1"></i> Read Article
                             </button>
-                            <a href="ml_and_ds_portfolio.html" class="btn btn-outline-light flex-grow-1">
+                            <a href="ml_and_ds_portfolio.html?project=${projectId}" class="btn btn-outline-light flex-grow-1">
                                 <i class="fas fa-code me-1"></i> See Implementation
                             </a>
                         </div>
@@ -1016,6 +1036,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addUnderDevelopmentNotice();
 
     // Add this to your existing DOMContentLoaded event handler
+
     function addProjectsRevisionNotice() {
         // Don't show if user already closed it in this session
         if (sessionStorage.getItem('projectsNoticeShown') === 'true') {
