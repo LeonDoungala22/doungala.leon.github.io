@@ -43,7 +43,7 @@
   --space-xl: 4rem;
 }
 
-/* Header Section Styling */
+/* Articles Header Section Styling */
 .articles-header {
   position: relative;
   background: linear-gradient(135deg, #1e2634, #14253d);
@@ -70,6 +70,11 @@
   z-index: 2;
 }
 
+.articles-header .header-content {
+  text-align: center; /* Add center alignment for all screen sizes */
+  margin: 0 auto; /* Center the content block */
+}
+
 .articles-header .header-title {
   color: var(--text-light);
   font-size: 3.5rem;
@@ -78,6 +83,8 @@
   letter-spacing: -0.02em;
   line-height: 1.2;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin-left: auto; /* Center the title */
+  margin-right: auto; /* Center the title */
 }
 
 .articles-header .header-welcome {
@@ -96,9 +103,11 @@
 .articles-header .header-brief {
   color: var(--text-secondary);
   font-size: 1.25rem;
-  max-width: 800px;
   line-height: 1.8;
   margin-bottom: var(--space-md);
+  margin-left: auto; /* Center the description */
+  margin-right: auto; /* Center the description */
+  max-width: 800px; /* Limit width but allow it to be centered */
 }
 
 .particles-container {
@@ -962,17 +971,22 @@
     max-width: 1680px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center; /* Ensure centering is maintained at large screens */
   }
   
   .articles-header .header-title,
   .academic-header .header-title {
     font-size: 4rem;
-    max-width: 70%;
+    max-width: 85%; /* Increased from 70% to better fill the centered space */
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .articles-header .header-brief,
   .academic-header .header-brief {
     font-size: 1.4rem;
-    max-width: 60%;
+    max-width: 70%; /* Increased from 60% to better match the title width */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
