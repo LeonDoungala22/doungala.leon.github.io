@@ -329,8 +329,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dynamic function to determine articles per page based on screen width
     function getArticlesPerPage() {
         const width = window.innerWidth;
-        if (width >= 1600) return 6;      // xxl+: 6 cards (2 rows of 3) - only on very large screens
-        if (width >= 992) return 4;       // lg: 4 cards (2 rows of 2) - better readability
+        if (width >= 2560) return 12;     // ultrawide: 12 cards (3 rows of 4)
+        if (width >= 1920) return 9;      // xxl: 9 cards (3 rows of 3)
+        if (width >= 1200) return 6;      // xl: 6 cards (2 rows of 3)
+        if (width >= 992) return 4;       // lg: 4 cards (2 rows of 2)
         if (width >= 768) return 4;       // md: 4 cards (2 rows of 2)
         return 2;                         // sm: 2 cards (2 rows of 1)
     }
@@ -338,7 +340,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dynamic function to determine column width based on screen size
     function getColumnClass() {
         const width = window.innerWidth;
-        if (width >= 1600) return 'col-xxl-4';           // 3 per row only on very large screens
+        if (width >= 2560) return 'col-xxl-3';           // 4 per row on ultrawide (2560px+)
+        if (width >= 1920) return 'col-xxl-4';           // 3 per row on very large screens (1920px+)
+        if (width >= 1200) return 'col-xl-4 col-lg-6';   // 3 per row on xl, 2 per row on lg
         if (width >= 768) return 'col-lg-6 col-md-6';    // 2 per row on large and medium
         return 'col-12';                                 // 1 per row on small
     }

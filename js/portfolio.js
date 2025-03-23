@@ -1605,3 +1605,29 @@ document.addEventListener('DOMContentLoaded', function() {
   addProjectsRevisionNotice();
 });
 
+// Add this to the CSS section or update your existing media queries
+document.addEventListener('DOMContentLoaded', function() {
+  // Add dynamic style for ultrawide screens
+  const style = document.createElement('style');
+  style.textContent = `
+    @media (min-width: 2560px) {
+      .project-grid.modern {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1920px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
+    @media (min-width: 1920px) and (max-width: 2559px) {
+      .project-grid.modern {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1680px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+});
+

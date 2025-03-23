@@ -936,3 +936,43 @@
     font-size: 0.9rem;
   }
 }
+
+/* Large screen notification positioning */
+@media (min-width: 1920px) {
+  .projects-revision-notice {
+    bottom: 50px;
+    right: calc((100% - 1680px) / 2 + 30px);
+    max-width: 450px;
+  }
+  
+  .notice-text h3 {
+    font-size: 1.3rem;
+  }
+  
+  .notice-text p {
+    font-size: 1rem;
+  }
+  
+  .notice-icon {
+    font-size: 2rem;
+  }
+
+  .articles-header .header-content,
+  .academic-header .header-content {
+    max-width: 1680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .articles-header .header-title,
+  .academic-header .header-title {
+    font-size: 4rem;
+    max-width: 70%;
+  }
+  
+  .articles-header .header-brief,
+  .academic-header .header-brief {
+    font-size: 1.4rem;
+    max-width: 60%;
+  }
+}
