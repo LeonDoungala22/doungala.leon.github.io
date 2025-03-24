@@ -1631,3 +1631,134 @@ document.addEventListener('DOMContentLoaded', function() {
   document.head.appendChild(style);
 });
 
+// Update the loadProject function to handle generative AI projects differently
+
+function loadProject(projectId) {
+  const project = projects.find(p => p.id === projectId);
+  if (!project) return;
+  
+  const projectContent = document.getElementById('project-content');
+  
+  // Get current date in formatted style
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+  
+  // Check if it's a generative AI project with a complex structure
+  const isGenerativeProject = project.category === 'generative';
+  
+  // For generative AI projects, use GitHub1s for code exploration
+  // For regular ML projects, use the notebook viewer
+  const embedUrl = isGenerativeProject 
+    ? project.githubUrl.replace('github.com', 'github1s.com') 
+    : project.notebookUrl;
+  
+  projectContent.innerHTML = `
+    <div class="project-article">
+      <!-- Project Header -->
+      <div class="project-article-header">
+        <h1 class="project-article-title">${project.title}</h1>
+        <div class="project-article-meta">
+          <div class="project-meta-left">
+            <div class="project-article-date">
+              <i class="far fa-calendar-alt"></i> ${formattedDate}
+            </div>
+            <div class="project-article-tags">
+              ${project.tags.map(tag => `<span class="badge ${isGenerativeProject ? 'bg-info' : 'bg-primary'}">${tag}</span>`).join('')}
+            </div>
+          </div>
+          <div class="project-meta-right">
+            <button class="project-info-btn toggle-description-btn" onclick="toggleDescription()">
+              <i class="fas fa-info-circle"></i> Project Information
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Top Control Bar -->
+      <div class="notebook-top-controls">
+        <div class="notebook-info">
+          <span class="notebook-author">Implementation by Leon Doungala, AI/ML Engineer</span>
+        </div>
+        <div class="notebook-actions">
+          <a href="${project.githubUrl}" class="action-btn github-btn" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="${embedUrl}" class="action-btn fullscreen-btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Open in New Tab
+          </a>
+          <button class="action-btn refresh-btn refresh-notebook">
+            <i class="fas fa-sync-alt"></i> Refresh
+          </button>
+          <button class="action-btn share-btn" onclick="shareProject('${project.title}', '${project.id}')">
+            <i class="fas fa-share-alt"></i> Share Project
+          </button>
+        </div>
+      </div>
+      
+      <!-- Label to indicate content type -->
+      <div class="content-type-indicator">
+        <i class="${isGenerativeProject ? 'fas fa-code' : 'fas fa-chart-line'}"></i>
+        <span>${isGenerativeProject ? 'Exploring Project Code Structure' : 'Jupyter Notebook'}</span>
+      </div>
+      
+      <!-- Maximum Width/Height Container for embedded content -->
+      <div class="notebook-frame-container-max">
+        <iframe class="notebook-iframe" src="${embedUrl}" allowfullscreen></iframe>
+      </div>
+      
+      <!-- Project Information Panel -->
+      <div class="project-description-panel" id="projectDescription">
+        <div class="description-panel-content">
+          <div class="panel-header">
+            <h3>Project Details</h3>
+            <button class="close-panel-btn" onclick="toggleDescription()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="panel-body">
+            ${project.detailedDescription}
+            
+            <div class="tech-section">
+              <h4>Technologies</h4>
+              <div class="tech-pills">
+                ${project.tags.map(tag => {
+                  const level = getTechLevel(tag);
+                  return `<span class="tech-pill tech-${level}">${tag}</span>`;
+                }).join('')}
+              </div>
+            </div>
+            
+            <div class="author-section">
+              <h4>Implementation by</h4>
+              <div class="author-info">
+                <div class="author-name">Leon Doungala</div>
+                <div class="author-title">AI/ML Engineer & Data Scientist</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  // Set up refresh notebook button
+  const refreshButton = projectContent.querySelector('.refresh-notebook');
+  if (refreshButton) {
+    refreshButton.addEventListener('click', function() {
+      const iframe = projectContent.querySelector('.notebook-iframe');
+      iframe.src = iframe.src; // Simple refresh by reassigning the src
+    });
+  }
+  
+  // Hide project explorer, show active project
+  document.getElementById('project-explorer').classList.add('d-none');
+  document.getElementById('active-project').classList.remove('d-none');
+  
+  // Scroll to top of active project
+  window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
+}
+
