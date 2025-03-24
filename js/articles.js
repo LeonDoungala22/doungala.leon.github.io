@@ -96,6 +96,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // For now, we'll use static data for demonstration
     const articles = [
         {
+            id: 2,
+            title: "Customer Segmentation: Advanced Clustering Techniques for Business Intelligence",
+            excerpt: "A comprehensive analysis of modern customer segmentation using K-means, hierarchical, and density-based clustering algorithms to uncover actionable business insights and drive targeted marketing strategies.",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            date: "2025-03-24",
+            readTime: "12 min read",
+            author: "Leon Doungala",
+            categories: ["clustering", "machine-learning"],
+            tags: ["Customer Segmentation", "K-means", "Clustering", "Business Intelligence", "Market Analysis"],
+            featured: true,
+            status: "coming-soon"
+        },
+        {
             id: 1,
             title: "Multimodal Diabetes Prediction: Combining ML Ensembles with RAG-Enhanced LLMs",
             excerpt: "Explore how machine learning ensembles and retrieval-augmented generation can be combined to create more accurate and interpretable diabetes prediction systems.",
@@ -105,19 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
             author: "Leon Doungala",
             categories: ["machine-learning", "healthcare", "generative-ai"],
             tags: ["ML Ensembles", "RAG", "Healthcare AI", "Diabetes", "LLMs"],
-            featured: true,
-            status: "coming-soon"
-        },
-        {
-            id: 2,
-            title: "Customer Segmentation: Unsupervised Learning for Business Intelligence",
-            excerpt: "A detailed walkthrough of customer segmentation techniques using K-means clustering and hierarchical clustering for business intelligence applications.",
-            image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-            date: "2025-02-28",
-            readTime: "12 min read",
-            author: "Leon Doungala",
-            categories: ["clustering", "machine-learning"],
-            tags: ["K-means", "Clustering", "Business Intelligence", "Market Segmentation"],
+            featured: false,
             status: "coming-soon"
         },
         {
