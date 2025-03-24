@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: 1,
             title: "Multimodal Diabetes Prediction: Combining ML Ensembles with RAG-Enhanced LLMs",
             excerpt: "Explore how machine learning ensembles and retrieval-augmented generation can be combined to create more accurate and interpretable diabetes prediction systems.",
-            image: "https://images.unsplash.com/photo-1581093806997-124204d9fa9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+            image: "https://placehold.co/800x450/264653/ffffff?text=Diabetes+Prediction",
             date: "2025-03-15",
             readTime: "15 min read",
             author: "Leon Doungala",
@@ -334,11 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update the getColumnClass function
     function getColumnClass() {
-        const width = window.innerWidth;
-        if (width >= 768) {
-            return 'col-md-6'; // 2 columns on desktop and tablet
-        }
-        return 'col-12'; // 1 column on mobile
+        return 'col-md-6'; // Always return 2 columns per row for desktop
     }
 
     // ----- Initialize -----
@@ -353,6 +349,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Call this function after initializing page elements
     addArticlesBanner();
+
+    // Apply the grid layout CSS
+    ensureProperGridLayout();
 
     // ----- Event Listeners -----
     // Filter tabs click event
@@ -455,7 +454,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Update the renderArticles function to fix the "See Implementation" buttons
+    // Update the renderArticles function to use more reliable image handling
     function renderArticles() {
         const filteredArticles = getFilteredArticles();
         const articlesPerPage = getArticlesPerPage();
@@ -481,7 +480,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Get the appropriate column class
-        const columnClass = getColumnClass();
+        const columnClass = 'col-md-6'; // Always use 2 columns for desktop
         
         // Map article IDs to project IDs (fixed mapping)
         const projectMappings = {
@@ -499,7 +498,10 @@ document.addEventListener('DOMContentLoaded', function() {
             12: "hr-analytics"
         };
         
-        // Render each article
+        // More reliable fallback image
+        const fallbackImage = "https://placehold.co/800x450/264653/ffffff?text=AI+%26+ML+Article";
+        
+        // Render each article with improved image handling
         paginatedArticles.forEach(article => {
             const articleCard = document.createElement('div');
             articleCard.className = `${columnClass} article-item mb-4`;
@@ -519,32 +521,47 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get the corresponding project ID for this article
             const projectId = projectMappings[article.id] || "";
             
-            articleCard.innerHTML = `
-                <div class="article-card h-100 d-flex flex-column">
-                    ${article.status === 'coming-soon' ? '<div class="coming-soon-badge">Coming Soon</div>' : ''}
-                    <div class="article-image">
-                        <img src="${article.image}" alt="${article.title}" class="img-fluid">
+            // Pre-load the image before rendering to check if it exists
+            const img = new Image();
+            img.onerror = function() {
+                // If image fails to load, use fallback immediately
+                renderArticleCard(fallbackImage);
+            };
+            img.onload = function() {
+                // If image loads successfully, use the original
+                renderArticleCard(article.image);
+            };
+            img.src = article.image;
+            
+            function renderArticleCard(imageSrc) {
+                articleCard.innerHTML = `
+                    <div class="article-card h-100 d-flex flex-column">
+                        ${article.status === 'coming-soon' ? '<div class="coming-soon-badge">Coming Soon</div>' : ''}
+                        <div class="article-image">
+                            <img src="${imageSrc}" alt="${article.title}" class="img-fluid" 
+                                onerror="if (!this.hasAttribute('data-error-shown')) { this.setAttribute('data-error-shown', 'true'); this.src='${fallbackImage}'; }">
+                        </div>
+                        <div class="article-content d-flex flex-column flex-grow-1">
+                            <h3 class="article-title">${article.title}</h3>
+                            <div class="article-meta">
+                                ${metaHTML}
+                            </div>
+                            <p class="article-excerpt flex-grow-1">${article.excerpt}</p>
+                            <div class="article-tags mb-3">
+                                ${tagsHTML}
+                            </div>
+                            <div class="article-buttons mt-auto d-flex gap-2">
+                                <button class="btn btn-primary flex-grow-1" ${article.status === 'coming-soon' ? 'disabled' : ''}>
+                                    <i class="fas fa-book-reader me-1"></i> Read Article
+                                </button>
+                                <a href="ml_and_ds_portfolio.html?project=${projectId}" class="btn btn-outline-light flex-grow-1">
+                                    <i class="fas fa-code me-1"></i> See Implementation
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="article-content d-flex flex-column flex-grow-1">
-                        <h3 class="article-title">${article.title}</h3>
-                        <div class="article-meta">
-                            ${metaHTML}
-                        </div>
-                        <p class="article-excerpt flex-grow-1">${article.excerpt}</p>
-                        <div class="article-tags mb-3">
-                            ${tagsHTML}
-                        </div>
-                        <div class="article-buttons mt-auto d-flex gap-2">
-                            <button class="btn btn-primary flex-grow-1" ${article.status === 'coming-soon' ? 'disabled' : ''}>
-                                <i class="fas fa-book-reader me-1"></i> Read Article
-                            </button>
-                            <a href="ml_and_ds_portfolio.html?project=${projectId}" class="btn btn-outline-light flex-grow-1">
-                                <i class="fas fa-code me-1"></i> See Implementation
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `;
+                `;
+            }
             
             articleGrid.appendChild(articleCard);
         });
@@ -1075,3 +1092,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show the notice
     addProjectsRevisionNotice();
 });
+
+// 4. Add CSS to ensure proper grid layout
+function ensureProperGridLayout() {
+    // Create a style element if it doesn't exist
+    let styleElement = document.getElementById('articles-grid-style');
+    if (!styleElement) {
+        styleElement = document.createElement('style');
+        styleElement.id = 'articles-grid-style';
+        document.head.appendChild(styleElement);
+    }
+    
+    // Update the style with fixed grid layout rules
+    styleElement.textContent = `
+        #articleGrid {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        
+        .article-item {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        .article-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-content {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-excerpt {
+            flex-grow: 1;
+        }
+        
+        @media (max-width: 767px) {
+            .article-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    `;
+}
