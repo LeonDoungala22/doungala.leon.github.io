@@ -333,6 +333,29 @@
   flex: 1;
 }
 
+/* Blue overlay for featured article */
+.article-card.featured.blue-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.article-card.featured.blue-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.2) 0%, rgba(0, 120, 215, 0.3) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.article-card.featured.blue-overlay .article-content {
+    position: relative;
+    z-index: 2;
+}
+
 /* Coming Soon Overlay */
 .coming-soon-overlay {
   position: absolute;
@@ -506,17 +529,37 @@
 
 /* Coming Soon Badge */
 .coming-soon-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--accent3-gradient);
-  color: var(--text-light);
-  padding: 0.4rem 1rem;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  z-index: 5;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 87, 34, 0.9); /* Deep orange */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    z-index: 3;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    transform: rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
+.coming-soon-badge:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.coming-soon-badge span {
+    display: inline-block;
+    position: relative;
+}
+
+.coming-soon-badge span::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    bottom: -2px;
+    left: 0;
 }
 
 /* Color coding for article cards */
@@ -534,6 +577,20 @@
 
 .article-item:nth-child(4n+4) .article-card {
   border-top: 3px solid var(--article-accent-5);
+}
+
+/* Update the article grid layout */
+.article-item {
+    flex: 0 0 50%; /* Make each card take up 50% of container width */
+    max-width: 50%; /* Ensure cards don't grow beyond 50% */
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .article-item {
+        flex: 0 0 100%; /* Full width on mobile */
+        max-width: 100%;
+    }
 }
 
 /* Pagination styling */

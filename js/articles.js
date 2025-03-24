@@ -95,11 +95,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // This would normally come from a database or API
     // For now, we'll use static data for demonstration
     const articles = [
+              // In the articles array, update the customer segmentation article (id: 2)
         {
             id: 2,
             title: "Customer Segmentation: Advanced Clustering Techniques for Business Intelligence",
             excerpt: "A comprehensive analysis of modern customer segmentation using K-means, hierarchical, and density-based clustering algorithms to uncover actionable business insights and drive targeted marketing strategies.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            image: "https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
             date: "2025-03-24",
             readTime: "12 min read",
             author: "Leon Doungala",
