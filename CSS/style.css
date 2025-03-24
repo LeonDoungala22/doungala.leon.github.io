@@ -3428,3 +3428,19 @@ copyright {
     font-size: 17px;
   }
 }
+
+/* Navigation optimization for large screens */
+@media (min-width: 1920px) {
+  .navbar > .container {
+    max-width: 1680px;
+  }
+  
+  .navbar-nav {
+    gap: 10px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.05rem;
+  }
+}

@@ -326,25 +326,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 1;
     let searchQuery = '';
 
-    // Dynamic function to determine articles per page based on screen width
+    // Update the getArticlesPerPage function
     function getArticlesPerPage() {
-        const width = window.innerWidth;
-        if (width >= 2560) return 12;     // ultrawide: 12 cards (3 rows of 4)
-        if (width >= 1920) return 9;      // xxl: 9 cards (3 rows of 3)
-        if (width >= 1200) return 6;      // xl: 6 cards (2 rows of 3)
-        if (width >= 992) return 4;       // lg: 4 cards (2 rows of 2)
-        if (width >= 768) return 4;       // md: 4 cards (2 rows of 2)
-        return 2;                         // sm: 2 cards (2 rows of 1)
+        // Always return 4 for 2x2 layout
+        return 4;
     }
 
-    // Dynamic function to determine column width based on screen size
+    // Update the getColumnClass function
     function getColumnClass() {
         const width = window.innerWidth;
-        if (width >= 2560) return 'col-xxl-3';           // 4 per row on ultrawide (2560px+)
-        if (width >= 1920) return 'col-xxl-4';           // 3 per row on very large screens (1920px+)
-        if (width >= 1200) return 'col-xl-4 col-lg-6';   // 3 per row on xl, 2 per row on lg
-        if (width >= 768) return 'col-lg-6 col-md-6';    // 2 per row on large and medium
-        return 'col-12';                                 // 1 per row on small
+        if (width >= 768) {
+            return 'col-md-6'; // 2 columns on desktop and tablet
+        }
+        return 'col-12'; // 1 column on mobile
     }
 
     // ----- Initialize -----
@@ -461,7 +455,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Render articles based on current filter, search, and pagination
+    // Update the renderArticles function to fix the "See Implementation" buttons
     function renderArticles() {
         const filteredArticles = getFilteredArticles();
         const articlesPerPage = getArticlesPerPage();
@@ -489,6 +483,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get the appropriate column class
         const columnClass = getColumnClass();
         
+        // Map article IDs to project IDs (fixed mapping)
+        const projectMappings = {
+            1: "diabetes-chatbot",
+            2: "customer-segmentation",
+            3: "heart-disease",
+            4: "virtual-doctor",
+            5: "ats-system",
+            6: "sentiment-analysis",
+            7: "breast-cancer",
+            8: "housing-prices",
+            9: "spam-email",
+            10: "fraud-detection",
+            11: "salary-prediction",
+            12: "hr-analytics"
+        };
+        
         // Render each article
         paginatedArticles.forEach(article => {
             const articleCard = document.createElement('div');
@@ -506,24 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="article-read-time"><i class="far fa-clock"></i> ${article.readTime}</div>
             `;
             
-            // Map article IDs to project links
-            // This maps each article to a specific project in the portfolio
-            const projectMappings = {
-                1: "diabetes-chatbot",  // Diabetes Prediction to diabetes-chatbot project
-                2: "customer-segmentation", // Customer Segmentation to related project
-                3: "heart-disease",    // Heart Disease Prediction to related project
-                4: "virtual-doctor",   // Healthcare Assistant to related project
-                5: "ats-system",       // RAG-Based ATS to related project
-                6: "sentiment-analysis", // Sentiment Analysis to related project
-                7: "breast-cancer",    // Breast Cancer to related project
-                8: "housing-prices",   // Housing Price Prediction to related project
-                9: "spam-email",       // Email Spam to related project
-                10: "fraud-detection", // Fraud Detection to related project
-                11: "salary-prediction", // Salary Prediction to related project
-                12: "hr-analytics"     // HR Analytics to related project
-            };
-            
-            // Get the corresponding project ID for the implementation link
+            // Get the corresponding project ID for this article
             const projectId = projectMappings[article.id] || "";
             
             articleCard.innerHTML = `
