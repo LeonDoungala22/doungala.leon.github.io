@@ -1649,6 +1649,7 @@ function loadProject(projectId) {
   
   // Check if it's a generative AI project with a complex structure
   const isGenerativeProject = project.category === 'generative';
+  const isPrivateRepo = project.isPrivate === true;
   
   // For generative AI projects, use GitHub1s for code exploration
   // For regular ML projects, use the notebook viewer
@@ -1705,10 +1706,29 @@ function loadProject(projectId) {
         <span>${isGenerativeProject ? 'Exploring Project Code Structure' : 'Jupyter Notebook'}</span>
       </div>
       
+      ${isPrivateRepo ? `
+      <!-- Private Repository Message -->
+      <div class="private-repo-message">
+        <div class="private-repo-content">
+          <div class="private-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="private-text">
+            <h3>Private Repository</h3>
+            <p>This project's source code is stored in a private repository and requires authorized access.</p>
+            <p>If you're interested in learning more about this project or requesting access, please contact me directly.</p>
+            <a href="mailto:doungala.leon@gmail.com" class="btn-contact">
+              <i class="fas fa-envelope"></i> Request Access
+            </a>
+          </div>
+        </div>
+      </div>
+      ` : `
       <!-- Maximum Width/Height Container for embedded content -->
       <div class="notebook-frame-container-max">
         <iframe class="notebook-iframe" src="${embedUrl}" allowfullscreen></iframe>
       </div>
+      `}
       
       <!-- Project Information Panel -->
       <div class="project-description-panel" id="projectDescription">
@@ -1750,7 +1770,7 @@ function loadProject(projectId) {
   if (refreshButton) {
     refreshButton.addEventListener('click', function() {
       const iframe = projectContent.querySelector('.notebook-iframe');
-      iframe.src = iframe.src; // Simple refresh by reassigning the src
+      if (iframe) iframe.src = iframe.src; // Simple refresh by reassigning the src
     });
   }
   
