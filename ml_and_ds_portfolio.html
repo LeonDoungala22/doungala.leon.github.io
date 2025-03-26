@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leon Doungala's Portfolio - AI/ML Engineer and Data Scientist">
+    <meta name="keywords" content="Leon Doungala, AI Engineer, ML Engineer, Data Scientist, Portfolio">
+    <meta name="author" content="Leon Doungala">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/protfolio.css">
+    <title>Leon Doungala - AI/ML Portfolio</title>
+</head>
+
+<body class="futuristic-theme">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="code-bracket">&lt;</span>Leon Doungala<span class="code-bracket">/&gt;</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about"><i class="fas fa-user"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-project-diagram"></i> AI/ML Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="thesi.html"><i class="fas fa-clipboard-check"></i> Thesis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#cv"><i class="fas fa-file"></i> CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html"><i class="fas fa-newspaper"></i> Articles</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Academic Header with Horizontal Balance -->
+    <header class="academic-header">
+        <div class="particles-container" id="particles-js"></div>
+        <div class="container">
+            <div class="header-content">
+                <!-- Title and Introduction Section -->
+                <div class="academic-intro">
+                    <span class="header-welcome">Research Portfolio</span>
+                    <h1 class="header-title">Advancing AI & Machine Learning Applications</h1>
+                    
+                    <!-- Brief intro text - kept professional and focused on work -->
+                    <p class="header-brief">
+                        A collection of research implementations and applications in machine learning, 
+                        data science, and artificial intelligence using rigorous methodologies.
+                    </p>
+                </div>
+                
+                <!-- Researcher Information Strip -->
+                <div class="researcher-strip">
+                    <div class="researcher-info">
+                        <div class="researcher-photo">
+                            <img src="images/Untitled_design-removebg-preview__1_-removebg-preview (1).png" alt="Leon Doungala">
+                        </div>
+                        <div class="researcher-details">
+                            <div class="researcher-name">Leon Doungala</div>
+                            <div class="researcher-titles">
+                                <span class="title-pill">Engineer</span>
+                                <span class="title-pill">AI/ML Engineer</span>
+                                <span class="title-pill">Data Scientist</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-actions">
+                        <a href="#project-explorer" class="btn btn-primary">
+                            <i class="fas fa-project-diagram"></i> View Projects
+                        </a>
+                        <a href="https://github.com/LeonDoungala22" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Update this section in your project explorer -->
+    <section id="project-explorer" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title with-line">Project Explorer</h2>
+                    <p class="section-subtitle">Discover my work in machine learning and generative AI</p>
+                </div>
+            </div>
+
+            <!-- Enhanced Category Selector & Search -->
+            <div class="explorer-controls mb-5">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-8">
+                        <div class="category-selector">
+                            <ul class="nav nav-pills nav-glowing mb-4 justify-content-center justify-content-lg-start flex-nowrap overflow-auto" id="projectTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-projects" 
+                                        type="button" role="tab" aria-selected="true">
+                                        <i class="fas fa-th-large"></i> All Projects
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="ml-tab" data-bs-toggle="tab" data-bs-target="#ml-projects" 
+                                        type="button" role="tab" aria-selected="false">
+                                        <i class="fas fa-brain"></i> Machine Learning
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="gen-tab" data-bs-toggle="tab" data-bs-target="#gen-projects" 
+                                        type="button" role="tab" aria-selected="false">
+                                        <i class="fas fa-robot"></i> Generative AI
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="search-box">
+                            <input type="text" id="projectSearch" class="form-control form-control-lg" placeholder="Search projects...">
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+
+            <!-- Project Display Area with Enhanced Layout -->
+            <div class="tab-content" id="projectTabContent">
+                <!-- All Projects Tab -->
+                <div class="tab-pane fade show active" id="all-projects" role="tabpanel" aria-labelledby="all-tab">
+                    <div class="project-grid modern" id="projectGrid">
+                        <!-- Project cards will be loaded here by JS -->
+                    </div>
+                </div>
+                
+                <!-- ML Projects Tab -->
+                <div class="tab-pane fade" id="ml-projects" role="tabpanel" aria-labelledby="ml-tab">
+                    <div class="project-grid modern" id="mlProjectGrid">
+                        <!-- ML Project cards will be loaded here by JS -->
+                    </div>
+                </div>
+                
+                <!-- Generative AI Tab -->
+                <div class="tab-pane fade" id="gen-projects" role="tabpanel" aria-labelledby="gen-tab">
+                    <div class="project-grid modern" id="genProjectGrid">
+                        <!-- Generative AI Project cards will be loaded here by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Project Section -->
+    <section id="active-project" class="py-5 d-none">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <button id="back-to-projects" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </button>
+                </div>
+            </div>
+            
+            <div class="project-display">
+                <!-- Project content will be dynamically loaded here -->
+                <div id="project-content" class="project-content-container">
+                    <!-- Dynamic project content goes here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="ai-footer">
+        <!-- Animated AI Background Elements -->
+        <div class="ai-particles">
+            <div class="ai-particle node" style="--delay: 0s; --x: 15%; --y: 20%;">
+                <div class="node-core"></div>
+                <div class="node-connections"></div>
+            </div>
+            <div class="ai-particle node" style="--delay: 2s; --x: 75%; --y: 15%;">
+                <div class="node-core"></div>
+                <div class="node-connections"></div>
+            </div>
+            <div class="ai-particle node" style="--delay: 4s; --x: 35%; --y: 65%;">
+                <div class="node-core"></div>
+                <div class="node-connections"></div>
+            </div>
+            <div class="ai-particle node" style="--delay: 6s; --x: 65%; --y: 70%;">
+                <div class="node-core"></div>
+                <div class="node-connections"></div>
+            </div>
+            
+            <div class="ai-particle data-flow" style="--x1: 15%; --y1: 20%; --x2: 75%; --y2: 15%;"></div>
+            <div class="ai-particle data-flow" style="--x1: 75%; --y1: 15%; --x2: 35%; --y2: 65%;"></div>
+            <div class="ai-particle data-flow" style="--x1: 35%; --y1: 65%; --x2: 65%; --y2: 70%;"></div>
+            <div class="ai-particle data-flow" style="--x1: 65%; --y1: 70%; --x2: 15%; --y2: 20%;"></div>
+        </div>
+        
+        <div class="container position-relative">
+            <div class="row py-5">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand mb-4">
+                        <span class="code-bracket">&lt;</span>Leon Doungala<span class="code-bracket">/&gt;</span>
+                    </div>
+                    <div class="footer-tag">
+                        <div class="tech-tags">
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">Data Science</span>
+                            <span class="tech-tag">Research</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Advancing artificial intelligence and machine learning applications through rigorous research and innovative implementations.
+                    </p>
+                    <div class="footer-connect mt-4">
+                        <a href="mailto:doungala.leon@gmail.com" class="connect-link">
+                            <i class="fas fa-envelope-open-text"></i> doungala.leon@gmail.com
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="footer-heading">Explore</h4>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="footer-nav">
+                                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                                <li><a href="index.html#about"><i class="fas fa-user"></i> About Me</a></li>
+                                <li><a href="index.html#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="footer-nav">
+                                <li><a href="#" class="active"><i class="fas fa-project-diagram"></i> Portfolio</a></li>
+                                <li><a href="thesi.html"><i class="fas fa-clipboard-check"></i> Thesis</a></li>
+                                <li><a href="index.html#cv"><i class="fas fa-file-alt"></i> Resume</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/LeonDoungala22" target="_blank" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/leon-doungala/" target="_blank" class="social-link linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" target="_blank" class="social-link twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                    </div>
+                    
+                    <div class="footer-cta mt-4">
+                        <h5 class="cta-title">Interested in collaboration?</h5>
+                        <a href="index.html#contact" class="cta-button">
+                            Let's Connect <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <p class="copyright">
+                            &copy; <span id="currentYear">2024</span> Leon Doungala. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="footer-badges">
+                            <span class="badge-item"><i class="fas fa-shield-alt"></i> Privacy Policy</span>
+                            <span class="badge-item"><i class="fas fa-handshake"></i> Terms of Use</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particle.js and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Animation for AI nodes based on scroll position
+    document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const scrollPercentage = scrollPosition / (docHeight - viewportHeight);
+            
+            // Move nodes based on scroll percentage
+            document.querySelectorAll('.ai-particle.node').forEach(node => {
+                const randomOffset = parseFloat(node.style.getPropertyValue('--delay')) * 10;
+                const xMovement = Math.sin(scrollPercentage * Math.PI * 2 + randomOffset) * 5;
+                const yMovement = Math.cos(scrollPercentage * Math.PI * 2 + randomOffset) * 5;
+                
+                node.style.transform = `translate(${xMovement}px, ${yMovement}px)`;
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
