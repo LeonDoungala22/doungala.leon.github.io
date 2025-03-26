@@ -422,27 +422,27 @@ const projects = [
     `
   },
   {
-    id: "hr-analytics",
-    title: "Human Resources Analytics",
-    description: "PCA and clustering for HR data analysis to identify employee patterns.",
-    category: "ml",
-    tags: ["PCA", "Data Analysis", "HR Analytics", "Employee Retention"],
-    image: "images/HR-Analytics.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%203_4_Advanced%20ML%20and%20Cloud%20Platforms%20for%20Machine%20Learning/Module%203%20Advanced%20ML%20with%20scikit-learn/Practical%20projects%20(%20Advanced%20ML%20)%20%20/PCA/Human%20Resources%20Analytics/main.ipynb",
-    detailedDescription: `
-      <p>This project uses Principal Component Analysis (PCA) and clustering techniques to analyze HR data and identify patterns related to employee satisfaction, performance, and retention.</p>
-      <h3>Key Techniques</h3>
-      <ul>
-        <li>Principal Component Analysis (PCA)</li>
-        <li>Hierarchical Clustering</li>
-        <li>Feature Importance Analysis</li>
-        <li>Correlation Analysis</li>
-      </ul>
-      <h3>Business Applications</h3>
-      <p>Human Resources departments can use these insights to develop better retention strategies, improve workplace satisfaction, and identify factors that contribute to employee turnover.</p>
-    `
-  },
+      id: "hr-analytics",
+      title: "Human Resources Analytics",
+      description: "PCA and clustering for HR data analysis to identify employee patterns.",
+      category: "ml",
+      tags: ["PCA", "Data Analysis", "HR Analytics", "Employee Retention"],
+      image: "images/HR-Analytics.jpeg",
+      notebookUrl: "https://nbviewer.org/github/leondoungala22/employee-clustering-analysis/blob/main/main.ipynb",
+      githubUrl: "https://github.com/leondoungala22/employee-clustering-analysis/blob/main/main.ipynb",
+      detailedDescription: `
+        <p>This project uses Principal Component Analysis (PCA) and clustering techniques to analyze HR data and identify patterns related to employee satisfaction, performance, and retention.</p>
+        <h3>Key Techniques</h3>
+        <ul>
+          <li>Principal Component Analysis (PCA)</li>
+          <li>Hierarchical Clustering</li>
+          <li>Feature Importance Analysis</li>
+          <li>Correlation Analysis</li>
+        </ul>
+        <h3>Business Applications</h3>
+        <p>Human Resources departments can use these insights to develop better retention strategies, improve workplace satisfaction, and identify factors that contribute to employee turnover.</p>
+      `
+    },
   {
     id: "diabetes-prediction",
     title: "Diabetes Prediction and Characterization",
