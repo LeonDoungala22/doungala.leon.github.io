@@ -1782,3 +1782,45 @@ function loadProject(projectId) {
   window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
 }
 
+// build.js - Add to your build scripts
+const fs = require('fs');
+
+// Create a config file from environment variables
+const config = {
+  github: {
+    token: process.env.GITHUB_TOKEN || ''
+  }
+};
+
+// Write to a file that's used by your app
+fs.writeFileSync('./js/config.js', `const config = ${JSON.stringify(config)};`);
+
+// Add this function to your portfolio.js
+function fetchFromGitHub(url) {
+  // Safely check if config exists and has a token
+  const token = (typeof config !== 'undefined' && 
+                config.github && 
+                config.github.token) ? config.github.token : '';
+  
+  return fetch(url, {
+    headers: {
+      'Authorization': token ? `token ${token}` : '',
+      'Accept': 'application/vnd.github.v3+json'
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      console.warn(`GitHub API error: ${response.status}`);
+      return response.json().then(err => {
+        throw new Error(`GitHub API: ${err.message || 'Unknown error'}`);
+      });
+    }
+    return response.json();
+  });
+}
+
+// Update your GitHub content loading functions to use this
+function loadGitHubRepoContent(owner, repo, path) {
+  return fetchFromGitHub(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`);
+}
+
