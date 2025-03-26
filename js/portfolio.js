@@ -2771,3 +2771,68 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Add this immediately after the loadProject function or in your DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function() {
+  // Add notebook height styles with !important to override any conflicting styles
+  const notebookHeightFix = document.createElement('style');
+  notebookHeightFix.textContent = `
+    /* Force taller notebook container */
+    .notebook-frame-container-max {
+      position: relative !important;
+      width: 100% !important;
+      height: 800px !important; /* Fixed explicit height */
+      overflow: hidden !important;
+      margin-bottom: 2rem !important;
+    }
+    
+    /* Make iframe fill the container completely */
+    .notebook-iframe {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      border: none !important;
+    }
+    
+    /* Responsive heights for different screen sizes */
+    @media (min-width: 1600px) {
+      .notebook-frame-container-max {
+        height: 900px !important;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .notebook-frame-container-max {
+        height: 700px !important;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .notebook-frame-container-max {
+        height: 600px !important;
+      }
+    }
+  `;
+  document.head.appendChild(notebookHeightFix);
+  
+  // Also apply the height directly to any existing notebooks
+  function updateNotebookHeight() {
+    const container = document.querySelector('.notebook-frame-container-max');
+    if (container) {
+      container.style.height = '800px';
+    }
+  }
+  
+  // Run immediately
+  updateNotebookHeight();
+  
+  // Also run when notebooks are loaded
+  document.addEventListener('click', function(e) {
+    if (e.target.matches('.btn-view-project')) {
+      // Wait for the notebook to be added to the DOM
+      setTimeout(updateNotebookHeight, 500);
+    }
+  });
+});
+
