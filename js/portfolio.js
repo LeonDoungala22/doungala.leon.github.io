@@ -1797,10 +1797,17 @@ fs.writeFileSync('./js/config.js', `const config = ${JSON.stringify(config)};`);
 
 // Add this function to your portfolio.js
 function fetchFromGitHub(url) {
+  // Check if config is available
+  if (typeof config === 'undefined') {
+    console.warn('GitHub config is not defined. Make sure config.js is loaded before portfolio.js');
+  }
+
   // Safely check if config exists and has a token
   const token = (typeof config !== 'undefined' && 
                 config.github && 
                 config.github.token) ? config.github.token : '';
+                
+  console.log('Using GitHub authentication:', token ? 'Yes (token available)' : 'No (no token)');
   
   return fetch(url, {
     headers: {
@@ -1811,6 +1818,9 @@ function fetchFromGitHub(url) {
   .then(response => {
     if (!response.ok) {
       console.warn(`GitHub API error: ${response.status}`);
+      if (response.status === 403 || response.status === 503) {
+        console.error('Rate limit likely exceeded. Check if token is working.');
+      }
       return response.json().then(err => {
         throw new Error(`GitHub API: ${err.message || 'Unknown error'}`);
       });
@@ -1822,5 +1832,20 @@ function fetchFromGitHub(url) {
 // Update your GitHub content loading functions to use this
 function loadGitHubRepoContent(owner, repo, path) {
   return fetchFromGitHub(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`);
+}
+
+// Example function for loading notebook content
+function loadNotebook(repo, path) {
+  return fetchFromGitHub(`https://api.github.com/repos/${repo}/contents/${path}`)
+    .then(data => {
+      if (data.encoding === 'base64') {
+        return atob(data.content); // Decode base64 content
+      }
+      return null;
+    })
+    .catch(error => {
+      console.error('Error loading notebook:', error);
+      return null;
+    });
 }
 
