@@ -1741,9 +1741,12 @@ function loadProject(projectId) {
         </div>
       </div>
       ` : `
-      <!-- Maximum Width/Height Container for embedded content -->
+      <!-- Enhanced Maximum Width/Height Container for embedded content -->
       <div class="notebook-frame-container-max">
-        <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideNotebookLoader()"></iframe>
+        <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideJupyterLoader()"></iframe>
+        <button class="notebook-fullscreen-toggle" title="Toggle fullscreen mode">
+          <i class="fas fa-expand"></i>
+        </button>
       </div>
       `}
       
@@ -2582,9 +2585,12 @@ function loadProject(projectId) {
         </div>
       </div>
       ` : `
-      <!-- Maximum Width/Height Container for embedded content -->
+      <!-- Enhanced Maximum Width/Height Container for embedded content -->
       <div class="notebook-frame-container-max">
         <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideJupyterLoader()"></iframe>
+        <button class="notebook-fullscreen-toggle" title="Toggle fullscreen mode">
+          <i class="fas fa-expand"></i>
+        </button>
       </div>
       `}
       
@@ -2651,5 +2657,117 @@ window.hideJupyterLoader = hideJupyterLoader;
 // Initialize the loader when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   createGlobalNotebookLoader();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Add enhanced notebook container styling
+  const notebookStyles = document.createElement('style');
+  notebookStyles.textContent = `
+    /* Enhanced Notebook Container */
+    .notebook-frame-container-max {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 75vh; /* This creates a tall container that takes 75% of viewport height */
+      overflow: hidden;
+      background: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      transition: height 0.3s ease;
+    }
+    
+    /* Make iframe fill the container completely */
+    .notebook-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+      background: white;
+    }
+    
+    /* Add responsive rules for different screen sizes */
+    @media (min-width: 1600px) {
+      .notebook-frame-container-max {
+        padding-bottom: 80vh; /* Even taller on large screens */
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .notebook-frame-container-max {
+        padding-bottom: 70vh; /* Slightly shorter on medium screens */
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .notebook-frame-container-max {
+        padding-bottom: 90vh; /* Taller on mobile for better reading */
+      }
+    }
+    
+    /* Toggle fullscreen mode button */
+    .notebook-fullscreen-toggle {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 100;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .notebook-fullscreen-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    /* Class to apply when in fullscreen mode */
+    .notebook-frame-container-max.fullscreen-mode {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh !important;
+      padding-bottom: 0;
+      z-index: 9999;
+      border-radius: 0;
+    }
+    
+    .notebook-frame-container-max.fullscreen-mode .notebook-iframe {
+      border-radius: 0;
+    }
+  `;
+  document.head.appendChild(notebookStyles);
+  
+  // Add fullscreen toggle functionality if needed
+  document.addEventListener('click', function(e) {
+    if (e.target.matches('.notebook-fullscreen-toggle') || e.target.closest('.notebook-fullscreen-toggle')) {
+      const container = document.querySelector('.notebook-frame-container-max');
+      if (container) {
+        container.classList.toggle('fullscreen-mode');
+        
+        // Update button icon
+        const icon = e.target.closest('.notebook-fullscreen-toggle').querySelector('i');
+        if (icon) {
+          if (container.classList.contains('fullscreen-mode')) {
+            icon.className = 'fas fa-compress';
+          } else {
+            icon.className = 'fas fa-expand';
+          }
+        }
+      }
+    }
+  });
 });
 
