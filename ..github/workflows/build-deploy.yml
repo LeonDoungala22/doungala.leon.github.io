@@ -1,0 +1,39 @@
+name: Build and Deploy Portfolio
+
+on:
+  push:
+    branches: [ main ]  # Or your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+    
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        
+      - name: Setup Git Identity 🔐
+        run: |
+          git config --global user.name "leondoungala22"
+          git config --global user.email "doungala.leon@gmail.com"
+
+      - name: Generate Config File 🔧
+        run: |
+          mkdir -p js
+          echo "const config = { github: { token: \"${{ secrets.GITHUBTOKEN }}\" } };" > js/config.js
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .  # The folder the action should deploy
+          branch: gh-pages  # The branch the action should deploy to
+          token: ${{ secrets.GITHUBTOKEN }}  # Use your token for deployment
+          commit-message: "Deploy portfolio site with GitHub token integration"
+          git-config-name: leondoungala22
+          git-config-email: doungala.leon@gmail.com
+          clean: true
