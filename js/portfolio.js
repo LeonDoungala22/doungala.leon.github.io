@@ -1700,6 +1700,23 @@ function loadProject(projectId) {
         </div>
       </div>
       
+      <!-- NEW: External Loading Animation -->
+      <div class="external-loading-animation" id="notebookExternalLoader">
+        <div class="loading-animation-content">
+          <div class="jupyter-logo-spinner">
+            <div class="jupyter-circles">
+              <div class="jupyter-circle jupyter-circle-1"></div>
+              <div class="jupyter-circle jupyter-circle-2"></div>
+              <div class="jupyter-circle jupyter-circle-3"></div>
+            </div>
+          </div>
+          <div class="loading-text">
+            <h3>Loading Jupyter Notebook</h3>
+            <p>Please wait while the notebook content is being prepared...</p>
+          </div>
+        </div>
+      </div>
+      
       <!-- Label to indicate content type -->
       <div class="content-type-indicator">
         <i class="${isGenerativeProject ? 'fas fa-code' : 'fas fa-chart-line'}"></i>
@@ -1726,11 +1743,11 @@ function loadProject(projectId) {
       ` : `
       <!-- Maximum Width/Height Container for embedded content -->
       <div class="notebook-frame-container-max">
-        <iframe class="notebook-iframe" src="${embedUrl}" allowfullscreen></iframe>
+        <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideNotebookLoader()"></iframe>
       </div>
       `}
       
-      <!-- Project Information Panel -->
+      <!-- Project Information Panel remains the same -->
       <div class="project-description-panel" id="projectDescription">
         <div class="description-panel-content">
           <div class="panel-header">
@@ -1770,9 +1787,32 @@ function loadProject(projectId) {
   if (refreshButton) {
     refreshButton.addEventListener('click', function() {
       const iframe = projectContent.querySelector('.notebook-iframe');
-      if (iframe) iframe.src = iframe.src; // Simple refresh by reassigning the src
+      if (iframe) {
+        // Show loading animation again when refreshing
+        showNotebookLoader();
+        iframe.src = iframe.src; // Refresh by reassigning the src
+      }
     });
   }
+  
+  // Add these functions to the global scope for iframe onload access
+  window.hideNotebookLoader = function() {
+    const loader = document.getElementById('notebookExternalLoader');
+    if (loader) {
+      loader.classList.add('loading-complete');
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 500); // Fade out animation duration
+    }
+  };
+  
+  window.showNotebookLoader = function() {
+    const loader = document.getElementById('notebookExternalLoader');
+    if (loader) {
+      loader.style.display = 'flex';
+      loader.classList.remove('loading-complete');
+    }
+  };
   
   // Hide project explorer, show active project
   document.getElementById('project-explorer').classList.add('d-none');
@@ -1848,4 +1888,768 @@ function loadNotebook(repo, path) {
       return null;
     });
 }
+
+// Add this to your DOMContentLoaded event or wherever you add styles dynamically
+document.addEventListener('DOMContentLoaded', function() {
+  // Add the CSS for the external loader
+  const style = document.createElement('style');
+  style.textContent = `
+    /* External Jupyter Notebook Loader */
+    .external-loading-animation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 2rem 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    
+    .external-loading-animation.loading-complete {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    
+    .loading-animation-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .jupyter-logo-spinner {
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    
+    .jupyter-circles {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      animation: spin 2s linear infinite;
+    }
+    
+    .jupyter-circle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    .jupyter-circle-1 {
+      background: #F37626; /* Orange */
+      top: 0;
+      left: calc(50% - 10px);
+      animation-delay: 0s;
+    }
+    
+    .jupyter-circle-2 {
+      background: #6E6E6E; /* Gray */
+      bottom: 10px;
+      left: calc(25% - 10px);
+      animation-delay: 0.5s;
+    }
+    
+    .jupyter-circle-3 {
+      background: #4E4E4E; /* Dark gray */
+      bottom: 10px;
+      right: calc(25% - 10px);
+      animation-delay: 1s;
+    }
+    
+    .loading-text h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+      color: #333;
+    }
+    
+    .loading-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    /* Mobile responsiveness for the loader */
+    @media (max-width: 768px) {
+      .loading-animation-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+      
+      .jupyter-logo-spinner {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+});
+
+// Execute immediately when script loads to ensure projects are properly initialized
+(function() {
+  console.log('Portfolio loader initializing...');
+  
+  // Make sure projects array exists before proceeding
+  if (typeof window.projects === 'undefined') {
+    console.error('Projects array not defined! Check your scripts loading order.');
+    // Define an empty array to prevent errors
+    window.projects = window.projects || [];
+  }
+  
+  // Single consolidated initialization function
+  function initializePortfolio() {
+    console.log('Initializing portfolio with', projects.length, 'projects');
+    
+    try {
+      // Get references to grids
+      const projectGrid = document.getElementById('projectGrid');
+      const mlProjectGrid = document.getElementById('mlProjectGrid');
+      const genProjectGrid = document.getElementById('genProjectGrid');
+      
+      // Populate project grids if they exist
+      if (projectGrid) {
+        console.log('Populating main project grid...');
+        populateProjects('projectGrid', projects);
+      }
+      
+      if (mlProjectGrid) {
+        populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
+      }
+      
+      if (genProjectGrid) {
+        populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
+      }
+      
+      // Update stats if they exist
+      updateStatsCounters();
+      
+      // Check for direct project links in URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get('project');
+      
+      if (projectId) {
+        console.log('Direct project link detected:', projectId);
+        const project = projects.find(p => p.id === projectId);
+        if (project) {
+          setTimeout(() => loadProject(projectId), 300);
+        }
+      }
+    } catch (error) {
+      console.error('Error initializing portfolio:', error);
+    }
+  }
+  
+  // Execute when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializePortfolio);
+  } else {
+    // DOM already loaded, run immediately
+    initializePortfolio();
+  }
+  
+})();
+
+// Add these styles to your document head
+document.addEventListener('DOMContentLoaded', function() {
+  const notebookLoaderStyles = document.createElement('style');
+  notebookLoaderStyles.textContent = `
+    /* External Jupyter Notebook Loader */
+    .external-loading-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease-out;
+    }
+    
+    .loading-animation-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      max-width: 500px;
+      width: 90%;
+    }
+    
+    .jupyter-logo-spinner {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+    }
+    
+    .jupyter-circles {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      animation: spin 2s linear infinite;
+    }
+    
+    .jupyter-circle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    .jupyter-circle-1 {
+      background: #F37626; /* Orange */
+      top: 0;
+      left: calc(50% - 10px);
+      animation-delay: 0s;
+    }
+    
+    .jupyter-circle-2 {
+      background: #6E6E6E; /* Gray */
+      bottom: 10px;
+      left: calc(25% - 10px);
+      animation-delay: 0.5s;
+    }
+    
+    .jupyter-circle-3 {
+      background: #4E4E4E; /* Dark gray */
+      bottom: 10px;
+      right: calc(25% - 10px);
+      animation-delay: 1s;
+    }
+    
+    .loading-text h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+      color: #333;
+    }
+    
+    .loading-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    .external-loading-animation.loading-complete {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .loading-animation-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      
+      .jupyter-logo-spinner {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  `;
+  document.head.appendChild(notebookLoaderStyles);
+});
+
+// Update your showNotebookLoader and hideNotebookLoader functions
+window.showNotebookLoader = function() {
+  // Check if loader exists, if not create it
+  let loader = document.getElementById('notebookExternalLoader');
+  if (!loader) {
+    loader = document.createElement('div');
+    loader.id = 'notebookExternalLoader';
+    loader.className = 'external-loading-animation';
+    loader.innerHTML = `
+      <div class="loading-animation-content">
+        <div class="jupyter-logo-spinner">
+          <div class="jupyter-circles">
+            <div class="jupyter-circle jupyter-circle-1"></div>
+            <div class="jupyter-circle jupyter-circle-2"></div>
+            <div class="jupyter-circle jupyter-circle-3"></div>
+          </div>
+        </div>
+        <div class="loading-text">
+          <h3>Loading Jupyter Notebook</h3>
+          <p>Please wait while the notebook content is being prepared...</p>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(loader);
+  } else {
+    loader.style.display = 'flex';
+    loader.classList.remove('loading-complete');
+  }
+};
+
+window.hideNotebookLoader = function() {
+  const loader = document.getElementById('notebookExternalLoader');
+  if (loader) {
+    loader.classList.add('loading-complete');
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 500);
+  }
+};
+
+function loadProject(projectId) {
+  const project = projects.find(p => p.id === projectId);
+  if (!project) return;
+  
+  // Show loader immediately when loading a project
+  if (window.showJupyterLoader) {
+    window.showJupyterLoader();
+  }
+  
+  // Rest of your loadProject code...
+  
+  // Update iframe onload to hide the loader
+  const notebookUrl = getOptimizedNotebookUrl(project.notebookUrl);
+  
+  // Generate project HTML...
+  projectContent.innerHTML = `
+    <!-- Your existing HTML -->
+    ${isPrivateRepo ? `
+    <!-- Private Repository Message -->
+    <!-- ... -->
+    ` : `
+    <!-- Maximum Width/Height Container for embedded content -->
+    <div class="notebook-frame-container-max">
+      <iframe 
+        class="notebook-iframe" 
+        id="notebookFrame" 
+        src="${notebookUrl}" 
+        allowfullscreen 
+        onload="if(window.hideJupyterLoader) window.hideJupyterLoader()"
+      ></iframe>
+    </div>
+    `}
+    <!-- Rest of your HTML -->
+  `;
+  
+  // Set up refresh notebook button
+  const refreshButton = projectContent.querySelector('.refresh-notebook');
+  if (refreshButton) {
+    refreshButton.addEventListener('click', function() {
+      const iframe = projectContent.querySelector('.notebook-iframe');
+      if (iframe) {
+        // Show loading animation again when refreshing
+        if (window.showJupyterLoader) {
+          window.showJupyterLoader();
+        }
+        iframe.src = iframe.src; // Refresh by reassigning the src
+      }
+    });
+  }
+  
+  // Hide project explorer, show active project
+  document.getElementById('project-explorer').classList.add('d-none');
+  document.getElementById('active-project').classList.remove('d-none');
+  
+  // Scroll to top of active project
+  window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
+}
+
+// Helper function to optimize notebook loading
+function getOptimizedNotebookUrl(url) {
+  // If GitHub URL, use nbviewer which is faster and doesn't count against API limits
+  if (url.includes('github.com') && url.includes('.ipynb')) {
+    return url.replace('github.com', 'nbviewer.org/github')
+              .replace('/blob/', '/');
+  }
+  return url;
+}
+
+// Add these functions at the bottom of your portfolio.js file
+// Consolidated Jupyter notebook loading system
+
+// 1. Create a single global loader that works across the site
+function createGlobalNotebookLoader() {
+  // Only create the loader if it doesn't already exist
+  if (!document.getElementById('globalNotebookLoader')) {
+    const loader = document.createElement('div');
+    loader.id = 'globalNotebookLoader';
+    loader.className = 'global-notebook-loader';
+    loader.innerHTML = `
+      <div class="loader-content">
+        <div class="jupyter-spinner">
+          <div class="jupyter-circles">
+            <div class="jupyter-circle circle-1"></div>
+            <div class="jupyter-circle circle-2"></div>
+            <div class="jupyter-circle circle-3"></div>
+          </div>
+        </div>
+        <div class="loader-text">
+          <h3>Loading Jupyter Notebook</h3>
+          <p>Please wait while the content is being prepared...</p>
+        </div>
+      </div>
+    `;
+    
+    // Add the loader to the body
+    document.body.appendChild(loader);
+    
+    // Add the required CSS
+    const style = document.createElement('style');
+    style.textContent = `
+      .global-notebook-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.92);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        visibility: hidden;
+        opacity: 0;
+      }
+      
+      .global-notebook-loader.visible {
+        visibility: visible;
+        opacity: 1;
+      }
+      
+      .loader-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        max-width: 500px;
+        width: 90%;
+      }
+      
+      .jupyter-spinner {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+      }
+      
+      .jupyter-circles {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        animation: jupyter-spin 2s linear infinite;
+      }
+      
+      .jupyter-circle {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        animation: jupyter-pulse 1.5s ease-in-out infinite;
+      }
+      
+      .circle-1 {
+        background: #F37626; /* Jupyter orange */
+        top: 0;
+        left: calc(50% - 11px);
+        animation-delay: 0s;
+      }
+      
+      .circle-2 {
+        background: #6E6E6E; /* Gray */
+        bottom: 10px;
+        left: calc(25% - 11px);
+        animation-delay: 0.5s;
+      }
+      
+      .circle-3 {
+        background: #4E4E4E; /* Dark gray */
+        bottom: 10px;
+        right: calc(25% - 11px);
+        animation-delay: 1s;
+      }
+      
+      .loader-text {
+        flex: 1;
+      }
+      
+      .loader-text h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.25rem;
+        color: #333;
+      }
+      
+      .loader-text p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #666;
+      }
+      
+      @keyframes jupyter-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes jupyter-pulse {
+        0%, 100% {
+          opacity: 0.6;
+          transform: scale(0.85);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .loader-content {
+          flex-direction: column;
+          gap: 1.5rem;
+          text-align: center;
+          padding: 1.5rem;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+}
+
+// 2. Show the loader
+function showJupyterLoader() {
+  createGlobalNotebookLoader(); // Ensure loader exists
+  const loader = document.getElementById('globalNotebookLoader');
+  if (loader) {
+    loader.classList.add('visible');
+  }
+}
+
+// 3. Hide the loader
+function hideJupyterLoader() {
+  const loader = document.getElementById('globalNotebookLoader');
+  if (loader) {
+    loader.classList.remove('visible');
+  }
+}
+
+// 4. Optimize notebook URL for faster loading
+function getOptimizedNotebookUrl(url) {
+  // Convert GitHub URLs to nbviewer for faster loading and no API limits
+  if (url && url.includes('github.com') && url.includes('.ipynb')) {
+    return url.replace('github.com', 'nbviewer.org/github')
+              .replace('/blob/', '/');
+  }
+  return url;
+}
+
+// 5. Update loadProject function to use the optimized loading
+function loadProject(projectId) {
+  const project = projects.find(p => p.id === projectId);
+  if (!project) return;
+  
+  // Show the loader immediately
+  showJupyterLoader();
+  
+  const projectContent = document.getElementById('project-content');
+  
+  // Get current date in formatted style
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+  
+  // Check if it's a generative AI project with a complex structure
+  const isGenerativeProject = project.category === 'generative';
+  const isPrivateRepo = project.isPrivate === true;
+  
+  // Use optimized URL for faster loading
+  const embedUrl = isGenerativeProject 
+    ? project.githubUrl.replace('github.com', 'github1s.com') 
+    : getOptimizedNotebookUrl(project.notebookUrl);
+  
+  // Generate the project HTML with proper onload handler
+  projectContent.innerHTML = `
+    <div class="project-article">
+      <!-- Project Header -->
+      <div class="project-article-header">
+        <h1 class="project-article-title">${project.title}</h1>
+        <div class="project-article-meta">
+          <div class="project-meta-left">
+            <div class="project-article-date">
+              <i class="far fa-calendar-alt"></i> ${formattedDate}
+            </div>
+            <div class="project-article-tags">
+              ${project.tags.map(tag => `<span class="badge ${isGenerativeProject ? 'bg-info' : 'bg-primary'}">${tag}</span>`).join('')}
+            </div>
+          </div>
+          <div class="project-meta-right">
+            <button class="project-info-btn toggle-description-btn" onclick="toggleDescription()">
+              <i class="fas fa-info-circle"></i> Project Information
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Top Control Bar -->
+      <div class="notebook-top-controls">
+        <div class="notebook-info">
+          <span class="notebook-author">Implementation by Leon Doungala, AI/ML Engineer</span>
+        </div>
+        <div class="notebook-actions">
+          <a href="${project.githubUrl}" class="action-btn github-btn" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="${embedUrl}" class="action-btn fullscreen-btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Open in New Tab
+          </a>
+          <button class="action-btn refresh-btn refresh-notebook">
+            <i class="fas fa-sync-alt"></i> Refresh
+          </button>
+          <button class="action-btn share-btn" onclick="shareProject('${project.title}', '${project.id}')">
+            <i class="fas fa-share-alt"></i> Share Project
+          </button>
+        </div>
+      </div>
+      
+      <!-- Label to indicate content type -->
+      <div class="content-type-indicator">
+        <i class="${isGenerativeProject ? 'fas fa-code' : 'fas fa-chart-line'}"></i>
+        <span>${isGenerativeProject ? 'Exploring Project Code Structure' : 'Jupyter Notebook'}</span>
+      </div>
+      
+      ${isPrivateRepo ? `
+      <!-- Private Repository Message -->
+      <div class="private-repo-message">
+        <div class="private-repo-content">
+          <div class="private-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="private-text">
+            <h3>Private Repository</h3>
+            <p>This project's source code is stored in a private repository and requires authorized access.</p>
+            <p>If you're interested in learning more about this project or requesting access, please contact me directly.</p>
+            <a href="mailto:doungala.leon@gmail.com" class="btn-contact">
+              <i class="fas fa-envelope"></i> Request Access
+            </a>
+          </div>
+        </div>
+      </div>
+      ` : `
+      <!-- Maximum Width/Height Container for embedded content -->
+      <div class="notebook-frame-container-max">
+        <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideJupyterLoader()"></iframe>
+      </div>
+      `}
+      
+      <!-- Project Information Panel remains the same -->
+      <div class="project-description-panel" id="projectDescription">
+        <div class="description-panel-content">
+          <div class="panel-header">
+            <h3>Project Details</h3>
+            <button class="close-panel-btn" onclick="toggleDescription()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="panel-body">
+            ${project.detailedDescription}
+            
+            <div class="tech-section">
+              <h4>Technologies</h4>
+              <div class="tech-pills">
+                ${project.tags.map(tag => {
+                  const level = getTechLevel(tag);
+                  return `<span class="tech-pill tech-${level}">${tag}</span>`;
+                }).join('')}
+              </div>
+            </div>
+            
+            <div class="author-section">
+              <h4>Implementation by</h4>
+              <div class="author-info">
+                <div class="author-name">Leon Doungala</div>
+                <div class="author-title">AI/ML Engineer & Data Scientist</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  // Set up refresh notebook button
+  const refreshButton = projectContent.querySelector('.refresh-notebook');
+  if (refreshButton) {
+    refreshButton.addEventListener('click', function() {
+      const iframe = projectContent.querySelector('.notebook-iframe');
+      if (iframe) {
+        // Show loading animation again when refreshing
+        showJupyterLoader();
+        iframe.src = iframe.src; // Refresh by reassigning the src
+      }
+    });
+  }
+  
+  // Hide project explorer, show active project
+  document.getElementById('project-explorer').classList.add('d-none');
+  document.getElementById('active-project').classList.remove('d-none');
+  
+  // Scroll to top of active project
+  window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
+}
+
+// Make the functions globally available
+window.showJupyterLoader = showJupyterLoader;
+window.hideJupyterLoader = hideJupyterLoader;
+
+// Initialize the loader when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  createGlobalNotebookLoader();
+});
 
