@@ -38,7 +38,7 @@ const projects = [
     tags: ["PCA", "Data Analysis", "HR Analytics", "Employee Retention"],
     image: "images/HR-Analytics.jpeg",
     notebookUrl: "https://nbviewer.org/github/leondoungala22/employee-clustering-analysis/blob/main/main.ipynb",
-    githubUrl: "https://github.com/leondoungala22/employee-clustering-analysis/blob/main/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/employee-clustering-analysis/blob/main/main.ipynb",
     detailedDescription: `
       <p>This project uses PCA and clustering techniques to analyze HR data and identify employee patterns.</p>
       <h3>Key Techniques</h3>
@@ -83,8 +83,9 @@ const projects = [
     status: "review",
     tags: ["SVM", "Medical ML", "Classification", "scikit-learn"],
     image: "images/8_Main_Types_of_Heart_Disease.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/SVM%20(Linear%20and%20non-linear)/Heart%20Disease%20Prediction/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/SVM%20(Linear%20and%20non-linear)/Heart%20Disease%20Prediction/main.ipynb",
+    // UPDATED link for Heart Disease Prediction:
+    notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
+    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
     detailedDescription: `
       <p>This project focuses on heart disease prediction using SVM and explores various medical indicators to assess risk factors.</p>
       <h3>Key Techniques</h3>
@@ -106,8 +107,9 @@ const projects = [
     status: "review",
     tags: ["NLP", "Naive Bayes", "Text Classification", "scikit-learn"],
     image: "images/sentiment-analysis.png",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
+    // UPDATED link for Sentiment Analysis using Bernoulli Naive Bayes:
+     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20on%20IMDb%20Movie%20Reviews/Bernoulli%20Naive%20Bayes/main.ipynb",
+    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20on%20IMDb%20Movie%20Reviews/Bernoulli%20Naive%20Bayes/main.ipynb",
     detailedDescription: `
       <p>This project applies NLP techniques to classify IMDb reviews using Naive Bayes algorithms.</p>
       <h3>Key Techniques</h3>
@@ -129,8 +131,9 @@ const projects = [
     status: "review",
     tags: ["KNN", "Medical ML", "Classification", "scikit-learn"],
     image: "images/breast-cancer.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/KNN%20(K%20Nearest%20Neighbors)/Breast%20Cancer%20Classification/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/KNN%20(K%20Nearest%20Neighbors)/Breast%20Cancer%20Classification/main.ipynb",
+    // UPDATED link for Breast Cancer Classification with KNN:
+     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/K-Nearest%20Neighbors%20(KNN)/Breast%20Cancer%20Classification%20with%20K-Nearest%20Neighbors%20(KNN)/main.ipynb",
+    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/K-Nearest%20Neighbors%20(KNN)/Breast%20Cancer%20Classification%20with%20K-Nearest%20Neighbors%20(KNN)/main.ipynb",
     detailedDescription: `
       <p>This project uses the K-Nearest Neighbors (KNN) algorithm to classify breast cancer tumors as malignant or benign.</p>
       <h3>Key Techniques</h3>
@@ -152,8 +155,9 @@ const projects = [
     status: "review",
     tags: ["Linear Regression", "Forecasting", "scikit-learn"],
     image: "images/salary-prediction.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Linear%20Regression/Salary%20Prediction/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Linear%20Regression/Salary%20Prediction/main.ipynb",
+    // UPDATED link for Salary Prediction:
+     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
+    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
     detailedDescription: `
       <p>This project develops a linear regression model to predict salaries using years of experience, education, and other factors.</p>
       <h3>Key Techniques</h3>
@@ -198,8 +202,9 @@ const projects = [
     status: "review",
     tags: ["Decision Tree Regression", "Real Estate", "Forecasting"],
     image: "images/housing-prices.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
+    // UPDATED link for Housing Prices:
+     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Predicting%20Housing%20Prices%20with%20Gaussian%20Naive%20Bayes/main.ipynb",
+    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Predicting%20Housing%20Prices%20with%20Gaussian%20Naive%20Bayes/main.ipynb",
     detailedDescription: `
       <p>This project develops a Decision Tree Regression model to predict housing prices based on property features.</p>
       <h3>Key Techniques</h3>
@@ -221,8 +226,9 @@ const projects = [
     status: "review",
     tags: ["Logistic Regression", "NLP", "Email Filtering"],
     image: "images/spam-detection.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
+    // UPDATED link for Spam Email Classification:
+     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/%20Logistic%20Regression%20(sigmoid%20functions)/Spam%20Email%20Classification/main.ipynb",
+    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/%20Logistic%20Regression%20(sigmoid%20functions)/Spam%20Email%20Classification/main.ipynb",
     detailedDescription: `
       <p>This project implements Logistic Regression to classify emails as spam or legitimate based on their content and headers.</p>
       <h3>Key Techniques</h3>
@@ -308,22 +314,30 @@ const projects = [
 ];
 
 // ---------------------
-// Helper: Convert GitHub URL to nbviewer or GitHub1s embed URL
+// Helper: Convert GitHub URL to an embeddable nbviewer URL (or use GitHub1s for generative projects)
 // ---------------------
 function getEmbedUrl(project) {
   if (project.category === 'generative') {
-    // For generative AI, use GitHub1s to show code structure
+    // For generative projects, use GitHub1s to show code structure
     return project.githubUrl.replace('github.com', 'github1s.com');
   }
-  // Otherwise, convert GitHub link to nbviewer if not already converted
-  if (project.notebookUrl.includes('nbviewer.org')) {
+  // If the notebookUrl already starts with nbviewer, return it unchanged.
+  if (project.notebookUrl.startsWith("https://nbviewer.org/")) {
     return project.notebookUrl;
   }
-  return project.notebookUrl.replace('github.com', 'nbviewer.org/github').replace('/blob/', '/');
+  // If the notebookUrl is a GitHub URL, convert it to nbviewer format.
+  if (project.notebookUrl.startsWith("https://github.com/")) {
+    let nbUrl = project.notebookUrl.replace('https://github.com/', 'https://nbviewer.org/github/');
+    // Remove '/blob/' if present to match nbviewer format
+    nbUrl = nbUrl.replace('/blob/', '/');
+    return nbUrl;
+  }
+  // Otherwise, return the original URL.
+  return project.notebookUrl;
 }
 
 // ---------------------
-// Helper: Generate Status Badge HTML with a more visible background
+// Helper: Generate a Status Badge with a visible background
 // ---------------------
 function getStatusBadge(status) {
   const lower = status.toLowerCase();
@@ -344,7 +358,7 @@ function getStatusBadge(status) {
 }
 
 // ---------------------
-// loadProject: Show the project details in the active section
+// loadProject: Display project details in the active section
 // ---------------------
 function loadProject(projectId) {
   const project = projects.find(p => p.id === projectId);
@@ -355,7 +369,6 @@ function loadProject(projectId) {
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   
-  // For private projects, check isPrivate flag (if set)
   const isPrivateRepo = project.isPrivate === true;
   const embedUrl = getEmbedUrl(project);
   
@@ -457,6 +470,15 @@ function loadProject(projectId) {
     </div>
   `;
   
+  // For "ready" projects using nbviewer, augment the notebook container height
+  if (!isPrivateRepo && project.status.toLowerCase() === "ready") {
+    const container = document.querySelector('.notebook-frame-container-max');
+    if (container) {
+      container.style.height = "90vh"; // Increase height for ready projects
+    }
+  }
+  
+  // Set refresh button event
   const refreshButton = projectContent.querySelector('.refresh-notebook');
   if (refreshButton) {
     refreshButton.addEventListener('click', () => {
@@ -474,7 +496,7 @@ function loadProject(projectId) {
 }
 
 // ---------------------
-// generateTechLevels: Build technology indicators (for detailed panel)
+// generateTechLevels: Build technology indicators for the detailed panel
 // ---------------------
 function generateTechLevels(tags) {
   const techLevels = {
@@ -528,7 +550,7 @@ function generateTechLevels(tags) {
 }
 
 // ---------------------
-// populateProjects: Fill project grids; sort projects so "ready" projects come first
+// populateProjects: Fill project grids (All, ML, and Generative) with sorting by status ("ready" first)
 // ---------------------
 function populateProjects(gridId, projectsList) {
   const grid = document.getElementById(gridId);
@@ -561,14 +583,14 @@ function populateProjects(gridId, projectsList) {
     projectCard.dataset.category = project.category;
     projectCard.dataset.tags = project.tags.join(',').toLowerCase();
     
-    // Color variation based on index
+    // Color variation based on index (4 variants)
     const colorVariant = index % 4;
     projectCard.classList.add(`card-variant-${colorVariant}`);
     
     const displayTags = project.tags.slice(0, 3);
     const remainingTagsCount = project.tags.length > 3 ? project.tags.length - 3 : 0;
     
-    // Get status badge HTML (with background color applied)
+    // Get the status badge HTML
     const statusBadgeHTML = getStatusBadge(project.status);
     
     projectCard.innerHTML = `
@@ -603,7 +625,7 @@ function populateProjects(gridId, projectsList) {
 }
 
 // ---------------------
-// Optional: Shuffle function (if you want random order instead of sorting by status)
+// Optional: Shuffle array (if needed for random order)
 // ---------------------
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -613,7 +635,7 @@ function shuffleArray(array) {
 }
 
 // ---------------------
-// Stats Counters & Search
+// Stats Counters & Search Functionality
 // ---------------------
 function animateCounter(elementId, targetValue) {
   const element = document.getElementById(elementId);
@@ -655,6 +677,7 @@ function filterProjects(searchTerm) {
       card.style.display = 'none';
     }
   });
+  
   ['projectGrid', 'mlProjectGrid', 'genProjectGrid'].forEach(tabId => {
     const grid = document.getElementById(tabId);
     if (!grid) return;
@@ -678,6 +701,7 @@ function filterProjects(searchTerm) {
 // Sharing & Navigation Functions
 // ---------------------
 function shareProject(title, id) {
+  // Use a fixed URL (your domain + pathname) with a query parameter so that it remains unchanged
   const sharedURL = window.location.origin + window.location.pathname + `?project=${id}`;
   if (navigator.share) {
     navigator.share({
@@ -686,14 +710,12 @@ function shareProject(title, id) {
       url: sharedURL
     }).catch(err => console.error('Share failed:', err));
   } else {
-    // Fallback for browsers that do not support Web Share API
     alert('Copy this link to share the project: ' + sharedURL);
   }
 }
 
-
 function copyLink(id) {
-  const linkToCopy = window.location.href.split('#')[0] + `?project=${id}`;
+  const linkToCopy = window.location.origin + window.location.pathname + `?project=${id}`;
   navigator.clipboard.writeText(linkToCopy)
     .then(() => {
       const notification = document.createElement('div');
@@ -847,17 +869,35 @@ function toggleDescription() {
 }
 
 // ---------------------
+// Fullscreen Toggle for Notebook Iframe
+// ---------------------
+document.addEventListener('click', function(e) {
+  if (e.target.matches('.notebook-fullscreen-toggle') || e.target.closest('.notebook-fullscreen-toggle')) {
+    const container = document.querySelector('.notebook-frame-container-max');
+    if (container) {
+      container.classList.toggle('fullscreen-mode');
+      const btn = e.target.closest('.notebook-fullscreen-toggle');
+      const icon = btn.querySelector('i');
+      if (icon) {
+        icon.className = container.classList.contains('fullscreen-mode') ? 'fas fa-compress' : 'fas fa-expand';
+      }
+    }
+  }
+});
+
+// ---------------------
 // DOMContentLoaded: Initialize everything
 // ---------------------
 document.addEventListener('DOMContentLoaded', function() {
   updateMainNavLink();
   
-  // Populate project grids; sort projects so "ready" projects come first in each grid
+  // Populate project grids (All, ML, Generative)
   if (document.getElementById('projectGrid')) {
     populateProjects('projectGrid', projects);
     populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
     populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
-    // updateStatsCounters(); // Uncomment if you use counters in your HTML
+    // Uncomment next line if you have stats counters in your HTML
+    // updateStatsCounters();
   }
   
   // "Back to Projects" button event
@@ -919,21 +959,4 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Create the global notebook loader
   createGlobalNotebookLoader();
-});
-
-// ---------------------
-// Fullscreen Toggle for Notebook Iframe
-// ---------------------
-document.addEventListener('click', function(e) {
-  if (e.target.matches('.notebook-fullscreen-toggle') || e.target.closest('.notebook-fullscreen-toggle')) {
-    const container = document.querySelector('.notebook-frame-container-max');
-    if (container) {
-      container.classList.toggle('fullscreen-mode');
-      const btn = e.target.closest('.notebook-fullscreen-toggle');
-      const icon = btn.querySelector('i');
-      if (icon) {
-        icon.className = container.classList.contains('fullscreen-mode') ? 'fas fa-compress' : 'fas fa-expand';
-      }
-    }
-  }
 });
