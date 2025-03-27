@@ -29,10 +29,8 @@ const projects = [
       <h3>Business Impact</h3>
       <p>Optimizes marketing strategies by identifying distinct customer segments and tailoring communications to drive engagement and conversion.</p>
     `
-  }
-   ,
-  
-   {
+  },
+  {
     id: "hr-analytics",
     title: "HR Analytics: Employee Segmentation with PCA and K-Means",
     description: "PCA simplifies HR data while K-Means clustering with cosine similarity segments employees by demographics, compensation, and satisfaction.",
@@ -48,15 +46,12 @@ const projects = [
       <ul>
         <li>Principal Component Analysis (PCA)</li>
         <li>K-Means Clustering with Cosine Similarity</li>
-        <li>Feature Importance & Correlation Analysis</li>
+        <li>Feature Importance &amp; Correlation Analysis</li>
       </ul>
       <h3>Business Applications</h3>
       <p>Provides actionable insights to optimize HR strategies and improve employee retention.</p>
     `
   },
-  
-   
-  
   {
     id: "diabetes-prediction",
     title: "Diabetes Prediction and Characterization",
@@ -88,9 +83,8 @@ const projects = [
     status: "review",
     tags: ["SVM", "Medical ML", "Classification", "scikit-learn"],
     image: "images/8_Main_Types_of_Heart_Disease.jpeg",
-    // UPDATED link for Heart Disease Prediction:
-    notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
-    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/SVM%20(%20Linear%20and%20non%20linear%20)/Heart%20Disease%20Prediction/main.ipynb",
     detailedDescription: `
       <p>This project focuses on heart disease prediction using SVM and explores various medical indicators to assess risk factors.</p>
       <h3>Key Techniques</h3>
@@ -112,9 +106,8 @@ const projects = [
     status: "review",
     tags: ["NLP", "Naive Bayes", "Text Classification", "scikit-learn"],
     image: "images/sentiment-analysis.png",
-    // UPDATED link for Sentiment Analysis using Bernoulli Naive Bayes:
-     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20on%20IMDb%20Movie%20Reviews/Bernoulli%20Naive%20Bayes/main.ipynb",
-    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20on%20IMDb%20Movie%20Reviews/Bernoulli%20Naive%20Bayes/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20on%20IMDb%20Movie%20Reviews/Bernoulli%20Naive%20Bayes/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Naive%20Bayes/Sentiment%20Analysis%20on%20IMDb%20Movie%20Reviews/Bernoulli%20Naive%20Bayes/main.ipynb",
     detailedDescription: `
       <p>This project applies NLP techniques to classify IMDb reviews using Naive Bayes algorithms.</p>
       <h3>Key Techniques</h3>
@@ -136,9 +129,8 @@ const projects = [
     status: "review",
     tags: ["KNN", "Medical ML", "Classification", "scikit-learn"],
     image: "images/breast-cancer.jpeg",
-    // UPDATED link for Breast Cancer Classification with KNN:
-     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/K-Nearest%20Neighbors%20(KNN)/Breast%20Cancer%20Classification%20with%20K-Nearest%20Neighbors%20(KNN)/main.ipynb",
-    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/K-Nearest%20Neighbors%20(KNN)/Breast%20Cancer%20Classification%20with%20K-Nearest%20Neighbors%20(KNN)/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/K-Nearest%20Neighbors%20(KNN)/Breast%20Cancer%20Classification%20with%20K-Nearest%20Neighbors%20(KNN)/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/K-Nearest%20Neighbors%20(KNN)/Breast%20Cancer%20Classification%20with%20K-Nearest%20Neighbors%20(KNN)/main.ipynb",
     detailedDescription: `
       <p>This project uses the K-Nearest Neighbors (KNN) algorithm to classify breast cancer tumors as malignant or benign.</p>
       <h3>Key Techniques</h3>
@@ -160,9 +152,8 @@ const projects = [
     status: "review",
     tags: ["Linear Regression", "Forecasting", "scikit-learn"],
     image: "images/salary-prediction.jpeg",
-    // UPDATED link for Salary Prediction:
-     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
-    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Linear%20Regression/Salary%20Prediction/main.ipynb",
     detailedDescription: `
       <p>This project develops a linear regression model to predict salaries using years of experience, education, and other factors.</p>
       <h3>Key Techniques</h3>
@@ -190,7 +181,7 @@ const projects = [
       <p>This project implements advanced machine learning techniques to detect fraudulent credit card transactions. Using PCA-transformed features, SMOTE for balancing, and tuning both Decision Tree and Random Forest classifiers, the approach is designed for high precision and recall on an extremely imbalanced dataset.</p>
       <h3>Key Techniques</h3>
       <ul>
-        <li>Decision Tree & Random Forest Classification with Hyperparameter Tuning</li>
+        <li>Decision Tree &amp; Random Forest Classification with Hyperparameter Tuning</li>
         <li>Data Preprocessing with Robust Scaling and SMOTE Oversampling</li>
         <li>PCA for Feature Transformation</li>
         <li>Model Evaluation: Confusion Matrix, ROC-AUC, and Precision-Recall Analysis</li>
@@ -198,9 +189,7 @@ const projects = [
       <h3>Financial Applications</h3>
       <p>This approach accurately identifies fraudulent transactions, reducing financial losses and enhancing security.</p>
     `
-  }
-  ,  
-  
+  },
   {
     id: "housing-prices",
     title: "Predicting Housing Prices",
@@ -209,9 +198,8 @@ const projects = [
     status: "review",
     tags: ["Decision Tree Regression", "Real Estate", "Forecasting"],
     image: "images/housing-prices.jpeg",
-    // UPDATED link for Housing Prices:
-     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Predicting%20Housing%20Prices%20with%20Gaussian%20Naive%20Bayes/main.ipynb",
-    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Predicting%20Housing%20Prices%20with%20Gaussian%20Naive%20Bayes/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Predicting%20Housing%20Prices%20with%20Gaussian%20Naive%20Bayes/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/Decision%20Trees/Predicting%20Housing%20Prices%20with%20Gaussian%20Naive%20Bayes/main.ipynb",
     detailedDescription: `
       <p>This project develops a Decision Tree Regression model to predict housing prices based on property features.</p>
       <h3>Key Techniques</h3>
@@ -233,9 +221,8 @@ const projects = [
     status: "review",
     tags: ["Logistic Regression", "NLP", "Email Filtering"],
     image: "images/spam-detection.jpeg",
-    // UPDATED link for Spam Email Classification:
-     notebookUrl: "https://nbviewer.org/github/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/%20Logistic%20Regression%20(sigmoid%20functions)/Spam%20Email%20Classification/main.ipynb",
-    githubUrl: "https://github.com/leondoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/%20Logistic%20Regression%20(sigmoid%20functions)/Spam%20Email%20Classification/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/%20Logistic%20Regression%20(sigmoid%20functions)/Spam%20Email%20Classification/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(%20ML%20models%20)%20%20/%20Logistic%20Regression%20(sigmoid%20functions)/Spam%20Email%20Classification/main.ipynb",
     detailedDescription: `
       <p>This project implements Logistic Regression to classify emails as spam or legitimate based on their content and headers.</p>
       <h3>Key Techniques</h3>
@@ -270,15 +257,14 @@ const projects = [
       <h3>Disclaimer</h3>
       <p>This system is for educational and experimental purposes only and does not replace professional medical advice.</p>
     `
-  }
-  ,
+  },
   {
     id: "ats-system",
-    title: "TalentMatch ATS: Semantic CV Matching and semantic search with RAG",
+    title: "TalentMatch ATS: Semantic CV Matching and Semantic Search with RAG",
     description: "AI Applicant Tracking System utilizing semantic search and Retrieval-Augmented Generation (RAG) to match resumes effectively with job descriptions.",
     category: "generative",
     status: "ready",
-    tags: ["Semantic Search", "RAG", "OpenAI", "Semantic search" , "LangChain", "Vector Search", "Anthropic"],
+    tags: ["Semantic Search", "RAG", "OpenAI", "LangChain", "Vector Search", "Anthropic"],
     image: "images/imag1.png",
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0/blob/main/ATS_System.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0",
@@ -295,37 +281,33 @@ const projects = [
       <h3>Applications</h3>
       <p>Streamlines recruitment by intelligently identifying top candidates beyond keyword matching, optimizing hiring processes.</p>
     `
+  },
+  {
+    id: "diabetes-chatbot",
+    title: "Advanced Predictive, Conversational AI & Semantic Search for Diabetes Prediction",
+    description: "Medical assistant using advanced NLP workflows, semantic search, XGBoost, and Random Forest for diabetes analysis.",
+    category: "generative",
+    status: "private",
+    tags: ["RAG", "Semantic Search", "Healthcare AI", "Conversational AI", "LangChain", "Machine Learning", "XGBoost", "Random Forest"],
+    image: "images/Screenshot 2025-01-02 at 21.08.13.png",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Chatbot.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization",
+    detailedDescription: `
+      <p>This project integrates advanced conversational AI with diabetes prediction models—leveraging RAG workflows, semantic search, and XGBoost alongside Random Forest—to create an interactive system that assesses diabetes risk and offers actionable insights.</p>
+      <h3>Key Technologies</h3>
+      <ul>
+        <li>Retrieval-Augmented Generation (RAG)</li>
+        <li>Semantic Search</li>
+        <li>LangChain Workflow Orchestration</li>
+        <li>Diabetes Prediction Models</li>
+        <li>XGBoost</li>
+        <li>Random Forest</li>
+        <li>Conversational UI</li>
+      </ul>
+      <h3>Applications</h3>
+      <p>This system can be deployed to educate patients on diabetes risk, support early intervention strategies, and enhance overall patient engagement.</p>
+    `
   }
-,  
-{
-  id: "diabetes-chatbot",
-  title: "Advanced Predictive, Conversational AI & Semantic Search and XGBoost for Diabetes Prediction",
-  description: "Medical assistant using RAG workflows, semantic search, and XGBoost for diabetes analysis.",
-  category: "generative",
-  status: "private",
-  tags: ["RAG", "Semantic Search", "Healthcare AI", "Conversational AI", "LangChain", "Machine Learning", "XGBoost"],
-  image: "images/Screenshot 2025-01-02 at 21.08.13.png",
-  notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Chatbot.ipynb",
-  githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization",
-  detailedDescription: `
-    <p>This project integrates advanced conversational AI with diabetes prediction models—leveraging RAG workflows, semantic search, and XGBoost—to create an interactive system that assesses diabetes risk and offers actionable insights.</p>
-    <h3>Key Technologies</h3>
-    <ul>
-      <li>Retrieval-Augmented Generation (RAG)</li>
-      <li>Semantic Search</li>
-      <li>LangChain Workflow Orchestration</li>
-      <li>Diabetes Prediction Models</li>
-      <li>XGBoost</li>
-      <li>Conversational UI</li>
-    </ul>
-    <h3>Applications</h3>
-    <p>This system can be deployed to educate patients on diabetes risk, support early intervention strategies, and enhance overall patient engagement.</p>
-  `
-}
-
-
-
-
 ];
 
 // ---------------------
@@ -343,74 +325,100 @@ function getEmbedUrl(project) {
   // If the notebookUrl is a GitHub URL, convert it to nbviewer format.
   if (project.notebookUrl.startsWith("https://github.com/")) {
     let nbUrl = project.notebookUrl.replace('https://github.com/', 'https://nbviewer.org/github/');
-    // Remove '/blob/' if present to match nbviewer format
     nbUrl = nbUrl.replace('/blob/', '/');
     return nbUrl;
   }
-  // Otherwise, return the original URL.
   return project.notebookUrl;
 }
 
 // ---------------------
-// Helper: Generate a Status Badge with a visible background
+// Helper: Generate a Status Badge with a visible background using a configuration object
 // ---------------------
+const statusStyles = {
+  review: {
+    text: "Under Review",
+    icon: "fas fa-clock",
+    background: "rgba(255,193,7,0.9)"
+  },
+  ready: {
+    text: "Ready",
+    icon: "fas fa-check-circle",
+    background: "rgba(0,230,118,0.9)"
+  },
+  private: {
+    text: "Private",
+    icon: "fas fa-lock",
+    background: "rgba(244,67,54,0.9)"
+  }
+};
+
 function getStatusBadge(status) {
-  const lower = status.toLowerCase();
-  if (lower === 'review') {
+  const key = status.toLowerCase();
+  const style = statusStyles[key];
+  if (style) {
     return `
-      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; background: rgba(255,193,7,0.9); color: white; font-weight:600; padding:5px 12px; border-radius:20px; z-index:4;">
-        <i class="fas fa-clock"></i> Under Review
-      </div>
-    `;
-  } else if (lower === 'ready') {
-    return `
-      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; background: rgba(0,230,118,0.9); color: white; font-weight:600; padding:5px 12px; border-radius:20px; z-index:4;">
-        <i class="fas fa-check-circle"></i> Ready
-      </div>
-    `;
-  } else if (lower === 'private') {
-    return `
-      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; background: rgba(244,67,54,0.9); color: white; font-weight:600; padding:5px 12px; border-radius:20px; z-index:4;">
-        <i class="fas fa-lock"></i> Private
+      <div class="project-status-badge" role="status" aria-label="${style.text}" style="position:absolute; top:15px; left:15px; background: ${style.background}; color: white; font-weight:600; padding:5px 12px; border-radius:20px; z-index:4;">
+        <i class="${style.icon}" aria-hidden="true"></i> ${style.text}
       </div>
     `;
   }
   return '';
 }
 
-
+// ---------------------
+// Cache Frequently Used DOM Elements for Performance
+// ---------------------
+const domCache = {
+  projectExplorer: document.getElementById('project-explorer'),
+  activeProject: document.getElementById('active-project'),
+  projectContent: document.getElementById('project-content'),
+  projectSearch: document.getElementById('projectSearch')
+};
 
 // ---------------------
-// loadProject: Display project details in the active section
+// Debounce Function for Search Input
+// ---------------------
+function debounce(func, delay) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+// ---------------------
+// Debounced Filter Function
+// ---------------------
+const debouncedFilterProjects = debounce(filterProjects, 300);
+
+// ---------------------
+// loadProject: Display project details in the active section (with ARIA improvements and DOM caching)
 // ---------------------
 function loadProject(projectId) {
   const project = projects.find(p => p.id === projectId);
   if (!project) return;
-  
+
   showJupyterLoader();
-  const projectContent = document.getElementById('project-content');
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  
-  const isPrivateRepo = project.isPrivate === true;
   const embedUrl = getEmbedUrl(project);
-  
-  projectContent.innerHTML = `
+
+  domCache.projectContent.innerHTML = `
     <div class="project-article">
       <div class="project-article-header">
         <h1 class="project-article-title">${project.title}</h1>
         <div class="project-article-meta">
           <div class="project-meta-left">
             <div class="project-article-date">
-              <i class="far fa-calendar-alt"></i> ${formattedDate}
+              <i class="far fa-calendar-alt" aria-hidden="true"></i> ${formattedDate}
             </div>
             <div class="project-article-tags">
               ${project.tags.map(tag => `<span class="badge ${project.category === 'generative' ? 'bg-info' : 'bg-primary'}">${tag}</span>`).join('')}
             </div>
           </div>
           <div class="project-meta-right">
-            <button class="project-info-btn toggle-description-btn" onclick="toggleDescription()">
-              <i class="fas fa-info-circle"></i> Project Information
+            <button class="project-info-btn toggle-description-btn" onclick="toggleDescription()" aria-label="Toggle project information">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> Project Information
             </button>
           </div>
         </div>
@@ -421,55 +429,55 @@ function loadProject(projectId) {
           <span class="notebook-author">Implementation by Leon Doungala, AI/ML Engineer</span>
         </div>
         <div class="notebook-actions">
-          <a href="${project.githubUrl}" class="action-btn github-btn" target="_blank">
-            <i class="fab fa-github"></i> GitHub
+          <a href="${project.githubUrl}" class="action-btn github-btn" target="_blank" role="button" aria-label="Open GitHub repository">
+            <i class="fab fa-github" aria-hidden="true"></i> GitHub
           </a>
-          <a href="${embedUrl}" class="action-btn fullscreen-btn" target="_blank">
-            <i class="fas fa-external-link-alt"></i> Open in New Tab
+          <a href="${embedUrl}" class="action-btn fullscreen-btn" target="_blank" role="button" aria-label="Open notebook in new tab">
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Open in New Tab
           </a>
-          <button class="action-btn refresh-btn refresh-notebook">
-            <i class="fas fa-sync-alt"></i> Refresh
+          <button class="action-btn refresh-btn refresh-notebook" role="button" aria-label="Refresh notebook">
+            <i class="fas fa-sync-alt" aria-hidden="true"></i> Refresh
           </button>
-          <button class="action-btn share-btn" onclick="shareProject('${project.title}', '${project.id}')">
-            <i class="fas fa-share-alt"></i> Share Project
+          <button class="action-btn share-btn" onclick="shareProject('${project.title}', '${project.id}')" role="button" aria-label="Share project">
+            <i class="fas fa-share-alt" aria-hidden="true"></i> Share Project
           </button>
         </div>
       </div>
       
       <div class="content-type-indicator">
-        <i class="${project.category === 'generative' ? 'fas fa-code' : 'fas fa-chart-line'}"></i>
+        <i class="${project.category === 'generative' ? 'fas fa-code' : 'fas fa-chart-line'}" aria-hidden="true"></i>
         <span>${project.category === 'generative' ? 'Exploring Project Code Structure' : 'Jupyter Notebook'}</span>
       </div>
       
       ${
-        isPrivateRepo 
-          ? `<div class="private-repo-message">
-               <div class="private-repo-content">
-                 <div class="private-icon"><i class="fas fa-lock"></i></div>
-                 <div class="private-text">
-                   <h3>Private Repository</h3>
-                   <p>This project's source code is stored in a private repository.</p>
-                   <p>If you're interested in learning more or requesting access, please contact me directly.</p>
-                   <a href="mailto:doungala.leon@gmail.com" class="btn-contact">
-                     <i class="fas fa-envelope"></i> Request Access
-                   </a>
-                 </div>
-               </div>
-             </div>`
-          : `<div class="notebook-frame-container-max">
-               <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideJupyterLoader()"></iframe>
-               <button class="notebook-fullscreen-toggle" title="Toggle fullscreen mode">
-                 <i class="fas fa-expand"></i>
-               </button>
-             </div>`
+        project.status.toLowerCase() === "private" ? `
+          <div class="private-repo-message">
+            <div class="private-repo-content">
+              <div class="private-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+              <div class="private-text">
+                <h3>Private Repository</h3>
+                <p>This project's source code is stored in a private repository.</p>
+                <p>If you're interested in learning more or requesting access, please contact me directly.</p>
+                <a href="mailto:doungala.leon@gmail.com" class="btn-contact" role="button" aria-label="Request access via email">
+                  <i class="fas fa-envelope" aria-hidden="true"></i> Request Access
+                </a>
+              </div>
+            </div>
+          </div>` : `
+          <div class="notebook-frame-container-max">
+            <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideJupyterLoader()"></iframe>
+            <button class="notebook-fullscreen-toggle" title="Toggle fullscreen mode" role="button" aria-label="Toggle fullscreen mode">
+              <i class="fas fa-expand" aria-hidden="true"></i>
+            </button>
+          </div>`
       }
       
       <div class="project-description-panel" id="projectDescription">
         <div class="description-panel-content">
           <div class="panel-header">
             <h3>Project Details</h3>
-            <button class="close-panel-btn" onclick="toggleDescription()">
-              <i class="fas fa-times"></i>
+            <button class="close-panel-btn" onclick="toggleDescription()" role="button" aria-label="Close project details">
+              <i class="fas fa-times" aria-hidden="true"></i>
             </button>
           </div>
           <div class="panel-body">
@@ -484,7 +492,7 @@ function loadProject(projectId) {
               <h4>Implementation by</h4>
               <div class="author-info">
                 <div class="author-name">Leon Doungala</div>
-                <div class="author-title">AI/ML Engineer & Data Scientist</div>
+                <div class="author-title">AI/ML Engineer &amp; Data Scientist</div>
               </div>
             </div>
           </div>
@@ -492,30 +500,30 @@ function loadProject(projectId) {
       </div>
     </div>
   `;
-  
+
   // For "ready" projects using nbviewer, augment the notebook container height
-  if (!isPrivateRepo && project.status.toLowerCase() === "ready") {
+  if (project.status.toLowerCase() === "ready") {
     const container = document.querySelector('.notebook-frame-container-max');
     if (container) {
-      container.style.height = "90vh"; // Increase height for ready projects
+      container.style.height = "90vh";
     }
   }
-  
-  // Set refresh button event
-  const refreshButton = projectContent.querySelector('.refresh-notebook');
+
+  // Add event listener to refresh button (using cached projectContent)
+  const refreshButton = domCache.projectContent.querySelector('.refresh-notebook');
   if (refreshButton) {
     refreshButton.addEventListener('click', () => {
-      const iframe = projectContent.querySelector('.notebook-iframe');
+      const iframe = domCache.projectContent.querySelector('.notebook-iframe');
       if (iframe) {
         showJupyterLoader();
         iframe.src = iframe.src;
       }
     });
   }
-  
-  document.getElementById('project-explorer').classList.add('d-none');
-  document.getElementById('active-project').classList.remove('d-none');
-  window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
+
+  domCache.projectExplorer.classList.add('d-none');
+  domCache.activeProject.classList.remove('d-none');
+  window.scrollTo(0, domCache.activeProject.offsetTop - 100);
 }
 
 // ---------------------
@@ -632,8 +640,8 @@ function populateProjects(gridId, projectsList) {
           ${remainingTagsCount > 0 ? `<span class="tech-badge more-badge">+${remainingTagsCount} more</span>` : ''}
         </div>
         <div class="project-links">
-          <button class="btn btn-view-project" data-id="${project.id}">
-            <i class="fas fa-eye"></i> View Project
+          <button class="btn btn-view-project" data-id="${project.id}" role="button" aria-label="View project">
+            <i class="fas fa-eye" aria-hidden="true"></i> View Project
           </button>
         </div>
       </div>
@@ -724,7 +732,6 @@ function filterProjects(searchTerm) {
 // Sharing & Navigation Functions
 // ---------------------
 function shareProject(title, id) {
-  // Use a fixed URL (your domain + pathname) with a query parameter so that it remains unchanged
   const sharedURL = window.location.origin + window.location.pathname + `?project=${id}`;
   if (navigator.share) {
     navigator.share({
@@ -927,17 +934,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const backBtn = document.getElementById('back-to-projects');
   if (backBtn) {
     backBtn.addEventListener('click', function() {
-      document.getElementById('active-project').classList.add('d-none');
-      document.getElementById('project-explorer').classList.remove('d-none');
-      window.scrollTo(0, document.getElementById('project-explorer').offsetTop - 100);
+      domCache.activeProject.classList.add('d-none');
+      domCache.projectExplorer.classList.remove('d-none');
+      window.scrollTo(0, domCache.projectExplorer.offsetTop - 100);
     });
   }
   
-  // Search functionality
-  const projectSearch = document.getElementById('projectSearch');
-  if (projectSearch) {
-    projectSearch.addEventListener('input', function(e) {
-      filterProjects(e.target.value.toLowerCase());
+  // Use debounced search filtering
+  if (domCache.projectSearch) {
+    domCache.projectSearch.setAttribute('aria-label', 'Search projects');
+    domCache.projectSearch.addEventListener('input', e => {
+      debouncedFilterProjects(e.target.value.toLowerCase());
     });
   }
   
