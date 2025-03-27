@@ -1,5 +1,5 @@
 // =====================
-// Portfolio.js
+// portfolio.js (Full)
 // =====================
 
 // ---------------------
@@ -11,10 +11,9 @@ const projects = [
     title: "Customer Segmentation using K-Means",
     description: "Clustering analysis for customer segmentation using K-Means algorithm.",
     category: "ml",
-    status: "ready", // Ready projects do not show status badge
+    status: "ready",
     tags: ["K-Means", "Clustering", "Machine Learning", "scikit-learn"],
     image: "images/download (1).jpeg",
-    // Note: This URL is already an nbviewer link
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/advanced-customer-segmentation-ai/blob/main/Customer_Segmentation_K_Means.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/advanced-customer-segmentation-ai/blob/main/Customer_Segmentation_K_Means.ipynb",
     detailedDescription: `
@@ -24,10 +23,10 @@ const projects = [
         <li>K-Means Clustering</li>
         <li>Data Preprocessing and Feature Engineering</li>
         <li>Dimensionality Reduction</li>
-        <li>Data Visualization</li>
+        <li>Visualization</li>
       </ul>
       <h3>Business Impact</h3>
-      <p>The analysis helps businesses understand different customer groups and optimize marketing strategies.</p>
+      <p>Identify different customer groups and optimize marketing strategies for each segment.</p>
     `
   },
   {
@@ -41,7 +40,7 @@ const projects = [
     notebookUrl: "https://nbviewer.org/github/leondoungala22/employee-clustering-analysis/blob/main/main.ipynb",
     githubUrl: "https://github.com/leondoungala22/employee-clustering-analysis/blob/main/main.ipynb",
     detailedDescription: `
-      <p>This project uses PCA and clustering techniques to analyze HR data and identify employee patterns for better retention strategies.</p>
+      <p>This project uses PCA and clustering techniques to analyze HR data and identify employee patterns.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>Principal Component Analysis (PCA)</li>
@@ -50,7 +49,7 @@ const projects = [
         <li>Correlation Analysis</li>
       </ul>
       <h3>Business Applications</h3>
-      <p>HR departments can use these insights to improve retention and employee satisfaction.</p>
+      <p>Helps improve employee retention strategies and workplace satisfaction.</p>
     `
   },
   {
@@ -58,23 +57,22 @@ const projects = [
     title: "Diabetes Prediction and Characterization",
     description: "Ensemble learning methods for medical prediction of diabetes risk.",
     category: "ml",
-    status: "review", // Under review: badge should appear
+    status: "review", // Under Review
     tags: ["Ensemble Learning", "Medical ML", "Random Forest", "XGBoost"],
     image: "images/diabete.jpeg",
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
     detailedDescription: `
-      <p>This project implements ensemble learning methods to predict diabetes risk using various health metrics.</p>
+      <p>This project implements ensemble learning methods to predict diabetes risk based on patient health metrics.</p>
       <h3>Key Techniques</h3>
       <ul>
-        <li>Random Forest Classification</li>
+        <li>Random Forest</li>
         <li>XGBoost</li>
         <li>Feature Importance Analysis</li>
         <li>Cross-Validation</li>
-        <li>Hyperparameter Tuning</li>
       </ul>
       <h3>Healthcare Applications</h3>
-      <p>The model helps identify patients at high risk for early intervention.</p>
+      <p>Helps providers identify high-risk patients for early intervention.</p>
     `
   },
   {
@@ -82,13 +80,13 @@ const projects = [
     title: "Heart Disease Prediction",
     description: "SVM and NLP techniques for medical diagnosis and risk assessment.",
     category: "ml",
-    status: "review", // Under review: badge should appear
+    status: "review",
     tags: ["SVM", "Medical ML", "Classification", "scikit-learn"],
     image: "images/8_Main_Types_of_Heart_Disease.jpeg",
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/SVM%20(Linear%20and%20non-linear)/Heart%20Disease%20Prediction/main.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/SVM%20(Linear%20and%20non-linear)/Heart%20Disease%20Prediction/main.ipynb",
     detailedDescription: `
-      <p>This project focuses on predicting heart disease risk using SVM and NLP methods.</p>
+      <p>This project focuses on heart disease prediction using SVM and explores various medical indicators to assess risk factors.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>Support Vector Machines (SVM)</li>
@@ -97,7 +95,7 @@ const projects = [
         <li>Medical Data Analysis</li>
       </ul>
       <h3>Healthcare Applications</h3>
-      <p>The model assists in early diagnosis and risk stratification for heart disease.</p>
+      <p>Assists in early diagnosis and risk stratification for heart disease patients.</p>
     `
   },
   {
@@ -105,13 +103,13 @@ const projects = [
     title: "Sentiment Analysis on IMDb Reviews",
     description: "NLP-based classification of movie reviews using Naive Bayes.",
     category: "ml",
-    status: "review", // Under review: badge should appear
+    status: "review",
     tags: ["NLP", "Naive Bayes", "Text Classification", "scikit-learn"],
     image: "images/sentiment-analysis.png",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/Naive%20Bayes/Sentiment%20Analysis/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/Naive%20Bayes/Sentiment%20Analysis/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Naive%20Bayes/Sentiment%20Analysis%20(NLP)/main.ipynb",
     detailedDescription: `
-      <p>This project applies NLP techniques to classify IMDb reviews using Naive Bayes.</p>
+      <p>This project applies NLP techniques to classify IMDb reviews using Naive Bayes algorithms.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>Text Preprocessing and Tokenization</li>
@@ -120,7 +118,7 @@ const projects = [
         <li>Model Performance Evaluation</li>
       </ul>
       <h3>Business Applications</h3>
-      <p>The approach can be adapted for brand monitoring and customer sentiment analysis.</p>
+      <p>Useful for brand monitoring, customer feedback analysis, and social media sentiment tracking.</p>
     `
   },
   {
@@ -128,17 +126,17 @@ const projects = [
     title: "Breast Cancer Classification",
     description: "KNN algorithm for diagnosing breast tumors as malignant or benign.",
     category: "ml",
-    status: "review", // Under review: badge should appear
+    status: "review",
     tags: ["KNN", "Medical ML", "Classification", "scikit-learn"],
     image: "images/breast-cancer.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/KNN/Breast%20Cancer%20Classification/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/KNN/Breast%20Cancer%20Classification/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/KNN%20(K%20Nearest%20Neighbors)/Breast%20Cancer%20Classification/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/KNN%20(K%20Nearest%20Neighbors)/Breast%20Cancer%20Classification/main.ipynb",
     detailedDescription: `
-      <p>This project uses the KNN algorithm to classify breast cancer tumors as malignant or benign.</p>
+      <p>This project uses the K-Nearest Neighbors (KNN) algorithm to classify breast cancer tumors as malignant or benign.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>K-Nearest Neighbors</li>
-        <li>Medical Image Analysis</li>
+        <li>Medical Image Feature Analysis</li>
         <li>Hyperparameter Optimization</li>
         <li>Model Evaluation Metrics</li>
       </ul>
@@ -151,13 +149,13 @@ const projects = [
     title: "Salary Prediction",
     description: "Linear regression model for salary forecasting based on experience and skills.",
     category: "ml",
-    status: "review", // Under review: badge should appear
+    status: "review",
     tags: ["Linear Regression", "Forecasting", "scikit-learn"],
     image: "images/salary-prediction.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/Linear%20Regression/Salary%20Prediction/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/Linear%20Regression/Salary%20Prediction/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Linear%20Regression/Salary%20Prediction/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Linear%20Regression/Salary%20Prediction/main.ipynb",
     detailedDescription: `
-      <p>This project develops a linear regression model to predict salaries using experience and skill data.</p>
+      <p>This project develops a linear regression model to predict salaries using years of experience, education, and other factors.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>Linear Regression</li>
@@ -166,7 +164,7 @@ const projects = [
         <li>Model Validation</li>
       </ul>
       <h3>Business Applications</h3>
-      <p>The model helps HR departments and recruiters set fair salary ranges.</p>
+      <p>Helps HR departments set fair salary ranges and improve compensation strategies.</p>
     `
   },
   {
@@ -174,13 +172,13 @@ const projects = [
     title: "Credit Card Fraud Detection",
     description: "Decision Trees for detecting fraudulent transactions in credit card data.",
     category: "ml",
-    status: "ready", // Ready projects appear first
+    status: "ready",
     tags: ["Decision Trees", "Anomaly Detection", "Financial ML"],
     image: "images/1637FraudDetection.jpeg",
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Advanced-Credit-Card-Fraud-Detection/blob/main/main.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/Advanced-Credit-Card-Fraud-Detection/blob/main/main.ipynb",
     detailedDescription: `
-      <p>This project focuses on detecting fraudulent credit card transactions using decision tree algorithms.</p>
+      <p>This project focuses on detecting fraudulent credit card transactions using Decision Tree algorithms.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>Decision Tree Classification</li>
@@ -189,7 +187,7 @@ const projects = [
         <li>Cost-Sensitive Learning</li>
       </ul>
       <h3>Financial Applications</h3>
-      <p>It assists in real-time fraud detection and prevention, protecting customers and reducing losses.</p>
+      <p>Protects customers from fraudulent transactions and reduces financial losses.</p>
     `
   },
   {
@@ -197,13 +195,13 @@ const projects = [
     title: "Predicting Housing Prices",
     description: "Decision Tree Regressor for real estate price prediction.",
     category: "ml",
-    status: "review", // Under review: badge should appear
+    status: "review",
     tags: ["Decision Tree Regression", "Real Estate", "Forecasting"],
     image: "images/housing-prices.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Decision%20Tree%20Regression/Housing%20Price%20Prediction/main.ipynb",
     detailedDescription: `
-      <p>This project uses a decision tree regression model to predict housing prices based on various property features.</p>
+      <p>This project develops a Decision Tree Regression model to predict housing prices based on property features.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>Decision Tree Regression</li>
@@ -212,7 +210,7 @@ const projects = [
         <li>Model Evaluation</li>
       </ul>
       <h3>Real Estate Applications</h3>
-      <p>The model assists in estimating property values for investors and real estate professionals.</p>
+      <p>Helps investors and real estate professionals estimate property values more accurately.</p>
     `
   },
   {
@@ -220,22 +218,22 @@ const projects = [
     title: "Spam Email Classification",
     description: "Logistic Regression for filtering spam emails from legitimate communications.",
     category: "ml",
-    status: "review", // Under review: badge should appear
+    status: "review",
     tags: ["Logistic Regression", "NLP", "Email Filtering"],
     image: "images/spam-detection.jpeg",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn(ML)/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
+    githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
     detailedDescription: `
-      <p>This project implements logistic regression to classify emails as spam or legitimate.</p>
+      <p>This project implements Logistic Regression to classify emails as spam or legitimate (ham) based on their content and headers.</p>
       <h3>Key Techniques</h3>
       <ul>
-        <li>Text Preprocessing</li>
-        <li>Vectorization</li>
         <li>Logistic Regression</li>
-        <li>Model Evaluation</li>
+        <li>Text Preprocessing and Vectorization</li>
+        <li>Model Evaluation and Threshold Optimization</li>
+        <li>Confusion Matrix Analysis</li>
       </ul>
-      <h3>Applications</h3>
-      <p>The model can be used to build effective email filters that protect users from spam and phishing.</p>
+      <h3>Practical Applications</h3>
+      <p>Can be used to develop email filters that protect users from phishing and unwanted marketing communications.</p>
     `
   },
   {
@@ -249,15 +247,15 @@ const projects = [
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/AI-Health-Assistant/blob/main/AI_Health_Assistant.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/AI-Health-Assistant",
     detailedDescription: `
-      <p>The Virtual Doctor AI Assistant provides medical guidance based on user symptoms using a conversational AI interface.</p>
+      <p>This generative AI application uses LangChain to provide medical guidance based on user symptoms.</p>
       <h3>Key Technologies</h3>
       <ul>
-        <li>LangChain Framework</li>
+        <li>LangChain</li>
         <li>Large Language Models</li>
-        <li>Medical Knowledge Integration</li>
+        <li>Medical Knowledge Base</li>
         <li>Conversational AI</li>
       </ul>
-      <h3>Note</h3>
+      <h3>Disclaimer</h3>
       <p>This system is for educational purposes only and does not replace professional medical advice.</p>
     `
   },
@@ -272,7 +270,7 @@ const projects = [
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0/blob/main/ATS_System.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0",
     detailedDescription: `
-      <p>This project implements a semantic ATS that matches CVs with job descriptions using RAG.</p>
+      <p>This project implements a semantic Applicant Tracking System (ATS) using Retrieval Augmented Generation (RAG) to match CVs/resumes with job descriptions.</p>
       <h3>Key Technologies</h3>
       <ul>
         <li>Retrieval Augmented Generation (RAG)</li>
@@ -281,7 +279,7 @@ const projects = [
         <li>Vector Embeddings</li>
       </ul>
       <h3>Applications</h3>
-      <p>The system assists recruiters in identifying qualified candidates by going beyond simple keyword matching.</p>
+      <p>Helps recruiters efficiently identify qualified candidates by going beyond simple keyword matching.</p>
     `
   },
   {
@@ -310,79 +308,55 @@ const projects = [
 ];
 
 // ---------------------
-// Helper Functions
+// Helper: Convert GitHub to nbviewer or GitHub1s
 // ---------------------
-
-// Embed notebook URL using nbviewer for robustness. For generative projects, use GitHub1s.
 function getEmbedUrl(project) {
   if (project.category === 'generative') {
+    // For generative AI, show code structure in GitHub1s
     return project.githubUrl.replace('github.com', 'github1s.com');
   }
-  if (project.notebookUrl.indexOf("nbviewer.org") !== -1) {
+  // If it already has nbviewer, just return it
+  if (project.notebookUrl.includes('nbviewer.org')) {
     return project.notebookUrl;
   }
-  return project.notebookUrl.replace('github.com', 'nbviewer.org/github').replace('/blob/', '/');
-}
-
-// Generate HTML for tech level indicators (if used in the project info panel)
-function generateTechLevels(tags) {
-  const techLevels = {
-    "K-Means": "advanced",
-    "Clustering": "advanced",
-    "Machine Learning": "advanced",
-    "scikit-learn": "advanced",
-    "PCA": "advanced",
-    "Data Analysis": "advanced",
-    "HR Analytics": "intermediate",
-    "Ensemble Learning": "advanced",
-    "Medical ML": "advanced",
-    "Random Forest": "advanced",
-    "XGBoost": "advanced",
-    "SVM": "advanced",
-    "NLP": "intermediate",
-    "Classification": "advanced",
-    "Text Classification": "intermediate",
-    "Naive Bayes": "advanced",
-    "KNN": "advanced",
-    "Linear Regression": "advanced",
-    "Forecasting": "intermediate",
-    "Decision Trees": "advanced",
-    "Anomaly Detection": "advanced",
-    "Financial ML": "intermediate",
-    "Decision Tree Regression": "advanced",
-    "Real Estate": "intermediate",
-    "Logistic Regression": "advanced",
-    "Email Filtering": "intermediate",
-    "LangChain": "intermediate",
-    "Medical AI": "intermediate",
-    "Generative AI": "intermediate",
-    "RAG": "intermediate",
-    "Resume Analysis": "intermediate",
-    "Semantic Search": "intermediate",
-    "Healthcare AI": "intermediate",
-    "Conversational AI": "intermediate",
-    "Document Processing": "intermediate",
-    "Vector Embeddings": "intermediate"
-  };
-  return tags.map(tag => {
-    const level = techLevels[tag] || "intermediate";
-    return `
-      <div class="article-tech-item">
-        <span>${tag}</span>
-        <div class="tech-level ${level}"></div>
-      </div>
-    `;
-  }).join('');
+  // Otherwise, convert GitHub link to nbviewer
+  return project.notebookUrl
+    .replace('github.com', 'nbviewer.org/github')
+    .replace('/blob/', '/');
 }
 
 // ---------------------
-// Main Function: loadProject
+// getStatusBadge: Return HTML for status
+// ---------------------
+function getStatusBadge(status) {
+  const lower = status.toLowerCase();
+  if (lower === 'review') {
+    return `
+      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; 
+           background:rgba(255,255,255,0.1); color:#ffc107; font-weight:600; 
+           padding:5px 12px; border-radius:20px; z-index:4;">
+        <i class="fas fa-clock"></i> Under Review
+      </div>
+    `;
+  } else if (lower === 'ready') {
+    return `
+      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; 
+           background:rgba(255,255,255,0.1); color:#00e676; font-weight:600; 
+           padding:5px 12px; border-radius:20px; z-index:4;">
+        <i class="fas fa-check-circle"></i> Ready
+      </div>
+    `;
+  }
+  return '';
+}
+
+// ---------------------
+// loadProject: Displays the single project in the #active-project section
 // ---------------------
 function loadProject(projectId) {
   const project = projects.find(p => p.id === projectId);
   if (!project) return;
   
-  // Show loader immediately
   showJupyterLoader();
   
   const projectContent = document.getElementById('project-content');
@@ -391,6 +365,7 @@ function loadProject(projectId) {
     year: 'numeric', month: 'long', day: 'numeric'
   });
   
+  // If there's a private repo, you might show a private message
   const isPrivateRepo = project.isPrivate === true;
   const embedUrl = getEmbedUrl(project);
   
@@ -442,25 +417,29 @@ function loadProject(projectId) {
       
       ${
         isPrivateRepo
-          ? `<div class="private-repo-message">
-               <div class="private-repo-content">
-                 <div class="private-icon"><i class="fas fa-lock"></i></div>
-                 <div class="private-text">
-                   <h3>Private Repository</h3>
-                   <p>This project's source code is stored in a private repository and requires authorized access.</p>
-                   <p>If you're interested in learning more or requesting access, please contact me directly.</p>
-                   <a href="mailto:doungala.leon@gmail.com" class="btn-contact">
-                     <i class="fas fa-envelope"></i> Request Access
-                   </a>
-                 </div>
-               </div>
-             </div>`
-          : `<div class="notebook-frame-container-max">
-               <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideJupyterLoader()"></iframe>
-               <button class="notebook-fullscreen-toggle" title="Toggle fullscreen mode">
-                 <i class="fas fa-expand"></i>
-               </button>
-             </div>`
+          ? `
+            <div class="private-repo-message">
+              <div class="private-repo-content">
+                <div class="private-icon"><i class="fas fa-lock"></i></div>
+                <div class="private-text">
+                  <h3>Private Repository</h3>
+                  <p>This project's source code is stored in a private repository.</p>
+                  <p>If you're interested in learning more or requesting access, please contact me directly.</p>
+                  <a href="mailto:doungala.leon@gmail.com" class="btn-contact">
+                    <i class="fas fa-envelope"></i> Request Access
+                  </a>
+                </div>
+              </div>
+            </div>
+          `
+          : `
+            <div class="notebook-frame-container-max">
+              <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideJupyterLoader()"></iframe>
+              <button class="notebook-fullscreen-toggle" title="Toggle fullscreen mode">
+                <i class="fas fa-expand"></i>
+              </button>
+            </div>
+          `
       }
       
       <div class="project-description-panel" id="projectDescription">
@@ -492,24 +471,80 @@ function loadProject(projectId) {
     </div>
   `;
   
+  // Refresh button
   const refreshButton = projectContent.querySelector('.refresh-notebook');
   if (refreshButton) {
-    refreshButton.addEventListener('click', function() {
+    refreshButton.addEventListener('click', () => {
       const iframe = projectContent.querySelector('.notebook-iframe');
       if (iframe) {
         showJupyterLoader();
-        iframe.src = iframe.src;
+        iframe.src = iframe.src; // reload
       }
     });
   }
   
+  // Hide explorer, show active project
   document.getElementById('project-explorer').classList.add('d-none');
   document.getElementById('active-project').classList.remove('d-none');
   window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
 }
 
 // ---------------------
-// Populate Project Cards
+// generateTechLevels: For the detailedDescription panel
+// ---------------------
+function generateTechLevels(tags) {
+  const techLevels = {
+    "K-Means": "advanced",
+    "Clustering": "advanced",
+    "Machine Learning": "advanced",
+    "scikit-learn": "advanced",
+    "PCA": "advanced",
+    "Data Analysis": "advanced",
+    "HR Analytics": "intermediate",
+    "Employee Retention": "intermediate",
+    "Ensemble Learning": "advanced",
+    "Medical ML": "advanced",
+    "Random Forest": "advanced",
+    "XGBoost": "advanced",
+    "SVM": "advanced",
+    "NLP": "intermediate",
+    "Classification": "advanced",
+    "Text Classification": "intermediate",
+    "Naive Bayes": "advanced",
+    "KNN": "advanced",
+    "Linear Regression": "advanced",
+    "Forecasting": "intermediate",
+    "Decision Trees": "advanced",
+    "Anomaly Detection": "advanced",
+    "Financial ML": "intermediate",
+    "Decision Tree Regression": "advanced",
+    "Real Estate": "intermediate",
+    "Logistic Regression": "advanced",
+    "Email Filtering": "intermediate",
+    "LangChain": "intermediate",
+    "Medical AI": "intermediate",
+    "Generative AI": "intermediate",
+    "RAG": "intermediate",
+    "Resume Analysis": "intermediate",
+    "Semantic Search": "intermediate",
+    "Healthcare AI": "intermediate",
+    "Conversational AI": "intermediate",
+    "Document Processing": "intermediate",
+    "Vector Embeddings": "intermediate"
+  };
+  return tags.map(tag => {
+    const level = techLevels[tag] || "intermediate";
+    return `
+      <div class="article-tech-item">
+        <span>${tag}</span>
+        <div class="tech-level tech-${level}"></div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ---------------------
+// populateProjects: Fills the grids with project cards
 // ---------------------
 function populateProjects(gridId, projectsList) {
   const grid = document.getElementById(gridId);
@@ -517,12 +552,9 @@ function populateProjects(gridId, projectsList) {
   
   grid.innerHTML = '';
   
-  // Sort so that "ready" projects come first
-  projectsList.sort((a, b) => {
-    if (a.status.toLowerCase() === "ready" && b.status.toLowerCase() !== "ready") return -1;
-    if (a.status.toLowerCase() !== "ready" && b.status.toLowerCase() === "ready") return 1;
-    return 0;
-  });
+  // We'll just display them in normal order
+  // or you can shuffle if you want random:
+  // shuffleArray(projectsList);
   
   if (projectsList.length === 0) {
     grid.innerHTML = `
@@ -542,11 +574,16 @@ function populateProjects(gridId, projectsList) {
     projectCard.dataset.category = project.category;
     projectCard.dataset.tags = project.tags.join(',').toLowerCase();
     
+    // Variation for color
     const colorVariant = index % 4;
     projectCard.classList.add(`card-variant-${colorVariant}`);
     
+    // Up to 3 tags in the summary
     const displayTags = project.tags.slice(0, 3);
     const remainingTagsCount = project.tags.length > 3 ? project.tags.length - 3 : 0;
+    
+    // Status badge
+    const statusBadgeHTML = getStatusBadge(project.status);
     
     projectCard.innerHTML = `
       <div class="project-image">
@@ -554,14 +591,7 @@ function populateProjects(gridId, projectsList) {
         <div class="project-category ${project.category === 'generative' ? 'cat-gen' : 'cat-ml'}">
           ${project.category === 'generative' ? 'Generative AI' : 'Machine Learning'}
         </div>
-        ${
-          // Display Under Review badge for ML projects with status "review" (except customer-segmentation)
-          (project.category === 'ml' &&
-           project.status.toLowerCase() === 'review' &&
-           project.id !== 'customer-segmentation')
-            ? `<div class="project-status-badge"><i class="fas fa-clock"></i> Under Review</div>`
-            : ''
-        }
+        ${statusBadgeHTML}
       </div>
       <div class="project-body">
         <h3 class="project-title">${project.title}</h3>
@@ -580,6 +610,7 @@ function populateProjects(gridId, projectsList) {
     
     grid.appendChild(projectCard);
     
+    // Click event to load the project
     projectCard.querySelector('.btn-view-project').addEventListener('click', function() {
       loadProject(this.dataset.id);
     });
@@ -587,7 +618,17 @@ function populateProjects(gridId, projectsList) {
 }
 
 // ---------------------
-// Stats Counters and Search Functionality
+// Shuffle (optional) if you want random
+// ---------------------
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// ---------------------
+// Stats Counters & Search
 // ---------------------
 function animateCounter(elementId, targetValue) {
   const element = document.getElementById(elementId);
@@ -610,6 +651,7 @@ function animateCounter(elementId, targetValue) {
 }
 
 function updateStatsCounters() {
+  // If you have counters in your HTML, e.g. #totalProjects, #mlProjects, #genProjects
   const totalProjects = projects.length;
   const mlProjects = projects.filter(p => p.category === 'ml').length;
   const genProjects = projects.filter(p => p.category === 'generative').length;
@@ -633,9 +675,11 @@ function filterProjects(searchTerm) {
     }
   });
   
+  // Check if each grid is empty after filtering
   ['projectGrid', 'mlProjectGrid', 'genProjectGrid'].forEach(tabId => {
     const grid = document.getElementById(tabId);
     if (!grid) return;
+    
     const visibleCards = grid.querySelectorAll('.project-card[style="display: flex;"]');
     if (visibleCards.length === 0 && !grid.querySelector('.empty-search-results')) {
       grid.innerHTML += `
@@ -653,7 +697,7 @@ function filterProjects(searchTerm) {
 }
 
 // ---------------------
-// Sharing and Navigation Functions
+// Sharing & Nav Functions
 // ---------------------
 function shareProject(title, id) {
   if (navigator.share) {
@@ -663,7 +707,7 @@ function shareProject(title, id) {
       url: window.location.href.split('#')[0] + `?project=${id}`
     }).catch(err => console.error('Share failed:', err));
   } else {
-    alert('Use the copy link function to share this project');
+    alert('Use copy link function to share this project');
   }
 }
 
@@ -705,11 +749,13 @@ function shareNotebook(title, notebookUrl) {
 
 function updateMainNavLink() {
   const portfolioLinks = document.querySelectorAll('a[href="_portfolio.html"]');
-  portfolioLinks.forEach(link => link.href = "ml_and_ds_portfolio.html");
+  portfolioLinks.forEach(link => {
+    link.href = "ml_and_ds_portfolio.html";
+  });
 }
 
 // ---------------------
-// Global Notebook Loader (nbviewer-based, no GitHub API call)
+// Global Notebook Loader (for nbviewer/iframe loading)
 // ---------------------
 function createGlobalNotebookLoader() {
   if (!document.getElementById('globalNotebookLoader')) {
@@ -737,91 +783,61 @@ function createGlobalNotebookLoader() {
     style.textContent = `
       .global-notebook-loader {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
         background: rgba(255, 255, 255, 0.92);
         z-index: 9999;
         display: flex;
         justify-content: center;
         align-items: center;
         transition: opacity 0.4s ease, visibility 0.4s ease;
-        visibility: hidden;
-        opacity: 0;
+        visibility: hidden; opacity: 0;
       }
       .global-notebook-loader.visible {
-        visibility: visible;
-        opacity: 1;
+        visibility: visible; opacity: 1;
       }
       .loader-content {
         background: white;
         padding: 2rem;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        max-width: 500px;
-        width: 90%;
+        display: flex; align-items: center; gap: 2rem;
+        max-width: 500px; width: 90%;
       }
       .jupyter-spinner {
         position: relative;
-        width: 80px;
-        height: 80px;
+        width: 80px; height: 80px;
         flex-shrink: 0;
       }
       .jupyter-circles {
-        position: relative;
-        width: 100%;
-        height: 100%;
+        position: relative; width: 100%; height: 100%;
         animation: jupyter-spin 2s linear infinite;
       }
       .jupyter-circle {
         position: absolute;
-        width: 22px;
-        height: 22px;
+        width: 22px; height: 22px;
         border-radius: 50%;
         animation: jupyter-pulse 1.5s ease-in-out infinite;
       }
-      .circle-1 {
-        background: #F37626;
-        top: 0;
-        left: calc(50% - 11px);
-        animation-delay: 0s;
-      }
-      .circle-2 {
-        background: #6E6E6E;
-        bottom: 10px;
-        left: calc(25% - 11px);
-        animation-delay: 0.5s;
-      }
-      .circle-3 {
-        background: #4E4E4E;
-        bottom: 10px;
-        right: calc(25% - 11px);
-        animation-delay: 1s;
-      }
+      .circle-1 { background: #F37626; top:0; left:calc(50% - 11px); animation-delay:0s; }
+      .circle-2 { background: #6E6E6E; bottom:10px; left:calc(25% - 11px); animation-delay:0.5s; }
+      .circle-3 { background: #4E4E4E; bottom:10px; right:calc(25% - 11px); animation-delay:1s; }
       .loader-text h3 {
-        margin: 0 0 0.5rem 0;
-        font-size: 1.25rem;
-        color: #333;
+        margin: 0 0 0.5rem 0; font-size:1.25rem; color:#333;
       }
       .loader-text p {
-        margin: 0;
-        font-size: 0.9rem;
-        color: #666;
+        margin: 0; font-size:0.9rem; color:#666;
       }
       @keyframes jupyter-spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
       @keyframes jupyter-pulse {
-        0%, 100% { opacity: 0.6; transform: scale(0.85); }
-        50% { opacity: 1; transform: scale(1); }
+        0%,100% { opacity:0.6; transform:scale(0.85); }
+        50% { opacity:1; transform:scale(1); }
       }
-      @media (max-width: 768px) {
-        .loader-content { flex-direction: column; gap: 1.5rem; text-align: center; }
+      @media (max-width:768px) {
+        .loader-content { flex-direction: column; gap:1.5rem; text-align:center; }
       }
     `;
     document.head.appendChild(style);
@@ -844,22 +860,28 @@ function hideJupyterLoader() {
 // ---------------------
 function toggleDescription() {
   const panel = document.getElementById('projectDescription');
-  if (panel) panel.classList.toggle('panel-open');
+  if (panel) {
+    panel.classList.toggle('panel-open');
+  }
 }
 
 // ---------------------
-// Initialization (DOMContentLoaded)
+// DOMContentLoaded
 // ---------------------
 document.addEventListener('DOMContentLoaded', function() {
+  // If you need to update certain nav links
   updateMainNavLink();
   
+  // Populate the main grids
   if (document.getElementById('projectGrid')) {
     populateProjects('projectGrid', projects);
     populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
     populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
-    updateStatsCounters();
+    // If you have counters in your HTML, uncomment:
+    // updateStatsCounters();
   }
   
+  // "Back to Projects" button
   const backBtn = document.getElementById('back-to-projects');
   if (backBtn) {
     backBtn.addEventListener('click', function() {
@@ -869,6 +891,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
+  // Search
   const projectSearch = document.getElementById('projectSearch');
   if (projectSearch) {
     projectSearch.addEventListener('input', function(e) {
@@ -876,12 +899,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
+  // Check URL param for direct project link
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('project');
   if (projectId) {
     setTimeout(() => loadProject(projectId), 500);
   }
   
+  // Initialize particles.js if present
   if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
     particlesJS("particles-js", {
       particles: {
@@ -890,17 +915,30 @@ document.addEventListener('DOMContentLoaded', function() {
         shape: { type: "circle" },
         opacity: { value: 0.5, random: true },
         size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: "#4285f4", opacity: 0.4, width: 1 },
-        move: { enable: true, speed: 2, direction: "none", random: true, out_mode: "out" }
+        line_linked: {
+          enable: true, distance: 150, color: "#4285f4",
+          opacity: 0.4, width: 1
+        },
+        move: {
+          enable: true, speed: 2, direction: "none",
+          random: true, out_mode: "out"
+        }
       },
       interactivity: {
         detect_on: "canvas",
-        events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" } },
-        modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 }
+        }
       }
     });
   }
   
+  // Create the global notebook loader
   createGlobalNotebookLoader();
 });
 
