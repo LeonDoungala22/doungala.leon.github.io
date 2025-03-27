@@ -1,5 +1,5 @@
 // =====================
-// portfolio.js (Full)
+// portfolio.js (Complete)
 // =====================
 
 // ---------------------
@@ -57,7 +57,7 @@ const projects = [
     title: "Diabetes Prediction and Characterization",
     description: "Ensemble learning methods for medical prediction of diabetes risk.",
     category: "ml",
-    status: "review", // Under Review
+    status: "review",
     tags: ["Ensemble Learning", "Medical ML", "Random Forest", "XGBoost"],
     image: "images/diabete.jpeg",
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Prediction.ipynb",
@@ -224,7 +224,7 @@ const projects = [
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/Practical_AI_ML_DL_DataScience_Portfolio/blob/main/code/Module%202_Scikit-Learn%2C%20Basic%20ML%20Models%2C%20EDA%2C%20and%20ML%20Practice%20Projects/Practical%20projects%20(ML%20models)/Logistic%20Regression/Spam%20Email%20Classification/main.ipynb",
     detailedDescription: `
-      <p>This project implements Logistic Regression to classify emails as spam or legitimate (ham) based on their content and headers.</p>
+      <p>This project implements Logistic Regression to classify emails as spam or legitimate based on their content and headers.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>Logistic Regression</li>
@@ -308,41 +308,34 @@ const projects = [
 ];
 
 // ---------------------
-// Helper: Convert GitHub to nbviewer or GitHub1s
+// Helper: Convert GitHub URL to nbviewer or GitHub1s embed URL
 // ---------------------
 function getEmbedUrl(project) {
   if (project.category === 'generative') {
-    // For generative AI, show code structure in GitHub1s
+    // For generative AI, use GitHub1s to show code structure
     return project.githubUrl.replace('github.com', 'github1s.com');
   }
-  // If it already has nbviewer, just return it
+  // Otherwise, convert GitHub link to nbviewer if not already converted
   if (project.notebookUrl.includes('nbviewer.org')) {
     return project.notebookUrl;
   }
-  // Otherwise, convert GitHub link to nbviewer
-  return project.notebookUrl
-    .replace('github.com', 'nbviewer.org/github')
-    .replace('/blob/', '/');
+  return project.notebookUrl.replace('github.com', 'nbviewer.org/github').replace('/blob/', '/');
 }
 
 // ---------------------
-// getStatusBadge: Return HTML for status
+// Helper: Generate Status Badge HTML with a more visible background
 // ---------------------
 function getStatusBadge(status) {
   const lower = status.toLowerCase();
   if (lower === 'review') {
     return `
-      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; 
-           background:rgba(255,255,255,0.1); color:#ffc107; font-weight:600; 
-           padding:5px 12px; border-radius:20px; z-index:4;">
+      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; background: rgba(255,193,7,0.9); color: white; font-weight:600; padding:5px 12px; border-radius:20px; z-index:4;">
         <i class="fas fa-clock"></i> Under Review
       </div>
     `;
   } else if (lower === 'ready') {
     return `
-      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; 
-           background:rgba(255,255,255,0.1); color:#00e676; font-weight:600; 
-           padding:5px 12px; border-radius:20px; z-index:4;">
+      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; background: rgba(0,230,118,0.9); color: white; font-weight:600; padding:5px 12px; border-radius:20px; z-index:4;">
         <i class="fas fa-check-circle"></i> Ready
       </div>
     `;
@@ -351,21 +344,18 @@ function getStatusBadge(status) {
 }
 
 // ---------------------
-// loadProject: Displays the single project in the #active-project section
+// loadProject: Show the project details in the active section
 // ---------------------
 function loadProject(projectId) {
   const project = projects.find(p => p.id === projectId);
   if (!project) return;
   
   showJupyterLoader();
-  
   const projectContent = document.getElementById('project-content');
   const currentDate = new Date();
-  const formattedDate = currentDate.toLocaleDateString('en-US', {
-    year: 'numeric', month: 'long', day: 'numeric'
-  });
+  const formattedDate = currentDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   
-  // If there's a private repo, you might show a private message
+  // For private projects, check isPrivate flag (if set)
   const isPrivateRepo = project.isPrivate === true;
   const embedUrl = getEmbedUrl(project);
   
@@ -416,30 +406,26 @@ function loadProject(projectId) {
       </div>
       
       ${
-        isPrivateRepo
-          ? `
-            <div class="private-repo-message">
-              <div class="private-repo-content">
-                <div class="private-icon"><i class="fas fa-lock"></i></div>
-                <div class="private-text">
-                  <h3>Private Repository</h3>
-                  <p>This project's source code is stored in a private repository.</p>
-                  <p>If you're interested in learning more or requesting access, please contact me directly.</p>
-                  <a href="mailto:doungala.leon@gmail.com" class="btn-contact">
-                    <i class="fas fa-envelope"></i> Request Access
-                  </a>
-                </div>
-              </div>
-            </div>
-          `
-          : `
-            <div class="notebook-frame-container-max">
-              <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideJupyterLoader()"></iframe>
-              <button class="notebook-fullscreen-toggle" title="Toggle fullscreen mode">
-                <i class="fas fa-expand"></i>
-              </button>
-            </div>
-          `
+        isPrivateRepo 
+          ? `<div class="private-repo-message">
+               <div class="private-repo-content">
+                 <div class="private-icon"><i class="fas fa-lock"></i></div>
+                 <div class="private-text">
+                   <h3>Private Repository</h3>
+                   <p>This project's source code is stored in a private repository.</p>
+                   <p>If you're interested in learning more or requesting access, please contact me directly.</p>
+                   <a href="mailto:doungala.leon@gmail.com" class="btn-contact">
+                     <i class="fas fa-envelope"></i> Request Access
+                   </a>
+                 </div>
+               </div>
+             </div>`
+          : `<div class="notebook-frame-container-max">
+               <iframe class="notebook-iframe" id="notebookFrame" src="${embedUrl}" allowfullscreen onload="hideJupyterLoader()"></iframe>
+               <button class="notebook-fullscreen-toggle" title="Toggle fullscreen mode">
+                 <i class="fas fa-expand"></i>
+               </button>
+             </div>`
       }
       
       <div class="project-description-panel" id="projectDescription">
@@ -471,26 +457,24 @@ function loadProject(projectId) {
     </div>
   `;
   
-  // Refresh button
   const refreshButton = projectContent.querySelector('.refresh-notebook');
   if (refreshButton) {
     refreshButton.addEventListener('click', () => {
       const iframe = projectContent.querySelector('.notebook-iframe');
       if (iframe) {
         showJupyterLoader();
-        iframe.src = iframe.src; // reload
+        iframe.src = iframe.src;
       }
     });
   }
   
-  // Hide explorer, show active project
   document.getElementById('project-explorer').classList.add('d-none');
   document.getElementById('active-project').classList.remove('d-none');
   window.scrollTo(0, document.getElementById('active-project').offsetTop - 100);
 }
 
 // ---------------------
-// generateTechLevels: For the detailedDescription panel
+// generateTechLevels: Build technology indicators (for detailed panel)
 // ---------------------
 function generateTechLevels(tags) {
   const techLevels = {
@@ -544,17 +528,20 @@ function generateTechLevels(tags) {
 }
 
 // ---------------------
-// populateProjects: Fills the grids with project cards
+// populateProjects: Fill project grids; sort projects so "ready" projects come first
 // ---------------------
 function populateProjects(gridId, projectsList) {
   const grid = document.getElementById(gridId);
   if (!grid) return;
   
-  grid.innerHTML = '';
+  // Sort projects: ready projects first
+  projectsList.sort((a, b) => {
+    if (a.status.toLowerCase() === 'ready' && b.status.toLowerCase() !== 'ready') return -1;
+    if (a.status.toLowerCase() !== 'ready' && b.status.toLowerCase() === 'ready') return 1;
+    return 0;
+  });
   
-  // We'll just display them in normal order
-  // or you can shuffle if you want random:
-  // shuffleArray(projectsList);
+  grid.innerHTML = '';
   
   if (projectsList.length === 0) {
     grid.innerHTML = `
@@ -574,15 +561,14 @@ function populateProjects(gridId, projectsList) {
     projectCard.dataset.category = project.category;
     projectCard.dataset.tags = project.tags.join(',').toLowerCase();
     
-    // Variation for color
+    // Color variation based on index
     const colorVariant = index % 4;
     projectCard.classList.add(`card-variant-${colorVariant}`);
     
-    // Up to 3 tags in the summary
     const displayTags = project.tags.slice(0, 3);
     const remainingTagsCount = project.tags.length > 3 ? project.tags.length - 3 : 0;
     
-    // Status badge
+    // Get status badge HTML (with background color applied)
     const statusBadgeHTML = getStatusBadge(project.status);
     
     projectCard.innerHTML = `
@@ -610,7 +596,6 @@ function populateProjects(gridId, projectsList) {
     
     grid.appendChild(projectCard);
     
-    // Click event to load the project
     projectCard.querySelector('.btn-view-project').addEventListener('click', function() {
       loadProject(this.dataset.id);
     });
@@ -618,7 +603,7 @@ function populateProjects(gridId, projectsList) {
 }
 
 // ---------------------
-// Shuffle (optional) if you want random
+// Optional: Shuffle function (if you want random order instead of sorting by status)
 // ---------------------
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -633,13 +618,11 @@ function shuffleArray(array) {
 function animateCounter(elementId, targetValue) {
   const element = document.getElementById(elementId);
   if (!element) return;
-  
   let currentValue = 0;
   const duration = 1500;
   const stepTime = 30;
   const totalSteps = duration / stepTime;
   const stepValue = targetValue / totalSteps;
-  
   const counterAnimation = setInterval(() => {
     currentValue += stepValue;
     if (currentValue >= targetValue) {
@@ -651,7 +634,6 @@ function animateCounter(elementId, targetValue) {
 }
 
 function updateStatsCounters() {
-  // If you have counters in your HTML, e.g. #totalProjects, #mlProjects, #genProjects
   const totalProjects = projects.length;
   const mlProjects = projects.filter(p => p.category === 'ml').length;
   const genProjects = projects.filter(p => p.category === 'generative').length;
@@ -667,19 +649,15 @@ function filterProjects(searchTerm) {
     const title = card.querySelector('.project-title').textContent.toLowerCase();
     const description = card.querySelector('.project-description').textContent.toLowerCase();
     const tags = card.dataset.tags.toLowerCase();
-    
     if (title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm)) {
       card.style.display = 'flex';
     } else {
       card.style.display = 'none';
     }
   });
-  
-  // Check if each grid is empty after filtering
   ['projectGrid', 'mlProjectGrid', 'genProjectGrid'].forEach(tabId => {
     const grid = document.getElementById(tabId);
     if (!grid) return;
-    
     const visibleCards = grid.querySelectorAll('.project-card[style="display: flex;"]');
     if (visibleCards.length === 0 && !grid.querySelector('.empty-search-results')) {
       grid.innerHTML += `
@@ -697,7 +675,7 @@ function filterProjects(searchTerm) {
 }
 
 // ---------------------
-// Sharing & Nav Functions
+// Sharing & Navigation Functions
 // ---------------------
 function shareProject(title, id) {
   if (navigator.share) {
@@ -755,7 +733,7 @@ function updateMainNavLink() {
 }
 
 // ---------------------
-// Global Notebook Loader (for nbviewer/iframe loading)
+// Global Notebook Loader
 // ---------------------
 function createGlobalNotebookLoader() {
   if (!document.getElementById('globalNotebookLoader')) {
@@ -785,7 +763,7 @@ function createGlobalNotebookLoader() {
         position: fixed;
         top: 0; left: 0;
         width: 100%; height: 100%;
-        background: rgba(255, 255, 255, 0.92);
+        background: rgba(255,255,255,0.92);
         z-index: 9999;
         display: flex;
         justify-content: center;
@@ -833,8 +811,8 @@ function createGlobalNotebookLoader() {
         100% { transform: rotate(360deg); }
       }
       @keyframes jupyter-pulse {
-        0%,100% { opacity:0.6; transform:scale(0.85); }
-        50% { opacity:1; transform:scale(1); }
+        0%,100% { opacity:0.6; transform: scale(0.85); }
+        50% { opacity:1; transform: scale(1); }
       }
       @media (max-width:768px) {
         .loader-content { flex-direction: column; gap:1.5rem; text-align:center; }
@@ -866,22 +844,20 @@ function toggleDescription() {
 }
 
 // ---------------------
-// DOMContentLoaded
+// DOMContentLoaded: Initialize everything
 // ---------------------
 document.addEventListener('DOMContentLoaded', function() {
-  // If you need to update certain nav links
   updateMainNavLink();
   
-  // Populate the main grids
+  // Populate project grids; sort projects so "ready" projects come first in each grid
   if (document.getElementById('projectGrid')) {
     populateProjects('projectGrid', projects);
     populateProjects('mlProjectGrid', projects.filter(p => p.category === 'ml'));
     populateProjects('genProjectGrid', projects.filter(p => p.category === 'generative'));
-    // If you have counters in your HTML, uncomment:
-    // updateStatsCounters();
+    // updateStatsCounters(); // Uncomment if you use counters in your HTML
   }
   
-  // "Back to Projects" button
+  // "Back to Projects" button event
   const backBtn = document.getElementById('back-to-projects');
   if (backBtn) {
     backBtn.addEventListener('click', function() {
@@ -891,7 +867,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Search
+  // Search functionality
   const projectSearch = document.getElementById('projectSearch');
   if (projectSearch) {
     projectSearch.addEventListener('input', function(e) {
@@ -899,14 +875,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Check URL param for direct project link
+  // Check URL parameter for direct project link
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('project');
   if (projectId) {
     setTimeout(() => loadProject(projectId), 500);
   }
   
-  // Initialize particles.js if present
+  // Initialize particles.js if available
   if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
     particlesJS("particles-js", {
       particles: {
