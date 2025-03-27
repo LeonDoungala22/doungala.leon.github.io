@@ -678,16 +678,19 @@ function filterProjects(searchTerm) {
 // Sharing & Navigation Functions
 // ---------------------
 function shareProject(title, id) {
+  const sharedURL = window.location.origin + window.location.pathname + `?project=${id}`;
   if (navigator.share) {
     navigator.share({
       title: title,
       text: `Check out this project: ${title}`,
-      url: window.location.href.split('#')[0] + `?project=${id}`
+      url: sharedURL
     }).catch(err => console.error('Share failed:', err));
   } else {
-    alert('Use copy link function to share this project');
+    // Fallback for browsers that do not support Web Share API
+    alert('Copy this link to share the project: ' + sharedURL);
   }
 }
+
 
 function copyLink(id) {
   const linkToCopy = window.location.href.split('#')[0] + `?project=${id}`;
