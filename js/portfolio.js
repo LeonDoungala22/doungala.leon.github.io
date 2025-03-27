@@ -8,50 +8,55 @@
 const projects = [
   {
     id: "customer-segmentation",
-    title: "Customer Segmentation using K-Means",
-    description: "Clustering analysis for customer segmentation using K-Means algorithm.",
+    title: "Customer Segmentation with K-Means, PCA, and AI-Driven Marketing",
+    description: "A comprehensive project combining K-Means clustering, PCA for dimensionality reduction, and generative AI to create personalized marketing recommendations.",
     category: "ml",
     status: "ready",
-    tags: ["K-Means", "Clustering", "Machine Learning", "scikit-learn"],
+    tags: ["K-Means", "PCA", "Cosine Similarity", "Clustering", "Machine Learning", "scikit-learn", "LangChain", "OpenAI"],
     image: "images/download (1).jpeg",
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/advanced-customer-segmentation-ai/blob/main/Customer_Segmentation_K_Means.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/advanced-customer-segmentation-ai/blob/main/Customer_Segmentation_K_Means.ipynb",
     detailedDescription: `
-      <p>This project demonstrates how to implement customer segmentation using K-Means clustering in Python with scikit-learn. It groups customers based on similarities to target marketing campaigns effectively.</p>
+      <p>This project demonstrates sophisticated customer segmentation techniques by integrating K-Means clustering, PCA for dimensionality reduction, and AI-driven marketing recommendations. The analysis of the Mall Customers dataset identifies distinct customer groups for targeted marketing strategies.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>K-Means Clustering</li>
-        <li>Data Preprocessing and Feature Engineering</li>
-        <li>Dimensionality Reduction</li>
-        <li>Visualization</li>
+        <li>Principal Component Analysis (PCA)</li>
+        <li>Cosine Similarity for measuring cluster similarity</li>
+        <li>Generative AI via LangChain &amp; OpenAI</li>
+        <li>Data Preprocessing &amp; Visualization</li>
       </ul>
       <h3>Business Impact</h3>
-      <p>Identify different customer groups and optimize marketing strategies for each segment.</p>
+      <p>Optimizes marketing strategies by identifying distinct customer segments and tailoring communications to drive engagement and conversion.</p>
     `
-  },
-  {
+  }
+   ,
+  
+   {
     id: "hr-analytics",
-    title: "Human Resources Analytics",
-    description: "PCA and clustering for HR data analysis to identify employee patterns.",
+    title: "HR Analytics: Employee Segmentation with PCA and K-Means",
+    description: "PCA simplifies HR data while K-Means clustering with cosine similarity segments employees by demographics, compensation, and satisfaction.",
     category: "ml",
     status: "ready",
-    tags: ["PCA", "Data Analysis", "HR Analytics", "Employee Retention"],
+    tags: ["PCA", "K-Means", "Clustering", "HR Analytics", "Employee Retention"],
     image: "images/HR-Analytics.jpeg",
-    notebookUrl: "https://nbviewer.org/github/leondoungala22/employee-clustering-analysis/blob/main/main.ipynb",
+    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/employee-clustering-analysis/blob/main/main.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/employee-clustering-analysis/blob/main/main.ipynb",
     detailedDescription: `
-      <p>This project uses PCA and clustering techniques to analyze HR data and identify employee patterns.</p>
+      <p>This project leverages PCA and K-Means clustering with cosine similarity to analyze HR data and identify distinct employee segments.</p>
       <h3>Key Techniques</h3>
       <ul>
         <li>Principal Component Analysis (PCA)</li>
-        <li>Hierarchical Clustering</li>
-        <li>Feature Importance Analysis</li>
-        <li>Correlation Analysis</li>
+        <li>K-Means Clustering with Cosine Similarity</li>
+        <li>Feature Importance & Correlation Analysis</li>
       </ul>
       <h3>Business Applications</h3>
-      <p>Helps improve employee retention strategies and workplace satisfaction.</p>
+      <p>Provides actionable insights to optimize HR strategies and improve employee retention.</p>
     `
   },
+  
+   
+  
   {
     id: "diabetes-prediction",
     title: "Diabetes Prediction and Characterization",
@@ -174,26 +179,28 @@ const projects = [
   {
     id: "fraud-detection",
     title: "Credit Card Fraud Detection",
-    description: "Decision Trees for detecting fraudulent transactions in credit card data.",
+    description: "Advanced ML techniques using Decision Trees and Random Forest with SMOTE and PCA to detect fraud in a highly imbalanced credit card dataset.",
     category: "ml",
     status: "ready",
-    tags: ["Decision Trees", "Anomaly Detection", "Financial ML"],
+    tags: ["Decision Trees", "Random Forest", "Anomaly Detection", "Financial ML"],
     image: "images/1637FraudDetection.jpeg",
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Advanced-Credit-Card-Fraud-Detection/blob/main/main.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/Advanced-Credit-Card-Fraud-Detection/blob/main/main.ipynb",
     detailedDescription: `
-      <p>This project focuses on detecting fraudulent credit card transactions using Decision Tree algorithms.</p>
+      <p>This project implements advanced machine learning techniques to detect fraudulent credit card transactions. Using PCA-transformed features, SMOTE for balancing, and tuning both Decision Tree and Random Forest classifiers, the approach is designed for high precision and recall on an extremely imbalanced dataset.</p>
       <h3>Key Techniques</h3>
       <ul>
-        <li>Decision Tree Classification</li>
-        <li>Handling Imbalanced Data</li>
-        <li>Feature Importance</li>
-        <li>Cost-Sensitive Learning</li>
+        <li>Decision Tree & Random Forest Classification with Hyperparameter Tuning</li>
+        <li>Data Preprocessing with Robust Scaling and SMOTE Oversampling</li>
+        <li>PCA for Feature Transformation</li>
+        <li>Model Evaluation: Confusion Matrix, ROC-AUC, and Precision-Recall Analysis</li>
       </ul>
       <h3>Financial Applications</h3>
-      <p>Protects customers from fraudulent transactions and reduces financial losses.</p>
+      <p>This approach accurately identifies fraudulent transactions, reducing financial losses and enhancing security.</p>
     `
-  },
+  }
+  ,  
+  
   {
     id: "housing-prices",
     title: "Predicting Housing Prices",
@@ -244,73 +251,81 @@ const projects = [
   },
   {
     id: "virtual-doctor",
-    title: "Virtual Doctor AI Assistant",
-    description: "AI-powered system for medical guidance based on symptoms.",
+    title: "AI Health Assistant",
+    description: "Generative AI system using LangChain, Onpai, and advanced techniques to deliver actionable health insights.",
     category: "generative",
     status: "ready",
-    tags: ["LangChain", "Medical AI", "NLP", "Generative AI"],
+    tags: ["LangChain", "Generative AI", "Onpai"],
     image: "images/virtual-doctor-ai.png",
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/AI-Health-Assistant/blob/main/AI_Health_Assistant.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/AI-Health-Assistant",
     detailedDescription: `
-      <p>This generative AI application uses LangChain to provide medical guidance based on user symptoms.</p>
+      <p>The AI Health Insight Engine leverages LangChain and Onpai to generate interactive, AI-driven health insights based on user inputs. This system provides dynamic guidance for medical inquiries while showcasing my expertise as an AI/ML Engineer.</p>
       <h3>Key Technologies</h3>
       <ul>
         <li>LangChain</li>
-        <li>Large Language Models</li>
-        <li>Medical Knowledge Base</li>
-        <li>Conversational AI</li>
+        <li>Generative AI</li>
+        <li>Onpai Integration</li>
       </ul>
       <h3>Disclaimer</h3>
-      <p>This system is for educational purposes only and does not replace professional medical advice.</p>
+      <p>This system is for educational and experimental purposes only and does not replace professional medical advice.</p>
     `
-  },
+  }
+  ,
   {
     id: "ats-system",
-    title: "AI Semantic ATS System for CV Matching",
-    description: "RAG-based system for CV-job description matching.",
+    title: "TalentMatch ATS: Semantic CV Matching and semantic search with RAG",
+    description: "AI Applicant Tracking System utilizing semantic search and Retrieval-Augmented Generation (RAG) to match resumes effectively with job descriptions.",
     category: "generative",
     status: "ready",
-    tags: ["RAG", "Resume Analysis", "NLP", "Semantic Search"],
+    tags: ["Semantic Search", "RAG", "OpenAI", "Semantic search" , "LangChain", "Vector Search", "Anthropic"],
     image: "images/imag1.png",
     notebookUrl: "https://nbviewer.org/github/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0/blob/main/ATS_System.ipynb",
     githubUrl: "https://github.com/LeonDoungala22/RAG-ATS-Semantic-matching-search-cv-ai-v1.0.0",
     detailedDescription: `
-      <p>This project implements a semantic Applicant Tracking System (ATS) using Retrieval Augmented Generation (RAG) to match CVs/resumes with job descriptions.</p>
+      <p>TalentMatch ATS is a sophisticated AI-driven Applicant Tracking System designed to intelligently match resumes with job descriptions using advanced semantic search and Retrieval-Augmented Generation (RAG). Leveraging OpenAI LLMs and LangChain, it automates CV parsing, semantic similarity analysis, and candidate scoring to enhance recruitment efficiency and accuracy.</p>
       <h3>Key Technologies</h3>
       <ul>
-        <li>Retrieval Augmented Generation (RAG)</li>
-        <li>Semantic Search</li>
-        <li>Document Processing</li>
-        <li>Vector Embeddings</li>
+        <li>Retrieval-Augmented Generation (RAG)</li>
+        <li>Semantic Vector Search</li>
+        <li>OpenAI (GPT-4o, text-embedding-ada-002)</li>
+        <li>LangChain</li>
+        <li>Vector Databases (Chroma)</li>
       </ul>
       <h3>Applications</h3>
-      <p>Helps recruiters efficiently identify qualified candidates by going beyond simple keyword matching.</p>
-    `
-  },
-  {
-    id: "diabetes-chatbot",
-    title: "Conversational AI for Diabetes Prediction",
-    description: "Medical assistant using RAG workflows for diabetes analysis.",
-    category: "generative",
-    status: "ready",
-    tags: ["RAG", "Healthcare AI", "Conversational AI", "LangChain"],
-    image: "images/Screenshot 2025-01-02 at 21.08.13.png",
-    notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Chatbot.ipynb",
-    githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization",
-    detailedDescription: `
-      <p>This project integrates conversational AI with diabetes prediction models to create an interactive system that assesses diabetes risk.</p>
-      <h3>Key Technologies</h3>
-      <ul>
-        <li>RAG (Retrieval Augmented Generation)</li>
-        <li>LangChain Workflow Orchestration</li>
-        <li>Diabetes Prediction Models</li>
-        <li>Conversational UI</li>
-      </ul>
-      <h3>Applications</h3>
-      <p>This system can be deployed to educate patients about diabetes risk and prevention.</p>
+      <p>Streamlines recruitment by intelligently identifying top candidates beyond keyword matching, optimizing hiring processes.</p>
     `
   }
+,  
+{
+  id: "diabetes-chatbot",
+  title: "Advanced Predictive, Conversational AI & Semantic Search and XGBoost for Diabetes Prediction",
+  description: "Medical assistant using RAG workflows, semantic search, and XGBoost for diabetes analysis.",
+  category: "generative",
+  status: "private",
+  tags: ["RAG", "Semantic Search", "Healthcare AI", "Conversational AI", "LangChain", "Machine Learning", "XGBoost"],
+  image: "images/Screenshot 2025-01-02 at 21.08.13.png",
+  notebookUrl: "https://nbviewer.org/github/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization/blob/main/Diabetes_Chatbot.ipynb",
+  githubUrl: "https://github.com/LeonDoungala22/Msc-Thesis-AI-ML-for-Diabetes-Characterization",
+  detailedDescription: `
+    <p>This project integrates advanced conversational AI with diabetes prediction models—leveraging RAG workflows, semantic search, and XGBoost—to create an interactive system that assesses diabetes risk and offers actionable insights.</p>
+    <h3>Key Technologies</h3>
+    <ul>
+      <li>Retrieval-Augmented Generation (RAG)</li>
+      <li>Semantic Search</li>
+      <li>LangChain Workflow Orchestration</li>
+      <li>Diabetes Prediction Models</li>
+      <li>XGBoost</li>
+      <li>Conversational UI</li>
+    </ul>
+    <h3>Applications</h3>
+    <p>This system can be deployed to educate patients on diabetes risk, support early intervention strategies, and enhance overall patient engagement.</p>
+  `
+}
+
+
+
+
 ];
 
 // ---------------------
@@ -353,9 +368,17 @@ function getStatusBadge(status) {
         <i class="fas fa-check-circle"></i> Ready
       </div>
     `;
+  } else if (lower === 'private') {
+    return `
+      <div class="project-status-badge" style="position:absolute; top:15px; left:15px; background: rgba(244,67,54,0.9); color: white; font-weight:600; padding:5px 12px; border-radius:20px; z-index:4;">
+        <i class="fas fa-lock"></i> Private
+      </div>
+    `;
   }
   return '';
 }
+
+
 
 // ---------------------
 // loadProject: Display project details in the active section
